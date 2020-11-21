@@ -1,4 +1,4 @@
-# FAB Defense UK 
+# Shooting Supplies
 
 Created using Nextjs, Tailwind, Lightspeed Retail API and Stripe!
 
@@ -24,3 +24,4 @@ Created using Nextjs, Tailwind, Lightspeed Retail API and Stripe!
 - Finish mini cart display in nav
 - Add search
 - Do something to improve the product page
+- Lots more!!!

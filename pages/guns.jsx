@@ -7,18 +7,39 @@ import GunFilter from '../components/GunFilter'
 const Guns = (props) => {
   const guns = props.guns
 
+  // Get categories for the Gun filter.
   const getCategories = guns.map(gun => {
     return gun.Type
   })
 
-  const filterCategories = getCategories.filter((category, index) => getCategories.indexOf(category) === index)
+  const filterCategories = getCategories.filter((category, index) => getCategories.indexOf(category) === index).sort()
 
   const categories = filterCategories.map((cat, index) => {
     return {
-      id: index,
-      name: cat
+      categories: {
+        catID: index,
+        name: cat
+      }
     }
   })
+
+  //Get brands for the Gun filter.
+  const getBrands = guns.map(gun => {
+    return gun.Make
+  })
+
+  const filterBrands = getBrands.filter((brand, index) => getBrands.indexOf(brand) === index).sort()
+
+  const brands = filterBrands.map((brand, index) => {
+    return {
+      brands: {
+        brandID: index,
+        name: brand
+      }
+    }
+  })
+
+  console.log(brands)
 
   const [checkedInputs, setCheckedInputs] = useState({})
 
@@ -34,7 +55,7 @@ const Guns = (props) => {
     <Layout>
       <div className="flex mx-96">
         <div className="w-1/4">
-          <GunFilter categories={categories} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
+          <GunFilter categories={categories} brands={brands} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">
           <div className="grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
@@ -45,22 +66,15 @@ const Guns = (props) => {
                 }
                 for (const [key, value] of Object.entries(checkedInputs)) {
                   if (value === true) {
-                    if (categories.id === key) {
-                      return <GunProductCard gun={gun} />
+                    if (key === gun.Type || key === gun.Make) {
+                      return (
+                        <GunProductCard gun={gun} />
+                      )
                     }
                   }
                 }
               }
             })}
-            {/* {guns.map(gun => {
-              if (gun.ImageCount > 1) {
-                return (
-                  <div key={gun.ID}>
-                    <GunProductCard gun={gun} />
-                  </div>
-                )
-              }
-            })} */}
           </div>
         </div>
       </div>
@@ -76,7 +90,8 @@ export async function getStaticProps() {
   return {
     props: {
       guns
-    }
+    },
+    revalidate: 600
   }
 }
 

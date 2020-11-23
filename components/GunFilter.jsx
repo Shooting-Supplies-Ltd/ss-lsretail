@@ -1,17 +1,27 @@
 const GunFilter = (props) => {
-  const { categories, handleInputChange, checkedInputs } = props
+  const { categories, brands, handleInputChange, checkedInputs } = props
 
   return (
     <div className="text-black my-24">
       <h4 className="p-2 border-b-2 border-r-2 font-bold">Filter By</h4>
-      <div className="p-2 border-r-2">
-        <h5 className="mb-2">Category</h5>
+      <div className="p-2 my-2 border-r-2 border-b-2">
+        <h5 className="mb-2 font-semibold">Category</h5>
         {categories.map(cat => {
-          console.log(cat)
           return (
             <div>
-              <input type="checkbox" id={cat.id} value={cat.id} checked={checkedInputs[cat.name]} onChange={handleInputChange} />
-              <label key={cat.id} className="ml-2" htmlFor={cat.id}>{cat.name}</label>
+              <input type="checkbox" id={cat.categories.name} value={cat.categories.name} checked={checkedInputs[cat.categories.name]} onChange={handleInputChange} />
+              <label key={cat.categories.name} className="ml-2" htmlFor={cat.categories.name}>{cat.categories.name}</label>
+            </div>
+          )
+        })}
+      </div>
+      <div className="p-2 my-2 border-r-2 border-b-2">
+        <h5 className="mb-2 font-semibold">Brand</h5>
+        {brands.map(brand => {
+          return (
+            <div>
+              <input type="checkbox" id={brand.brands.name} value={brand.brands.name} checked={checkedInputs[brand.brands.name]} onChange={handleInputChange} />
+              <label key={brand.brands.name} className="ml-2" htmlFor={brand.brands.name}>{brand.brands.name}</label>
             </div>
           )
         })}

@@ -15,7 +15,7 @@ const GunFilter = (props) => {
           )
         })}
       </div>
-      <div className="p-2 my-2 border-r-2 border-b-2">
+      {/* <div className="p-2 my-2 border-r-2 border-b-2">
         <h5 className="mb-2 font-semibold">Brand</h5>
         {brands.map(brand => {
           return (
@@ -25,7 +25,7 @@ const GunFilter = (props) => {
             </div>
           )
         })}
-      </div>
+      </div> */}
     </div>
   )
 }

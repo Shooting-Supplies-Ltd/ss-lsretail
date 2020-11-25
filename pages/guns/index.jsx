@@ -1,45 +1,22 @@
 import slugify from 'slugify'
 import { useState, useEffect } from 'react'
-import Layout from '../components/Layout'
-import GunProductCard from '../components/GunProductCard'
-import GunFilter from '../components/GunFilter'
+import Image from 'next/image'
+import Layout from '../../components/layout/Layout'
+import GunProductCard from '../../components/GunProductCard'
+import GunFilter from '../../components/filters/GunFilter'
 
 const Guns = (props) => {
-  const guns = props.guns
+  const { guns } = props
 
-  // Get categories for the Gun filter.
-  const getCategories = guns.map(gun => {
-    return gun.Type
-  })
-
-  const filterCategories = getCategories.filter((category, index) => getCategories.indexOf(category) === index).sort()
-
-  const categories = filterCategories.map((cat, index) => {
-    return {
-      categories: {
-        catID: index,
-        name: cat
-      }
-    }
-  })
-
-  //Get brands for the Gun filter.
-  const getBrands = guns.map(gun => {
-    return gun.Make
-  })
-
-  const filterBrands = getBrands.filter((brand, index) => getBrands.indexOf(brand) === index).sort()
-
-  const brands = filterBrands.map((brand, index) => {
-    return {
-      brands: {
-        brandID: index,
-        name: brand
-      }
-    }
-  })
-
-  console.log(brands)
+  if (!guns) {
+    return (
+      <Layout>
+        <div className="flex justify-center items-center min-h-vh">
+          <Image src="/loading.gif" width={500} height={300} />
+        </div>
+      </Layout>
+    )
+  }
 
   const [checkedInputs, setCheckedInputs] = useState({})
 
@@ -51,17 +28,63 @@ const Guns = (props) => {
     console.log('Checked Inputs', checkedInputs)
   }, [checkedInputs])
 
+
+  // Get categories for the Gun filter.
+  const getCategories = () => {
+    const findCategories = guns.map(gun => {
+      return gun.Type
+    })
+
+    const filterCategories = findCategories.filter((category, index) => findCategories.indexOf(category) === index).sort()
+
+    const categories = filterCategories.map((cat, index) => {
+      return {
+        categories: {
+          catID: index,
+          name: cat
+        }
+      }
+    })
+
+    return categories
+  }
+
+
+  //Get brands for the Gun filter.
+  const getBrands = () => {
+    const findBrands = guns.map(gun => {
+      return gun.Make
+    })
+
+    const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort()
+
+    const brands = filterBrands.map((brand, index) => {
+      return {
+        brands: {
+          brandID: index,
+          name: brand
+        }
+      }
+    })
+
+    return brands
+  }
+
+
+
   return (
     <Layout>
       <div className="flex mx-96">
         <div className="w-1/4">
-          <GunFilter categories={categories} brands={brands} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
+          <GunFilter categories={getCategories()} brands={getBrands()} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">
           <div className="grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
             {guns.map(gun => {
               if (gun.ImageCount > 1) {
+                // If no options boxes selected
                 if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
+                  console.log(checkedInputs)
                   return <GunProductCard gun={gun} />
                 }
                 for (const [key, value] of Object.entries(checkedInputs)) {

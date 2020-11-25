@@ -19,7 +19,7 @@ async function getHeader() {
 
 export async function getItems() {
   let axiosConfig = await getHeader()
-  return axios.get(`Item.json?manufacturerID=168&load_relations=["Category", "Images", "ItemShops", "CustomFieldValues"]`, axiosConfig).catch(err => console.error(err.data))
+  return axios.get(`Item.json?load_relations=["Category", "Images", "ItemShops", "CustomFieldValues"]`, axiosConfig).catch(err => console.error(err.data))
 }
 
 export async function getItem(itemID) {
@@ -35,4 +35,9 @@ export async function createSale(newSale) {
 export async function getCategories(categoryID) {
   let axiosConfig = await getHeader()
   return axios.get(`Category.json?categoryID=IN,${categoryID}`, axiosConfig).catch(err => console.error(err.data))
+}
+
+export async function getAmmo() {
+  let axiosConfig = await getHeader()
+  return axios.get(`Item.json?load_relations=["Category"]&Category.categoryID=IN,[23,46,218]`, axiosConfig).catch(err => console.error(err.data))
 }

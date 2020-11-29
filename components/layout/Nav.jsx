@@ -34,7 +34,7 @@ const Nav = () => {
             </div>
           </div>
           <div className="w-6/12 flex justify-center items-center">
-            <ul className="flex text-xl font-black space-x-16">
+            <ul className="flex text-xl font-black space-x-16 md:space-x-8">
               <Link href="/guns">
                 <a>
                   <li className="hover:text-ssorange">GUNS</li>

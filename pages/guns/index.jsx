@@ -74,8 +74,8 @@ const Guns = (props) => {
 
   return (
     <Layout>
-      <div className="flex mx-96">
-        <div className="w-1/4">
+      <div className="flex mx-96 md:mx-40">
+        <div className="w-1/4 md:mt-12">
           <GunFilter categories={getCategories()} brands={getBrands()} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">

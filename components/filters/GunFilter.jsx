@@ -9,7 +9,7 @@ const GunFilter = (props) => {
         {categories.map(cat => {
           return (
             <div>
-              <input type="checkbox" id={cat.categories.name} value={cat.categories.name} checked={checkedInputs[cat.categories.name]} onChange={handleInputChange} />
+              <input type="checkbox" id={cat.categories.name} value={cat.categories.name} checked={checkedInputs[cat.categories]} onChange={handleInputChange} />
               <label key={cat.categories.name} className="ml-2" htmlFor={cat.categories.name}>{cat.categories.name}</label>
             </div>
           )

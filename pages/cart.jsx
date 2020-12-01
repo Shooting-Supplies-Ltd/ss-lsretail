@@ -3,7 +3,7 @@ import { useShoppingCart } from 'use-shopping-cart'
 import { fetchPostJSON } from './api/api-helpers'
 import CartItems from '../components/cart/CartItems'
 import { setCookie, destroyCookie } from 'nookies'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 
 

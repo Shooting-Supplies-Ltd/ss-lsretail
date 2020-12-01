@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import PrintObject from '../components/PrintObject'
 import { createSale } from '../pages/api/lightspeed'
 import { useShoppingCart } from 'use-shopping-cart'

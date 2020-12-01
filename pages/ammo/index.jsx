@@ -1,10 +1,10 @@
-import Layout from '../components/layout/Layout'
-import ProductCard from '../components/ProductCard'
-import ProductFilter from '../components/ProductFilter'
-import { getCategories, getItems } from './api/lightspeed'
+import Layout from '../../components/layout/Layout'
+import ProductCard from '../../components/ProductCard'
+import ProductFilter from '../../components/ProductFilter'
+import { getCategories, getAmmo } from '../api/lightspeed'
 import { useState, useEffect } from 'react'
 
-const Products = (props) => {
+const Ammo = (props) => {
   console.log(props)
   const { items } = props
   const { Category } = props.categories
@@ -51,7 +51,7 @@ const Products = (props) => {
 }
 
 export async function getServerSideProps() {
-  const itemData = await getItems()
+  const itemData = await getAmmo()
   const fetchedItems = await itemData.data
 
   const items = []
@@ -61,6 +61,7 @@ export async function getServerSideProps() {
       items.push(item)
     }
   })
+
 
   const categoriesToFetch = []
 
@@ -79,4 +80,4 @@ export async function getServerSideProps() {
   }
 }
 
-export default Products;
+export default Ammo;

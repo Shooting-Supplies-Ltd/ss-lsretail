@@ -1,10 +1,10 @@
-import Layout from '../components/layout/Layout'
-import ProductCard from '../components/ProductCard'
-import ProductFilter from '../components/ProductFilter'
-import { getCategories, getItems } from './api/lightspeed'
+import Layout from '../../components/layout/Layout'
+import ProductCard from '../../components/ProductCard'
+import ProductFilter from '../../components/ProductFilter'
+import { getCategories, getAccessories } from '../api/lightspeed'
 import { useState, useEffect } from 'react'
 
-const Products = (props) => {
+const Accessories = (props) => {
   console.log(props)
   const { items } = props
   const { Category } = props.categories
@@ -19,17 +19,14 @@ const Products = (props) => {
     console.log('Checked Inputs', checkedInputs)
   }, [checkedInputs])
 
-  console.log(typeof Item)
-  console.log(checkedInputs)
-
   return (
     <Layout>
-      <div className="flex mx-44 mt-14">
+      <div className="flex mx-44 mt-12">
         <div className="w-1/4">
           <ProductFilter category={Category} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">
-          <div className="lg:grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
+          <div className="lg:grid grid-cols-3 gap-2 lg:my-8 lg:justify-center">
             {items.map(item => {
               if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
                 return <ProductCard item={item} key={item.itemID} />
@@ -51,7 +48,7 @@ const Products = (props) => {
 }
 
 export async function getServerSideProps() {
-  const itemData = await getItems()
+  const itemData = await getAccessories()
   const fetchedItems = await itemData.data
 
   const items = []
@@ -61,6 +58,7 @@ export async function getServerSideProps() {
       items.push(item)
     }
   })
+
 
   const categoriesToFetch = []
 
@@ -79,4 +77,4 @@ export async function getServerSideProps() {
   }
 }
 
-export default Products;
+export default Accessories;

@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="w-full h-64 bg-ssblue">
       <div className="hidden lg:flex pb-8 pt-8 flex text-white justify-around border-t border-black mx-16">
         <div id="about-us-footer-menu">
-          <h3 className="font-bold text-xl">ABOUT US</h3>
+          <h3 className="font-black text-xl">ABOUT US</h3>
           <hr className="mb-4 mt-1" />
           <ul>
             <li>
@@ -29,7 +29,7 @@ const Footer = () => {
           </ul>
         </div>
         <div id="products-footer-menu">
-          <h3 className="font-bold text-xl">PRODUCTS</h3>
+          <h3 className="font-black text-xl">PRODUCTS</h3>
           <hr className="mb-4 mt-1" />
           <ul>
             <li>
@@ -47,7 +47,7 @@ const Footer = () => {
           </ul>
         </div>
         <div id="social-footer-menu">
-          <h3 className="font-bold text-xl">FIND US ON</h3>
+          <h3 className="font-black text-xl">FIND US ON</h3>
           <hr className="mb-4 mt-1" />
           <a
             href="https://www.facebook.com/ShootingSuppliesLTD/"
@@ -83,13 +83,13 @@ const Footer = () => {
         </div>
 
         <div id="contact-us-footer-menu">
-          <h3 className="font-bold text-xl">CONTACT US</h3>
+          <h3 className="font-black text-xl">CONTACT US</h3>
           <hr className="mb-4 mt-1" />
-          <p className="font-semibold text-lg">38 SHERWOOD ROAD, BROMSGROVE, B60 3DR</p>
-          <p className="font-semibold text-lg">TEL: 01527 831 261</p>
-          <p className="font-semibold text-lg hover:text-ssorange">
+          <p>38 SHERWOOD ROAD, BROMSGROVE, B60 3DR</p>
+          <p>TEL: 01527 31 261</p>
+          <p className="hover:text-ssorange">
             EMAIL:
-          <a href="mailto:info@shootingsuppliesltd.co.uk">INFO@SHOOTINGSUPPLIESLTD.CO.UK</a>
+          <a href="mailto:info@shootingsuppliesltd.co.uk"> info@shootingsuppliesltd.co.uk</a>
           </p>
 
 

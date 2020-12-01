@@ -29,12 +29,12 @@ const Nav = () => {
           <div className="w-3/12 flex justify-center">
             <div className="absolute z-10">
               <Link href="/">
-                <a><img src="/logos/Logo.png" alt="Shooting Supplies Ltd Logo" width="180" className="py-6 mr-8" /></a>
+                <a><img src="/logos/Logo.png" alt="Shooting Supplies Ltd Logo" width="160" className="py-6 mr-8" /></a>
               </Link>
             </div>
           </div>
           <div className="w-6/12 flex justify-center items-center">
-            <ul className="flex text-xl font-black space-x-16 md:space-x-8">
+            <ul className="flex text-xl font-black space-x-6">
               <Link href="/guns">
                 <a>
                   <li className="hover:text-ssorange">GUNS</li>

@@ -6,13 +6,6 @@ module.exports = {
         ssblue: '#004d91',
         ssorange: 'rgb(239, 70, 36)',
       },
-      fontFamily: {
-        sans: ['Roboto'],
-        serif: ['Roboto'],
-        mono: ['Roboto'],
-        display: ['Roboto'],
-        body: ['Roboto']
-      },
     },
   },
   variants: {},

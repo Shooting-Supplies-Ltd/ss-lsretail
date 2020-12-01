@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <Layout>
       <div>
+        <div id="app-modal" />
         <div>
           <HomeBanner />
         </div>
         <div>
           <HomeModal />
         </div>
-        <div id="app-modal" />
         <div>
           <LinksSection />
         </div>

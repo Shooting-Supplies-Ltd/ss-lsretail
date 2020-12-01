@@ -21,7 +21,7 @@ const ProductCard = (props) => {
                   height={250}
                 />}
             </div>
-            <div className="lg:p-4 bg-black text-white font-bold uppercase">
+            <div className="h-full lg:p-4 bg-ssblue text-white font-bold uppercase">
               <h2>{item.description}</h2>
               <p className="lg:mt-4 lg:text-lg">£{item.Prices.ItemPrice[0].amount}</p>
             </div>

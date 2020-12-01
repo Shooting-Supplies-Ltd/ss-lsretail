@@ -70,11 +70,9 @@ const Guns = (props) => {
     return brands
   }
 
-
-
   return (
     <Layout>
-      <div className="flex mx-96 md:mx-40">
+      <div className="flex mx-72">
         <div className="w-1/4 md:mt-12">
           <GunFilter categories={getCategories()} brands={getBrands()} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
@@ -84,7 +82,7 @@ const Guns = (props) => {
               if (gun.ImageCount > 1) {
                 // If no options boxes selected
                 if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
-                  console.log(checkedInputs)
+                  // console.log(checkedInputs)
                   return <GunProductCard gun={gun} />
                 }
                 for (const [key, value] of Object.entries(checkedInputs)) {
@@ -114,23 +112,8 @@ export async function getStaticProps() {
     props: {
       guns
     },
-    revalidate: 600
+    revalidate: 60
   }
 }
-
-// export async function getStaticPaths() {
-//   const res = await fetch(process.env.GUNTRADER_API)
-//   const guns = await res.json()
-
-
-
-//   const paths = guns.Guns.map(gun => {
-//     const title = slugify(`${gun.Make}${gun.Model}${gun.SerialNumber}`)
-
-//       ({ params: { id: title } })
-
-//     return { paths, fallback: false }
-//   })
-// }
 
 export default Guns

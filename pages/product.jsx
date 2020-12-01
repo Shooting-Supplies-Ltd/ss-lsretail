@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Layout from '../components/Layout'
+import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import { getItem } from './api/lightspeed'
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
@@ -30,48 +30,49 @@ const Product = (props) => {
 
   return (
     <Layout>
-      <div className="lg:my-12">
-        <div className="lg:mx-96 lg:mb-24 grid grid-cols-2 gap-4">
-
-          <div className="mr-2">
-            <h1 className="lg:mb-16 lg:font-black lg:text-3xl uppercase">{product.name}</h1>
-            <div className="lg:flex lg:justify-center">
-              <img src={product.image} alt={`Image of the ${product.name}`} />
-              {/* <Image
-                src={product.image}
-                alt={`Photo of ${product.name}`}
-                width={500}
-                height={500}
-              /> */}
-            </div>
-          </div>
+      <div className="my-12 mx-72 rounded-b-lg shadow-lg border-t-4 border-ssblue">
+        <div className="mt-4 grid grid-cols-2 gap-4">
 
           <div>
-            <div className="lg:ml-12">
-              <p className="lg:mb-8 lg:font-black lg:text-3xl uppercase lg:mb-2">{formatCurrencyString({
-                value: product.price,
-                currency: product.currency,
-              })}</p>
-              <div className="font-medium" dangerouslySetInnerHTML={productDescriptionShort()}></div>
-              <button
-                onClick={() => addItem(product)}
-                aria-label={`Add ${product.name} to your cart`}
-                className="lg:my-8 lg:p-2 lg:bg-fabred lg:text-white lg:font-bold lg:rounded lg:mr-2"
-              >
-                Add to Cart
-              </button>
-              {cartCount > 0 ? (
-                <Link href="/cart">
-                  <button className="lg:my-8 lg:p-2 lg:bg-fabred lg:text-white lg:font-bold lg:rounded">View Cart</button>
-                </Link>
-              ) : ''}
+            <div className="lg:flex lg:justify-center">
+              {/* <img src={product.image} alt={`Image of the ${product.name}`} width="400" /> */}
+              <Image
+                src={product.image}
+                alt={`Photo of ${product.name}`}
+                width={300}
+                height={300}
+              />
             </div>
           </div>
+
+          <div className="mr-4">
+            <h1 className="mt-4 font-black text-3xl uppercase italic">{product.name}</h1>
+            <p className="mt-2 font-bold text-2xl uppercase">{formatCurrencyString({
+              value: product.price,
+              currency: product.currency,
+            })}</p>
+            <div className="mt-4" dangerouslySetInnerHTML={productDescriptionShort()}></div>
+            <div className="mt-4 uppercase text-sm font-semibold">Stock Qty: { }</div>
+            <button
+              onClick={() => addItem(product)}
+              aria-label={`Add ${product.name} to your cart`}
+              className="my-8 p-2 bg-ssblue text-white font-bold rounded mr-2"
+            >
+              Add to Cart
+              </button>
+            {cartCount > 0 ? (
+              <Link href="/cart">
+                <button className="my-8 p-2 bg-ssblue text-white font-bold rounded">View Cart</button>
+              </Link>
+            ) : ''}
+          </div>
         </div>
-        <div className="lg:mx-96">
-          <h3 className="lg:text-2xl lg:font-black lg:mb-4">About {product.name}</h3>
-          <section>
-            <div className="font-medium" dangerouslySetInnerHTML={productDescriptionLong()}></div>
+
+
+        <div className="mx-4">
+          <h3 className="p-1 text-white text-2xl text-center font-bold bg-ssblue rounded">{product.name} DETAILS</h3>
+          <section className="mx-2 my-2">
+            <div dangerouslySetInnerHTML={productDescriptionLong()}></div>
           </section>
         </div>
       </div>

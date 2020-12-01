@@ -4,12 +4,14 @@ const ProductFilter = (props) => {
 
   const { category, handleInputChange, checkedInputs } = props
 
+  const categories = category.sort((a, b) => (a.name > b.name ? 1 : -1))
+
   return (
     <div className="text-black my-24">
       <h4 className="p-2 border-b-2 border-r-2 font-bold">Filter By</h4>
       <div className="p-2 border-r-2">
         <h5 className="mb-2">Category</h5>
-        {category.map(cat => {
+        {categories.map(cat => {
           return (
             <div>
               <input type="checkbox" id={cat.categoryID} value={cat.categoryID} checked={checkedInputs[cat.name]} onChange={handleInputChange} />

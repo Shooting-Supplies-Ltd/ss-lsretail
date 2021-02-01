@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Layout from '../../components/layout/Layout'
 import GunProductCard from '../../components/GunProductCard'
 import GunFilter from '../../components/filters/gunFilters/GunFilter'
+import SearchFilter from '../../components/filters/gunFilters/SearchFilter'
 
 const Guns = ({ guns, categories, brands, conditions }) => {
   const [selectedCategory, setSelectedCategory] = useState({})
@@ -98,6 +99,7 @@ const Guns = ({ guns, categories, brands, conditions }) => {
 
   return (
     <Layout>
+      <SearchFilter guns={guns} />
       <div className="flex mx-44 mt-14">
         <div className="w-1/4">
           <GunFilter

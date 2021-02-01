@@ -3,11 +3,12 @@ import Image from 'next/image'
 
 import Layout from '../../components/layout/Layout'
 import GunProductCard from '../../components/GunProductCard'
-import GunFilter from '../../components/filters/GunFilter'
+import GunFilter from '../../components/filters/gunFilters/GunFilter'
 
-const Guns = ({ guns, categories, brands }) => {
+const Guns = ({ guns, categories, brands, conditions }) => {
   const [selectedCategory, setSelectedCategory] = useState({})
   const [selectedBrand, setSelectedBrand] = useState({})
+  const [selectedCondition, setSelectedCondition] = useState({})
   const [gunFilters, setGunFilters] = useState()
   const [filteredGuns, setFilteredGuns] = useState()
 
@@ -21,10 +22,15 @@ const Guns = ({ guns, categories, brands }) => {
     setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked })
   }
 
+  const handleConditionChange = (event) => {
+    setSelectedCondition({ ...selectedCondition, [event.target.value]: event.target.checked })
+  }
+
   const handleFilters = () => {
     const appliedFilters = {
       Make: [],
-      Type: []
+      Type: [],
+      Condition: []
     }
 
     for (let MakeKey in selectedBrand) {
@@ -33,12 +39,14 @@ const Guns = ({ guns, categories, brands }) => {
     for (let TypeKey in selectedCategory) {
       if (selectedCategory[TypeKey]) appliedFilters.Type.push(TypeKey)
     }
+    for (let ConditionKey in selectedCondition) {
+      if (selectedCondition[ConditionKey]) appliedFilters.Condition.push(ConditionKey)
+    }
     setGunFilters(appliedFilters)
   }
 
   const multiPropsFilter = (guns, gunFilters) => {
     const filterKeys = Object.keys(gunFilters);
-    console.log(filterKeys)
     return guns.filter(gun => {
       return filterKeys.every(key => {
         if (!gunFilters[key].length) return true
@@ -51,7 +59,6 @@ const Guns = ({ guns, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false
     } else {
-      console.log(selectedBrand)
       handleFilters()
     }
   }, [selectedBrand])
@@ -60,22 +67,24 @@ const Guns = ({ guns, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false
     } else {
-      console.log(selectedCategory)
       handleFilters()
     }
   }, [selectedCategory])
 
   useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+    } else {
+      handleFilters()
+    }
+  }, [selectedCondition])
+
+  useEffect(() => {
     if (gunFilters != undefined) {
-      console.log({ gunFilters })
       const myGuns = multiPropsFilter(guns, gunFilters)
       setFilteredGuns(myGuns)
     }
   }, [gunFilters])
-
-  useEffect(() => {
-    console.log(filteredGuns)
-  }, [filteredGuns])
 
   if (!guns) {
     return (
@@ -98,6 +107,9 @@ const Guns = ({ guns, categories, brands }) => {
             brands={brands}
             selectedBrand={selectedBrand}
             handleBrandChange={handleBrandChange}
+            conditions={conditions}
+            selectedCondition={selectedCondition}
+            handleConditionChange={handleConditionChange}
           />
         </div>
         <div className="w-3/4">
@@ -115,7 +127,6 @@ export async function getStaticProps() {
   const res = await fetch(process.env.GUNTRADER_API)
   const data = await res.json()
   const gunData = data.Guns
-
   const guns = []
 
   // Filter out guns with no images
@@ -144,7 +155,6 @@ export async function getStaticProps() {
     return gun.Type
   })
   const filterCategories = findCategories.filter((category, index) => findCategories.indexOf(category) === index).sort()
-
   const categories = filterCategories.map((cat, index) => {
     return {
       categories: {
@@ -154,11 +164,26 @@ export async function getStaticProps() {
     }
   })
 
+  // Get condition for the condition filter
+  const findCondition = guns.map(gun => {
+    return gun.Condition
+  })
+  const filterCondition = findCondition.filter((condition, index) => findCondition.indexOf(condition) === index).sort()
+  const conditions = filterCondition.map((condition, index) => {
+    return {
+      condition: {
+        catID: index,
+        name: condition
+      }
+    }
+  })
+
   return {
     props: {
       guns,
       brands,
-      categories
+      categories,
+      conditions
     },
     revalidate: 3600
   }

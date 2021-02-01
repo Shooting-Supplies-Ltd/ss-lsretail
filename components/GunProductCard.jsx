@@ -3,7 +3,6 @@ import Image from 'next/image'
 import slugify from 'slugify'
 
 const GunProductCard = ({ gun }) => {
-  console.log(gun)
   let slug = slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.ID}`).toLowerCase()
 
   return (

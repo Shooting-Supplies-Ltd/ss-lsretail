@@ -5,7 +5,6 @@ import { getCategories, getMaintenance } from '../api/lightspeed'
 import { useState, useEffect } from 'react'
 
 const Maintenance = (props) => {
-  console.log(props)
   const { items } = props
   const { Category } = props.categories
 
@@ -16,11 +15,8 @@ const Maintenance = (props) => {
   }
 
   useEffect(() => {
-    console.log('Checked Inputs', checkedInputs)
+    // console.log('Checked Inputs', checkedInputs)
   }, [checkedInputs])
-
-  console.log(typeof Item)
-  console.log(checkedInputs)
 
   return (
     <Layout>
@@ -29,7 +25,7 @@ const Maintenance = (props) => {
           <ProductFilter category={Category} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">
-          <div className="lg:grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
+          <div className="grid grid-cols-3 gap-2 my-12 justify-center">
             {items.map(item => {
               if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
                 return <ProductCard item={item} key={item.itemID} />
@@ -37,7 +33,6 @@ const Maintenance = (props) => {
               for (const [key, value] of Object.entries(checkedInputs)) {
                 if (value === true) {
                   if (item.categoryID === key) {
-                    console.log(item)
                     return <ProductCard item={item} key={item.itemID} />
                   }
                 }
@@ -54,12 +49,10 @@ export async function getServerSideProps() {
   const itemData = await getMaintenance()
   const fetchedItems = await itemData.data
 
-  console.log(fetchedItems)
-
   const items = []
 
   fetchedItems.Item.map(item => {
-    if (item.Images) {
+    if (item.Images.Image.baseImageURL) {
       items.push(item)
     }
   })

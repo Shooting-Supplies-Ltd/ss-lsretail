@@ -7,6 +7,14 @@ const Gun = (props) => {
   const router = useRouter()
   const { Gun } = props
 
+  const Mailto = ({ email, subject = '', body = '', children }) => {
+    let params = subject || body ? '?' : '';
+    if (subject) params += `subject=${encodeURIComponent(subject)}`;
+    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+    return <a href={`mailto:${email}${params}`}>{children}</a>;
+  };
+
   if (!Gun) {
     return (
       <Layout>
@@ -32,11 +40,11 @@ const Gun = (props) => {
             </div>
             <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</h1>
             <div className="mx-4 mt-4 border border-black">
-              <table className="table-auto w-full mb-4">
+              <table className="table-fixed w-full mb-4">
                 <thead className="bg-ssblue text-white">
                   <tr>
-                    <th colspan="2" className="p-2 uppercase text-xl">Gun Details</th>
-                    <th></th>
+                    <th className="w-1/2 p-2 uppercase text-xl text-left" colSpan="1">Gun Details</th>
+                    <th className="w-1/2"></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -74,8 +82,10 @@ const Gun = (props) => {
               <h3 className="mx-4 my-8 text-2xl font-black uppercase">Please Contact Us to Purchase this item or for more information</h3>
             </div>
             <div className="flex mx-4 my-8">
-              <button className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Call</button>
-              <button className="flex items-center justify-center h-10 w-24 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Email</button>
+              <a href="tel:01527831261" className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Call Us</a>
+              <Mailto email="info@shootingsuppliesltd.co.uk" subject={`GUN ENQUIRY: ${Gun.Make} ${Gun.Model} ${Gun.Variant ? Gun.Variant : ''} - STOCK NUMBER: ${Gun.StockNumber}`}>
+                <p className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Email</p>
+              </Mailto>
             </div>
           </div>
         </div>
@@ -105,17 +115,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params
-  console.log(slug)
   const gunSerial = slug.substr(slug.lastIndexOf('-') + 1).toUpperCase()
-  console.log(gunSerial)
 
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns')
   const data = await res.json()
   const { Guns } = data
 
   const Gun = Guns.find(gun => gun.ID == gunSerial)
-
-  console.log(Gun)
 
   return {
     props: {

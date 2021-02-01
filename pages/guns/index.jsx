@@ -1,12 +1,81 @@
-import slugify from 'slugify'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
+
 import Layout from '../../components/layout/Layout'
 import GunProductCard from '../../components/GunProductCard'
 import GunFilter from '../../components/filters/GunFilter'
 
-const Guns = (props) => {
-  const { guns } = props
+const Guns = ({ guns, categories, brands }) => {
+  const [selectedCategory, setSelectedCategory] = useState({})
+  const [selectedBrand, setSelectedBrand] = useState({})
+  const [gunFilters, setGunFilters] = useState()
+  const [filteredGuns, setFilteredGuns] = useState()
+
+  const initialRender = useRef(true)
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked })
+  }
+
+  const handleBrandChange = (event) => {
+    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked })
+  }
+
+  const handleFilters = () => {
+    const appliedFilters = {
+      Make: [],
+      Type: []
+    }
+
+    for (let MakeKey in selectedBrand) {
+      if (selectedBrand[MakeKey]) appliedFilters.Make.push(MakeKey)
+    }
+    for (let TypeKey in selectedCategory) {
+      if (selectedCategory[TypeKey]) appliedFilters.Type.push(TypeKey)
+    }
+    setGunFilters(appliedFilters)
+  }
+
+  const multiPropsFilter = (guns, gunFilters) => {
+    const filterKeys = Object.keys(gunFilters);
+    console.log(filterKeys)
+    return guns.filter(gun => {
+      return filterKeys.every(key => {
+        if (!gunFilters[key].length) return true
+        return gunFilters[key].includes(gun[key])
+      })
+    })
+  }
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+    } else {
+      console.log(selectedBrand)
+      handleFilters()
+    }
+  }, [selectedBrand])
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+    } else {
+      console.log(selectedCategory)
+      handleFilters()
+    }
+  }, [selectedCategory])
+
+  useEffect(() => {
+    if (gunFilters != undefined) {
+      console.log({ gunFilters })
+      const myGuns = multiPropsFilter(guns, gunFilters)
+      setFilteredGuns(myGuns)
+    }
+  }, [gunFilters])
+
+  useEffect(() => {
+    console.log(filteredGuns)
+  }, [filteredGuns])
 
   if (!guns) {
     return (
@@ -18,84 +87,22 @@ const Guns = (props) => {
     )
   }
 
-  const [checkedInputs, setCheckedInputs] = useState({})
-
-  const handleInputChange = (event) => {
-    setCheckedInputs({ ...checkedInputs, [event.target.value]: event.target.checked })
-  }
-
-  useEffect(() => {
-    console.log('Checked Inputs', checkedInputs)
-  }, [checkedInputs])
-
-
-  // Get categories for the Gun filter.
-  const getCategories = () => {
-    const findCategories = guns.map(gun => {
-      return gun.Type
-    })
-
-    const filterCategories = findCategories.filter((category, index) => findCategories.indexOf(category) === index).sort()
-
-    const categories = filterCategories.map((cat, index) => {
-      return {
-        categories: {
-          catID: index,
-          name: cat
-        }
-      }
-    })
-
-    return categories
-  }
-
-
-  //Get brands for the Gun filter.
-  const getBrands = () => {
-    const findBrands = guns.map(gun => {
-      return gun.Make
-    })
-
-    const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort()
-
-    const brands = filterBrands.map((brand, index) => {
-      return {
-        brands: {
-          brandID: index,
-          name: brand
-        }
-      }
-    })
-
-    return brands
-  }
-
   return (
     <Layout>
-      <div className="flex mx-72">
-        <div className="w-1/4 md:mt-12">
-          <GunFilter categories={getCategories()} brands={getBrands()} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
+      <div className="flex mx-44 mt-14">
+        <div className="w-1/4">
+          <GunFilter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            handleCategoryChange={handleCategoryChange}
+            brands={brands}
+            selectedBrand={selectedBrand}
+            handleBrandChange={handleBrandChange}
+          />
         </div>
         <div className="w-3/4">
-          <div className="grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
-            {guns.map(gun => {
-              if (gun.ImageCount > 1) {
-                // If no options boxes selected
-                if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
-                  // console.log(checkedInputs)
-                  return <GunProductCard gun={gun} />
-                }
-                for (const [key, value] of Object.entries(checkedInputs)) {
-                  if (value === true) {
-                    if (key === gun.Type || key === gun.Make) {
-                      return (
-                        <GunProductCard gun={gun} />
-                      )
-                    }
-                  }
-                }
-              }
-            })}
+          <div className="grid grid-cols-3 gap-2 my-12 justify-center">
+            {filteredGuns ? filteredGuns.map(gun => <GunProductCard gun={gun} />) : guns.map(gun => <GunProductCard gun={gun} />)}
           </div>
         </div>
       </div>
@@ -104,15 +111,56 @@ const Guns = (props) => {
 }
 
 export async function getStaticProps() {
+  // Get guns
   const res = await fetch(process.env.GUNTRADER_API)
   const data = await res.json()
-  const guns = data.Guns
+  const gunData = data.Guns
+
+  const guns = []
+
+  // Filter out guns with no images
+  gunData.map(gun => {
+    if (gun.ImageCount > 1) {
+      guns.push(gun)
+    }
+  })
+
+  //Get brands for the Gun filter.
+  const findBrands = guns.map(gun => {
+    return gun.Make
+  })
+  const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort()
+  const brands = filterBrands.map((brand, index) => {
+    return {
+      brands: {
+        brandID: index,
+        name: brand
+      }
+    }
+  })
+
+  // Get categories for the category filter
+  const findCategories = guns.map(gun => {
+    return gun.Type
+  })
+  const filterCategories = findCategories.filter((category, index) => findCategories.indexOf(category) === index).sort()
+
+  const categories = filterCategories.map((cat, index) => {
+    return {
+      categories: {
+        catID: index,
+        name: cat
+      }
+    }
+  })
 
   return {
     props: {
-      guns
+      guns,
+      brands,
+      categories
     },
-    revalidate: 60
+    revalidate: 3600
   }
 }
 

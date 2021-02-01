@@ -1,10 +1,10 @@
 import Layout from '../../components/layout/Layout'
 import ProductCard from '../../components/ProductCard'
 import ProductFilter from '../../components/ProductFilter'
-import { getCategories, getAccessories } from '../api/lightspeed'
+import { getGuns } from '../api/gun-trader'
 import { useState, useEffect } from 'react'
 
-const Accessories = (props) => {
+const Guns = (props) => {
   const { items } = props
   const { Category } = props.categories
 
@@ -20,12 +20,12 @@ const Accessories = (props) => {
 
   return (
     <Layout>
-      <div className="flex mx-44 mt-12">
+      <div className="flex mx-44 mt-14">
         <div className="w-1/4">
           <ProductFilter category={Category} handleInputChange={handleInputChange} checkedInputs={checkedInputs} />
         </div>
         <div className="w-3/4">
-          <div className="lg:grid grid-cols-3 gap-2 lg:my-8 lg:justify-center">
+          <div className="lg:grid grid-cols-3 gap-2 lg:my-12 lg:justify-center">
             {items.map(item => {
               if (Object.keys(checkedInputs).length < 1 || Object.keys(checkedInputs).every(value => checkedInputs[value] === false)) {
                 return <ProductCard item={item} key={item.itemID} />
@@ -46,26 +46,56 @@ const Accessories = (props) => {
 }
 
 export async function getServerSideProps() {
-  const itemData = await getAccessories()
+  const itemData = await getGuns()
   const fetchedItems = await itemData.data
 
   const items = []
+  const filteredCategories = []
 
-  fetchedItems.Item.map(item => {
-    if (item.Images) {
-      items.push(item)
+  fetchedItems.Guns.map(item => {
+    if (item.ImageCount >= 2) {
+      items.push({
+        itemID: item.ID,
+        systemSku: item.StockNumber,
+        customSku: item.StockNumber,
+        description: item.Variant ? `${item.Make} ${item.Model} ${item.Variant}` : `${item.Make} ${item.Model}`,
+        Category: {
+          name: item.Type
+        },
+        Images: {
+          Image: {
+            FullPath: item.Images[0].FullPath
+          }
+        },
+        ItemECommerce: {
+          shortDescription: item.Variant ? `${item.Condition} ${item.Make} ${item.Model} ${item.Variant}` : `${item.Condition} ${item.Make} ${item.Model}`,
+          longDescription: item.Description
+        },
+        Prices: {
+          ItemPrice: [
+            {
+              amount: item.Price
+            }
+          ]
+        }
+      })
     }
   })
 
-
-  const categoriesToFetch = []
-
   const findCategories = items.map(item => {
-    categoriesToFetch.push(item.categoryID)
+    return item.Category.name
   })
 
-  const categoryData = await getCategories(categoriesToFetch)
-  const categories = await categoryData.data
+  const filterCategories = findCategories.filter((category, index) => findCategories.indexOf(category) === index)
+
+  const newCategories = filterCategories.map((cat, index) => {
+    filteredCategories.push({
+      categoryID: index,
+      name: cat
+    })
+  })
+
+  const categories = { Category: filteredCategories }
 
   return {
     props: {
@@ -75,4 +105,4 @@ export async function getServerSideProps() {
   }
 }
 
-export default Accessories;
+export default Guns;

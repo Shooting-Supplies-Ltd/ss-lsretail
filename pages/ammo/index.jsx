@@ -5,7 +5,6 @@ import { getCategories, getAmmo } from '../api/lightspeed'
 import { useState, useEffect } from 'react'
 
 const Ammo = (props) => {
-  console.log(props)
   const { items } = props
   const { Category } = props.categories
 
@@ -16,11 +15,8 @@ const Ammo = (props) => {
   }
 
   useEffect(() => {
-    console.log('Checked Inputs', checkedInputs)
+    // console.log('Checked Inputs', checkedInputs)
   }, [checkedInputs])
-
-  console.log(typeof Item)
-  console.log(checkedInputs)
 
   return (
     <Layout>
@@ -37,7 +33,6 @@ const Ammo = (props) => {
               for (const [key, value] of Object.entries(checkedInputs)) {
                 if (value === true) {
                   if (item.categoryID === key) {
-                    console.log(item)
                     return <ProductCard item={item} key={item.itemID} />
                   }
                 }
@@ -57,7 +52,7 @@ export async function getServerSideProps() {
   const items = []
 
   fetchedItems.Item.map(item => {
-    if (item.Images) {
+    if (item.Images.Image.baseImageURL) {
       items.push(item)
     }
   })

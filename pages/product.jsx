@@ -20,8 +20,11 @@ const Product = (props) => {
     unitPrice: Item.Prices.ItemPrice[0].amount,
   }
 
+  console.log('Type of Product Description:', typeof product.description)
+  console.log('Product Description:', product.description)
+
   const productDescriptionLong = () => {
-    return { __html: product.description }
+    return { __html: `${product.description}` }
   }
 
   const productDescriptionShort = () => {
@@ -34,7 +37,7 @@ const Product = (props) => {
         <div className="mt-4 grid grid-cols-2 gap-4">
 
           <div>
-            <div className="lg:flex lg:justify-center">
+            <div className="mt-4 flex justify-center">
               {/* <img src={product.image} alt={`Image of the ${product.name}`} width="400" /> */}
               <Image
                 src={product.image}
@@ -47,12 +50,12 @@ const Product = (props) => {
 
           <div className="mr-4">
             <h1 className="mt-4 font-black text-3xl uppercase italic">{product.name}</h1>
-            <p className="mt-2 font-bold text-2xl uppercase">{formatCurrencyString({
+            <p className="mt-2 font-black text-2xl uppercase">{formatCurrencyString({
               value: product.price,
               currency: product.currency,
             })}</p>
             <div className="mt-4" dangerouslySetInnerHTML={productDescriptionShort()}></div>
-            <div className="mt-4 uppercase text-sm font-semibold">Stock Qty: { }</div>
+            <div className="mt-4 uppercase text-sm font-semibold">Stock Qty: {Item.ItemShops.ItemShop[0].qoh}</div>
             <button
               onClick={() => addItem(product)}
               aria-label={`Add ${product.name} to your cart`}
@@ -67,13 +70,9 @@ const Product = (props) => {
             ) : ''}
           </div>
         </div>
-
-
-        <div className="mx-4">
-          <h3 className="p-1 text-white text-2xl text-center font-bold bg-ssblue rounded">{product.name} DETAILS</h3>
-          <section className="mx-2 my-2">
-            <div dangerouslySetInnerHTML={productDescriptionLong()}></div>
-          </section>
+        <div className="mx-24 pb-8">
+          <h3 className="mb-4 text-center">{`${product.name} DESCRIPTION`}</h3>
+          <div id="product-detail" dangerouslySetInnerHTML={{ __html: product.description }} className="prose" />
         </div>
       </div>
     </Layout >

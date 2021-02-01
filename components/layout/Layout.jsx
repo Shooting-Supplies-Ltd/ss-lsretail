@@ -12,7 +12,6 @@ const Layout = (props) => {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      console.log('App is changing to: ', url)
       NProgress.start()
     }
 

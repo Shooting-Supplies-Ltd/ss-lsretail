@@ -8,7 +8,7 @@ const Categories = () => {
         <ul className="grid grid-cols-3 gap-4">
           <div>
             <li className="hover:text-ssorange rounded-lg">
-              <Link href="/">
+              <Link href="/guns">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561021/shootingsuppliesltd.co.uk/Guns.jpg"
@@ -21,7 +21,7 @@ const Categories = () => {
           </div>
           <div>
             <li className="hover:text-ssorange rounded-lg">
-              <Link href="/">
+              <Link href="/ammo">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561043/shootingsuppliesltd.co.uk/Ammo.jpg"
@@ -34,7 +34,7 @@ const Categories = () => {
           </div>
           <div>
             <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/">
+              <Link href="/optics">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561058/shootingsuppliesltd.co.uk/Scopes.jpg"
@@ -51,7 +51,7 @@ const Categories = () => {
         <ul className="grid grid-cols-3 gap-4">
           <div>
             <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/">
+              <Link href="/maintenance">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561073/shootingsuppliesltd.co.uk/Maintenance.jpg"
@@ -77,7 +77,7 @@ const Categories = () => {
           </div>
           <div>
             <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/">
+              <Link href="/clothing">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561134/shootingsuppliesltd.co.uk/Clothing.jpg"

@@ -5,7 +5,6 @@ import { getCategories, getOptics } from '../api/lightspeed'
 import { useState, useEffect } from 'react'
 
 const Optics = (props) => {
-  console.log(props)
   const { items } = props
   const { Category } = props.categories
 
@@ -16,11 +15,8 @@ const Optics = (props) => {
   }
 
   useEffect(() => {
-    console.log('Checked Inputs', checkedInputs)
+    // console.log('Checked Inputs', checkedInputs)
   }, [checkedInputs])
-
-  console.log(typeof Item)
-  console.log(checkedInputs)
 
   return (
     <Layout>
@@ -37,7 +33,6 @@ const Optics = (props) => {
               for (const [key, value] of Object.entries(checkedInputs)) {
                 if (value === true) {
                   if (item.categoryID === key) {
-                    console.log(item)
                     return <ProductCard item={item} key={item.itemID} />
                   }
                 }
@@ -54,8 +49,6 @@ export async function getServerSideProps() {
   const itemData = await getOptics()
   const fetchedItems = await itemData.data
 
-  console.log(fetchedItems)
-
   const items = []
 
   fetchedItems.Item.map(item => {
@@ -63,7 +56,6 @@ export async function getServerSideProps() {
       items.push(item)
     }
   })
-
 
   const categoriesToFetch = []
 

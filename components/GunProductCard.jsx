@@ -12,8 +12,8 @@ const GunProductCard = ({ gun }) => {
             <img src={gun.Images[0].FullPath} alt={`Photo of ${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`} className="w-full object-cover object-center" />
           </div>
           <div className="p-4 flex flex-col">
-            <h2 className="flex justify-center text-white uppercase">{`${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`}</h2>
-            <p className="flex justify-center font-bold text-lg text-white">£{gun.Price}</p>
+            <h2 className="flex justify-center text-center text-white uppercase">{`${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`}</h2>
+            <p className="mt-2 flex justify-center font-bold text-lg text-white">£{gun.Price}</p>
           </div>
         </a>
       </Link>

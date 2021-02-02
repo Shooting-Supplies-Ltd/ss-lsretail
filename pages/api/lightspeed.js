@@ -40,9 +40,9 @@ export async function getCategories(categoryID) {
   return http.get(`Category.json?categoryID=IN,${categoryID}`, axiosConfig).catch(err => console.error(err.data))
 }
 
-export async function getManufacturers(categoryID) {
+export async function getManufacturers(manufacturerID) {
   let axiosConfig = await getHeader()
-  return http.get(`Manufacturer.json?categoryID=IN,${categoryID}`, axiosConfig).catch(err => console.error(err.data))
+  return http.get(`Manufacturer.json?manufacturerID=IN,${manufacturerID}`, axiosConfig).catch(err => console.error(err.data))
 }
 
 export async function getAmmo() {

@@ -5,8 +5,8 @@ import CategoryFilter from './CategoryFilter'
 import BrandFilter from './BrandFilter'
 
 const ProductFilter = (props) => {
-  const [displayBrands, setDisplayBrands] = useState()
-  const [displayCategories, setDisplayCategories] = useState()
+  const [displayCategories, setDisplayCategories] = useState(true)
+  const [displayBrands, setDisplayBrands] = useState(false)
 
   const toggleDisplayCategories = () => {
     setDisplayCategories(!displayCategories)

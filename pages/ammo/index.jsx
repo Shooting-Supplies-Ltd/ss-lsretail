@@ -20,7 +20,6 @@ const Ammo = ({ items, categories, brands }) => {
   }
 
   const handleBrandChange = (event) => {
-    console.log(event.target)
     setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked })
   }
 
@@ -33,7 +32,6 @@ const Ammo = ({ items, categories, brands }) => {
       if (selectedCategory[CategoryKey]) appliedFilters.categoryID.push(CategoryKey)
     }
     for (let BrandKey in selectedBrand) {
-      console.log({ BrandKey })
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey)
     }
     setItemFilters(appliedFilters)
@@ -41,11 +39,9 @@ const Ammo = ({ items, categories, brands }) => {
 
   const multiPropsFilter = (items, itemFilters) => {
     const filterKeys = Object.keys(itemFilters);
-    console.log({ filterKeys })
     return items.filter(item => {
       return filterKeys.every(key => {
         if (!itemFilters[key].length) return true
-        console.log('itemKey:', item[key])
         return itemFilters[key].includes(item[key])
       })
     })
@@ -55,7 +51,6 @@ const Ammo = ({ items, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false
     } else {
-      console.log(selectedBrand)
       handleFilters()
     }
   }, [selectedBrand])
@@ -64,7 +59,6 @@ const Ammo = ({ items, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false
     } else {
-      console.log(selectedCategory)
       handleFilters()
     }
   }, [selectedCategory])
@@ -115,10 +109,12 @@ export async function getStaticProps() {
   })
 
   // Get Categories
-  const categoriesToFetch = []
-  const findCategories = items.map(item => {
-    categoriesToFetch.push(item.categoryID)
+  const categoryIds = []
+  items.map(item => {
+    categoryIds.push(item.categoryID)
   })
+  const categoriesToFetch = [...new Set(categoryIds)]
+  console.log({ categoriesToFetch })
   const categoryData = await getCategories(categoriesToFetch)
   const returnedCategories = await categoryData.data
   const categories = returnedCategories.Category.map(category => {
@@ -131,11 +127,13 @@ export async function getStaticProps() {
   })
 
   // Get Brands
-  const brandsToFetch = []
-  const findBrands = items.map(item => {
-    brandsToFetch.push(item.manufacturerID)
+  const brandIds = []
+  items.map(item => {
+    brandIds.push(parseInt(item.manufacturerID))
   })
-  const brandData = await getManufacturers()
+  const brandsToFetch = [...new Set(brandIds)]
+  console.log({ brandsToFetch })
+  const brandData = await getManufacturers(brandsToFetch)
   const returnedBrands = await brandData.data
   const brands = returnedBrands.Manufacturer.map(brand => {
     return {

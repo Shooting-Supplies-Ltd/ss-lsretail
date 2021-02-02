@@ -4,10 +4,10 @@ const SearchFilter = ({ guns, setFilteredGuns }) => {
   const [searchQuery, setSearchQuery] = useState()
 
   useEffect(() => {
-    if (searchQuery && searchQuery.length > 3) {
+    if (searchQuery && searchQuery.length > 2) {
       console.log(searchQuery)
       const searchResult = guns.filter(gun => {
-        if (gun.Make.toLowerCase().includes(searchQuery.toLowerCase()) || gun.Model?.toLowerCase().includes(searchQuery.toLowerCase())) {
+        if (gun.Make.toLowerCase().includes(searchQuery.toLowerCase()) || gun.Model?.toLowerCase().includes(searchQuery.toLowerCase()) || gun.Variant?.toLowerCase().includes(searchQuery.toLowerCase())) {
           return gun
         }
       })

@@ -1,9 +1,10 @@
-import Nav from './Nav'
-import Footer from './Footer'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import NProgress from 'nprogress'
+import Head from 'next/head'
+
+import Header from './Header'
+import Footer from './Footer'
 
 NProgress.configure({ showSpinner: false });
 
@@ -25,7 +26,7 @@ const Layout = (props) => {
       <Head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
       </Head>
-      <Nav />
+      <Header />
       <div className="flex-grow">
         {props.children}
       </div>

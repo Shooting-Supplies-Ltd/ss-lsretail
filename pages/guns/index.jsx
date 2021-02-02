@@ -3,14 +3,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import Layout from '../../components/layout/Layout'
-import GunProductCard from '../../components/GunProductCard'
 import GunFilter from '../../components/filters/gunFilters/GunFilter'
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter'
+import GunProductCard from '../../components/GunProductCard'
 
-const Guns = ({ guns, categories, brands, conditions }) => {
+const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const [selectedCategory, setSelectedCategory] = useState({})
   const [selectedBrand, setSelectedBrand] = useState({})
   const [selectedCondition, setSelectedCondition] = useState({})
+  const [selectedMechanism, setSelectedMechanism] = useState({})
   const [gunFilters, setGunFilters] = useState()
   const [filteredGuns, setFilteredGuns] = useState()
 
@@ -28,11 +29,16 @@ const Guns = ({ guns, categories, brands, conditions }) => {
     setSelectedCondition({ ...selectedCondition, [event.target.value]: event.target.checked })
   }
 
+  const handleMechanismChange = (event) => {
+    setSelectedMechanism({ ...selectedMechanism, [event.target.value]: event.target.checked })
+  }
+
   const handleFilters = () => {
     const appliedFilters = {
       Make: [],
       Type: [],
-      Condition: []
+      Condition: [],
+      Mechanism: []
     }
 
     for (let MakeKey in selectedBrand) {
@@ -43,6 +49,9 @@ const Guns = ({ guns, categories, brands, conditions }) => {
     }
     for (let ConditionKey in selectedCondition) {
       if (selectedCondition[ConditionKey]) appliedFilters.Condition.push(ConditionKey)
+    }
+    for (let MechanismKey in selectedMechanism) {
+      if (selectedMechanism[MechanismKey]) appliedFilters.Mechanism.push(MechanismKey)
     }
     setGunFilters(appliedFilters)
   }
@@ -82,6 +91,14 @@ const Guns = ({ guns, categories, brands, conditions }) => {
   }, [selectedCondition])
 
   useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+    } else {
+      handleFilters()
+    }
+  }, [selectedMechanism])
+
+  useEffect(() => {
     if (gunFilters != undefined) {
       const myGuns = multiPropsFilter(guns, gunFilters)
       setFilteredGuns(myGuns)
@@ -104,8 +121,8 @@ const Guns = ({ guns, categories, brands, conditions }) => {
         <title>Guns - Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
-      <div className="flex mx-44 mt-14">
-        <div className="w-1/4">
+      <div className="flex mx-12 my-16">
+        <div className="w-1/5 p-2">
           <GunFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -116,10 +133,13 @@ const Guns = ({ guns, categories, brands, conditions }) => {
             conditions={conditions}
             selectedCondition={selectedCondition}
             handleConditionChange={handleConditionChange}
+            mechanisms={mechanisms}
+            selectedMechanism={selectedMechanism}
+            handleMechanismChange={handleMechanismChange}
           />
         </div>
-        <div className="w-3/4">
-          <div className="grid grid-cols-3 gap-2 my-12 justify-center">
+        <div className="w-4/5 p-2">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredGuns ? filteredGuns.map(gun => <GunProductCard gun={gun} />) : guns.map(gun => <GunProductCard gun={gun} />)}
           </div>
         </div>
@@ -178,8 +198,22 @@ export async function getStaticProps() {
   const conditions = filterCondition.map((condition, index) => {
     return {
       condition: {
-        catID: index,
+        conID: index,
         name: condition
+      }
+    }
+  })
+
+  // Get Mechanisms
+  const findMechanism = guns.map(gun => {
+    return gun.Mechanism
+  })
+  const filterMechanism = findMechanism.filter((mechanism, index) => findMechanism.indexOf(mechanism) === index).sort()
+  const mechanisms = filterMechanism.map((mechanism, index) => {
+    return {
+      mechanism: {
+        mechID: index,
+        name: mechanism
       }
     }
   })
@@ -189,7 +223,8 @@ export async function getStaticProps() {
       guns,
       brands,
       categories,
-      conditions
+      conditions,
+      mechanisms
     },
     revalidate: 3600
   }

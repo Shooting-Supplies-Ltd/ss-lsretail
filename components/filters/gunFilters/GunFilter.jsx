@@ -4,11 +4,13 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 import BrandFilter from "./BrandFilter"
 import CategoryFilter from "./CategoryFilter"
 import ConditionFilter from "./ConditionFilter"
+import MechanismFilter from './MechanismFilter'
 
 const GunFilter = (props) => {
-  const [displayConditions, setDisplayConditions] = useState(false)
-  const [displayCategories, setDisplayCategories] = useState(false)
+  const [displayConditions, setDisplayConditions] = useState(true)
+  const [displayCategories, setDisplayCategories] = useState(true)
   const [displayBrands, setDisplayBrands] = useState(false)
+  const [displayMechanisms, setDisplayMechanisms] = useState(false)
 
   const toggleDisplayConditions = () => {
     setDisplayConditions(!displayConditions)
@@ -22,37 +24,53 @@ const GunFilter = (props) => {
     setDisplayBrands(!displayBrands)
   }
 
+  const toggleDisplayMechanisms = () => {
+    setDisplayMechanisms(!displayMechanisms)
+  }
+
+  console.log(props)
+
   return (
     <>
-      <div className="my-24">
-        <div >
-          <h4 className="p-2 border-b-2 border-r-2 font-black uppercase text-2xl">Filter By</h4>
-          <div className="p-2 my-2 border-r-2 border-b-2" onClick={toggleDisplayConditions}>
-            <h5 className="mb-2 font-semibold text-lg uppercase">Condition<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
+      <div className="border-2 border-gray-300 rounded-lg">
+        <h4 className="p-4 font-bold uppercase text-xl border-b-2">Filter By</h4>
+        <div className="border-b-2">
+          <div className="p-4" onClick={toggleDisplayConditions}>
+            <h5 className="font-semibold uppercase">Condition<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
           </div>
           {displayConditions &&
-            <div>
+            <div className="pl-4 pb-4">
               <ConditionFilter conditions={props.conditions} handleConditionChange={props.handleConditionChange} selectedCondition={props.selectedCondition} />
             </div>
           }
         </div>
-        <div>
-          <div className="p-2 my-2 border-r-2 border-b-2" onClick={toggleDisplayCategories}>
-            <h5 className="mb-2 font-semibold text-lg uppercase">Category<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
+        <div className="border-b-2">
+          <div className="p-4" onClick={toggleDisplayCategories}>
+            <h5 className="font-semibold uppercase">Category<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
           </div>
           {displayCategories &&
-            <div>
+            <div className="pl-4 pb-4">
               <CategoryFilter categories={props.categories} handleCategoryChange={props.handleCategoryChange} selectedCategory={props.selectedCategory} />
             </div>
           }
         </div>
-        <div>
-          <div className="p-2 my-2 border-r-2 border-b-2" onClick={toggleDisplayBrands}>
-            <h5 className="mb-2 font-semibold text-lg uppercase">Brand<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
+        <div className="border-b-2">
+          <div className="p-4" onClick={toggleDisplayBrands}>
+            <h5 className="font-semibold uppercase">Brand<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
           </div>
           {displayBrands &&
-            <div>
+            <div className="pl-4 pb-4 overflow-y-auto h-64">
               <BrandFilter brands={props.brands} handleBrandChange={props.handleBrandChange} selectedBrand={props.selectedBrand} />
+            </div>
+          }
+        </div>
+        <div>
+          <div className="p-4" onClick={toggleDisplayMechanisms}>
+            <h5 className="font-semibold uppercase">Mechanism<span className="ml-2 inline-block align-middle"><MdKeyboardArrowDown /></span></h5>
+          </div>
+          {displayMechanisms &&
+            <div className="pl-4 pb-4 overflow-y-auto h-64">
+              <MechanismFilter mechanisms={props.mechanisms} handleMechanismChange={props.handleMechanismChange} selectedMechanism={props.selectedMechanism} />
             </div>
           }
         </div>

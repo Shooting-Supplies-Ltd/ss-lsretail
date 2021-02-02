@@ -52,11 +52,10 @@ export async function getServerSideProps() {
   const items = []
 
   fetchedItems.Item.map(item => {
-    if (item.Images.Image.baseImageURL) {
+    if (item.Images?.Image?.baseImageURL) {
       items.push(item)
     }
   })
-
 
   const categoriesToFetch = []
 

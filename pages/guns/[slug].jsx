@@ -1,6 +1,6 @@
 import Layout from '../../components/layout/Layout'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import Head from 'next/head'
 import slugify from 'slugify'
 
 const Gun = (props) => {
@@ -31,6 +31,19 @@ const Gun = (props) => {
 
   return (
     <Layout>
+      <Head>
+        <title className="uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</title>
+        <meta name="description" content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant}`}></meta>
+        <meta name="robots" content="index, follow"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta name="keywords" content={`${Gun.Make}, ${Gun.Model}, ${Gun.Variant}, ${Gun.Mechanism}, ${Gun.Type}`} />
+        <meta property="og:title" content={`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}></meta>
+        <meta property="og:description" content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant}`}></meta>
+        <meta property="og:image" content={Gun.Images[0].FullPath}></meta>
+        <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`}></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta charset="UTF-8"></meta>
+      </Head>
       <div className="flex">
         <div className="w-1/4"></div>
         <div className="w-2/4 flex flex-wrap justify-center">

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import Head from 'next/head'
 import Image from 'next/image'
 
 import Layout from '../../components/layout/Layout'
@@ -99,7 +100,10 @@ const Guns = ({ guns, categories, brands, conditions }) => {
 
   return (
     <Layout>
-      <SearchFilter guns={guns} />
+      <Head>
+        <title>Guns - Shooting Supplies Ltd</title>
+      </Head>
+      <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div className="flex mx-44 mt-14">
         <div className="w-1/4">
           <GunFilter

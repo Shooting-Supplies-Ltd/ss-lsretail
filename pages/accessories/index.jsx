@@ -77,7 +77,7 @@ const Accessories = ({ items, categories, brands }) => {
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">
-        <div className="w-1/5 p-2">
+        <div className="w-1/6 p-2">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -87,7 +87,7 @@ const Accessories = ({ items, categories, brands }) => {
             handleBrandChange={handleBrandChange}
           />
         </div>
-        <div className="w-4/5 p-2">
+        <div className="w-5/6 p-2">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredItems ? filteredItems.map(item => <ProductCard item={item} key={item.customSku} />) : items.map(item => <ProductCard item={item} key={item.customSku} />)}
           </div>

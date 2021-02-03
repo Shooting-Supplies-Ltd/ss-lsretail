@@ -4,7 +4,8 @@ const HomeBanner = () => {
   return (
     <div className="border-b border-solid-2 border-black">
       <Image
-        src={"/banners/Slide1.png"}
+        src={"/banners/harkilaBanner.png"}
+        alt="Harkila Click & Collect Here"
         layout="responsive"
         width={1920}
         height={480}

@@ -16,13 +16,13 @@ const Nav = () => {
   return (
     <nav>
       <div className="bg-ssblue">
-        <div className="flex h-16 mx-12">
-          <div className="w-1/5 flex justify-center p-2">
+        <div className="flex h-12 mx-12">
+          <div className="w-1/6 flex justify-center p-2">
             <Link href="/">
               <img className="absolute z-10 top-1 h-40 w-auto" src="/logos/Logo.png" alt="Shooting Supplies" />
             </Link>
           </div>
-          <div className="w-3/5 p-2">
+          <div className="w-4/6 p-2 flex items-center justify-center">
             <ul className="flex justify-center space-x-6 p-2">
               <Link href="/guns">
                 <a>
@@ -44,23 +44,23 @@ const Nav = () => {
                   <li className="text-white hover:text-ssorange font-bold text-lg">OPTICS</li>
                 </a>
               </Link>
-              <Link href="/security">
+              {/* <Link href="/security">
                 <a>
                   <li className="text-white hover:text-ssorange font-bold text-lg">SECURITY</li>
                 </a>
-              </Link>
+              </Link> */}
               <Link href="/maintenance">
                 <a><li className="text-white hover:text-ssorange font-bold text-lg">MAINTENANCE</li></a>
               </Link>
-              <Link href="/clothing">
+              {/* <Link href="/clothing">
                 <a><li className="text-white hover:text-ssorange font-bold text-lg">CLOTHING</li></a>
-              </Link>
-              <Link href="/sale">
+              </Link> */}
+              {/* <Link href="/sale">
                 <a><li className="text-white hover:text-ssorange font-bold text-lg">SALE</li></a>
-              </Link>
+              </Link> */}
             </ul>
           </div>
-          <div className="w-1/5 p-2 flex justify-center items-center">
+          <div className="w-1/6 p-2 flex justify-center items-center hidden">
             <div onMouseEnter={updateCartDisplay} onMouseLeave={updateCartDisplay}>
               <CartIcon />
               {cartCount > 0 && cartDisplay && <CartDisplay />}

@@ -4,7 +4,6 @@ const MechanismFilter = (props) => {
   return (
     <>
       {mechanisms.map(mechanism => {
-        console.log(mechanism)
         return (
           <div>
             <div>

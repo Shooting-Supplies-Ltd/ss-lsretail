@@ -17,9 +17,9 @@ const Nav = () => {
     <nav>
       <div className="bg-ssblue">
         <div className="flex h-16 mx-12">
-          <div class="w-1/5 flex justify-center p-2">
+          <div className="w-1/5 flex justify-center p-2">
             <Link href="/">
-              <img class="absolute z-10 top-1 h-40 w-auto" src="/logos/Logo.png" alt="Shooting Supplies" />
+              <img className="absolute z-10 top-1 h-40 w-auto" src="/logos/Logo.png" alt="Shooting Supplies" />
             </Link>
           </div>
           <div className="w-3/5 p-2">

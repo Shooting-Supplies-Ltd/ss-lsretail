@@ -20,9 +20,6 @@ const Product = (props) => {
     unitPrice: Item.Prices.ItemPrice[0].amount,
   }
 
-  console.log('Type of Product Description:', typeof product.description)
-  console.log('Product Description:', product.description)
-
   const productDescriptionLong = () => {
     return { __html: `${product.description}` }
   }

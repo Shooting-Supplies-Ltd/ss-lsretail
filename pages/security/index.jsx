@@ -89,7 +89,7 @@ const Security = ({ items, categories, brands }) => {
         </div>
         <div className="w-4/5 p-2">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-            {filteredItems ? filteredItems.map(item => <ProductCard item={item} />) : items.map(item => <ProductCard item={item} />)}
+            {filteredItems ? filteredItems.map(item => <ProductCard item={item} key={item.customSku} />) : items.map(item => <ProductCard item={item} key={item.customSku} />)}
           </div>
         </div>
       </div>
@@ -114,7 +114,6 @@ export async function getStaticProps() {
     categoryIds.push(item.categoryID)
   })
   const categoriesToFetch = [...new Set(categoryIds)]
-  console.log({ categoriesToFetch })
   const categoryData = await getCategories(categoriesToFetch)
   const returnedCategories = await categoryData.data
   const categories = returnedCategories.Category.map(category => {
@@ -132,7 +131,6 @@ export async function getStaticProps() {
     brandIds.push(parseInt(item.manufacturerID))
   })
   const brandsToFetch = [...new Set(brandIds)]
-  console.log({ brandsToFetch })
   const brandData = await getManufacturers(brandsToFetch)
   const returnedBrands = await brandData.data
   const brands = returnedBrands.Manufacturer.map(brand => {

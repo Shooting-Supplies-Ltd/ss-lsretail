@@ -10,7 +10,6 @@ const SearchFilter = ({ items, setFilteredItems }) => {
           return item
         }
       })
-      console.log(searchResult)
       setFilteredItems(searchResult)
     } else {
       setFilteredItems(null)

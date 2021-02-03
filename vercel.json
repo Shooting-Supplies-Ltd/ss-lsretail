@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "name": "fab-next",
-  "alias": "fab-next",
+  "name": "ss-next",
+  "alias": "ss-next",
   "builds": [
     {
       "src": "package.json",

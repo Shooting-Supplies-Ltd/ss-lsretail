@@ -5,6 +5,7 @@ import HomeBanner from '../components/home/HomeBanner'
 import HomeModal from '../components/home/Modal'
 import LinksSection from '../components/home/LinksSection'
 import Categories from '../components/home/Categories'
+import HelpBanner from '../components/home/HelpBanner'
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           <Categories />
         </div>
       </div>
+      <HelpBanner />
     </Layout>
   )
 }

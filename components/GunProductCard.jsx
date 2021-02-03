@@ -6,15 +6,15 @@ const GunProductCard = ({ gun }) => {
 
   return (
     <>
-      <div className="block h-80 border-2 border-gray-300 rounded-lg  bg-ssblue" key={gun.SerialNumber}>
+      <div className="block h-80 border-2 border-gray-300 rounded-lg bg-gray-800" key={gun.SerialNumber}>
         <Link href={`/guns/[slug]`} as={`/guns/${slug}`}>
           <a>
             <div className="flex h-48 overflow-hidden">
               <img src={gun.Images[0].FullPath} alt={`Photo of ${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`} className="w-full object-cover object-center" />
             </div>
-            <div className="p-4 flex flex-col">
-              <h2 className="flex justify-center text-center text-white uppercase">{`${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`}</h2>
-              <p className="mt-2 flex justify-center font-bold text-lg text-white">£{gun.Price}</p>
+            <div className="p-4 flex flex-col text-white hover:text-ssorange">
+              <h2 className="flex justify-center text-center uppercase">{`${gun.Make} ${gun.Model} ${gun.Variant ? gun.Variant : ''}`}</h2>
+              <p className="mt-2 flex justify-center font-bold text-lg">£{gun.Price}</p>
             </div>
           </a>
         </Link>

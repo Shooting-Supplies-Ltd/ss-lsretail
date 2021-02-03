@@ -15,11 +15,11 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className="bg-ssblue">
+      <div className="bg-gray-800">
         <div className="flex h-12 mx-12">
           <div className="w-1/6 flex justify-center p-2">
             <Link href="/">
-              <img className="absolute z-10 top-1 h-40 w-auto" src="/logos/Logo.png" alt="Shooting Supplies" />
+              <img className="absolute z-10 top-1 h-40 w-auto border-4 border-white rounded-lg" src="/logos/logo.png" alt="Shooting Supplies" />
             </Link>
           </div>
           <div className="w-4/6 p-2 flex items-center justify-center">

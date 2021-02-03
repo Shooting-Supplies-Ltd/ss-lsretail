@@ -8,7 +8,7 @@ const MechanismFilter = (props) => {
           <div>
             <div>
               <input type="checkbox" id={mechanism.mechanism.name} value={mechanism.mechanism.name} checked={selectedMechanism[mechanism.mechanism.name]} onChange={handleMechanismChange} className="hover:ssorange" />
-              <label key={mechanism.mechanism.name} htmlFor={mechanism.mechanism.name} className="ml-2 uppercase">{mechanism.mechanism.name}</label>
+              <label key={mechanism.mechanism.name} htmlFor={mechanism.mechanism.name} className="ml-1 uppercase">{mechanism.mechanism.name}</label>
             </div>
           </div>
         )

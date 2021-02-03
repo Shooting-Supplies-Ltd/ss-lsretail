@@ -7,7 +7,7 @@ const ConditionFilter = (props) => {
         return (
           <div className="hover:text-ssorange" key={condition.condition.conID}>
             <input type="checkbox" id={condition.condition.name} value={condition.condition.name} checked={selectedCondition[condition.condition]} onChange={handleConditionChange} className="hover:ssorange" />
-            <label key={condition.condition.conID} htmlFor={condition.condition.name} className="ml-2 uppercase">{condition.condition.name}</label>
+            <label key={condition.condition.conID} htmlFor={condition.condition.name} className="ml-1 uppercase">{condition.condition.name}</label>
           </div>
         )
       })}

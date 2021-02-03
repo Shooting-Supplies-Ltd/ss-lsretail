@@ -76,7 +76,7 @@ const Item = ({ item }) => {
           {item.ItemShops.ItemShop[0].qoh > 0 ? <p className="mt-8 text-green-500 font-bold text-lg">In Stock</p> : <p className="mt-8 text-red-500 font-bold text-lg">Out of Stock - Check Back or Call for Availability</p>}
         </div>
       </div>
-      <div id="fulldescription" className="mx-72 my-12 p-6 bg-gray-50 rounded-lg">
+      <div id="fulldescription" className="mx-72 mt-8 mb-12 p-6 bg-gray-50 rounded-lg">
         <h2 className="font-bold text-2xl">Full Description</h2>
         <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 prose"></div>
       </div>

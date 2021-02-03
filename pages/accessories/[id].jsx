@@ -60,11 +60,11 @@ const Item = ({ item }) => {
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta charset="UTF-8"></meta>
       </Head>
-      <div className="mx-36 my-12 flex justify-center">
-        <div className="w-2/5 p-2">
+      <div className="mx-72 my-12 flex justify-center">
+        <div className="w-1/2 p-2">
           <img src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`} alt={`${item.description}`} />
         </div>
-        <div className="p-6 w-2/5 p-2 bg-gray-50 rounded-lg">
+        <div className="p-6 w-1/2 p-2 bg-gray-50 rounded-lg">
           <h1 className="text-4xl font-bold">{item.description}</h1>
           <p>SKU: {item.customSku}</p>
           <p className="mt-2 font-bold text-4xl uppercase">{formatCurrencyString({
@@ -76,7 +76,7 @@ const Item = ({ item }) => {
           {item.ItemShops.ItemShop[0].qoh > 0 ? <p className="mt-8 text-green-500 font-bold text-lg">In Stock</p> : <p className="mt-8 text-red-500 font-bold text-lg">Out of Stock - Check Back or Call for Availability</p>}
         </div>
       </div>
-      <div id="fulldescription" className="mx-72 my-12 p-6 bg-gray-50 rounded-lg">
+      <div id="fulldescription" className="mx-72 mt-8 mb-12 p-6 bg-gray-50 rounded-lg">
         <h2 className="font-bold text-2xl">Full Description</h2>
         <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4"></div>
       </div>

@@ -21,7 +21,7 @@ export default function Home() {
           <HomeModal />
         </div>
         <div>
-          <LinksSection />
+          {/* <LinksSection /> */}
         </div>
         <div>
           <Categories />

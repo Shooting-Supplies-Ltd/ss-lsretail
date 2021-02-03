@@ -5,7 +5,7 @@ import Link from 'next/link'
 const LinksSection = () => {
   return (
     <div>
-      <ul className="my-8 mx-24 flex justify-between">
+      <ul className="my-8 mx-12 flex justify-between">
         <li>
           <Link href="/">
             <a>

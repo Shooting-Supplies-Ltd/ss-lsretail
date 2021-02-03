@@ -3,94 +3,49 @@ import Link from 'next/link'
 
 const Categories = () => {
   return (
-    <div className="mx-24 my-24">
-      <div className="my-24 flex justify-center">
-        <ul className="grid grid-cols-3 gap-4">
+    <div className="mx-12 my-24">
+      <div className="flex justify-center">
+        <ul className="grid grid-cols-3 gap-8">
           <div>
-            <li className="hover:text-ssorange rounded-lg">
+            <li className="border border-gray-300">
               <Link href="/guns">
                 <a>
                   <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561021/shootingsuppliesltd.co.uk/Guns.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">GUNS</h2>
+                    src="/home/Guns.png"
+                    width={600}
+                    height={280}
+                    className="object-fill" />
                 </a>
               </Link>
             </li>
           </div>
           <div>
-            <li className="hover:text-ssorange rounded-lg">
+            <li className="border border-gray-300">
               <Link href="/ammo">
                 <a>
                   <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561043/shootingsuppliesltd.co.uk/Ammo.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">AMMO</h2>
+                    src="/home/Ammo.png"
+                    width={600}
+                    height={280} />
                 </a>
               </Link>
             </li>
           </div>
           <div>
-            <li className="hover:text-ssorange rounded-lg mx-4 my-4">
+            <li className="border border-gray-300">
               <Link href="/optics">
                 <a>
                   <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561058/shootingsuppliesltd.co.uk/Scopes.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">OPTICS</h2>
+                    src="/home/Optics.png"
+                    width={600}
+                    height={280} />
                 </a>
               </Link>
             </li>
           </div>
         </ul>
       </div>
-      <div className="flex justify-center">
-        <ul className="grid grid-cols-3 gap-4">
-          <div>
-            <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/maintenance">
-                <a>
-                  <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561073/shootingsuppliesltd.co.uk/Maintenance.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">MAINTENANCE</h2>
-                </a>
-              </Link>
-            </li>
-          </div>
-          <div>
-            <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/">
-                <a>
-                  <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561100/shootingsuppliesltd.co.uk/Reloading.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">RELOADING</h2>
-                </a>
-              </Link>
-            </li>
-          </div>
-          <div>
-            <li className="hover:text-ssorange rounded-lg mx-4 my-4">
-              <Link href="/clothing">
-                <a>
-                  <Image
-                    src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573561134/shootingsuppliesltd.co.uk/Clothing.jpg"
-                    width={300}
-                    height={150} />
-                  <h2 className="mt-2 text-center font-bold text-xl">CLOTHING</h2>
-                </a>
-              </Link>
-            </li>
-          </div>
-        </ul>
-      </div>
-    </div>
+    </div >
   )
 }
 

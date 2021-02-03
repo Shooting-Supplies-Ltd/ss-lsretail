@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className="h-96 bg-gray-900">
-      <footer className="mx-36 grid grid-cols-4 gap-4 bg-gray-900">
+    <div className="h-72 bg-gray-900">
+      <footer className="mx-12 grid grid-cols-4 gap-8 bg-gray-900">
         <div className="my-12 flex flex-col">
           <h3 className="mb-2 text-white font-bold text-xl">About Us</h3>
           <ul className="text-white space-y-1">
@@ -37,7 +37,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="mx-12 my-12 flex flex-col">
+        <div className="my-12 flex flex-col">
           <h3 className="mb-2 text-white font-bold text-xl">Delivery & Returns</h3>
           <ul className="text-white space-y-1">
             <li>
@@ -70,7 +70,7 @@ const Footer = () => {
           </li> */}
           </ul>
         </div>
-        <div className="mx-12 my-12 flex flex-col">
+        <div className="my-12 flex flex-col">
           <h3 className="mb-2 text-white font-bold text-xl">Customer Support</h3>
           <ul className="text-white space-y-1">
             <li>
@@ -96,7 +96,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="mx-12 my-12 flex flex-col">
+        <div className="my-12 flex flex-col">
           <h3 className="mb-2 text-white font-bold text-xl">More...</h3>
           <ul className="text-white space-y-1">
             <li>

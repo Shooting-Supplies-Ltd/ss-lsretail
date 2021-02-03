@@ -6,6 +6,7 @@ import HomeModal from '../components/home/Modal'
 import LinksSection from '../components/home/LinksSection'
 import Categories from '../components/home/Categories'
 import HelpBanner from '../components/home/HelpBanner'
+import SubHeader from '../components/home/SubHeader'
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
           <HomeBanner />
         </div>
         <div>
+          <SubHeader />
+        </div>
+        <div>
           <HomeModal />
         </div>
         <div>
@@ -29,6 +33,6 @@ export default function Home() {
         </div>
       </div>
       <HelpBanner />
-    </Layout>
+    </Layout >
   )
 }

@@ -19,44 +19,44 @@ const Nav = () => {
         <div className="flex h-12 mx-12">
           <div className="w-1/6 flex justify-center p-2">
             <Link href="/">
-              <img className="absolute z-10 top-1 h-40 w-auto border-4 border-white rounded-lg" src="/logos/logo.png" alt="Shooting Supplies" />
+              <img className="absolute z-10 top-1 h-40 w-auto border-4 border-white hover:border-ssorange hover:pointer rounded-xl" src="/logos/logo.png" alt="Shooting Supplies" />
             </Link>
           </div>
           <div className="w-4/6 p-2 flex items-center justify-center">
             <ul className="flex justify-center space-x-6 p-2">
               <Link href="/guns">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-lg">GUNS</li>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">GUNS</li>
                 </a>
               </Link>
               <Link href="/ammo">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-lg">AMMO</li>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">AMMO</li>
                 </a>
               </Link>
               <Link href="/accessories">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-lg">ACCESSORIES</li>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">ACCESSORIES</li>
                 </a>
               </Link>
               <Link href="/optics">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-lg">OPTICS</li>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
                 </a>
               </Link>
               {/* <Link href="/security">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-lg">SECURITY</li>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
                 </a>
               </Link> */}
               <Link href="/maintenance">
-                <a><li className="text-white hover:text-ssorange font-bold text-lg">MAINTENANCE</li></a>
+                <a><li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li></a>
               </Link>
               {/* <Link href="/clothing">
-                <a><li className="text-white hover:text-ssorange font-bold text-lg">CLOTHING</li></a>
+                <a><li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li></a>
               </Link> */}
               {/* <Link href="/sale">
-                <a><li className="text-white hover:text-ssorange font-bold text-lg">SALE</li></a>
+                <a><li className="text-white hover:text-ssorange font-bold text-2xl">SALE</li></a>
               </Link> */}
             </ul>
           </div>

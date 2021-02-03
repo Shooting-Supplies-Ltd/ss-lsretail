@@ -7,7 +7,7 @@ const Categories = () => {
       <div className="flex justify-center">
         <ul className="grid grid-cols-3 gap-8">
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/guns">
                 <a>
                   <Image
@@ -20,7 +20,7 @@ const Categories = () => {
             </li>
           </div>
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/ammo">
                 <a>
                   <Image
@@ -32,7 +32,7 @@ const Categories = () => {
             </li>
           </div>
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/optics">
                 <a>
                   <Image
@@ -44,7 +44,7 @@ const Categories = () => {
             </li>
           </div>
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/accessories">
                 <a>
                   <Image
@@ -56,7 +56,7 @@ const Categories = () => {
             </li>
           </div>
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/maintenance">
                 <a>
                   <Image
@@ -69,7 +69,7 @@ const Categories = () => {
             </li>
           </div>
           <div>
-            <li className="border border-gray-300">
+            <li className="border border-gray-300 hover:border-ssorange">
               <Link href="/clothing">
                 <a>
                   <Image

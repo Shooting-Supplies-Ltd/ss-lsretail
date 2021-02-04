@@ -7,9 +7,14 @@ import Layout from '../../components/layout/Layout'
 export async function getStaticPaths() {
   const data = await getAccessories()
   const pathData = await data.data.Item
-  const paths = pathData.map(item => {
-    return { params: { id: `${item.itemID}` } }
-  })
+
+  // const paths = pathData.map(item => {
+  //   return { params: { id: `${item.itemID}` } }
+  // })
+
+  const paths = pathData.map(item => ({
+    params: { id: item.itemID }
+  }))
 
   return { paths, fallback: true }
 }
@@ -59,7 +64,7 @@ const Item = ({ item }) => {
         <meta property="og:image" content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`} alt={`${item.description}`}></meta>
         <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`}></meta>
         <meta name="twitter:card" content="summary_large_image"></meta>
-        <meta charset="UTF-8"></meta>
+        <meta charSet="UTF-8"></meta>
       </Head>
       <div className="mx-72 my-12 flex justify-center">
         <div className="w-1/2 p-2">

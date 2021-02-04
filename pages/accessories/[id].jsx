@@ -43,6 +43,12 @@ const Item = ({ item }) => {
   //   unitPrice: item.Prices.ItemPrice[0].amount,
   // }
 
+  if (!data) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
   const productDescriptionLong = () => {
     return { __html: item.ItemECommerce ? item.ItemECommerce.longDescription : '' }
   }
@@ -51,11 +57,6 @@ const Item = ({ item }) => {
     return { __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' }
   }
 
-  if (!data) {
-    return (
-      <div>Loading...</div>
-    )
-  }
 
   return (
     <Layout>

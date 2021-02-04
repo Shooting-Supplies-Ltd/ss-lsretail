@@ -6,8 +6,8 @@ import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
   const data = await getOptics()
-  const productData = await data.data.Item
-  const paths = productData.map(item => {
+  const pathData = await data.data.Item
+  const paths = pathData.map(item => {
     return { params: { id: `${item.itemID}` } }
   })
 
@@ -19,7 +19,8 @@ export async function getStaticProps({ params: { id } }) {
   const item = await data.data.Item
 
   return {
-    props: { item }
+    props: { item },
+    revalidate: 300
   }
 }
 

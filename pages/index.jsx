@@ -23,7 +23,7 @@ export default function Home() {
           <SubHeader />
         </div>
         <div>
-          <HomeModal />
+          {/* <HomeModal /> */}
         </div>
         <div>
           {/* <LinksSection /> */}

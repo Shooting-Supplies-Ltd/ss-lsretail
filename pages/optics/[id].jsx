@@ -50,6 +50,12 @@ const Item = ({ item }) => {
     return { __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' }
   }
 
+  if (!data) {
+    return (
+      <div>Loading...</div>
+    )
+  }
+
   return (
     <Layout>
       <Head>

@@ -7,13 +7,12 @@ import Layout from '../../components/layout/Layout'
 export async function getStaticPaths() {
   const data = await getAmmo()
   const pathData = await data.data.Item
-  // const paths = pathData.map(item => {
-  //   return { params: { id: `${item.itemID}` } }
-  // })
 
   const paths = pathData.map(item => ({
     params: { id: item.itemID }
   }))
+
+  console.log(paths)
 
   return { paths, fallback: true }
 }
@@ -48,6 +47,12 @@ const Item = ({ item }) => {
 
   const productDescriptionShort = () => {
     return { __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' }
+  }
+
+  if (!data) {
+    return (
+      <div>Loading...</div>
+    )
   }
 
   return (

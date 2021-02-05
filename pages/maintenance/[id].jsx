@@ -26,7 +26,6 @@ export async function getStaticProps({ params: { id } }) {
 }
 
 const Item = ({ item }) => {
-  console.log(item)
   const router = useRouter()
   // const product = {
   //   name: item.description,

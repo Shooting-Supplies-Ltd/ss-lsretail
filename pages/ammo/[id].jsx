@@ -12,8 +12,6 @@ export async function getStaticPaths() {
     params: { id: item.itemID }
   }))
 
-  console.log(paths)
-
   return { paths, fallback: true }
 }
 

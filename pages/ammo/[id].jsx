@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { id } }) {
   const itemData = await getItem(id)
-  const item = await itemData.data.Item
+  const item = await itemData.data?.Item
 
   return {
     props: { item },

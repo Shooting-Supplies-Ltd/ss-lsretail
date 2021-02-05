@@ -41,7 +41,7 @@ const Item = ({ item }) => {
   //   unitPrice: item.Prices.ItemPrice[0].amount,
   // }
 
-  if (!data) {
+  if (!item) {
     return (
       <div>Loading...</div>
     )

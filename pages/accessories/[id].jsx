@@ -6,11 +6,7 @@ import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
   const data = await getAccessories()
-  const pathData = await data.data.Item
-
-  // const paths = pathData.map(item => {
-  //   return { params: { id: `${item.itemID}` } }
-  // })
+  const pathData = await data.data?.Item
 
   const paths = pathData.map(item => ({
     params: { id: item.itemID }

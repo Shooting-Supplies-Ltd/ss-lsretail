@@ -8,17 +8,25 @@ export async function getStaticPaths() {
   const data = await getAmmo()
 
   if (!data || data === undefined) {
-    const data = setTimeout(getAmmo, 2000)
-    const pathData = await data
-    console.log(pathData)
+    const data2 = setTimeout(getAmmo, 2000)
+    const pathData2 = await data2
 
-    return { paths, fallback: true }
+    const paths2 = await pathData2.map(item => ({
+      params: { id: item.itemID }
+    }))
+
+    return { paths2, fallback: true }
   }
 
   const pathData = await data
-  console.log(pathData)
 
-  return { paths, fallback: true }
+  const paths = await pathData.map(item => ({
+    params: { id: item.itemID }
+  }))
+
+  return {
+    paths, fallback: false
+  }
 }
 
 export async function getStaticProps({ params: { id } }) {

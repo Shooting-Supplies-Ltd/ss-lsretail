@@ -29,7 +29,7 @@ const refreshToken = async () => {
           "Content-Type": "application/json",
         },
         data: JSON.stringify(body),
-      });
+      }).catch(err => console.error(err));
 
       const tokenData = await response.data
 

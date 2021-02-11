@@ -116,7 +116,10 @@ export async function getStaticPaths() {
   const paths = []
 
   const getPaths = Guns.map(gun => {
-    if (gun.FullPath) {
+    if (!gun.Images[0]?.FullPath) {
+      return null
+    }
+    else {
       paths.push({
         params: {
           slug: (slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.ID}`).toLowerCase())

@@ -10,7 +10,7 @@ export async function getStaticPaths() {
   if (!data || data === undefined) {
     const data2 = setTimeout(getMaintenance, 2000)
     const pathData2 = await data2
-
+    console.log(pathData2)
     const paths2 = await pathData2.map(item => ({
       params: { id: item.itemID }
     }))

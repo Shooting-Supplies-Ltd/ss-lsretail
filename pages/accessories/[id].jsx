@@ -8,11 +8,15 @@ export async function getStaticPaths() {
   const data = await getAccessories().catch(err => console.error(err))
   const pathData = await data.data?.Item
 
-  const paths = await pathData.map(item => ({
-    params: { id: item.itemID }
-  }))
+  if (pathData) {
+    const paths = await pathData.map(item => ({
+      params: { id: item.itemID }
+    }))
 
-  return { paths, fallback: true }
+    return { paths, fallback: true }
+  } else {
+    return null
+  }
 }
 
 export async function getStaticProps({ params: { id } }) {

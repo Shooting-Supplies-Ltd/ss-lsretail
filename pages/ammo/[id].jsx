@@ -6,13 +6,17 @@ import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
   const data = await getAmmo().catch(err => console.error(err))
-  const pathData = await data.data?.Item
+  const pathData = await data.data.Item
 
-  const paths = await pathData.map(item => ({
-    params: { id: item.itemID }
-  }))
+  if (pathData) {
+    const paths = await pathData.map(item => ({
+      params: { id: item.itemID }
+    }))
 
-  return { paths, fallback: true }
+    return { paths, fallback: true }
+  } else {
+    return null
+  }
 }
 
 export async function getStaticProps({ params: { id } }) {

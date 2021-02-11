@@ -8,12 +8,16 @@ export async function getStaticPaths() {
   const data = await getOptics()
   const pathData = await data.data.Item
 
-  const paths = await pathData.map(item => ({
-    params: { id: item.itemID }
-  }))
+  if (pathData) {
+    const paths = await pathData.map(item => ({
+      params: { id: item.itemID }
+    }))
 
-  return {
-    paths, fallback: false
+    return {
+      paths, fallback: false
+    }
+  } else {
+    return null
   }
 }
 

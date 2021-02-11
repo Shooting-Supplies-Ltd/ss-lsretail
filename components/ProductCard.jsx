@@ -15,7 +15,7 @@ const ProductCard = ({ item }) => {
           <div className="flex justify-center h-48 overflow-hidden">
             <img src={imageUrl} alt={`Image of ${name}`} className="w-60" />
           </div>
-          <div className="h-32 p-4 flex flex-col bg-gray-800 text-white hover:text-ssorange rounded-b-lg">
+          <div className="h-32 p-4 flex flex-col bg-ssblue text-white hover:text-ssorange rounded-b-lg">
             <h2 className="flex justify-center text-center uppercase">{name}</h2>
             <p className="mt-2 flex justify-center font-bold text-lg ">£{item.Prices.ItemPrice[0].amount}</p>
           </div>

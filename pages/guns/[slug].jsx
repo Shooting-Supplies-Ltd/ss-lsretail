@@ -20,7 +20,7 @@ const Gun = (props) => {
       <Layout>
         <div className="grid grid-cols-3">
           <div></div>
-          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-gray-800">
+          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
             <p>Details will be updated soon, please check back later.</p>
           </div>
           <div></div>
@@ -47,14 +47,14 @@ const Gun = (props) => {
       <div className="flex">
         <div className="w-1/4"></div>
         <div className="w-2/4 flex flex-wrap justify-center">
-          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-gray-800">
+          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
             <div className="flex justify-center">
               <img src={Gun.Images[0].FullPath} alt={`Image of the ${Gun.Make} ${Gun.Model} ${Gun.Variant}`} className="max-h-96" />
             </div>
             <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</h1>
             <div className="mx-4 mt-4 border border-black">
               <table className="table-fixed w-full mb-4">
-                <thead className="bg-gray-800 text-white">
+                <thead className="bg-ssblue text-white">
                   <tr>
                     <th className="w-1/2 p-2 uppercase text-xl text-left" colSpan="1">Gun Details</th>
                     <th className="w-1/2"></th>
@@ -95,9 +95,9 @@ const Gun = (props) => {
               <h3 className="mx-4 my-8 text-2xl font-black uppercase">Please Contact Us to Purchase this item or for more information</h3>
             </div>
             <div className="flex mx-4 my-8">
-              <a href="tel:01527831261" className="flex items-center justify-center h-10 w-24 mr-4 bg-gray-800 hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Call Us</a>
+              <a href="tel:01527831261" className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Call Us</a>
               <Mailto email="info@shootingsuppliesltd.co.uk" subject={`GUN ENQUIRY: ${Gun.Make} ${Gun.Model} ${Gun.Variant ? Gun.Variant : ''} - STOCK NUMBER: ${Gun.StockNumber}`}>
-                <p className="flex items-center justify-center h-10 w-24 mr-4 bg-gray-800 hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Email</p>
+                <p className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">Email</p>
               </Mailto>
             </div>
           </div>

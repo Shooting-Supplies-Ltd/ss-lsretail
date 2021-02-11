@@ -6,7 +6,7 @@ const GunProductCard = ({ gun }) => {
 
   return (
     <>
-      <div className="block h-80 border-2 border-gray-300 rounded-lg bg-gray-800" key={gun.SerialNumber}>
+      <div className="block h-80 border-2 border-gray-300 rounded-lg bg-ssblue" key={gun.SerialNumber}>
         <Link href={`/guns/[slug]`} as={`/guns/${slug}`}>
           <a>
             <div className="flex h-48 overflow-hidden">

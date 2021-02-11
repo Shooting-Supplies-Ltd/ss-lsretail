@@ -6,7 +6,7 @@ import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
   const data = await getAmmo().catch(err => console.error(err))
-  const pathData = await data.data.Item
+  const pathData = awaitJSON.parse(data.data?.Item)
 
   if (pathData) {
     const paths = await pathData.map(item => ({

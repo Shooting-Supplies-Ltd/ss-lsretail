@@ -100,9 +100,9 @@ const Ammo = ({ items, categories, brands }) => {
 export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getAmmo()
-  const fetchedItems = await itemData.data
+  const fetchedItems = await itemData
   const items = []
-  fetchedItems.Item.map(item => {
+  fetchedItems.map(item => {
     if (item.Images?.Image?.baseImageURL) {
       items.push(item)
     }

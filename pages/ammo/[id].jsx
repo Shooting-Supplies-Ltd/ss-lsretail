@@ -5,8 +5,8 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
-  const data = await getAmmo().catch(err => console.error(err))
-  const pathData = await JSON.parse(data.data.Item)
+  const data = await getAmmo()
+  const pathData = await data
   console.log(pathData)
 
   if (pathData) {

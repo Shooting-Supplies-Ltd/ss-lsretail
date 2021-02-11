@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const data = await getAccessories().catch(err => console.error(err))
   const pathData = await data.data?.Item
 
-  const paths = pathData.map(item => ({
+  const paths = await pathData.map(item => ({
     params: { id: item.itemID }
   }))
 

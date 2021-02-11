@@ -5,13 +5,8 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
-  try {
-    const data = await getOptics().catch(err => console.error(err))
-    const pathData = await data.data?.Item
-    return pathData
-  } catch (error) {
-    console.error(error)
-  }
+  const data = await getOptics().catch(err => console.error(err))
+  const pathData = await data.data?.Item
 
   const paths = pathData.map(item => ({
     params: { id: item.itemID }

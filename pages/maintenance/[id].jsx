@@ -5,14 +5,20 @@ import { useRouter } from 'next/router'
 import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
-  const data = await getMaintenance()
-  const pathData = await data.data?.Item
+  try {
+    const data = await getMaintenance()
+    const pathData = await data.data?.Item
+    console.log(pathData)
+    return pathData
+  } catch (error) {
+    console.error(error)
+  }
 
   const paths = pathData.map(item => ({
     params: { id: item.itemID }
   }))
 
-  return { paths, fallback: blocking }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params: { id } }) {

@@ -6,7 +6,7 @@ import Layout from '../../components/layout/Layout'
 
 export async function getStaticPaths() {
   try {
-    const data = await getMaintenance()
+    const data = await getMaintenance().catch(err => console.error(err))
     const pathData = await data.data?.Item
     console.log(pathData)
     return pathData

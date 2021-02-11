@@ -38,7 +38,6 @@ export async function getAmmo() {
   let axiosConfig = await getHeader()
   let ammoData = await http.get(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]&ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[23,46,218]&ItemECommerce.listOnStore=true`, axiosConfig).catch(err => console.error(err.data))
   const ammo = await ammoData.data.Item
-  console.log({ ammo })
   return ammo
 }
 

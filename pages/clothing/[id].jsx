@@ -18,7 +18,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { id } }) {
   const itemData = await getMatrixClothingItem(id)
-  console.log(itemData)
   const item = itemData.data.ItemMatrix
 
   return {

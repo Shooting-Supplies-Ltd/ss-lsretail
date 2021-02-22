@@ -16,7 +16,6 @@ export async function getStaticProps() {
       return item
     }
   }).filter(item => item)
-  console.log(items)
 
   // Get Categories
   const categoryIds = items.map(item => {

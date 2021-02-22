@@ -10,7 +10,7 @@ const ProductCard = ({ item }) => {
 
   return (
     <div className="block h-80 border-2 border-gray-300 rounded-lg">
-      <Link href={`${router.pathname}/[id]?id=${item.itemID}&slug=${slug}`}>
+      <Link href={`${router.pathname}/[id]?id=${item.itemID ? item.itemID : item.itemMatrixID}&slug=${slug}`}>
         <a>
           <div className="flex justify-center h-48 overflow-hidden">
             <img src={imageUrl} alt={`Image of ${name}`} className="w-60" />

@@ -80,6 +80,12 @@ export async function getMatrixClothing() {
   return matrixClothing
 }
 
+export async function getMatrixClothingItem(itemID) {
+  let axiosConfig = await getHeader()
+  let matrixClothingItem = await http.get(`ItemMatrix/${itemID}.json?load_relations=["Category", "Images", "ItemECommerce"]&ItemECommerce.listOnStore=true`, axiosConfig).catch(err => console.error(err.data))
+  return matrixClothingItem
+}
+
 export async function getCategory(categoryID) {
   let axiosConfig = await getHeader()
   let category = await http.get(`Category.json?categoryID=IN,${categoryID}&orderby=name`, axiosConfig).catch(err => console.error(err.data))

@@ -9,28 +9,28 @@ const Footer = () => {
           <ul className="text-white space-y-1">
             <li>
               <Link href="/blog">
-                <a>
+                <a className="hover:text-ssorange">
                   About Us
               </a>
               </Link>
             </li>
             <li>
               <Link href="/blog">
-                <a>
+                <a className="hover:text-ssorange">
                   Contact Us
               </a>
               </Link>
             </li>
             <li>
               <Link href="/blog">
-                <a>
+                <a className="hover:text-ssorange">
                   Privacy Policy
               </a>
               </Link>
             </li>
             <li>
               <Link href="/blog">
-                <a>
+                <a className="hover:text-ssorange">
                   Blog
               </a>
               </Link>
@@ -42,21 +42,21 @@ const Footer = () => {
           <ul className="text-white space-y-1">
             <li>
               <Link href="/terms">
-                <a>
+                <a className="hover:text-ssorange">
                   Terms & Conditions
               </a>
               </Link>
             </li>
             <li>
               <Link href="/returns">
-                <a>
+                <a className="hover:text-ssorange">
                   Returns Policy
               </a>
               </Link>
             </li>
             <li>
               <Link href="/privacy">
-                <a>
+                <a className="hover:text-ssorange">
                   Privacy Policy
               </a>
               </Link>
@@ -75,21 +75,21 @@ const Footer = () => {
           <ul className="text-white space-y-1">
             <li>
               <Link href="/customer-account">
-                <a>
+                <a className="hover:text-ssorange">
                   Your Account
               </a>
               </Link>
             </li>
             <li>
               <Link href="/clothing-sizes">
-                <a>
+                <a className="hover:text-ssorange">
                   Clothing Sizes
               </a>
               </Link>
             </li>
             <li>
               <Link href="/trade-enquiries">
-                <a>
+                <a className="hover:text-ssorange">
                   Trade Enquiries
               </a>
               </Link>
@@ -101,35 +101,33 @@ const Footer = () => {
           <ul className="text-white space-y-1">
             <li>
               <Link href="/finance">
-                <a>
+                <a className="hover:text-ssorange">
                   Finance
               </a>
               </Link>
             </li>
             <li>
               <Link href="/our-brands">
-                <a>
+                <a className="hover:text-ssorange">
                   Our Brands
               </a>
               </Link>
             </li>
             <li>
               <Link href="/gunsmithing">
-                <a>
+                <a className="hover:text-ssorange">
                   Gunsmithing Service
               </a>
               </Link>
             </li>
             <li>
-              <Link href="/blog">
-                <a>
-                  FAB Defence
+              <a href="https://fabdefense.co.uk" target="_blank" className="hover:text-ssorange">
+                FAB Defense
               </a>
-              </Link>
             </li>
             <li>
               <Link href="/blog">
-                <a>
+                <a className="hover:text-ssorange">
                   Tippmann Arms
               </a>
               </Link>

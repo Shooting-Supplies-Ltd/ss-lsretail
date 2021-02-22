@@ -2,8 +2,6 @@ import Head from 'next/head'
 
 import Layout from '../components/layout/Layout'
 import HomeBanner from '../components/home/HomeBanner'
-import HomeModal from '../components/home/Modal'
-import LinksSection from '../components/home/LinksSection'
 import Categories from '../components/home/Categories'
 import HelpBanner from '../components/home/HelpBanner'
 import SubHeader from '../components/home/SubHeader'
@@ -21,12 +19,6 @@ export default function Home() {
         </div>
         <div>
           <SubHeader />
-        </div>
-        <div>
-          {/* <HomeModal /> */}
-        </div>
-        <div>
-          {/* <LinksSection /> */}
         </div>
         <div>
           <Categories />

@@ -52,9 +52,9 @@ const Nav = () => {
               <Link href="/maintenance">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li></a>
               </Link>
-              {/* <Link href="/clothing">
+              <Link href="/clothing">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li></a>
-              </Link> */}
+              </Link>
               {/* <Link href="/sale">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">SALE</li></a>
               </Link> */}

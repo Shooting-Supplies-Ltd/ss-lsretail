@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getAmmo, getCategory, getManufacturers } from '../api/lightspeed'
+import { getClothing, getCategory, getManufacturers } from '../api/lightspeed'
 import { useState, useEffect, useRef } from 'react'
 
 import Layout from '../../components/layout/Layout'
@@ -9,22 +9,29 @@ import ProductFilter from '../../components/filters/productFilters/ProductFilter
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getAmmo()
+  const itemData = await getClothing()
+  console.log(itemData.data)
 
-  const items = itemData.data.Item.map(item => {
+  const items = itemData.data.Item ? itemData.data.Item.map(item => {
     if (item.Images?.Image?.baseImageURL) {
       return item
     }
-  })
+  }) :
+    itemData.data.ItemMatrix.map(item => {
+      if (item.Images?.Image?.baseImageURL) {
+        return item
+      }
+    })
 
-  // Get Categories for filter
+  // Get Categories
   const categoryIds = items.map(item => {
     return item.categoryID
   })
 
   const categoriesToFetch = [...new Set(categoryIds)]
   const categoryData = await getCategory(categoriesToFetch)
-  const categories = categoryData.data.Category.map(category => {
+  const returnedCategories = await categoryData.data
+  const categories = returnedCategories.Category.map(category => {
     return {
       category: {
         catID: category.categoryID,
@@ -34,8 +41,9 @@ export async function getStaticProps() {
   })
 
   // Get Brands
-  const brandIds = items.map(item => {
-    return item.manufacturerID
+  const brandIds = []
+  items.map(item => {
+    brandIds.push(parseInt(item.manufacturerID))
   })
 
   const brandsToFetch = [...new Set(brandIds)]
@@ -60,7 +68,7 @@ export async function getStaticProps() {
   }
 }
 
-const Ammo = ({ items, categories, brands }) => {
+const Accessories = ({ items, categories, brands }) => {
   const [selectedCategory, setSelectedCategory] = useState({})
   const [selectedBrand, setSelectedBrand] = useState({})
   const [itemFilters, setItemFilters] = useState()
@@ -126,7 +134,7 @@ const Ammo = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Ammo - Shooting Supplies Ltd</title>
+        <title>Gun Accessories | All Rifle Accessories & Attachments - Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">
@@ -150,6 +158,4 @@ const Ammo = ({ items, categories, brands }) => {
   )
 }
 
-
-
-export default Ammo;
+export default Accessories;

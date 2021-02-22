@@ -7,20 +7,7 @@ import Layout from '../../components/layout/Layout'
 export async function getStaticPaths() {
   const data = await getAmmo()
 
-  if (!data || data === undefined) {
-    const data2 = setTimeout(getAmmo, 2000)
-    const pathData2 = await data2
-    console.log(pathData2)
-    const paths2 = await pathData2.map(item => ({
-      params: { id: item.itemID }
-    }))
-
-    return { paths2, fallback: true }
-  }
-
-  const pathData = await data
-
-  const paths = await pathData.map(item => ({
+  const paths = data.data.Item.map(item => ({
     params: { id: item.itemID }
   }))
 
@@ -31,7 +18,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { id } }) {
   const itemData = await getItem(id)
-  const item = await itemData.data?.Item
+  const item = itemData.data?.Item
 
   return {
     props: { item },

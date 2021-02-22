@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { getClothing, getCategory, getManufacturers } from '../api/lightspeed'
+import { getMatrixClothing, getCategory, getManufacturers } from '../api/lightspeed'
 import { useState, useEffect, useRef } from 'react'
 
 import Layout from '../../components/layout/Layout'
@@ -9,24 +9,20 @@ import ProductFilter from '../../components/filters/productFilters/ProductFilter
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getClothing()
-  console.log(itemData.data)
+  const itemData = await getMatrixClothing()
 
-  const items = itemData.data.Item ? itemData.data.Item.map(item => {
+  const items = itemData.data.ItemMatrix.map(item => {
     if (item.Images?.Image?.baseImageURL) {
       return item
     }
-  }) :
-    itemData.data.ItemMatrix.map(item => {
-      if (item.Images?.Image?.baseImageURL) {
-        return item
-      }
-    })
+  }).filter(item => item)
+  console.log(items)
 
   // Get Categories
   const categoryIds = items.map(item => {
     return item.categoryID
   })
+
 
   const categoriesToFetch = [...new Set(categoryIds)]
   const categoryData = await getCategory(categoriesToFetch)

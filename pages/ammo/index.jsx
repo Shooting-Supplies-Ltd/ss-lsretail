@@ -126,7 +126,7 @@ const Ammo = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Ammo - Shooting Supplies Ltd</title>
+        <title>Bulk Ammo for Rifles, Shotguns, Airguns - Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">

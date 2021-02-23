@@ -129,7 +129,7 @@ const Accessories = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Gun Accessories | All Rifle Accessories & Attachments - Shooting Supplies Ltd</title>
+        <title>Outdoor Clothing & Footwear for all Weathers - Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">

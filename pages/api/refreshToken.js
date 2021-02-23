@@ -1,9 +1,5 @@
 const axios = require('axios')
 const lightspeedApi = "https://api.lightspeedapp.com/API";
-import NodeCache from 'node-cache'
-
-const tokenCache = new NodeCache()
-let token = null
 
 const refreshToken = async () => {
   const body = {
@@ -13,34 +9,21 @@ const refreshToken = async () => {
     refresh_token: process.env.LIGHTSPEED_REFRESH_TOKEN,
   };
 
-  const cachedToken = await tokenCache.get('tokenData')
+  try {
+    const response = await axios({
+      url: "https://cloud.lightspeedapp.com/oauth/access_token.php",
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(body),
+    }).catch(err => console.error(err));
 
-  if (cachedToken != undefined && cachedToken.expires_in > 30) {
-    token = cachedToken.access_token
-    return token
-  }
-
-  if (cachedToken === undefined || cachedToken.expires_in < 30) {
-    try {
-      const response = await axios({
-        url: "https://cloud.lightspeedapp.com/oauth/access_token.php",
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: JSON.stringify(body),
-      }).catch(err => console.error(err));
-
-      const tokenData = await response.data
-
-      tokenCache.set('tokenData', tokenData, { checkperiod: tokenData.expires_in })
-
-      token = tokenData.access_token
-
-      return token;
-    } catch (error) {
-      if (error) console.error("We have a problem! Could not get token.", error.data);
-    }
+    const accessToken = await response.data.access_token
+    console.log(accessToken)
+    return accessToken;
+  } catch (error) {
+    if (error) console.error("We have a problem! Could not get token.", error.data);
   }
 };
 

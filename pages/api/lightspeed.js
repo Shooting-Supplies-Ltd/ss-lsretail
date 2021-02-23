@@ -2,29 +2,22 @@ import axios from 'axios'
 import refreshToken from './refreshToken'
 import rateLimit from 'axios-rate-limit';
 
+const token = []
 
-async function getHeader() {
-  let token = await refreshToken()
-
-  function memoize() {
-    let cache = {}
-    console.log('Cache', cache)
-
-    if (cache.bearerToken != undefined) {
-      console.log('Token from cache')
-      return cache.bearerToken
-    } else {
-      let newToken = token
-      cache.bearerToken = newToken
-      console.log('Token from API')
-      return newToken
-    }
+const getToken = async (n) => {
+  if (token[n] != null) {
+    return token[n]
   }
+  const bearer = await refreshToken()
+  token[n] = bearer
+  return bearer
+}
 
-  let bearer = memoize()
+const getHeader = async () => {
+  const token = await getToken()
 
   const header = {
-    Authorization: `Bearer ${bearer}`,
+    Authorization: `Bearer ${token}`,
   };
 
   const axiosConfig = {
@@ -34,7 +27,6 @@ async function getHeader() {
 
   return axiosConfig
 }
-
 
 const http = rateLimit(axios.create(), { maxRequests: 1, perMilliseconds: 2000, maxRPS: 1 })
 

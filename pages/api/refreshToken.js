@@ -20,7 +20,6 @@ const refreshToken = async () => {
     }).catch(err => console.error(err));
 
     const accessToken = await response.data.access_token
-    console.log(accessToken)
     return accessToken;
   } catch (error) {
     if (error) console.error("We have a problem! Could not get token.", error.data);

@@ -70,6 +70,7 @@ const Item = ({ item }) => {
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta charSet="UTF-8"></meta>
       </Head>
+      <main>
       <div className="mx-72 my-12 flex justify-center">
         <div className="w-1/2 p-2">
           <img src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`} alt={`${item.description}`} />
@@ -90,6 +91,7 @@ const Item = ({ item }) => {
         <h2 className="font-bold text-2xl">Full Description</h2>
         <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4"></div>
       </div>
+      </main>
     </Layout>
   )
 }

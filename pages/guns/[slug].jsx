@@ -44,7 +44,7 @@ const Gun = (props) => {
         <meta name="twitter:card" content="summary_large_image"></meta>
         <meta charSet="UTF-8"></meta>
       </Head>
-      <div className="flex">
+      <main className="flex">
         <div className="w-1/4"></div>
         <div className="w-2/4 flex flex-wrap justify-center">
           <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
@@ -103,7 +103,7 @@ const Gun = (props) => {
           </div>
         </div>
         <div className="w-1/4"></div>
-      </div>
+      </main>
     </Layout>
   )
 }

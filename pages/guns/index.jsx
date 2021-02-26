@@ -138,11 +138,11 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             handleMechanismChange={handleMechanismChange}
           />
         </div>
-        <div className="w-5/6 p-2">
+        <main className="w-5/6 p-2">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredGuns ? filteredGuns.map(gun => <GunProductCard gun={gun} key={gun.ID} />) : guns.map(gun => <GunProductCard gun={gun} key={gun.ID} />)}
           </div>
-        </div>
+        </main>
       </div>
     </Layout >
   )

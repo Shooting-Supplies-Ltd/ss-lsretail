@@ -4,7 +4,7 @@ const Footer = () => (
   <div className="h-72 bg-blue-900">
     <footer className="mx-12 grid grid-cols-4 gap-8 ssblue">
       <div className="my-12 flex flex-col">
-        <h3 className="mb-2 text-white font-bold text-xl">About Us</h3>
+        <h3 className="mb-2 text-white font-bold text-xl uppercase">About Us</h3>
         <ul className="text-white space-y-1">
           <li>
             <Link href="/about">
@@ -17,6 +17,11 @@ const Footer = () => (
             </Link>
           </li>
           <li>
+            <Link href="/virtual-tour">
+              <a className="hover:text-ssorange">Virtual Tour</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/blog">
               <a className="hover:text-ssorange">Blog</a>
             </Link>
@@ -24,7 +29,7 @@ const Footer = () => (
         </ul>
       </div>
       <div className="my-12 flex flex-col">
-        <h3 className="mb-2 text-white font-bold text-xl">Terms & Conditions</h3>
+        <h3 className="mb-2 text-white font-bold text-xl uppercase">Terms & Conditions</h3>
         <ul className="text-white space-y-1">
           <li>
             <Link href="/terms">
@@ -51,7 +56,7 @@ const Footer = () => (
         </ul>
       </div>
       <div className="my-12 flex flex-col">
-        <h3 className="mb-2 text-white font-bold text-xl">Customer Support</h3>
+        <h3 className="mb-2 text-white font-bold text-xl uppercase">Customer Support</h3>
         <ul className="text-white space-y-1">
           <li>
             <Link href="/customer-account">
@@ -71,7 +76,7 @@ const Footer = () => (
         </ul>
       </div>
       <div className="my-12 flex flex-col">
-        <h3 className="mb-2 text-white font-bold text-xl">More...</h3>
+        <h3 className="mb-2 text-white font-bold text-xl uppercase">More...</h3>
         <ul className="text-white space-y-1">
           <li>
             <Link href="/finance">

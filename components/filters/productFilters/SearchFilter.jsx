@@ -1,26 +1,38 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 const SearchFilter = ({ items, setFilteredItems }) => {
-  const [searchQuery, setSearchQuery] = useState()
+  const [searchQuery, setSearchQuery] = useState();
 
   useEffect(() => {
     if (searchQuery && searchQuery.length > 2) {
-      const searchResult = items.filter(item => {
-        if (item.description.toLowerCase().includes(searchQuery.toLowerCase()) || item.ItemECommerce?.shortDescription?.toLowerCase().includes(searchQuery.toLowerCase())) {
-          return item
+      const searchResult = items.filter((item) => {
+        if (
+          item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          item.ItemECommerce?.shortDescription?.toLowerCase().includes(searchQuery.toLowerCase())
+        ) {
+          return item;
         }
-      })
-      setFilteredItems(searchResult)
+      });
+      setFilteredItems(searchResult);
     } else {
-      setFilteredItems(null)
+      setFilteredItems(null);
     }
-  }, [searchQuery])
+  }, [searchQuery]);
 
   return (
     <div className="flex justify-center">
-      <input type="text" name="search" id="search" className="p-2 w-full border-t border-b border-ssblue" style={{ textAlign: 'center' }} placeholder={`Search Here`} onChange={e => setSearchQuery(e.target.value)} />
+      <input
+        type="text"
+        name="search"
+        id="search"
+        autoComplete="off"
+        className="p-2 w-full border-t border-b border-ssblue"
+        style={{ textAlign: 'center' }}
+        placeholder="Search Here"
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default SearchFilter
+export default SearchFilter;

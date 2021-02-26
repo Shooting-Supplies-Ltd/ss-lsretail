@@ -2,11 +2,12 @@ import Layout from '../components/layout/Layout';
 
 const Contact = () => (
   <Layout>
-    <>
-      <form className="mx-72 my-12">
+    <main className="mx-72 my-12">
+      <h1 className="text-3xl font-black">Contact Us</h1>
+      <form className="mt-4">
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="first-name">
+            <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="first-name">
               First Name
             </label>
             <input
@@ -17,7 +18,7 @@ const Contact = () => (
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="last-name">
+            <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="last-name">
               Last Name
             </label>
             <input
@@ -30,7 +31,7 @@ const Contact = () => (
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="email">
+            <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -41,7 +42,7 @@ const Contact = () => (
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="phone">
+            <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="phone">
               Phone
             </label>
             <input
@@ -54,7 +55,7 @@ const Contact = () => (
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="message">
+            <label className="block uppercase tracking-wide text-gray-700 font-bold mb-2" htmlFor="message">
               Message
             </label>
             <textarea
@@ -75,7 +76,7 @@ const Contact = () => (
           <div className="md:w-2/3" />
         </div>
       </form>
-    </>
+    </main>
   </Layout>
 );
 

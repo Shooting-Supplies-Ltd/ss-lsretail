@@ -6,10 +6,10 @@ export default function Privacy() {
   return (
     <Layout>
       <Head>
-        <title>Privacy - FAB Defense (UK)</title>
+        <title>Privacy - Shooting Supplies Ltd</title>
         <meta
           name="description"
-          content="At FAB Defense (UK) we take your privacy seriously. Please find our privacy policies below."
+          content="At Shooting Supplies Ltd we take your privacy seriously. Please find our privacy policies below."
         />
       </Head>
       <div className="mx-8 my-8 lg:mx-72 lg:my-12">
@@ -72,7 +72,7 @@ export default function Privacy() {
             our emails at any point using the link in the email. If you object to us using your data in any capacity,
             please contact us
             <Link href="mailto:data@shootingsuppliesltd.co.uk">
-              <a className="text-fabred">data@shootingsuppliesltd.co.uk</a>
+              <a className="text-ssblue"> data@shootingsuppliesltd.co.uk</a>
             </Link>
             .
           </p>
@@ -127,7 +127,7 @@ export default function Privacy() {
           <p className="my-1">
             If you would like a copy of the personal data that we have for you, please email{' '}
             <Link href="mailto:data@shootingsuppliesltd.co.uk">
-              <a className="text-fabred">data@shootingsuppliesltd.co.uk</a>
+              <a className="text-ssblue">data@shootingsuppliesltd.co.uk</a>
             </Link>
           </p>
           <p className="my-1">
@@ -150,7 +150,7 @@ export default function Privacy() {
           <p className="my-1">
             If you would like to have your data erased, please contact{' '}
             <Link href="mailto:data@shootingsuppliesltd.co.uk">
-              <a className="text-fabred">data@shootingsuppliesltd.co.uk</a>
+              <a className="text-ssblue">data@shootingsuppliesltd.co.uk</a>
             </Link>
           </p>
         </div>

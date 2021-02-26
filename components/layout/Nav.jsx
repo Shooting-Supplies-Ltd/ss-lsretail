@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import { useShoppingCart } from 'use-shopping-cart'
+import Link from 'next/link';
+import { useState } from 'react';
+import { useShoppingCart } from 'use-shopping-cart';
 
-import CartIcon from '../cart/CartIcon'
-import CartDisplay from '../CartDisplay'
+import CartIcon from '../cart/CartIcon';
+import CartDisplay from '../CartDisplay';
 
 const Nav = () => {
-  const [cartDisplay, setCartDisplay] = useState(false)
-  const { cartCount } = useShoppingCart()
+  const [cartDisplay, setCartDisplay] = useState(false);
+  const { cartCount } = useShoppingCart();
 
   const updateCartDisplay = () => {
-    setCartDisplay(!cartDisplay)
-  }
+    setCartDisplay(!cartDisplay);
+  };
 
   return (
     <nav>
@@ -19,7 +19,11 @@ const Nav = () => {
         <div className="flex h-12 mx-12">
           <div className="w-1/6 flex justify-center p-2">
             <Link href="/">
-              <img className="absolute z-10 top-1 h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl" src="/logos/Logo.png" alt="Shooting Supplies" />
+              <img
+                className="absolute z-10 top-1 h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
+                src="/logos/Logo.png"
+                alt="Shooting Supplies"
+              />
             </Link>
           </div>
           <div className="w-4/6 p-2 flex items-center justify-center">
@@ -50,10 +54,14 @@ const Nav = () => {
                 </a>
               </Link> */}
               <Link href="/maintenance">
-                <a><li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li></a>
+                <a>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
+                </a>
               </Link>
               <Link href="/clothing">
-                <a><li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li></a>
+                <a>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
+                </a>
               </Link>
               {/* <Link href="/sale">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">SALE</li></a>
@@ -69,7 +77,7 @@ const Nav = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

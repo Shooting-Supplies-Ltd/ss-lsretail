@@ -5,10 +5,10 @@ import Layout from '../components/layout/Layout';
 const Terms = () => (
   <Layout>
     <Head>
-      <title>Terms & Conditions - FAB Defense (UK)</title>
+      <title>Terms & Conditions - Shooting Supplies Ltd</title>
       <meta
         name="description"
-        content="At FAB Defense (UK) we aim to be transparent with you. You are able to read our terms and conditions here."
+        content="At Shooting Supplies Ltd we aim to be transparent with you. You are able to read our terms and conditions here."
       />
     </Head>
     <div className="mx-8 my-8 lg:mx-72 lg:my-12">
@@ -98,7 +98,7 @@ const Terms = () => (
         Terms & Conditions
       </h2>
       <h3 className="my-2 font-semibold text-lg">1. About Us</h3>
-      <p>This website www.fabdefense.co.uk/www.fab-defense.co.uk is owned and operated by</p>
+      <p>This website www.shootingsuppliesltd.co.uk is owned and operated by</p>
       <address className="mt-2">
         <p>
           <strong>Shooting Supplies Ltd</strong>
@@ -109,7 +109,7 @@ const Terms = () => (
       </address>
       <p className="mt-2">
         Email:{' '}
-        <a href="mailto:info@shootingsuppliesltd.co.uk" className="text-ssred">
+        <a href="mailto:info@shootingsuppliesltd.co.uk" className="text-ssblue">
           info@shootingsuppliesltd.co.uk
         </a>
       </p>
@@ -178,7 +178,7 @@ const Terms = () => (
       </p>
       <p>3.9 Once your order is complete your order shall be dispatched within 1-3 working days.</p>
       <p>
-        3.10 Only voucher codes obtained from the FAB Defense (UK) Website will be honoured. Any vouchers from this
+        3.10 Only voucher codes obtained from the Shooting Supplies Ltd Website will be honoured. Any vouchers from this
         website that are over 6 months old can be considered expired and will not be accepted.
       </p>
 
@@ -331,7 +331,7 @@ const Terms = () => (
       <hr className="my-4" />
 
       <h2 id="website" className="mt-8 mb-2 font-bold text-2xl">
-        Website Disclaimer for: www.fabdefense.co.uk & www.fab-defense.co.uk
+        Website Disclaimer for: www.shootingsuppliesltd.co.uk
       </h2>
       <h3 id="use" className="mb-2 mt-6 font-semibold text-lg">
         1. Use of Website

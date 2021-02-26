@@ -58,18 +58,18 @@ const Footer = () => (
       <div className="my-12 flex flex-col">
         <h3 className="mb-2 text-white font-bold text-xl uppercase">Customer Support</h3>
         <ul className="text-white space-y-1">
-          <li>
+          {/* <li>
             <Link href="/customer-account">
               <a className="hover:text-ssorange">Your Account</a>
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link href="/clothing-sizes">
               <a className="hover:text-ssorange">Clothing Sizes</a>
             </Link>
-          </li>
+          </li> */}
           <li>
-            <Link href="/trade-enquiries">
+            <Link href="/contact">
               <a className="hover:text-ssorange">Trade Enquiries</a>
             </Link>
           </li>
@@ -83,11 +83,11 @@ const Footer = () => (
               <a className="hover:text-ssorange">Finance</a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/our-brands">
               <a className="hover:text-ssorange">Our Brands</a>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/gunsmithing">
               <a className="hover:text-ssorange">Gunsmithing Service</a>
@@ -98,11 +98,11 @@ const Footer = () => (
               FAB Defense
             </a>
           </li>
-          <li>
+          {/* <li>
             <Link href="/blog">
               <a className="hover:text-ssorange">Tippmann Arms</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </footer>

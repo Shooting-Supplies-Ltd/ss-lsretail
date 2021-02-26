@@ -2,7 +2,7 @@ import Link from 'next/link'
 import slugify from 'slugify'
 
 const GunProductCard = ({ gun }) => {
-  let slug = slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.ID}`).toLowerCase()
+  let slug = slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.SerialNumber}`).toLowerCase()
 
   return (
     <>

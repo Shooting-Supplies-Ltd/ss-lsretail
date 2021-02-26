@@ -122,7 +122,7 @@ export async function getStaticPaths() {
     else {
       paths.push({
         params: {
-          slug: (slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.ID}`).toLowerCase())
+          slug: (slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.SerialNumber}`).toLowerCase())
         }
       })
     }
@@ -139,7 +139,7 @@ export async function getStaticProps({ params }) {
   const data = await res.json()
   const { Guns } = data
 
-  const Gun = Guns.find(gun => gun.ID == gunSerial)
+  const Gun = Guns.find(gun => gun.SerialNumber == gunSerial)
 
   return {
     props: {

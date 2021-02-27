@@ -1,5 +1,5 @@
-import axios from 'axios';
 import rateLimit from 'axios-rate-limit';
+import axios from 'axios';
 import refreshToken from './refreshToken';
 
 const token = [];

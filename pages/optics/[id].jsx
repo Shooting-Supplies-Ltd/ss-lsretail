@@ -9,7 +9,7 @@ export async function getStaticPaths() {
 
   const paths = await data.data.Item.map((item) => ({
     params: { id: item.itemID },
-  }));
+  })).filter((path) => path);
 
   return {
     paths,

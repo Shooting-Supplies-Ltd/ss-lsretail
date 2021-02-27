@@ -164,32 +164,33 @@ export async function getStaticPaths() {
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
   const data = await res.json();
   const { Guns } = data;
+  const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
 
-  const paths = Guns.map((gun) => {
-    if (!gun.Images[0] || !gun.SerialNumber) {
-      return undefined;
-    }
-    return {
-      params: {
-        slug: slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.SerialNumber}`).toLowerCase(),
-      },
-    };
-  }).filter((path) => path);
-
-  console.log(paths);
+  const paths = filteredGuns
+    .map((gun) => {
+      if (!gun.Images[0] || !gun.ID) {
+        return undefined;
+      }
+      return {
+        params: {
+          slug: slugify(`${gun?.Make}-${gun?.Model}-${gun?.Variant}-${gun.ID}`).toLowerCase(),
+        },
+      };
+    })
+    .filter((path) => path);
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const gunSerial = slug.substr(slug.lastIndexOf('-') + 1).toUpperCase();
+  const gunID = slug.substr(slug.lastIndexOf('-') + 1).toUpperCase();
 
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
   const data = await res.json();
   const { Guns } = data;
 
-  const Gun = Guns.find((gun) => gun.SerialNumber == gunSerial);
+  const Gun = Guns.find((gun) => gun.ID === gunID);
 
   return {
     props: {

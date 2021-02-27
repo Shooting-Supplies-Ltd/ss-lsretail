@@ -2,11 +2,11 @@ import Link from 'next/link';
 import slugify from 'slugify';
 
 const GunProductCard = ({ gun }) => {
-  const slug = slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.SerialNumber}`).toLowerCase();
+  const slug = slugify(`${gun.Make}-${gun.Model}-${gun.Variant}-${gun.ID}`).toLowerCase();
 
   return (
     <>
-      <div className="block h-80 border-2 border-gray-300 rounded-lg bg-ssblue" key={gun.SerialNumber}>
+      <div className="block h-80 border-2 border-gray-300 rounded-lg bg-ssblue" key={gun.ID}>
         <Link href="/guns/[slug]" as={`/guns/${slug}`}>
           <a>
             <div className="flex h-48 overflow-hidden">

@@ -1,5 +1,4 @@
-import rateLimit from 'axios-rate-limit';
-import axios from 'axios';
+import api from './limit';
 import refreshToken from './refreshToken';
 
 const token = [];
@@ -27,11 +26,9 @@ const getHeader = async () => {
   return axiosConfig;
 };
 
-const http = rateLimit(axios.create(), { maxRequests: 1, perMilliseconds: 2000, maxRPS: 1 });
-
 const makeRequest = async (url) => {
   const axiosConfig = await getHeader();
-  const data = await http.get(url, axiosConfig).catch((err) => err);
+  const data = await api.get(url, axiosConfig).catch((err) => console.error(err.response.data));
   return data;
 };
 

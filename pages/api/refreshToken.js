@@ -1,8 +1,4 @@
-import rateLimit from 'axios-rate-limit';
-
-const axios = require('axios');
-
-const http = rateLimit(axios.create(), { maxRequests: 1, perMilliseconds: 1000 });
+import api from './limit';
 
 const refreshToken = async () => {
   const body = {
@@ -12,7 +8,7 @@ const refreshToken = async () => {
     refresh_token: process.env.LIGHTSPEED_REFRESH_TOKEN,
   };
 
-  const response = await http({
+  const response = await api({
     url: 'https://cloud.lightspeedapp.com/oauth/access_token.php',
     method: 'post',
     headers: {

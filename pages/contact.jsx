@@ -2,7 +2,7 @@ import Layout from '../components/layout/Layout';
 
 const Contact = () => (
   <Layout>
-    <main className="mx-72 my-12">
+    <main className="mx-96 my-12">
       <h1 className="text-3xl font-black">Contact Us</h1>
       <form className="mt-4">
         <div className="flex flex-wrap -mx-3 mb-6">

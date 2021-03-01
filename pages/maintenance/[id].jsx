@@ -84,6 +84,7 @@ const Item = ({ item }) => {
             <img
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`}
               alt={`${item.description}`}
+              className="object-contain"
             />
           </div>
           <div className="p-6 lg:w-1/2 p-2 bg-gray-50 rounded-lg">

@@ -58,7 +58,7 @@ const Gun = (props) => {
               <img
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
-                className="max-h-96"
+                className="object-contain"
               />
             </div>
             <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</h1>

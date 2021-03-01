@@ -122,7 +122,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div className="flex mx-12 my-16">
-        <div className="hidden lg:w-1/6 p-2">
+        <div className="hidden lg:block lg:w-1/6 p-2">
           <GunFilter
             categories={categories}
             selectedCategory={selectedCategory}

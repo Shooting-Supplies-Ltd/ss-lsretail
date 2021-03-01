@@ -126,7 +126,7 @@ const Accessories = ({ items, categories, brands }) => {
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">
-        <div className="hidden lg:w-1/6 p-2">
+        <div className="hidden lg:block lg:w-1/6 p-2">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}

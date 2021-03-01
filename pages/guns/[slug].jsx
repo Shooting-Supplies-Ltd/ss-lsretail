@@ -51,9 +51,9 @@ const Gun = (props) => {
         <meta charSet="UTF-8" />
       </Head>
       <main className="flex">
-        <div className="w-1/4" />
-        <div className="w-2/4 flex flex-wrap justify-center">
-          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
+        <div className="lg:w-1/4" />
+        <div className="lg:w-2/4 flex flex-wrap justify-center">
+          <div className="my-0 lg:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
             <div className="flex justify-center">
               <img
                 src={Gun.Images[0].FullPath}
@@ -154,7 +154,7 @@ const Gun = (props) => {
             </div>
           </div>
         </div>
-        <div className="w-1/4" />
+        <div className="lg:w-1/4" />
       </main>
     </Layout>
   );

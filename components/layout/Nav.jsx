@@ -18,7 +18,7 @@ const Nav = () => {
   return (
     <nav>
       {displayMobileMenu && (
-        <div className="absolute z-20 top-24 bg-ssblue w-full text-white shadow-2xl">
+        <div className="absolute z-20 top-28 bg-ssblue w-full text-white shadow-2xl">
           <ul className="my-6 text-center uppercase font-bold">
             <Link href="/guns">
               <a>
@@ -67,11 +67,11 @@ const Nav = () => {
         </div>
       )}
       <div className="lg:bg-ssblue">
-        <div className="flex justify-between lg:justify-start h-24 lg:h-12 lg:mx-12 shadow lg:shadow-none">
+        <div className="flex justify-between lg:justify-start h-28 lg:h-12 lg:mx-12 shadow lg:shadow-none">
           <div className="lg:w-1/6 lg:flex lg:justify-center p-2">
             <Link href="/">
               <img
-                className="lg:absolute lg:z-10 lg:top-1 h-20 lg:h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
+                className="lg:absolute lg:z-10 lg:top-1 h-24 lg:h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
                 src="/logos/Logo.png"
                 alt="Shooting Supplies"
               />

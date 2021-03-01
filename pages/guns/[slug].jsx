@@ -32,18 +32,18 @@ const Gun = (props) => {
   return (
     <Layout>
       <Head>
-        <title className="uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</title>
+        <title className="uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}</title>
         <meta
           name="description"
-          content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant}`}
+          content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content={`${Gun.Make}, ${Gun.Model}, ${Gun.Variant}, ${Gun.Mechanism}, ${Gun.Type}`} />
-        <meta property="og:title" content={`${Gun.Make} ${Gun.Model} ${Gun.Variant}`} />
+        <meta property="og:title" content={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`} />
         <meta
           property="og:description"
-          content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant}`}
+          content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
         />
         <meta property="og:image" content={Gun.Images[0].FullPath} />
         <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
@@ -57,7 +57,7 @@ const Gun = (props) => {
             <div className="flex justify-center">
               <img
                 src={Gun.Images[0].FullPath}
-                alt={`Image of the ${Gun.Make} ${Gun.Model} ${Gun.Variant}`}
+                alt={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
                 className="max-h-96"
               />
             </div>

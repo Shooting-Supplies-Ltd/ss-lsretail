@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const TopBar = () => (
-  <div className="flex mx-12 py-1">
+  <div className="hidden lg:flex mx-12 py-1">
     <div className="w-2/6" />
     <div className="w-2/6">
       <p className="text-center text-sm">

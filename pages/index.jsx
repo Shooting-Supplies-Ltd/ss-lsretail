@@ -1,10 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
-import Layout from '../components/layout/Layout'
-import HomeBanner from '../components/home/HomeBanner'
-import Categories from '../components/home/Categories'
-import HelpBanner from '../components/home/HelpBanner'
-import SubHeader from '../components/home/SubHeader'
+import Layout from '../components/layout/Layout';
+import HomeBanner from '../components/home/HomeBanner';
+import Categories from '../components/home/Categories';
+import HelpBanner from '../components/home/HelpBanner';
+import SubHeader from '../components/home/SubHeader';
 
 export default function Home() {
   return (
@@ -14,10 +14,10 @@ export default function Home() {
       </Head>
       <div>
         <div id="app-modal" />
-        <div>
+        <div className="hidden lg:block">
           <HomeBanner />
         </div>
-        <div>
+        <div className="hidden lg:block">
           <SubHeader />
         </div>
         <div>
@@ -25,6 +25,6 @@ export default function Home() {
         </div>
       </div>
       <HelpBanner />
-    </Layout >
-  )
+    </Layout>
+  );
 }

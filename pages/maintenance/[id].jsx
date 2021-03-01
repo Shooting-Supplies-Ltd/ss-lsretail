@@ -43,6 +43,14 @@ const Item = ({ item }) => {
   //   unitPrice: item.Prices.ItemPrice[0].amount,
   // }
 
+  const Mailto = ({ email, subject = '', body = '', children }) => {
+    let params = subject || body ? '?' : '';
+    if (subject) params += `subject=${encodeURIComponent(subject)}`;
+    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+    return <a href={`mailto:${email}${params}`}>{children}</a>;
+  };
+
   if (!item) {
     return <div>Loading...</div>;
   }
@@ -102,6 +110,27 @@ const Item = ({ item }) => {
         <div id="fulldescription" className="mx-0 lg:mx-72 mt-8 mb-12 p-6 bg-gray-50 rounded-lg">
           <h2 className="font-bold text-2xl">Full Description</h2>
           <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 prose" />
+        </div>
+        <div className="lg:mx-72 mx-4">
+          <h3 className="my-8 text-2xl font-black uppercase">
+            Please Contact Us to Purchase this item or for more information
+          </h3>
+        </div>
+        <div className="lg:mx-72 flex mx-4 my-8">
+          <a
+            href="tel:01527831261"
+            className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded"
+          >
+            Call Us
+          </a>
+          <Mailto
+            email="info@shootingsuppliesltd.co.uk"
+            subject={`ITEM ENQUIRY: ${item.description} / ${item.customSku}`}
+          >
+            <p className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">
+              Email
+            </p>
+          </Mailto>
         </div>
       </main>
     </Layout>

@@ -36,7 +36,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -75,9 +75,7 @@ export async function getStaticProps({ params: { slug } }) {
   const postData = await data.json();
   const post = postData.data.allPost[0];
 
-  return {
-    props: { post },
-  };
+  return { props: { post }, revalidate: 60 };
 }
 
 export default function Post({ post }) {

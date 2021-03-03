@@ -32,7 +32,7 @@ export async function getStaticProps() {
   const postsData = await data.json();
   const posts = postsData.data.allPost;
 
-  return { props: { posts } };
+  return { props: { posts }, revalidate: 60 };
 }
 
 const Blog = ({ posts }) => (

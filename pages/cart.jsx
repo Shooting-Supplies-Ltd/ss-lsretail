@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { setCookie, destroyCookie } from 'nookies';
-import Link from 'next/link';
+
+import Head from 'next/head';
 import { fetchPostJSON } from './api/api-helpers';
 import CartItems from '../components/cart/CartItems';
 import Layout from '../components/layout/Layout';

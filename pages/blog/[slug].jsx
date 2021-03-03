@@ -91,6 +91,10 @@ export default function Post({ post }) {
     },
   };
 
+  if (!post) {
+    return <Layout>Loading...</Layout>;
+  }
+
   return (
     <Layout>
       <Head>

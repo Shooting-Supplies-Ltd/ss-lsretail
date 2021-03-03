@@ -118,7 +118,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   return (
     <Layout>
       <Head>
-        <title>New & Used Firearms, Shotguns & Airguns - Shooting Supplies Ltd</title>
+        <title>New & Used Firearms, Shotguns & Airguns | Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div className="flex mx-12 my-16">

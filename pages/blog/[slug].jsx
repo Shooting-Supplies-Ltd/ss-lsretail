@@ -108,7 +108,7 @@ export default function Post({ post }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta charSet="UTF-8" />
       </Head>
-      <div className="mx-96 my-12">
+      <div className="mx-4 lg:mx-96 my-12">
         <article className="mt-4">
           <h1 className="text-3xl font-black uppercase">{post.title}</h1>
           <div className="prose prose-lg max-w-none">

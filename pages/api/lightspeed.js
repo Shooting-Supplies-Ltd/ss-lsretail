@@ -26,6 +26,31 @@ const getHeader = async () => {
 
 const makeRequest = async (url) => {
   const axiosConfig = await getHeader();
+
+  api.interceptors.response.use(
+    function (response) {
+      return response;
+    },
+    async function (error) {
+      await new Promise(function (res) {
+        setTimeout(function () {
+          res();
+        }, 2000);
+      });
+
+      const originalRequest = error.config;
+
+      if (error.response.status === 401 && !originalRequest._retry) {
+        originalRequest._retry = true;
+        const refreshedHeader = await getHeader();
+        api.defaults.headers = refreshedHeader;
+        originalRequest.headers = refreshedHeader;
+        return Promise.resolve(api(originalRequest));
+      }
+      return Promise.reject(error);
+    }
+  );
+
   const data = await api.get(url, axiosConfig).catch((err) => console.error(err.response.data));
   return data;
 };

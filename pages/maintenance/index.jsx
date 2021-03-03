@@ -120,7 +120,7 @@ const Maintenance = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Gun Cleaning Kits & Cleaning Supplies - Shooting Supplies Ltd</title>
+        <title>Gun Cleaning Kits & Cleaning Supplies | Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">

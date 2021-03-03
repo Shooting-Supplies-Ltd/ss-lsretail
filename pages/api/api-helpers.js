@@ -1,11 +1,11 @@
-import { getItems } from './lightspeed'
+import { getItems } from './lightspeed';
 
 export async function fetchGetJSON(url) {
   try {
-    const data = await fetch(url).then((res) => res.json())
-    return data
+    const data = await fetch(url).then((res) => res.json());
+    return data;
   } catch (err) {
-    throw new Error(err.message)
+    throw new Error(err.message);
   }
 }
 
@@ -24,29 +24,24 @@ export async function fetchPostJSON(url, data) {
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *client
       body: JSON.stringify(data || {}), // body data type must match "Content-Type" header
-    })
-    return await response.json() // parses JSON response into native JavaScript objects
+    });
+    return await response.json(); // parses JSON response into native JavaScript objects
   } catch (err) {
-    console.log(err)
-    throw new Error(err.message)
+    throw new Error(err.message);
   }
 }
 
 export async function getInventory() {
-  const res = await getItems()
-  const data = await res.data
-  const items = data.Item
+  const res = await getItems();
+  const data = await res.data;
+  const items = data.Item;
 
-  const products = items.map(item => {
-    return (
-      {
-        "name": item.description,
-        "sku": item.customSku,
-        "price": item.Prices.ItemPrice[0].amount.replace('.', ''),
-        "image": item.Images ? `${item.Images.Image.baseImageURL}/w_250/${item.Images.Image.publicID}.jpg` : null,
-        "currency": 'GBP'
-      }
-    )
-  })
-  return products
+  const products = items.map((item) => ({
+    name: item.description,
+    sku: item.customSku,
+    price: item.Prices.ItemPrice[0].amount.replace('.', ''),
+    image: item.Images ? `${item.Images.Image.baseImageURL}/w_250/${item.Images.Image.publicID}.jpg` : null,
+    currency: 'GBP',
+  }));
+  return products;
 }

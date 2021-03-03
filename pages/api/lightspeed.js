@@ -5,11 +5,9 @@ const token = [];
 
 const getToken = async (n) => {
   if (token[n] != null) {
-    console.log('Cached Token');
     return token[n];
   }
   const bearer = await refreshToken();
-  console.log('API Token');
   token[n] = bearer;
   return bearer;
 };

@@ -1,8 +1,6 @@
 import Link from 'next/link';
 
-export default function PostCard({ item, key }) {
-  console.log(item, key);
-
+export default function PostCard({ item }) {
   return (
     <div className="block h-80 border-2 border-gray-300 rounded-lg">
       <Link href={`/blog/[slug]?slug=${item.slug?.current}`}>

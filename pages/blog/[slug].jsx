@@ -81,6 +81,7 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function Post({ post }) {
   const router = useRouter();
+
   const serializers = {
     types: {
       youtube: ({ node }) => {

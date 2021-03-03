@@ -22,9 +22,9 @@ module.exports = {
             },
             img: {
               padding: '16px',
-              border: '2px solid',
-              borderColor: '#4B5563',
+              border: '2px solid gray',
               borderRadius: '5px',
+              width: '75%',
             },
           },
         },

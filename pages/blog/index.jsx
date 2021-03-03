@@ -15,12 +15,8 @@ export async function getStaticProps() {
         }
         excerpt
         mainImage
-        categories {
-          title
         }
-        publishedAt
-      }
-    }`,
+      }`,
   });
 
   const data = await fetch('https://sspj558i.api.sanity.io/v1/graphql/production/default', {

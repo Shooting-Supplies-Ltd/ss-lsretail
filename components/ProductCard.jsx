@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import slugify from 'slugify'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import slugify from 'slugify';
+import { useRouter } from 'next/router';
 
 const ProductCard = ({ item }) => {
-  const router = useRouter()
-  const slug = slugify(item.description.replace('/', '-')).toLocaleLowerCase()
-  const name = item.description
-  const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.jpg`
+  const router = useRouter();
+  const slug = slugify(item.description.replace('/', '-')).toLocaleLowerCase();
+  const name = item.description;
+  const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.jpg`;
 
   return (
     <div className="block h-80 border-2 border-gray-300 rounded-lg">
@@ -22,7 +22,7 @@ const ProductCard = ({ item }) => {
         </a>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;

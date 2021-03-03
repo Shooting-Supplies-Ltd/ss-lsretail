@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout';
 const Terms = () => (
   <Layout>
     <Head>
-      <title>Terms & Conditions - Shooting Supplies Ltd</title>
+      <title>Terms & Conditions | Shooting Supplies Ltd</title>
       <meta
         name="description"
         content="At Shooting Supplies Ltd we aim to be transparent with you. You are able to read our terms and conditions here."

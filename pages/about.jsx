@@ -1,9 +1,14 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/layout/Layout';
 
 export default function About() {
   return (
     <Layout>
+      <Head>
+        <title>About Us | Shooting Supplies Ltd</title>
+        <meta name="description" content="More about Shooting Supplies Ltd." />
+      </Head>
       <main className="mx-72 my-12">
         <h1 className="text-3xl font-black uppercase">About Us</h1>
         <p className="mt-4">

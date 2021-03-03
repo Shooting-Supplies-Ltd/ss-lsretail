@@ -6,7 +6,7 @@ export default function Privacy() {
   return (
     <Layout>
       <Head>
-        <title>Privacy - Shooting Supplies Ltd</title>
+        <title>Privacy | Shooting Supplies Ltd</title>
         <meta
           name="description"
           content="At Shooting Supplies Ltd we take your privacy seriously. Please find our privacy policies below."

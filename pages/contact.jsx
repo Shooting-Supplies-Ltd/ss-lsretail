@@ -1,7 +1,12 @@
+import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 
 const Contact = () => (
   <Layout>
+    <Head>
+      <title>Contact US | Shooting Supplies Ltd</title>
+      <meta name="description" content="Contact us with any of your questions, we're always happy to help." />
+    </Head>
     <main className="mx-96 my-12">
       <h1 className="text-3xl font-black">Contact Us</h1>
       <div className="my-8">

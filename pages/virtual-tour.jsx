@@ -1,8 +1,13 @@
+import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 
 export default function VirtualTour() {
   return (
     <Layout>
+      <Head>
+        <title>Virtual Tour | Shooting Supplies Ltd</title>
+        <meta name="description" content="Have a look around our shop using Google 360" />
+      </Head>
       <main className="mx-72 my-12">
         <h1 className="font-black text-3xl uppercase">Virtual Tour</h1>
         <p className="mt-4">Take a wander around our store using Google 360</p>

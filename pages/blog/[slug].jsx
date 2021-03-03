@@ -9,10 +9,10 @@ export async function getStaticPaths() {
   const query = JSON.stringify({
     query: `{
       allPost {
+        _id
         slug {
           current
         }
-        _id
       }
     }`,
   });
@@ -25,9 +25,10 @@ export async function getStaticPaths() {
     method: 'POST',
     body: query,
   });
+
   const slugData = await data.json();
 
-  const paths = slugData.data.allPost
+  const paths = slugData.data?.allPost
     .map((item) => ({
       params: { slug: item.slug.current },
     }))

@@ -5,7 +5,7 @@ export default function Finance() {
   return (
     <Layout>
       <Head>
-        <title>Finance - Shooting Supplies Ltd</title>
+        <title>Finance | Shooting Supplies Ltd</title>
         <meta name="description" content="We offer finance on in-store purchases through Deko" />
       </Head>
       <div className="mx-8 my-8 lg:mx-72 lg:my-12">

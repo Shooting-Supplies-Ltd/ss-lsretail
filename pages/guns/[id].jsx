@@ -7,8 +7,6 @@ const Gun = (props) => {
   const router = useRouter();
   const { Gun } = props;
 
-  // console.log(Gun);
-
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';
     if (subject) params += `subject=${encodeURIComponent(subject)}`;
@@ -187,8 +185,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { id } }) {
-  console.log(id);
-
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
   const data = await res.json();
   const { Guns } = data;

@@ -2,14 +2,14 @@ import Link from 'next/link';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, key }) => {
   const router = useRouter();
   const slug = slugify(item.description.replace('/', '-')).toLocaleLowerCase();
   const name = item.description;
   const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.jpg`;
 
   return (
-    <div className="block h-80 border-2 border-gray-300 rounded-lg">
+    <div className="block h-80 border-2 border-gray-300 rounded-lg" key={key}>
       <Link href={`${router.pathname}/[id]?id=${item.itemID ? item.itemID : item.itemMatrixID}&slug=${slug}`}>
         <a>
           <div className="flex justify-center h-48 overflow-hidden">

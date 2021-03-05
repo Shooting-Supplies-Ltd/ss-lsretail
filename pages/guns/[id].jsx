@@ -54,7 +54,7 @@ const Gun = (props) => {
         <div className="lg:w-1/4" />
         <div className="lg:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 lg:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
-            <div className="flex justify-center">
+            <div className="block w-full">
               <img
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}

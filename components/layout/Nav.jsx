@@ -27,17 +27,17 @@ const Nav = () => {
             </Link>
             <Link href="/ammo">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">AMMO</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">AMMO</li>
               </a>
             </Link>
             <Link href="/accessories">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">ACCESSORIES</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">ACCESSORIES</li>
               </a>
             </Link>
             <Link href="/optics">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
               </a>
             </Link>
             {/* <Link href="/security">
@@ -47,17 +47,17 @@ const Nav = () => {
               </Link> */}
             <Link href="/maintenance">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
               </a>
             </Link>
             <Link href="/clothing">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
               </a>
             </Link>
             <Link href="/blog">
               <a>
-                <li className="mt-2 text-white hover:text-ssorange font-bold text-2xl">BLOG</li>
+                <li className="mt-3 text-white hover:text-ssorange font-bold text-2xl">BLOG</li>
               </a>
             </Link>
             {/* <Link href="/sale">

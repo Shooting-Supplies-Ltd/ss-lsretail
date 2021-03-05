@@ -7,6 +7,8 @@ const Gun = (props) => {
   const router = useRouter();
   const { Gun } = props;
 
+  // console.log(Gun);
+
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';
     if (subject) params += `subject=${encodeURIComponent(subject)}`;
@@ -61,7 +63,9 @@ const Gun = (props) => {
                 className="object-scale-down"
               />
             </div>
-            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant}`}</h1>
+            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${
+              Gun.Model ? Gun.Model : Gun.Type
+            } ${Gun.Variant ? Gun.Variant : ''}`}</h1>
             <div className="mx-4 mt-4 border border-black">
               <table className="table-fixed w-full mb-4">
                 <thead className="bg-ssblue text-white">
@@ -173,24 +177,23 @@ export async function getStaticPaths() {
       }
       return {
         params: {
-          slug: slugify(`${gun?.Make}-${gun?.Model}-${gun?.Variant}-${gun.ID}`).toLowerCase(),
+          id: gun.ID,
         },
       };
     })
     .filter((path) => path);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const gunID = slug.substr(slug.lastIndexOf('-') + 1).toUpperCase();
+export async function getStaticProps({ params: { id } }) {
+  console.log(id);
 
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
   const data = await res.json();
   const { Guns } = data;
 
-  const Gun = Guns.find((gun) => gun.ID === gunID);
+  const Gun = Guns.find((gun) => gun.ID === id);
 
   return {
     props: {

@@ -25,7 +25,7 @@ export async function getStaticProps({ params: { id } }) {
 
   return {
     props: { item },
-    revalidate: 100,
+    revalidate: 60,
   };
 }
 

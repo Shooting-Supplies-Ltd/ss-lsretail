@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Categories = () => (
-  <div className="lg:mx-36 mx-2 lg:my-24 my-8">
+  <div className="xl:mx-36 mx-2 xl:my-24 my-8">
     <div className="flex justify-center">
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
+      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8">
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/guns">

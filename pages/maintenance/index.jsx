@@ -124,7 +124,7 @@ const Maintenance = ({ items, categories, brands }) => {
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-16">
-        <div className="hidden lg:block lg:w-1/6 p-2">
+        <div className="hidden xl:block xl:w-1/6 p-2">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -134,8 +134,8 @@ const Maintenance = ({ items, categories, brands }) => {
             handleBrandChange={handleBrandChange}
           />
         </div>
-        <main className="lg:w-5/6 p-2">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+        <main className="xl:w-5/6 p-2">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredItems
               ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
               : items.map((item) => <ProductCard item={item} key={item.customSku} />)}

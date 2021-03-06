@@ -11,7 +11,7 @@ const Terms = () => (
         content="At Shooting Supplies Ltd we aim to be transparent with you. You are able to read our terms and conditions here."
       />
     </Head>
-    <div className="mx-8 my-8 lg:mx-72 lg:my-12">
+    <div className="mx-8 my-8 xl:mx-72 xl:my-12">
       <h1 id="about-us" className="mb-4 font-black text-4xl">
         Terms & Conditions
       </h1>

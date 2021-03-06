@@ -40,11 +40,11 @@ const Cart = () => {
         <title>Cart | Shooting Supplies Ltd</title>
         <meta name="description" content="Your Cart" />
       </Head>
-      <div className="lg:mx-96 lg:my-12">
+      <div className="xl:mx-96 xl:my-12">
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full shadow rounded overflow-hidden">
-            <table className="lg:min-w-full lg:leading-normal">
-              <thead className="lg:bg-black lg:text-white">
+            <table className="xl:min-w-full xl:leading-normal">
+              <thead className="xl:bg-black xl:text-white">
                 <tr>
                   <th className="px-5 py-3 border-b-2 border-gray-200 bg-black text-left text-xs font-semibold text-white uppercase tracking-wider" />
                   <th className="px-5 py-3 border-b-2 border-gray-200 bg-black text-left text-xs font-semibold text-white uppercase tracking-wider" />
@@ -65,23 +65,23 @@ const Cart = () => {
             </table>
           </div>
         </div>
-        <div className="lg:flex lg:justify-end">
-          <div className="lg:w-48 lg:flex lg:flex-col lg:border-2 lg:border-gray-200 lg:text-center">
-            <div className="lg:p-2 lg:bg-black lg:text-white lg:rounded-t">
+        <div className="xl:flex xl:justify-end">
+          <div className="xl:w-48 xl:flex xl:flex-col xl:border-2 xl:border-gray-200 xl:text-center">
+            <div className="xl:p-2 xl:bg-black xl:text-white xl:rounded-t">
               <h3>Cart Total</h3>
             </div>
-            <div className="lg:p-2 lg:text-center">
+            <div className="xl:p-2 xl:text-center">
               <p>{formattedTotalPrice}</p>
             </div>
           </div>
         </div>
-        <div className="lg:mt-4 lg:flex lg:justify-end">
-          <button onClick={clearCookie} className="lg:mt-4 lg:bg-black lg:text-white lg:rounded lg:p-2 ">
+        <div className="xl:mt-4 xl:flex xl:justify-end">
+          <button onClick={clearCookie} className="xl:mt-4 xl:bg-black xl:text-white xl:rounded xl:p-2 ">
             Clear Cart
           </button>
           <button
             onClick={handleCheckout}
-            className="lg:ml-4 lg:mt-4 lg:bg-black lg:text-white lg:rounded lg:p-2"
+            className="xl:ml-4 xl:mt-4 xl:bg-black xl:text-white xl:rounded xl:p-2"
             disabled
           >
             Pay Now

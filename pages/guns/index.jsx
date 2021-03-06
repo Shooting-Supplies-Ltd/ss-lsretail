@@ -122,7 +122,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div className="flex mx-12 my-16">
-        <div className="hidden lg:block lg:w-1/6 p-2">
+        <div className="hidden xl:block xl:w-1/6 p-2">
           <GunFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -138,8 +138,8 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             handleMechanismChange={handleMechanismChange}
           />
         </div>
-        <main className="lg:w-5/6 p-2">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+        <main className="xl:w-5/6 p-2">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredGuns
               ? filteredGuns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)
               : guns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)}

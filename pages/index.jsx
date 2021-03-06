@@ -14,10 +14,10 @@ export default function Home() {
       </Head>
       <div>
         <div id="app-modal" />
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <HomeBanner />
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <SubHeader />
         </div>
         <div>

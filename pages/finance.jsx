@@ -8,7 +8,7 @@ export default function Finance() {
         <title>Finance | Shooting Supplies Ltd</title>
         <meta name="description" content="We offer finance on in-store purchases through Deko" />
       </Head>
-      <div className="mx-8 my-8 lg:mx-72 lg:my-12">
+      <div className="mx-8 my-8 xl:mx-72 xl:my-12">
         <h1 id="privacy" className="mb-4 font-black text-4xl">
           Finance
         </h1>

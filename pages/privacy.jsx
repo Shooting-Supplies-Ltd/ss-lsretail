@@ -12,7 +12,7 @@ export default function Privacy() {
           content="At Shooting Supplies Ltd we take your privacy seriously. Please find our privacy policies below."
         />
       </Head>
-      <div className="mx-8 my-8 lg:mx-72 lg:my-12">
+      <div className="mx-8 my-8 xl:mx-72 xl:my-12">
         <h1 id="privacy" className="mb-4 font-black text-4xl">
           Privacy Policy
         </h1>

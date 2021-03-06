@@ -66,18 +66,18 @@ const Nav = () => {
           </ul>
         </div>
       )}
-      <div className="lg:bg-ssblue">
-        <div className="flex justify-between lg:justify-start h-28 lg:h-12 lg:mx-12 shadow lg:shadow-none">
-          <div className="lg:w-1/6 lg:flex lg:justify-center p-2">
+      <div className="xl:bg-ssblue">
+        <div className="flex justify-between xl:justify-start h-28 xl:h-12 xl:mx-12 shadow xl:shadow-none">
+          <div className="xl:w-1/6 xl:flex xl:justify-center p-2">
             <Link href="/">
               <img
-                className="lg:absolute lg:z-10 lg:top-1 h-24 lg:h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
+                className="xl:absolute xl:z-10 xl:top-1 h-24 xl:h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
                 src="/logos/Logo.png"
                 alt="Shooting Supplies"
               />
             </Link>
           </div>
-          <div className="hidden lg:w-4/6 lg:p-2 lg:flex items-center justify-center">
+          <div className="hidden xl:w-4/6 xl:p-2 xl:flex items-center justify-center">
             <ul className="flex justify-center space-x-6 p-2">
               <Link href="/guns">
                 <a>
@@ -125,7 +125,7 @@ const Nav = () => {
               {cartCount > 0 && cartDisplay && <CartDisplay />}
             </div>
           </div>
-          <div className="mr-4 flex items-center text-3xl lg:hidden">
+          <div className="mr-4 flex items-center text-3xl xl:hidden">
             <CgMenuRight onClick={() => setDisplayMobileMenu(!displayMobileMenu)} />
           </div>
         </div>

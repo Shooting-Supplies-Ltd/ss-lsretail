@@ -50,7 +50,7 @@ const Blog = ({ posts }) => (
       <meta charSet="UTF-8" />
     </Head>
     <main className="my-28 mx-12">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
         {posts && posts.map((post) => <PostCard item={post} key={post._id} />)}
       </div>
     </main>

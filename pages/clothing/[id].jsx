@@ -79,15 +79,15 @@ const Item = ({ item }) => {
         <meta charSet="UTF-8" />
       </Head>
       <main>
-        <div className="lg:mx-72 lg:my-12 flex flex-col lg:flex-row justify-center">
-          <div className="w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
+        <div className="xl:mx-72 xl:my-12 flex flex-col xl:flex-row justify-center">
+          <div className="w-3/4 mx-auto xl:mx-0 xl:w-1/2 p-2">
             <img
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`}
               alt={`${item.description}`}
               className="object-scale-down"
             />
           </div>
-          <div className="p-6 lg:w-1/2 p-2 bg-gray-50 rounded-lg">
+          <div className="p-6 xl:w-1/2 p-2 bg-gray-50 rounded-lg">
             <h1 className="text-4xl font-bold">{item.description}</h1>
             <p>SKU: {item.customSku}</p>
             <p className="mt-2 font-bold text-4xl uppercase">
@@ -102,22 +102,22 @@ const Item = ({ item }) => {
               <p className="mt-4 text-red-500 font-bold text-lg">Out of Stock - Check Back or Call for Availability</p>
             )} */}
             <p className="mt-8" dangerouslySetInnerHTML={productDescriptionShort()} />
-            <a href="#fulldescription" className="hidden lg:block">
+            <a href="#fulldescription" className="hidden xl:block">
               <p className="mt-2 text-ssblue hover:text-ssorange">Full Description..</p>
             </a>
           </div>
         </div>
-        <hr className="lg:hidden my-8" />
-        <div id="fulldescription" className="mx-0 lg:mx-72 mt-8 mb-12 p-6 bg-gray-50 rounded-lg">
+        <hr className="xl:hidden my-8" />
+        <div id="fulldescription" className="mx-0 xl:mx-72 mt-8 mb-12 p-6 bg-gray-50 rounded-lg">
           <h2 className="font-bold text-2xl">Full Description</h2>
           <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 prose" />
         </div>
-        <div className="lg:mx-72 mx-4">
+        <div className="xl:mx-72 mx-4">
           <h3 className="my-8 text-2xl font-black uppercase">
             Please Contact Us to Purchase this item or for more information
           </h3>
         </div>
-        <div className="lg:mx-72 flex mx-4 my-8">
+        <div className="xl:mx-72 flex mx-4 my-8">
           <a
             href="tel:01527831261"
             className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded"

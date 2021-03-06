@@ -6,6 +6,7 @@ import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
+import StockMessage from '../../components/StockMessage';
 
 export async function getStaticProps() {
   // Get Items/Products
@@ -125,7 +126,7 @@ const Accessories = ({ items, categories, brands }) => {
         <title>Outdoor Clothing & Footwear for all Weathers | Shooting Supplies Ltd</title>
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
-      <div className="flex mx-12 my-16">
+      <div className="flex mx-12 my-4 xl:my-16">
         <div className="hidden xl:block xl:w-1/6 p-2">
           <ProductFilter
             categories={categories}
@@ -137,7 +138,10 @@ const Accessories = ({ items, categories, brands }) => {
           />
         </div>
         <main className="xl:w-5/6 p-2">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
+          <div className="mb-4 xl:hidden text-center">
+            <StockMessage />
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
               ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
               : items.map((item) => <ProductCard item={item} key={item.customSku} />)}

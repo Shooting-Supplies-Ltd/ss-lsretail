@@ -141,7 +141,7 @@ const Maintenance = ({ items, categories, brands }) => {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
+              ? filteredItems.map((item) => <ProductCard item={item} key={item.itemID} />)
               : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
           </div>
         </main>

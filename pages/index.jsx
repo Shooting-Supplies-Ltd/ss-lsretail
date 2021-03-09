@@ -11,6 +11,7 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier</title>
+        <meta name="description" content="The Midlands leading Shooting Supplier" />
       </Head>
       <div>
         <div id="app-modal" />

@@ -124,6 +124,10 @@ const Accessories = ({ items, categories, brands }) => {
     <Layout>
       <Head>
         <title>Outdoor Clothing & Footwear for all Weathers | Shooting Supplies Ltd</title>
+        <meta
+          name="description"
+          content="Shooting & outdoor clothing for all weathers and conditions. | Shooting Supplies Ltd"
+        />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

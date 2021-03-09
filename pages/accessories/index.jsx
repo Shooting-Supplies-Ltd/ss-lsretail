@@ -124,6 +124,7 @@ const Accessories = ({ items, categories, brands }) => {
     <Layout>
       <Head>
         <title>Shooting Accessories & Attachments | Shooting Supplies Ltd</title>
+        <meta name="description" content="Bipods & Supports, Mounts & Fixings, Spares & Accessories & More" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

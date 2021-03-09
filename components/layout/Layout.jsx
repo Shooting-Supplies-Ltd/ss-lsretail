@@ -42,8 +42,6 @@ const Layout = (props) => {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-        <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101209513);</script>
-        <script async src="//static.getclicky.com/js" />
       </Head>
       <Header />
       <div className="flex-grow">{props.children}</div>

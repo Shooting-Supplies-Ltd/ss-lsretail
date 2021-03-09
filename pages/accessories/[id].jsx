@@ -59,6 +59,8 @@ const Item = ({ item }) => {
 
   const productDescriptionShort = () => ({ __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' });
 
+  const price = parseFloat(item.Prices.ItemPrice[0].amount).toFixed(2).replace('.', '');
+
   return (
     <Layout>
       <Head>
@@ -92,7 +94,7 @@ const Item = ({ item }) => {
             <p>SKU: {item.customSku}</p>
             <p className="mt-2 font-bold text-4xl uppercase">
               {formatCurrencyString({
-                value: item.Prices.ItemPrice[0].amount.replace('.', ''),
+                value: price,
                 currency: 'GBP',
               })}
             </p>
@@ -103,7 +105,7 @@ const Item = ({ item }) => {
             )}
             <p className="mt-8" dangerouslySetInnerHTML={productDescriptionShort()} />
             <a href="#fulldescription" className="hidden xl:block">
-              <p className="mt-2 text-ssblue hover:text-ssorange">Full Description..</p>
+              <p className="mt-6 text-ssblue hover:text-ssorange">Full Description..</p>
             </a>
           </div>
         </div>

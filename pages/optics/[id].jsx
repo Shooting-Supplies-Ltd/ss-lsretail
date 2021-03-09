@@ -59,6 +59,8 @@ const Item = ({ item }) => {
 
   const productDescriptionShort = () => ({ __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' });
 
+  const price = parseFloat(item.Prices.ItemPrice[0].amount).toFixed(2).replace('.', '');
+
   return (
     <Layout>
       <Head>
@@ -90,9 +92,9 @@ const Item = ({ item }) => {
           <div className="p-6 xl:w-1/2 p-2 bg-gray-50 rounded-lg">
             <h1 className="text-4xl font-bold">{item.description}</h1>
             <p>SKU: {item.customSku}</p>
-            <p className="mt-2 font-bold text-4xl uppercase">
+            <p className="mt-6 font-bold text-4xl uppercase">
               {formatCurrencyString({
-                value: item.Prices.ItemPrice[0].amount.replace('.', ''),
+                value: price,
                 currency: 'GBP',
               })}
             </p>

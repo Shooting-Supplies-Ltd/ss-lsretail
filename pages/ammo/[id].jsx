@@ -105,7 +105,7 @@ const Item = ({ item }) => {
             )}
             <p className="mt-8" dangerouslySetInnerHTML={productDescriptionShort()} />
             <a href="#fulldescription" className="hidden xl:block">
-              <p className="mt-2 text-ssblue hover:text-ssorange">Full Description..</p>
+              <p className="mt-6 text-ssblue hover:text-ssorange">Full Description..</p>
             </a>
           </div>
         </div>

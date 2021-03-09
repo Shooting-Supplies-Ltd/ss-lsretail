@@ -5,14 +5,14 @@ excerpt: >-
   Shooting Supplies opened in the heart of Bromsgrove in 2002 and just four years later moved to its present location offering a purpose-built shop featuring a dedicated gun room.
 date: 2019-12-12T00:00:00
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.webp
 author: Shooting Supplies
 keywords: about us, shooting supplies ltd, bromsgrove, midlands
 ---
 
 # **About Us**
 
-![Shooting Supplies Store](https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg)
+![Shooting Supplies Store](https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.webp)
 
 Shooting Supplies opened in the heart of Bromsgrove in 2002 and just four years later moved to its present location offering a purpose-built shop featuring a dedicated gun room on the outskirts of the town.
 
@@ -21,7 +21,6 @@ The 3000 sq ft premises offers customers a huge selection of products in a conve
 Knowledgeable and experienced staff are always on hand to provide a helpful and friendly service to help fulfil our number one aim, for customers to leave the shop happy with their purchases and confident in the advice they have received. Our philosophy that ‘customer service is paramount’ is key to our business.
 
 Shooting Supplies cater for all disciplines of shooting, offering all of the necessary accessories, enabling customers to visit just one shop to fill all of their shooting needs.
-  
 
 **Have a look around our store in Google 360.**
 

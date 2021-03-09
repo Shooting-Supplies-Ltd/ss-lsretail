@@ -5,7 +5,7 @@ date: "2019-09-20"
 excerpt: >-
   Ruger went big with its popular Ruger Precision platform and gave us the meaner Ruger Precision Lapua .338 Magnum rifle.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222249/Blog/GOTW-Ruger-Precision-338-Lapua-Magnum.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222249/Blog/GOTW-Ruger-Precision-338-Lapua-Magnum.webp
 category: News
 keywords: lapua, .338, ruger precision, long range rifle
 author: Shooting Supplies
@@ -21,11 +21,11 @@ Ruger states: “These new magnum calibre models pair exceptional long-range acc
 
 The low cost of this rifle makes it an attractive purchase, not only for first-time long-distance shooters but also a compelling choice for those already in the hobby. Pair the Ruger Precision Lapua .338 Magnum with an optic and match ammunition and this rifle is difficult to beat.
 
-****
+---
 
-![Ruger Precision 338 Lapua Rifle Front Right Hand View](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222255/guns/Ruger-Precision-Lapua-338-Mag-rh.jpg)
+![Ruger Precision 338 Lapua Rifle Front Right Hand View](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222255/guns/Ruger-Precision-Lapua-338-Mag-rh.webp)
 
-****
+---
 
 ## **Ruger Precision Lapua .338 Magnum Features**
 
@@ -52,11 +52,11 @@ The low cost of this rifle makes it an attractive purchase, not only for first-t
 - Hand-guard includes integral QD sling attachment points to eliminate the need for additional adaptors, a target-style flat bottom that improves stability and an integral bottom 1.50" dovetail that is compatible with RRS S.O.A.R. and similar QD systems.
 - Also includes: two, 5-round AI-Style magazines.
 
-****
+---
 
-![Ruger Precision 338 Lapua Magnum Rifle, Rear Right Hand View](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222253/guns/Ruger-Precision-Lapua-338-Mag-rh-2.jpg)
+![Ruger Precision 338 Lapua Magnum Rifle, Rear Right Hand View](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222253/guns/Ruger-Precision-Lapua-338-Mag-rh-2.webp)
 
-****
+---
 
 ## **Ruger Precision Lapua .338 Magnum Specs**
 
@@ -75,6 +75,6 @@ The low cost of this rifle makes it an attractive purchase, not only for first-t
 - Folded Length - 40.35"
 - Width - 3.50"
 
-****
+---
 
 Call us on [01527831261](tel:01527831261) to reserve yours today.

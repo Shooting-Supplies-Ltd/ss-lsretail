@@ -19,22 +19,21 @@ The real original Winchester has arrived. Black Walnut straight grip stock, poli
 
 Nicknamed “Yellow Boy” because of its bright brass receiver, the Model 1866 Short Rifle is built for cowboy action competitors, hunters, casual shooters and anybody who wants to spend a day at the range with a real lever-action classic.
 
-****
+---
 
-![Winchester 1866 .38 Special Banner](https://res.cloudinary.com/shooting-supplies/image/upload/v1592557707/Blog/Winchester_Model_1866_Short_Rifle_-_banner_m5suck.jpg)
+![Winchester 1866 .38 Special Banner](https://res.cloudinary.com/shooting-supplies/image/upload/v1592557707/Blog/Winchester_Model_1866_Short_Rifle_-_banner_m5suck.webp)
 
-
-****
+---
 
 This remarkable rifle starts with walnut straight grip stock with a satin oil finish that’s velvet smooth to the touch. Features a classic rifle-style forearm with forearm cap for the legendary look and feel of the original Model 1866.
 
 Sporting a 20" barrel, the rifle includes several important improvements designed by the former Winchester factory manager Nelson King. These improvements included a closed magazine tube, a right side loading gate and a wooden forearm.
 
-****
+---
 
-![The Winchester 1866 .38 Special, "Yellow Boy"](https://res.cloudinary.com/shooting-supplies/image/upload/v1592557712/Blog/Winchester_Model_1866_Short_Rifle_-_534244188_m1rjs2.jpg)
+![The Winchester 1866 .38 Special, "Yellow Boy"](https://res.cloudinary.com/shooting-supplies/image/upload/v1592557712/Blog/Winchester_Model_1866_Short_Rifle_-_534244188_m1rjs2.webp)
 
-****
+---
 
 ## **Winchester 1866 .38 Special Features**
 
@@ -43,12 +42,12 @@ Sporting a 20" barrel, the rifle includes several important improvements designe
 - FULL BRIGHT POLISH gives a deep, traditional glow to the brass receiver, crescent buttplate and forearm cap
 - CRESCENT BRASS BUTTPLATE slips right into your shoulder for a more solid hold from any shooting position
 - FOLDING LADDER REAR SIGHT WITH MARBLE ARMS® GOLD BEAD FRONT SIGHT get you on target quickly
-- OPEN TOP EJECTION PORT for easier single cartridge loading and smoother, more reliable ejection of fired cases 
+- OPEN TOP EJECTION PORT for easier single cartridge loading and smoother, more reliable ejection of fired cases
 - FULL-LENGTH MAGAZINE TUBE aids in offhand balance and provides plenty of ammo capacity for hunting, competition and casual plinking
 - BLUED STEEL LOADING GATE gives smoother loading and adds a touch of contrast against the highly polished brass receiver
 - BLUED STEEL ACTION SCREWS create an added touch of tasteful contrast against the surface of the polished brass receiver
 
-****
+---
 
 Here’s your chance to own the rifle that started it all — the legendary Winchester® Model 1866 “Yellow Boy.”
 

@@ -6,7 +6,7 @@ author: Shooting Supplies
 excerpt: >-
   We have a limited run of the Tippmann Arms Elite Alpha, see it now at the British Shooting Show or in-store.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1583521437/guns/Tippmann-Arms-Elite-Alpha.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1583521437/guns/Tippmann-Arms-Elite-Alpha.webp
 category: News
 keywords: tippmann arms, elite alpha, m4, 22lr, rifle
 ---
@@ -24,6 +24,6 @@ With all of the features of the Elite-L plus:
 
 This is one to catch before they sell out.
 
-****
+---
 
-![Tippmann Arms Elite Alpha Ltd Edition](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521437/guns/Tippmann-Arms-Elite-Alpha.jpg)
+![Tippmann Arms Elite Alpha Ltd Edition](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521437/guns/Tippmann-Arms-Elite-Alpha.webp)

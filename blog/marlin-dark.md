@@ -21,6 +21,6 @@ Designed for the modern hunter, they feature a stealthy-tough black matte parker
 
 This is one to look out for and we shall update you as soon as they come into stock.
 
-****
+---
 
-![Marlin Dark, coming soon.](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521466/Marlin-Dark-Poster.jpg)
+![Marlin Dark, coming soon.](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521466/Marlin-Dark-Poster.webp)

@@ -7,7 +7,7 @@ excerpt: >-
   accessories that will make great gifts for the shooters in your life.
 date: 2019-12-12T00:00:00
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1576320943/Blog/Christmas-Shooting-Supplies_buseop.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1576320943/Blog/Christmas-Shooting-Supplies_buseop.webp
 author: Shooting Supplies
 category: News
 keywords: christmas gifts, aimcam pro 2, bisley cleaning kit, 3M Peltor Sportac Hearing Protection
@@ -17,11 +17,11 @@ keywords: christmas gifts, aimcam pro 2, bisley cleaning kit, 3M Peltor Sportac 
 
 It’s often difficult to find gifts for our family and friends over the Christmas period but at Shooting Supplies, we stock a great number of shooting accessories that will make great gifts for the shooters in your life.
 
-****
+---
 
 ## **Capture all of the Action with these HD Camera Glasses**
 
-![Aimcam Pro 2 Video Glasses](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320987/Blog/Aimcam-pro-2_rhdvy6.jpg)
+![Aimcam Pro 2 Video Glasses](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320987/Blog/Aimcam-pro-2_rhdvy6.webp)
 
 The Pro 2 camera glasses from Aimcam are a great way to capture all of the action whether on the range or hunting. Featuring a Sony full HD Camera and high impact safety lenses the Pro 2 offers fantastic quality.
 
@@ -31,7 +31,7 @@ The Pro 2 camera glasses from Aimcam are a great way to capture all of the actio
 
 ## **Bisley's cleaning kits.**
 
-![Bisley Cleaning Kits](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320970/Blog/bisley-cleaning-kit_fe7kkp.jpg)
+![Bisley Cleaning Kits](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320970/Blog/bisley-cleaning-kit_fe7kkp.webp)
 
 We stock a range of cleaning kits & accessories from Bisley, the perfect choice for keeping guns in top condition.
 
@@ -41,7 +41,7 @@ We stock a range of cleaning kits & accessories from Bisley, the perfect choice 
 
 ## **Protect their hearing with 3M Peltor Sportac Hearing Protectors**
 
-![3M Peltor Sportac Hearing Protection](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320960/Blog/Peltor-3M-SporTac-Electronic-Ear-Muffs-Green_kak23y.jpg)
+![3M Peltor Sportac Hearing Protection](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320960/Blog/Peltor-3M-SporTac-Electronic-Ear-Muffs-Green_kak23y.webp)
 
 These highly rated hearing protectors are designed specifically for hunters and shooting. Lighting reactivity to loud impulse noises and distortion-free amplification of low-level sounds such as range commands keep them and their hearing protected.
 
@@ -51,7 +51,7 @@ These highly rated hearing protectors are designed specifically for hunters and 
 
 ## **Keep on shooting with a new Cartridge Bag**
 
-![Teales Cartridge Bag](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320950/Blog/Devonshire-Cartridge-Bag_ypnh9w.jpg)
+![Teales Cartridge Bag](https://res.cloudinary.com/shooting-supplies/image/upload/v1576320950/Blog/Devonshire-Cartridge-Bag_ypnh9w.webp)
 
 We have a great range of Teales and Beretta Cartridge Bags to choose from, offering something for all tastes and budgets.
 
@@ -61,7 +61,7 @@ Item pictured - Teales Devonshire Cartridge Bag - **In store £109.99**
 
 ## **For those most difficult to choose for**
 
-![Shooting Supplies Gift Voucher](https://res.cloudinary.com/shooting-supplies/image/upload/v1573564505/misc/Gift-Voucher_zmxwhk_phspb2_gg0ln5.jpg)
+![Shooting Supplies Gift Voucher](https://res.cloudinary.com/shooting-supplies/image/upload/v1573564505/misc/Gift-Voucher_zmxwhk_phspb2_gg0ln5.webp)
 
 We all have those people in our lives, the ones that are impossible to buy for! Here's our solution, a Shooting Supplies Gift Voucher. With 6 months to use them, they are an ideal gift for the shooter in your life.
 

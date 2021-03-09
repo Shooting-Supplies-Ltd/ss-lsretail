@@ -5,7 +5,7 @@ date: "2019-06-26"
 excerpt: >-
   It comes equipped with a 12″ Aluminium free floating M-lok hand guard and a smooth profile 16″ barrel.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223188/guns/TippmannArmsElite-L.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223188/guns/TippmannArmsElite-L.webp
 category: News
 keywords: tippmann arms, m4, 22lr, elite-l
 author: Shooting Supplies
@@ -13,18 +13,17 @@ author: Shooting Supplies
 
 # **Tippmann Arms Elite-L**
 
-
 The **Tippmann Arms Elite-L** rifle is a premium .22 caliber semi-automatic tactical rim-fire rifle.
 
 It comes equipped with a 12″ Aluminium free floating M-lok hand guard and a smooth profile 16″ barrel.
 
 Boasting the same ruggedness and reliability of the classic, the Elite-L is the next level of 22LR semi-auto performance rifles.
 
-****
+---
 
-![Tippmann Arms Elite-L](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223188/guns/TippmannArmsElite-L.jpg)
+![Tippmann Arms Elite-L](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223188/guns/TippmannArmsElite-L.webp)
 
-****
+---
 
 ### **The Tippmann Arms Elite-L Features:**
 
@@ -54,7 +53,7 @@ Boasting the same ruggedness and reliability of the classic, the Elite-L is the 
 - Owner’s Manual
 - Tactical Hard Case
 
-****
+---
 
 The Elite-L also comes complete with a spare magazine and hard case, priced at just **£999** (scope not included).
 
@@ -62,6 +61,6 @@ Call us on [01527831261](tel:01527831261) to check stock, reserve or to answer a
 
 See The Gun Mart Review [Here](https://www.gunmart.net/gun-reviews/firearms/rifles/tippman-.22lr-ar15)
 
-****
+---
 
 `youtube:https://youtu.be/ppi2TW4Wv5Y`

@@ -11,7 +11,7 @@ keywords: mossberg, mossberg 500, mossberg hushpower, mossberg 500 hushpower 410
 author: Shooting Supplies
 ---
 
-# ***Mossberg 500 Hushpower .410***
+# **_Mossberg 500 Hushpower .410_**
 
 In-store £699
 
@@ -19,7 +19,7 @@ One of the most popular brands of pump-action shotgun on the market today, Mossb
 
 ---
 
-![Image of the Mossberg 500 Hushpower .410](https://res.cloudinary.com/shooting-supplies/image/upload/v1605785412/Blog/Mossberg-500-hushpower/200930102023013-1_fb9be9.jpg)
+![Image of the Mossberg 500 Hushpower .410](https://res.cloudinary.com/shooting-supplies/image/upload/v1605785412/Blog/Mossberg-500-hushpower/200930102023013-1_fb9be9.webp)
 
 ---
 
@@ -33,7 +33,7 @@ All in all, there’s nothing to dislike about the Mossberg 500 Hushpower .410, 
 
 ---
 
-### ***Mossberg 500 Hushpower .410 Specs***
+### **_Mossberg 500 Hushpower .410 Specs_**
 
 - Brand : Mossberg
 - Type : Pump-Action Shotgun
@@ -46,4 +46,3 @@ All in all, there’s nothing to dislike about the Mossberg 500 Hushpower .410, 
 - Stock Finish : Synthetic Black
 
 ---
-

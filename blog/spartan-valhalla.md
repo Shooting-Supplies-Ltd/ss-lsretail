@@ -5,7 +5,7 @@ date: "2020-09-21"
 excerpt: >-
   A surprisingly strong, low-weight Bipod from Spartan
 thumbnail: >-
-    https://aws.shootingsuppliesltd.co.uk/wp-content/uploads/2020/09/dscetvcyy3usx5ajs0yx.jpg
+  https://aws.shootingsuppliesltd.co.uk/wp-content/uploads/2020/09/dscetvcyy3usx5ajs0yx.webp
 category: News
 keywords: spartan valhalla, valhalla bipod, spartan bipod
 author: Shooting Supplies
@@ -15,7 +15,7 @@ author: Shooting Supplies
 
 In-Store £399.95
 
-We're now stocking the Spartan range of bipods including the Valhalla, a surprisingly strong, low-weight (just 373g) bipod from Spartan. Manufactured using CNC machined 7075 aliminium and carbon fibre, the [Valhalla](/products/spartan-valhalla-bipod) has been designed and developed with input from professional hunters and the military, including personnel associated with Norwegian Special Forces. 
+We're now stocking the Spartan range of bipods including the Valhalla, a surprisingly strong, low-weight (just 373g) bipod from Spartan. Manufactured using CNC machined 7075 aliminium and carbon fibre, the [Valhalla](/products/spartan-valhalla-bipod) has been designed and developed with input from professional hunters and the military, including personnel associated with Norwegian Special Forces.
 
 The Valhalla is considered a heavy weight amongst its competition and is a fantastic tool that provides both value and functionality.
 

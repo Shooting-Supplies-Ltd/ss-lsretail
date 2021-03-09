@@ -38,7 +38,7 @@ const Item = ({ item }) => {
   //   sku: item.customSku,
   //   price: item.Prices.ItemPrice[0].amount.replace('.', ''),
   //   currency: 'GBP',
-  //   image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`,
+  //   image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
   //   itemID: item.itemID,
   //   unitPrice: item.Prices.ItemPrice[0].amount,
   // }
@@ -71,7 +71,7 @@ const Item = ({ item }) => {
         <meta property="og:description" content={`${productDescriptionShort()}`} />
         <meta
           property="og:image"
-          content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`}
+          content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
           alt={`${item.description}`}
         />
         <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
@@ -82,7 +82,7 @@ const Item = ({ item }) => {
         <div className="xl:mx-72 xl:my-12 flex flex-col xl:flex-row justify-center">
           <div className="w-3/4 mx-auto xl:mx-0 xl:w-1/2 p-2">
             <img
-              src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.jpg`}
+              src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
               alt={`${item.description}`}
               className="object-scale-down"
             />

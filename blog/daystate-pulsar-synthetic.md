@@ -5,7 +5,7 @@ date: "2019-08-02"
 excerpt: >-
   The Daystate Pulsar Synthetic PCP Air Rifle is a damned good air rifle, read on to learn more.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223228/Blog/GOTW-Daystate-Pulsar.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223228/Blog/GOTW-Daystate-Pulsar.webp
 category: News
 keywords: daystate pulsar, air rifle, pcp
 author: Shooting Supplies
@@ -21,11 +21,11 @@ _The Daystate Pulsar is a feat of engineering, featuring an electronic firing sy
 
 The Daystate Pulsar doesn't use the standard hammer and valve system, instead it uses a super consistent electric solenoid which reads the pressure within the air cylinder, and strikes the valve the exact amount to provide extreme consistency between shots.
 
-****
+---
 
-![Daystate Pulsar Synthetic Air Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223226/guns/Daystate-pulsar-Main.jpg)
+![Daystate Pulsar Synthetic Air Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223226/guns/Daystate-pulsar-Main.webp)
 
-****
+---
 
 The Pulsar's Synthetic stock is ergonomic and easy to handle and with a weaver rail underneath the barrel, mounting accessories such as bipods and lamps is effortless.
 

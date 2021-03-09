@@ -5,7 +5,7 @@ date: "2019-08-16"
 excerpt: >-
   Chiappa Firearms have introduced the new Nebula variant of its Rhino revolver, sporting a captivating multi-colored finish which almost instantly made it a star.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223307/guns/Chiappa-Rhino-Nebula.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223307/guns/Chiappa-Rhino-Nebula.webp
 category: News
 keywords: chiappa rhino, long barrel pistol, chiappa nebula
 author: Shooting Supplies
@@ -19,11 +19,11 @@ Chiappa Firearms have introduced the new Nebula variant of its Rhino revolver, s
 
 The Nebula has been featured in countless movies, TV shows and videogames – offering form, function, and performance in one package.
 
-****
+---
 
-![Chiappa Rhino Nebula](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223307/guns/Chiappa-Rhino-Nebula.jpg)
+![Chiappa Rhino Nebula](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223307/guns/Chiappa-Rhino-Nebula.webp)
 
-****
+---
 
 As with all the Rhino variants, the Chiappa Rhino Nebula revolver is built around a CNC-machined alloy frame and features a precision-built 6-inch (152 mm) steel barrel.
 
@@ -31,11 +31,11 @@ An octagonal cylinder reduces the overall width, allowing for easier holstering 
 
 The fixed front sight and adjustable rear sight of the Chiappa Firearms Rhino Nebula revolver offer high-visibility fiber optic inserts, and the barrel shroud sports a machined bottom Picatinny rail for tactical accessories and a top MIL-STD 1913 rail portion for reflex sights.
 
-****
+---
 
-![Nebula Pistol Grip](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223309/stocks/Chiappa-Rhino-Nebula-Grip.jpg)
+![Nebula Pistol Grip](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223309/stocks/Chiappa-Rhino-Nebula-Grip.webp)
 
-****
+---
 
 The Chiappa Rhino Nebula also comes with a distinctive blue laminate wood grip, conceived to match the colour tones of the deep space-inspired “Nebula” finish.
 

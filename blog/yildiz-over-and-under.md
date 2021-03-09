@@ -5,7 +5,7 @@ date: "2020-09-17"
 excerpt: >-
   A winner since it was introduced, the Yildiz over and under is a great shotgun at a competitive price range.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573565466/guns/Yildiz-OverUnder.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573565466/guns/Yildiz-OverUnder.webp
 category: Gun of the Week
 keywords: yildiz, over and under, shotgun
 author: Shooting Supplies
@@ -17,11 +17,11 @@ A winner since it was introduced, the Yildiz over and under is a great shotgun a
 
 Stocked in our store with a range of options, 12/20 & 410 bores and 26/28 & 30" lengths, ejector & non-ejector variations. The Yildiz over and under offers something for everyone, junior and adult shooters alike.
 
-****
+---
 
-![Yildiz Over & Under Shotgun](https://res.cloudinary.com/shooting-supplies/image/upload/v1573565466/guns/Yildiz-OverUnder.jpg)
+![Yildiz Over & Under Shotgun](https://res.cloudinary.com/shooting-supplies/image/upload/v1573565466/guns/Yildiz-OverUnder.webp)
 
-****
+---
 
 ## Yildiz 410
 
@@ -29,7 +29,7 @@ Voted Best New Shotgun for the Shooting Industry Awards on its debut back in 201
 
 **_In-store from £489_**
 
-****
+---
 
 ## Yildiz 20
 
@@ -39,7 +39,7 @@ The junior version provides a next step from the 410 for youngsters not quite re
 
 **_In-store from £589_**
 
-****
+---
 
 ## Yildiz 12
 

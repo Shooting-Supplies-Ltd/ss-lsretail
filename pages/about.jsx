@@ -30,7 +30,7 @@ export default function About() {
         </p>
         <div className="mt-6">
           <Image
-            src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg"
+            src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.webp"
             width={600}
             height={280}
             className="rounded-lg"

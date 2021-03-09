@@ -7,18 +7,18 @@ excerpt: >-
 keywords: gun cleaning, gun maintenance, bisley, cleaning kits, rust inhibitor
 author: Shooting Supplies
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223012/cleaning/Cleaning-Kit.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223012/cleaning/Cleaning-Kit.webp
 ---
 
 # **Gun Maintenance & Cleaning**
 
 If it’s a new cleaning kit for that great new shiny rifle you have just bought or replacement parts and chemicals you need, we have it all. Our extensive range of popular cleaning products, Hoppes, Bisley, Tetra, Napier, KG, Legia and Birchwood Casey enable you to keep your gun/equipment in tip top condition.
 
-****
+---
 
-![Bisley Cleaning Kit](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223012/cleaning/Cleaning-Kit.jpg)
+![Bisley Cleaning Kit](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223012/cleaning/Cleaning-Kit.webp)
 
-****
+---
 
 From bore guides, tools, blueing, cleaning chemicals, rods, cloths and patches to jags, mops, phosphor bronze brushes, oils, greases, pull-throughs and rust inhibitors. Alternatively, our range of cleaning kits offer everything you need in one box.
 

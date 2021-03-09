@@ -5,7 +5,7 @@ date: "2019-06-28"
 excerpt: >-
   Your household insurance policy may not be covering your guns & equipment.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222273/misc/hiscox-gun-cover.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222273/misc/hiscox-gun-cover.webp
 category: News
 keywords: gun insurance, shooting insurance
 author: Shooting Supplies
@@ -17,11 +17,11 @@ Your household insurance policy may not be covering your guns & equipment. As a 
 
 Get a quote for shooting insurance in seconds at [Gun Guard](https://www.gunguard.co.uk/?a=9382).
 
-****
+---
 
-![Hiscox Gun Cover](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222273/misc/hiscox-gun-cover.jpg)
+![Hiscox Gun Cover](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222273/misc/hiscox-gun-cover.webp)
 
-****
+---
 
 ### **What is shooting insurance and why would I need it?**
 
@@ -29,7 +29,7 @@ Household insurance often contains restrictions on cover, especially when items 
 
 Hiscox Gunguard is a specialist insurance policy to cover your guns and accessories.
 
-****
+---
 
 ### **What this shooting insurance policy cover?**
 
@@ -45,7 +45,7 @@ Low excess - £25
 
 Payment is by Interest Free Direct Debit installments with no deposit.
 
-****
+---
 
 ### **What's Not Covered?**
 
@@ -56,7 +56,7 @@ Payment is by Interest Free Direct Debit installments with no deposit.
 - Confiscation by government bodies
 - Business or professional use of guns
 
-****
+---
 
 ### **OK, Where Do I Sign Up?**
 

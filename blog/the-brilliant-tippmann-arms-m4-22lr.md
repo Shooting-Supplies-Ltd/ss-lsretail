@@ -13,19 +13,17 @@ author: Shooting Supplies
 
 # **The Brilliant Tippmann Arms M4 22LR**
 
-
 The Tippmann Arms M4 22 LR is a premium .22 calibre semi-automatic rifle with aluminium upper and lower receivers, with all the features of a true M4.
 
 The M4 22 LR is largely mil-spec compatible with fully functioning buffer tube**.**
 
 Available as a package with hard case and spare magazine from only £899.00
 
-****
+---
 
-![Tippmann Arms M4 22LR Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223057/guns/Tippmann-Arms-Image-1-from-their-Website.jpg)
+![Tippmann Arms M4 22LR Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223057/guns/Tippmann-Arms-Image-1-from-their-Website.webp)
 
-
-****
+---
 
 ## **Some of the amazing features of the Tippmann Arms M4 22 LR rifle include:**
 
@@ -46,9 +44,7 @@ Available as a package with hard case and spare magazine from only £899.00
 - Upgradeable trigger group set at
 - 4.5lbs standard
 
-
 ### **All Aluminium Receiver & Bolt Hold Open On Empty**
-
 
 - Selector Switch Safety
 - All Aluminium Receivers
@@ -57,13 +53,13 @@ Available as a package with hard case and spare magazine from only £899.00
 - Capacity - 20 Rounds
 - Take Down - Push Pin
 
-****
+---
 
-![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223059/tippmann/Tippmann-Arms-Image-4-from-their-Website.jpg)
-![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223062/tippmann/Tippmann-Arms-Image-2-from-their-Website.jpg)
-![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223085/tippmann/Tippmann-Arms-Image-3-from-their-Website.jpg)
+![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223059/tippmann/Tippmann-Arms-Image-4-from-their-Website.webp)
+![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223062/tippmann/Tippmann-Arms-Image-2-from-their-Website.webp)
+![](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223085/tippmann/Tippmann-Arms-Image-3-from-their-Website.webp)
 
-****
+---
 
 ## **Tippmann Arms M4 22 LR Specifications:**
 
@@ -80,11 +76,11 @@ Available as a package with hard case and spare magazine from only £899.00
 - Length - 31.25" - 34.5"
 - Weight - 5.7lbs.
 
-****
+---
 
 Gunmart have now reviewed this rifle in all it's forms, with some very positive feedback. You can find all the reviews here: [Gunmart Review](https://www.gunmart.net/gun-reviews/firearms/rifles/tippman-.22lr-ar15).
 
-****
+---
 
 ### Youtube Reviews & Information;
 
@@ -94,7 +90,7 @@ Gunmart have now reviewed this rifle in all it's forms, with some very positive 
 
 `youtube:https://www.youtube.com/watch?v=4Fa8Mdjmv\_M`
 
-****
+---
 
 ### [The Tippmann Arms M4 22 LR Available From Shooting Supplies Ltd From Only £899.00](/guns/brand/tippmann-arms)
 

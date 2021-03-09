@@ -5,7 +5,7 @@ date: "2019-10-11"
 excerpt: >-
   A special edition featuring upgraded American Walnut, matt black action, a gold trigger and a nice gold engraving.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1578939799/guns/Browning-B525-Shadow_m5omvi.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1578939799/guns/Browning-B525-Shadow_m5omvi.webp
 category: News
 keywords: browning b5252 shadow, shotgun, over and under
 author: Shooting Supplies
@@ -15,17 +15,17 @@ author: Shooting Supplies
 
 The Browning B525 Shadow over and under shotgun is based on the ever popular 525 action. A special edition featuring upgraded American Walnut, matt black action, a gold trigger and a nice gold engraving on the underside.
 
-****
+---
 
-![Browning B525 Shadow](https://res.cloudinary.com/shooting-supplies/image/upload/v1578939799/guns/Browning-B525-Shadow_m5omvi.jpg)
+![Browning B525 Shadow](https://res.cloudinary.com/shooting-supplies/image/upload/v1578939799/guns/Browning-B525-Shadow_m5omvi.webp)
 
-****
+---
 
 The barrels on 525 Shadow are of a monobloc construction, backbored, chrome lined to prevent corrosion. Chambered for 3in cartridges and has high performance proof marks.
 
 The Browning 525 Shadow offers great- affordability, perfect balance and a strong, reliable action with a touch of class.
 
-****
+---
 
 ## **Browning 525 Shadow Specifications:**
 

@@ -6,10 +6,10 @@ const ProductCard = ({ item, key }) => {
   const router = useRouter();
   const slug = slugify(item.description.replace('/', '-')).toLocaleLowerCase();
   const name = item.description;
-  const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.jpg`;
+  const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.webp`;
 
   return (
-    <div className="block h-80 border-2 border-gray-300 rounded-lg" key={key}>
+    <div className="block h-80 border-2 border-gray-300 rounded-lg" key={item.itemID}>
       <Link href={`${router.pathname}/[id]?id=${item.itemID ? item.itemID : item.itemMatrixID}&slug=${slug}`}>
         <a>
           <div className="flex justify-center h-48 overflow-hidden">

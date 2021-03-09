@@ -5,7 +5,7 @@ date: "2019-06-26"
 excerpt: >-
   The newest model to the Tippmann family is the Pro-S. The Pro-S has a polymer handguard, instead of the Aluminium version on the Elite.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223257/guns/Tippmann-Arms-Pro-S-800x320.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223257/guns/Tippmann-Arms-Pro-S-800x320.webp
 category: News
 keywords: tippmann arms, pro-s, m4, 22lr, rifle
 author: Shooting Supplies
@@ -21,11 +21,11 @@ As far as looks go, you would struggle to tell the difference between the Pro-S 
 
 This brings the weight of the Rifle down to under 5lbs, making it super fast!
 
-****
+---
 
-![Tippmann Arms Pro-S M4 Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223257/guns/Tippmann-Arms-Pro-S-800x320.jpg)
+![Tippmann Arms Pro-S M4 Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223257/guns/Tippmann-Arms-Pro-S-800x320.webp)
 
-****
+---
 
 The Pro-S also features a Gen 2 grip for better handling and a silver nickel coated bolt for extra durability.
 
@@ -33,7 +33,7 @@ Just like the other models of the Tippmann M4 family, the Pro-S comes with a har
 
 All of this for **£949**!!
 
-****
+---
 
 ### **Tippmann Arms M4 22 Pro-S Features & Specifications**
 
@@ -65,6 +65,6 @@ All of this for **£949**!!
 - Owner’s Manual
 - Tactical Hard Case
 
-****
+---
 
 To check stock, reserve or have any questions, call our experts on [01527831261](tel:01527831261).

@@ -3,7 +3,7 @@ slug: remington-700
 title: "The Remington 700"
 date: "2020-10-15"
 excerpt: >-
- The Remington 700? It's the number one bolt-action of all time, made in the U.S.A. for over 50 years.
+  The Remington 700? It's the number one bolt-action of all time, made in the U.S.A. for over 50 years.
 thumbnail: >-
   https://res.cloudinary.com/shooting-supplies/image/upload/v1602770937/Blog/Remington-700/Remington-700-fb_vseyfd.png
 keyword: remington, remington 700, remington 700 5r mil-spec, remington 700 adl, remington 700 pcr
@@ -20,13 +20,13 @@ Remington offer quite the range of 700 rifles, a few of which you can find in ou
 
 ---
 
-## ***Remington 700 5R MIL-SPEC***
+## **_Remington 700 5R MIL-SPEC_**
 
 In-store £1195
 
 The Remington 700 5R Mil-Spec was first introduced as a limited edition rifle and is based of the M24, a gun used widely by the US military. The barrel on this rifle is cold hammer forged and features 5R rifling, with the aim of improving life expectancy, accuracy and reducing fouling of the barrel.
 
-![Remington 700 5R MIL-Spec](https://images.guntrader.uk/GunImages/18/1802/18020/180209090618009/180209090618009-1.jpg)
+![Remington 700 5R MIL-Spec](https://images.guntrader.uk/GunImages/18/1802/18020/180209090618009/180209090618009-1.webp)
 
 **Features of the 700 5R**
 
@@ -39,13 +39,13 @@ The Remington 700 5R Mil-Spec was first introduced as a limited edition rifle an
 
 ---
 
-## ***Remington 700 ADL***
+## **_Remington 700 ADL_**
 
 In-store £675
 
 The Remington 700 ADL is at the lower end of the 700 range but still promises the same relability and ruggedness as other models. It uses an improved X-mark trigger and is a low priced entry into the 700 platform.
 
-![Remington 700 ADL](https://images.guntrader.uk/GunImages/19/1905/19051/190515113952009/190515113952009-1.jpg)
+![Remington 700 ADL](https://images.guntrader.uk/GunImages/19/1905/19051/190515113952009/190515113952009-1.webp)
 
 **Features of the 700 ADL**
 
@@ -55,7 +55,7 @@ The Remington 700 ADL is at the lower end of the 700 range but still promises th
 
 ---
 
-## ***Remington 700 PCR***
+## **_Remington 700 PCR_**
 
 In-store £1449
 
@@ -63,7 +63,7 @@ The Remington 700 PCR is the one you really want! Or maybe it's just the one tha
 
 The 700 PCR provides oustanding accuracy and is built ready to meet the demands of competitive shooting.
 
-![Remington 700 PCR](https://images.guntrader.uk/GunImages/19/1903/19031/190313161513001/190313161513001-1.jpg)
+![Remington 700 PCR](https://images.guntrader.uk/GunImages/19/1903/19031/190313161513001/190313161513001-1.webp)
 
 **Features of the Remington 700 PCR**
 
@@ -96,9 +96,3 @@ As you can see from the guns selected above, there's a good range of variation i
 ---
 
 Visit our [guns](/guns) section to find your next purchase.
-
-
-
-
-
-

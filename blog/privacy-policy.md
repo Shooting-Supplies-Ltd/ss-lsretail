@@ -4,7 +4,7 @@ title: Privacy Policy
 excerpt: >-
   In order to provide you with the full range of services, we are sometimes required to collect information about you.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1592402214/Blog/privacy_bh1k6y.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1592402214/Blog/privacy_bh1k6y.webp
 date: 2019-12-12T00:00:00
 author: Shooting Supplies
 keywords: privacy policy, shooting supplies
@@ -144,4 +144,4 @@ United Kingdom
 Phone: +44 1527 831261
 Email: info@shootingsuppliesltd.co.uk
 
-Last updated:  24th May 2018
+Last updated: 24th May 2018

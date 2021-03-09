@@ -6,21 +6,20 @@ author: Shooting Supplies
 excerpt: >-
   The Beretta 1301 Comp Pro offers a package of accuracy, power, speed, and comfort.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1583521482/guns/Beretta-1301-Comp-Pro_l9juji.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1583521482/guns/Beretta-1301-Comp-Pro_l9juji.webp
 category: Gun of the Week
 keywords: beretta, 1301 comp pro, shotgun, 12 gauge
 ---
 
 # **Beretta 1301 Comp Pro**
 
-
 The Beretta 1301 Comp Pro offers a package of accuracy, power, speed, and comfort. As a result, the 12 gauge shotgun is one of the most sought after models from the Beretta lineup.
 
-****
+---
 
-![Beretta 1301 Comp Pro](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521482/guns/Beretta-1301-Comp-Pro_l9juji.jpg)
+![Beretta 1301 Comp Pro](https://res.cloudinary.com/shooting-supplies/image/upload/v1583521482/guns/Beretta-1301-Comp-Pro_l9juji.webp)
 
-****
+---
 
 Extremely well built, offering comfort, stability, and easy swing, all as a result of a range of features including the Kick Off Plus system.
 
@@ -36,6 +35,6 @@ The Beretta also features an ultra-fast, safe loading system and new oversized c
 
 All of these features combined make the 1301 Comp Pro the most competitive shooting platform around.
 
-****
+---
 
 `youtube:https://youtu.be/jzrtIe\_mz7k`

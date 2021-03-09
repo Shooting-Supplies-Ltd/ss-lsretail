@@ -40,7 +40,7 @@ export async function getInventory() {
     name: item.description,
     sku: item.customSku,
     price: item.Prices.ItemPrice[0].amount.replace('.', ''),
-    image: item.Images ? `${item.Images.Image.baseImageURL}/w_250/${item.Images.Image.publicID}.jpg` : null,
+    image: item.Images ? `${item.Images.Image.baseImageURL}/w_250/${item.Images.Image.publicID}.webp` : null,
     currency: 'GBP',
   }));
   return products;

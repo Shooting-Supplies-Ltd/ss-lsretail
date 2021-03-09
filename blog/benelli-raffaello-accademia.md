@@ -5,13 +5,14 @@ date: "2019-09-27"
 excerpt: >-
   enelli are well known for their ultra reliable shotguns and the Raffaello Accademia is no exception, with this semi auto they are offering something a little bit special.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222202/Blog/BenelliRaffaelloAccademiaGOTWSlide_vvohwj.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573222202/Blog/BenelliRaffaelloAccademiaGOTWSlide_vvohwj.webp
 category: Gun of the Week
 keywords: benelli raffaello accademia, shotgun, special edition
 author: Shooting Supplies
 ---
 
 # **Benelli Raffaello Accademia**
+
 In Store Price £2949
 
 Benelli are well known for their ultra reliable shotguns and the Raffaello Accademia is no exception, with this semi auto they are offering something a little bit special.
@@ -20,11 +21,11 @@ The Raffaello Accademia is an exclusive semi auto shotgun, with only 1000 made, 
 
 In the Accademia, Benelli have created a unique and collectible, premium shotgun. Featuring Satin Walnut furniture and a unique engraving. The engraving is the result of a collaboration between Benelli and students of Urbino's Academy of Fine Arts.
 
-****
+---
 
-![The unique design on the action of the Benelli Raffaello Accademia.](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222207/guns/Raffaello-Accademia-2_oaha1c.jpg)
+![The unique design on the action of the Benelli Raffaello Accademia.](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222207/guns/Raffaello-Accademia-2_oaha1c.webp)
 
-****
+---
 
 The barrels of the Accademia have been treated with Benelli's B.E.S.T. finishing process which provides an exceptional finish with a brilliant stand out black and provides excellent resistance to corrosion and wear.
 
@@ -34,11 +35,11 @@ The Raffaello Accademia is a must have!
 
 Call us on 01527831261 to reserve yours today!
 
-****
+---
 
 ![The Benelli Raffaello Accademia semi auto shotgun for sale](https://res.cloudinary.com/shooting-supplies/image/upload/v1573222205/guns/Raffaello-Accademia_p9znr8.png)
 
-****
+---
 
 ## **Raffaello Accademia Features**
 
@@ -48,7 +49,7 @@ Call us on 01527831261 to reserve yours today!
 
 Read more about the features of this gun on the [Benelli](https://www.benelli.it/en/products/semiautomatic-shotguns/raffaello/raffaello-accademia#node-arma-full-group-canne) website.
 
-****
+---
 
 ## **Tech Specs**
 
@@ -60,9 +61,7 @@ Read more about the features of this gun on the [Benelli](https://www.benelli.it
 - Stock length trigger measured / deviation: 365 +/- 2 mm, modifiable to 380 +/- 2 mm with long recoil pad
 - Dimensions: Length 1250 mm, with 28’’ barrel.
 - Drop at comb: 37 +/- 1 mm
-- Drop at heel: 55 +/- 1 mm, adjustable to 45/50/60/65 mm;  deviation right/left
+- Drop at heel: 55 +/- 1 mm, adjustable to 45/50/60/65 mm; deviation right/left
 - Weight: 2900g approx
 - Magazine: Tubular with 2-rounds reducer (without 3-rounds 12/76 and 4-rounds 12/70 reducers)
 - Sight: Red fibre optic
-
-

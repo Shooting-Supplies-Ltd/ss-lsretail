@@ -10,7 +10,7 @@ const LinksSection = () => {
           <Link href="/">
             <a>
               <Image
-                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222842/misc/AirArmsApproved.jpg"
+                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222842/misc/AirArmsApproved.webp"
                 width={160}
                 height={70} />
             </a>
@@ -30,7 +30,7 @@ const LinksSection = () => {
           <Link href="/">
             <a>
               <Image
-                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564830/logos/Tackle-and-Guns-Star-Shop-1_gixwr1_th35jk.jpg"
+                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564830/logos/Tackle-and-Guns-Star-Shop-1_gixwr1_th35jk.webp"
                 width={160}
                 height={70} />
             </a>
@@ -50,7 +50,7 @@ const LinksSection = () => {
           <Link href="/">
             <a>
               <Image
-                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222241/misc/find-us-guntrader_pzj8vm.jpg"
+                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222241/misc/find-us-guntrader_pzj8vm.webp"
                 width={160}
                 height={70} />
             </a>
@@ -60,7 +60,7 @@ const LinksSection = () => {
           <Link href="/">
             <a>
               <Image
-                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222843/misc/Opening-Times_rufl99.jpg"
+                src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573222843/misc/Opening-Times_rufl99.webp"
                 width={160}
                 height={70} />
             </a>

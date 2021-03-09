@@ -5,7 +5,7 @@ date: "2016-09-29"
 excerpt: >-
   New in for the Autumn season the latest Harkila and Seeland clothing, including the new Kensinton jacket and trousers.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573564111/shop/DSC_0158_jorr8g_lgvqtp-1_o85bcz.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573564111/shop/DSC_0158_jorr8g_lgvqtp-1_o85bcz.webp
 category: News
 keywords: clothing, seeland, kensington jacket, harkila, baleno
 author: Shooting Supplies

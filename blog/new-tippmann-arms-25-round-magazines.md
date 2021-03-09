@@ -5,7 +5,7 @@ date: "2018-12-13"
 excerpt: >-
   We have received our first shipment of the Tippmann Arms 22LR 25 round magazines.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223129/tippmann/Tippmann-Arms-M4-22LR-25RND-Magazine.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223129/tippmann/Tippmann-Arms-M4-22LR-25RND-Magazine.webp
 category: News
 keywords: tippmann arms, 22lr, magazine
 author: Shooting Supplies
@@ -19,6 +19,6 @@ They have the same outside dimensions as the 20rd mag, they have just changed th
 
 They are priced the same as the 20rnd mags at £39.95. Get yours now!!
 
-****
+---
 
-![Tippmann Arms 22LR 25 Round Magazine](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223129/tippmann/Tippmann-Arms-M4-22LR-25RND-Magazine.jpg)
+![Tippmann Arms 22LR 25 Round Magazine](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223129/tippmann/Tippmann-Arms-M4-22LR-25RND-Magazine.webp)

@@ -5,7 +5,7 @@ date: 2017-05-19
 excerpt: >-
   The quality, ergonomics and functions of the Thermal Scopes have all improved as demonstrated by the new Pulsar Helion unit.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223151/optics/pulsar-xq23v-thermal-monoculars_vntxoy_oxv1c0.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223151/optics/pulsar-xq23v-thermal-monoculars_vntxoy_oxv1c0.webp
 category: News
 keywords: pulsar thermal scope
 author: Shooting Supplies
@@ -23,8 +23,8 @@ The Pulsar Scope also features a wireless remote control, wi-fi connectivity for
 
 Another new product from the Pulsar range is the Quantum lite. The Pulsar Quantum Lite has all of the features found on the last Quantum series (XQ range) but by reducing the lens size and increasing the processor capabilities it maintains the clarity and detection without the £3000 price tag.
 
-The Quantum Lite Scopes start at £1195, making it a lot more affordable to take down that difficult charlie.  
+The Quantum Lite Scopes start at £1195, making it a lot more affordable to take down that difficult charlie.
 
-****
-  
+---
+
 `youtube:https://youtu.be/OnwufFGli9Q`

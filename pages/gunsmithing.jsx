@@ -15,7 +15,7 @@ export default function Gunsmithing() {
         <meta property="og:description" content="Professional gun repair and refurbishment" />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/shooting-supplies/image/upload/v1573223185/Blog/gunsmith.jpg"
+          content="https://res.cloudinary.com/shooting-supplies/image/upload/v1573223185/Blog/gunsmith.webp"
         />
         <meta property="og:url" content="https://shootingsuppliesltd.co.uk/gunsmithing" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -25,7 +25,7 @@ export default function Gunsmithing() {
         <h1 className="text-3xl font-black uppercase">Gunsmithing</h1>
         <div className="mt-8 flex justify-center">
           <Image
-            src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573223185/Blog/gunsmith.jpg"
+            src="https://res.cloudinary.com/shooting-supplies/image/upload/v1573223185/Blog/gunsmith.webp"
             width={645}
             height={300}
           />

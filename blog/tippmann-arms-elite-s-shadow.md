@@ -5,7 +5,7 @@ date: "2019-08-02"
 excerpt: >-
   The M4-22 Elite Shadow is a premium .22 caliber semi-automatic tactical rimfire rifle with aluminum upper and lower receivers and all the features of a true M4.
 thumbnail: >-
-  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223255/guns/Tippmann-Arms-Elite-S-Shadow-800x320.jpg
+  https://res.cloudinary.com/shooting-supplies/image/upload/v1573223255/guns/Tippmann-Arms-Elite-S-Shadow-800x320.webp
 category: News
 keywords: tippmann arms, elite shadow, m4, 22lr, rifle
 author: Shooting Supplies
@@ -19,7 +19,7 @@ The Elite Shadow is largely mil-spec compatible and will accept most AR15 stocks
 
 The M4-22 has the look, feel and controls of a true M4 and is a perfect platform for competition, training applications or backyard plinking.
 
-![Tippmann Arms Elite-S Shadow M4 Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223255/guns/Tippmann-Arms-Elite-S-Shadow-800x320.jpg)
+![Tippmann Arms Elite-S Shadow M4 Rifle](https://res.cloudinary.com/shooting-supplies/image/upload/v1573223255/guns/Tippmann-Arms-Elite-S-Shadow-800x320.webp)
 
 ### **Tippmann Arms Elite Shadow Features:**
 

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
 
-const ProductCard = ({ item, key }) => {
+const ProductCard = ({ item }) => {
   const router = useRouter();
   const slug = slugify(item.description.replace('/', '-')).toLocaleLowerCase();
   const name = item.description;

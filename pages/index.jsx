@@ -11,7 +11,12 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier</title>
-        <meta name="description" content="The Midlands leading Shooting Supplier" />
+        <link rel="canonical" href="https://shootingsuppliesltd.co.uk" />
+        <meta name="description" content="The Midlands Leading Shooting Supplier" />
+        <meta
+          name="keywords"
+          content="shotgun, air rifle, air pistol, long barrel pistol, firearms, rifle, rifle scope, night vision, binoculars, spotters, bipods, foregrip, pellets, air gun pellets, gun mounts, rangefinder, thermal scope"
+        />
       </Head>
       <div>
         <div id="app-modal" />

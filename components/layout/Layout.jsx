@@ -42,6 +42,8 @@ const Layout = (props) => {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
       </Head>
       <Header />
       <div className="flex-grow">{props.children}</div>

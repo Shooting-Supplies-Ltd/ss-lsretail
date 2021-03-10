@@ -194,7 +194,7 @@ export async function getStaticProps({ params: { id } }) {
   return {
     props: {
       Gun,
-      revalidate: 60,
+      revalidate: 600,
     },
   };
 }

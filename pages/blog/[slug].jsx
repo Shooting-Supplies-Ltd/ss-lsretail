@@ -75,7 +75,7 @@ export async function getStaticProps({ params: { slug } }) {
   const postData = await data.json();
   const post = postData.data.allPost[0];
 
-  return { props: { post }, revalidate: 60 };
+  return { props: { post } };
 }
 
 export default function Post({ post }) {

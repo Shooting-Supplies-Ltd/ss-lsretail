@@ -4,7 +4,7 @@ import { useShoppingCart } from 'use-shopping-cart';
 import { CgMenuRight } from 'react-icons/cg';
 
 import CartIcon from '../cart/CartIcon';
-import CartDisplay from '../CartDisplay';
+import CartDisplay from '../cart/CartDisplay';
 
 const Nav = () => {
   const [cartDisplay, setCartDisplay] = useState(false);

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import Layout from '../../components/layout/Layout';
+import slugify from 'slugify';
+import Layout from '../../../components/layout/Layout';
 
 const Gun = (props) => {
   const router = useRouter();
@@ -175,6 +176,9 @@ export async function getStaticPaths() {
       return {
         params: {
           id: gun.ID,
+          slug: slugify(
+            `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
+          ).toLowerCase(),
         },
       };
     })

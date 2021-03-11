@@ -1,4 +1,4 @@
-import { getItems } from './lightspeed';
+import { getItems } from '../../adapters/lightspeed/lightspeed';
 
 export async function fetchGetJSON(url) {
   try {

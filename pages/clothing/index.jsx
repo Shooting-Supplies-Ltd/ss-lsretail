@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
-import { getMatrixClothing, getCategory, getManufacturers } from '../api/lightspeed';
+import { getMatrixClothing, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
 import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';

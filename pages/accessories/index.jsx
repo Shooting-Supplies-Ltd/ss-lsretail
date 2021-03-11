@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
-import { getAccessories, getCategory, getManufacturers } from '../api/lightspeed';
+import { getAccessories, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
 import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';

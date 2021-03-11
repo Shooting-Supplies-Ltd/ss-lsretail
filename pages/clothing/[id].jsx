@@ -1,4 +1,4 @@
-import { getMatrixClothing, getMatrixClothingItem, getItem } from '../api/lightspeed';
+import { getMatrixClothing, getMatrixClothingItem, getItem } from '../../adapters/lightspeed/lightspeed';
 import Layout from '../../components/layout/Layout';
 import LightspeedProduct from '../../components/LightspeedProduct';
 

@@ -1,4 +1,4 @@
-import { getMaintenance, getItem } from '../api/lightspeed';
+import { getMaintenance, getItem } from '../../adapters/lightspeed/lightspeed';
 import Layout from '../../components/layout/Layout';
 import LightspeedProduct from '../../components/LightspeedProduct';
 

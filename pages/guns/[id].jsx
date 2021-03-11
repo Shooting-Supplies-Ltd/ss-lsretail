@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import slugify from 'slugify';
 import Layout from '../../components/layout/Layout';
 
 const Gun = (props) => {

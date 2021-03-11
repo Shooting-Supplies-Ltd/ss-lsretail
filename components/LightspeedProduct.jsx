@@ -53,11 +53,15 @@ export default function LightspeedProduct({ item }) {
                 currency: 'GBP',
               })}
             </p>
-            {item.ItemShops.ItemShop[0].qoh > 0 ? (
-              <p className="mt-4 text-green-500 font-bold text-lg">In Stock</p>
-            ) : (
-              <p className="mt-4 text-red-500 font-bold text-lg">Out of Stock - Check Back or Call for Availability</p>
-            )}
+            {item.ItemShops ? (
+              item.ItemShops.ItemShop[0].qoh > 0 ? (
+                <p className="mt-4 text-green-500 font-bold text-lg">In Stock</p>
+              ) : (
+                <p className="mt-4 text-red-500 font-bold text-lg">
+                  Out of Stock - Check Back or Call for Availability
+                </p>
+              )
+            ) : null}
             <p className="mt-8" dangerouslySetInnerHTML={productDescriptionShort()} />
             <a href="#fulldescription" className="hidden xl:block">
               <p className="mt-6 text-ssblue hover:text-ssorange">Full Description..</p>

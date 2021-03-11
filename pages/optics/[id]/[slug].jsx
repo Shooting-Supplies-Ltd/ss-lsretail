@@ -1,12 +1,18 @@
-import { getMaintenance, getItem } from '../../adapters/lightspeed/lightspeed';
-import Layout from '../../components/layout/Layout';
-import LightspeedProduct from '../../components/LightspeedProduct';
+import slugify from 'slugify';
+import { getOptics, getItem } from '../../../adapters/lightspeed/lightspeed';
+import Layout from '../../../components/layout/Layout';
+import LightspeedProduct from '../../../components/LightspeedProduct';
 
 export async function getStaticPaths() {
-  const data = await getMaintenance();
+  const data = await getOptics();
 
   const paths = await data.data.Item.map((item) => ({
-    params: { id: item.itemID },
+    params: {
+      slug: slugify(item.description.replace('/', '-'))
+        .replace(/["'.,]/g, '')
+        .toLocaleLowerCase(),
+      id: item.itemID,
+    },
   })).filter((path) => path);
 
   return {

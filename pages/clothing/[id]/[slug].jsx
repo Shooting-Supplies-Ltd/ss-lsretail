@@ -1,13 +1,19 @@
-import { getMatrixClothing, getMatrixClothingItem, getItem } from '../../adapters/lightspeed/lightspeed';
-import Layout from '../../components/layout/Layout';
-import LightspeedProduct from '../../components/LightspeedProduct';
+import slugify from 'slugify';
+import { getMatrixClothing, getMatrixClothingItem, getItem } from '../../../adapters/lightspeed/lightspeed';
+import Layout from '../../../components/layout/Layout';
+import LightspeedProduct from '../../../components/LightspeedProduct';
 
 export async function getStaticPaths() {
   const data = await getMatrixClothing();
 
-  const paths = data.data.ItemMatrix.map((item) => ({
-    params: { id: item.itemMatrixID },
-  })).filter((item) => item);
+  const paths = await data.data.ItemMatrix.map((item) => ({
+    params: {
+      slug: slugify(item.description.replace('/', '-'))
+        .replace(/["'.,]/g, '')
+        .toLocaleLowerCase(),
+      id: item.itemMatrixID,
+    },
+  })).filter((path) => path);
 
   return {
     paths,

@@ -1,12 +1,18 @@
-import { getAmmo, getItem } from '../../adapters/lightspeed/lightspeed';
-import Layout from '../../components/layout/Layout';
-import LightspeedProduct from '../../components/LightspeedProduct';
+import slugify from 'slugify';
+import { getAmmo, getItem } from '../../../adapters/lightspeed/lightspeed';
+import Layout from '../../../components/layout/Layout';
+import LightspeedProduct from '../../../components/LightspeedProduct';
 
 export async function getStaticPaths() {
   const data = await getAmmo();
 
-  const paths = data.data.Item.map((item) => ({
-    params: { id: item.itemID },
+  const paths = await data.data.Item.map((item) => ({
+    params: {
+      slug: slugify(item.description.replace('/', '-'))
+        .replace(/["'.,]/g, '')
+        .toLocaleLowerCase(),
+      id: item.itemID,
+    },
   })).filter((path) => path);
 
   return {

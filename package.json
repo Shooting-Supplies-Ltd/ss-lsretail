@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
@@ -18,6 +19,7 @@
     "axios": "^0.20.0",
     "get-youtube-id": "^1.0.1",
     "next": "^10.0.1",
+    "next-sitemap": "^1.5.16",
     "next-ym": "^2.3.5",
     "nookies": "^2.4.0",
     "nprogress": "^0.2.0",

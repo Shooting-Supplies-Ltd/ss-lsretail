@@ -4,7 +4,9 @@ import { useRouter } from 'next/router';
 
 const ProductCard = ({ item }) => {
   const router = useRouter();
-  const slug = slugify(item.description.replace('/', '-')).replace(/["']/g, '').toLocaleLowerCase();
+  const slug = slugify(item.description.replace('/', '-'))
+    .replace(/["'.,]/g, '')
+    .toLocaleLowerCase();
   const name = item.description;
   const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.webp`;
 

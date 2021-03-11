@@ -3,7 +3,7 @@ import { useShoppingCart } from 'use-shopping-cart';
 import { parseCookies, destroyCookie } from 'nookies';
 import Layout from '../components/layout/Layout';
 import PrintObject from '../components/PrintObject';
-import { createSale } from './api/lightspeed';
+import { createSale } from '../adapters/lightspeed/lightspeed';
 
 const ResultPage = (props) => {
   const router = useRouter();

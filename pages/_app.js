@@ -5,7 +5,7 @@ import Router from 'next/router';
 import withYM from 'next-ym';
 
 function MyApp({ Component, pageProps }) {
-  const stripePromise = loadStripe(process.env.STRIPE_API_PUBLIC_KEY);
+  const stripePromise = loadStripe(`${process.env.STRIPE_API_PUBLIC_KEY}`);
 
   return (
     <CartProvider

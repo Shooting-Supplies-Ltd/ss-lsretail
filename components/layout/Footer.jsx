@@ -94,7 +94,12 @@ const Footer = () => (
             </Link>
           </li>
           <li>
-            <a href="https://fabdefense.co.uk" target="_blank" className="hover:text-ssorange">
+            <a
+              href="https://fabdefense.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ssorange"
+            >
               FAB Defense
             </a>
           </li>

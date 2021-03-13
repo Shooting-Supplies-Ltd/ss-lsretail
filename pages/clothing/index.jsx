@@ -32,10 +32,7 @@ export async function getStaticProps() {
   }));
 
   // Get Brands
-  const brandIds = [];
-  items.map((item) => {
-    brandIds.push(parseInt(item.manufacturerID));
-  });
+  const brandIds = items.map((item) => parseInt(item.manufacturerID));
 
   const brandsToFetch = [...new Set(brandIds)];
   const brandData = await getManufacturers(brandsToFetch);
@@ -101,6 +98,7 @@ const Accessories = ({ items, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false;
     } else {
+      console.log(`Selected Brand:`, selectedBrand);
       handleFilters();
     }
   }, [selectedBrand]);

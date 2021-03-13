@@ -16,17 +16,17 @@ const HelpBanner = () => (
     <h3 className="pt-8 text-white font-semibold xl:text-2xl text-center">Get In Touch & Follow Us for Updates</h3>
     <div className="pt-4 flex justify-center">
       <ul className="flex space-x-6 xl:space-x-8 text-3xl xl:text-4xl">
-        <a href="https://facebook.com/ShootingSuppliesLTD" target="_blank">
+        <a href="https://facebook.com/ShootingSuppliesLTD" target="_blank" rel="noopener noreferrer">
           <li className="text-white hover:text-ssorange">
             <ImFacebook2 />
           </li>
         </a>
-        <a href="https://instagram.com/shootingsupplies" target="_blank">
+        <a href="https://instagram.com/shootingsupplies" target="_blank" rel="noopener noreferrer">
           <li className="text-white hover:text-ssorange">
             <ImInstagram />
           </li>
         </a>
-        <a href="https://twitter.com/shootbromsgrove" target="_blank">
+        <a href="https://twitter.com/shootbromsgrove" target="_blank" rel="noopener noreferrer">
           <li className="text-white hover:text-ssorange">
             <ImTwitter />
           </li>

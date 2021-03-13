@@ -16,7 +16,7 @@ const TopBar = () => (
     <div className="w-2/6">
       <p className="text-right text-sm">
         Call Us:{' '}
-        <span className="hover:text-ssblue">
+        <span className="text-ssorange hover:text-ssblue">
           <a href="tel:01527831261">01527831261</a>
         </span>
       </p>

@@ -50,7 +50,7 @@ export async function getStaticProps() {
   };
 }
 
-const Accessories = ({ items, categories, brands }) => {
+const Clothing = ({ items, categories, brands }) => {
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedBrand, setSelectedBrand] = useState({});
   const [itemFilters, setItemFilters] = useState();
@@ -141,8 +141,16 @@ const Accessories = ({ items, categories, brands }) => {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
-              : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
+              ? filteredItems.map((item) => (
+                  <div key={item.itemID}>
+                    <ProductCard item={item} />
+                  </div>
+                ))
+              : items.map((item) => (
+                  <div key={item.itemID}>
+                    <ProductCard item={item} />
+                  </div>
+                ))}
           </div>
         </main>
       </div>
@@ -150,4 +158,4 @@ const Accessories = ({ items, categories, brands }) => {
   );
 };
 
-export default Accessories;
+export default Clothing;

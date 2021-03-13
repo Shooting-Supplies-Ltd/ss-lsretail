@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 const BrandFilter = ({ brands, handleBrandChange, selectedBrand }) => (
   <>
     {brands.map((brand) => (
-      <div>
+      <div key={brand.brandID}>
         <div>
           <input
             type="checkbox"

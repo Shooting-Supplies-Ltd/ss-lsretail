@@ -25,10 +25,8 @@ export async function getStaticProps() {
   const categoryData = await getCategory(categoriesToFetch);
 
   const categories = categoryData.data.Category.map((category) => ({
-    category: {
-      catID: category.categoryID,
-      name: category.name,
-    },
+    catID: category.categoryID,
+    name: category.name,
   }));
 
   // Get Brands
@@ -38,10 +36,8 @@ export async function getStaticProps() {
   const brandData = await getManufacturers(brandsToFetch);
 
   const brands = brandData.data.Manufacturer.map((brand) => ({
-    brand: {
-      brandID: brand.manufacturerID,
-      name: brand.name,
-    },
+    brandID: brand.manufacturerID,
+    name: brand.name,
   }));
 
   // Return props

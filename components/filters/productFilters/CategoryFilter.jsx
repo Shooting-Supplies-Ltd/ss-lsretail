@@ -1,17 +1,17 @@
 const CategoryFilter = ({ categories, handleCategoryChange, selectedCategory }) => (
   <>
     {categories.map((cat) => (
-      <div className="hover:text-ssorange" key={cat.category.catID}>
+      <div className="hover:text-ssorange" key={cat.catID}>
         <input
           type="checkbox"
-          id={cat.category.name}
-          value={cat.category.catID}
-          checked={selectedCategory[cat.category.name]}
+          id={cat.name}
+          value={cat.catID}
+          checked={selectedCategory[cat.name]}
           onChange={handleCategoryChange}
           className="hover:ssorange"
         />
-        <label key={cat.category.name} htmlFor={cat.category.name} className="ml-1 uppercase">
-          {cat.category.name}
+        <label key={cat.name} htmlFor={cat.name} className="ml-1 uppercase">
+          {cat.name}
         </label>
       </div>
     ))}

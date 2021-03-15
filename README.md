@@ -25,3 +25,6 @@ Created using Nextjs, Tailwind, Lightspeed Retail API and Stripe!
 - Add search
 - Do something to improve the product page
 - Lots more!!!
+
+### Next 
+- Convert Filters to use array instead of object & use query strings from useRouter

@@ -84,7 +84,7 @@ export async function getAmmo() {
 
 export async function getAccessories() {
   const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
+  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
   return accessories;
 }
 

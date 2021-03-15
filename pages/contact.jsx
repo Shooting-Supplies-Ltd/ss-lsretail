@@ -24,7 +24,7 @@ const Contact = () => (
         </p>
         <p>
           <strong>Address: </strong>
-          <address className="mt-2 inline-block">38, Sherwood Road, Bromsgrove, B60 3DR</address>
+          <address className="mt-2 inline-block">38, Sherwood Road, Bromsgrove, Worcestershire, B60 3DR</address>
         </p>
       </div>
       <hr className="my-8" />

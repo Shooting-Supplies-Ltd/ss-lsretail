@@ -11,12 +11,13 @@ import StockMessage from '../../components/StockMessage';
 export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getAccessories();
+  // const matrixItemData = await getMatrixAccessories();
 
   const items = itemData.data.Item.map((item) => {
     if (item.Images?.Image?.baseImageURL) {
       return item;
     }
-  });
+  }).filter(Boolean);
 
   // Get Categories
   const categoryIds = items.map((item) => item.categoryID);

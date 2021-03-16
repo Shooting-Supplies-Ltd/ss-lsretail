@@ -120,6 +120,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       <Head>
         <title>New & Used Firearms, Shotguns & Airguns | Shooting Supplies Ltd</title>
         <meta name="description" content="The best collection of Shotguns, Rifles and Airguns in the Midlands" />
+        <link rel="canonical" href="https://shootingsuppliesltd.co.uk/guns" />
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div className="flex mx-12 my-16">

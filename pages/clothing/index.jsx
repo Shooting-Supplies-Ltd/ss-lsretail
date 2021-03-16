@@ -122,6 +122,7 @@ const Clothing = ({ items, categories, brands }) => {
           name="description"
           content="Shooting & Outdoor clothing for all weathers and conditions from the biggest brands."
         />
+        <link rel="canonical" href="https://shootingsuppliesltd.co.uk/clothing" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

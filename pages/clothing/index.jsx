@@ -10,7 +10,7 @@ import StockMessage from '../../components/StockMessage';
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getMatrixClothing();
+  const itemData = await getMatrixClothing().catch((err) => console.err(err));
 
   const items = itemData.data.ItemMatrix.map((item) => {
     if (item.Images?.Image?.baseImageURL) {

@@ -10,7 +10,7 @@ import StockMessage from '../../components/StockMessage';
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getAccessories();
+  const itemData = await getAccessories().catch((err) => console.err(err));
   // const matrixItemData = await getMatrixAccessories();
 
   const items = itemData.data.Item.map((item) => {

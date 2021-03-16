@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier</title>
+        <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier. Guns, Ammo, Optics & More</title>
         <link rel="canonical" href="https://shootingsuppliesltd.co.uk" />
-        <meta name="description" content="The Midlands Leading Shooting Supplier" />
+        <meta name="description" content="The Midlands Leading Shooting Retailer for Guns, Optics, Ammo & More." />
         <meta
           name="keywords"
           content="shotgun, air rifle, air pistol, long barrel pistol, firearms, rifle, rifle scope, night vision, binoculars, spotters, bipods, foregrip, pellets, air gun pellets, gun mounts, rangefinder, thermal scope"

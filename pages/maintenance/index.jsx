@@ -117,7 +117,7 @@ const Maintenance = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Gun Cleaning Kits & Cleaning Supplies | Shooting Supplies Ltd</title>
+        <title>Gun Cleaning Kits & Chemicals & Supplies | Shooting Supplies Ltd</title>
         <meta name="description" content="Gun cleaning cloths, chemicals and kits from all of the leading brands." />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

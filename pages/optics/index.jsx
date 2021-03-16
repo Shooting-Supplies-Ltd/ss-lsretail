@@ -115,7 +115,7 @@ const Optics = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>From Spotters to Night Vision | Shooting Supplies Ltd</title>
+        <title>Optics - Rifle Scopes, Night Vision, Spotters & More | Shooting Supplies Ltd</title>
         <meta
           name="description"
           content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of the leading brands."

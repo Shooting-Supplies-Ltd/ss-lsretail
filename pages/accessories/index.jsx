@@ -120,7 +120,7 @@ const Accessories = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Shooting Accessories & Attachments | Shooting Supplies Ltd</title>
+        <title>Shooting Accessories & Gun Attachments | Shooting Supplies Ltd</title>
         <meta
           name="description"
           content="Bipods & Supports, Grips, Mounts & Fixings, Spares & Accessories & More, from all of the big brands."

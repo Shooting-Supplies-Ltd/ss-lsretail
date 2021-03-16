@@ -117,7 +117,7 @@ const Clothing = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Outdoor Clothing & Footwear for all Weathers | Shooting Supplies Ltd</title>
+        <title>Shooting & Outdoor Clothing for all Conditions | Shooting Supplies Ltd</title>
         <meta
           name="description"
           content="Shooting & Outdoor clothing for all weathers and conditions from the biggest brands."

@@ -14,14 +14,14 @@ const GunProductCard = ({ gun }) => {
             <div className="flex h-48 overflow-hidden">
               <img
                 src={gun.Images[0].FullPath}
-                alt={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''}`}
+                alt={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}
                 className="w-full object-cover object-center"
               />
             </div>
             <div className="p-4 flex flex-col text-white hover:text-ssorange">
               <h2 className="flex justify-center text-center uppercase">{`${gun.Make} ${gun.Model ? gun.Model : ''} ${
                 gun.Variant ? gun.Variant : ''
-              }`}</h2>
+              } ${gun.Calibre}`}</h2>
               <p className="mt-2 flex justify-center font-bold text-lg">£{gun.Price}</p>
             </div>
           </a>

@@ -32,15 +32,20 @@ const Gun = (props) => {
   return (
     <Layout>
       <Head>
-        <title className="uppercase">{`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}</title>
+        <title className="uppercase">{`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${
+          gun.Calibre
+        }`}</title>
         <meta
           name="description"
-          content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
+          content={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content={`${Gun.Make}, ${Gun.Model}, ${Gun.Variant}, ${Gun.Mechanism}, ${Gun.Type}`} />
-        <meta property="og:title" content={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`} />
+        <meta
+          property="og:title"
+          content={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}
+        />
         <meta
           property="og:description"
           content={Gun.Description ? Gun.Description : `${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
@@ -57,13 +62,13 @@ const Gun = (props) => {
             <div className="block w-full">
               <img
                 src={Gun.Images[0].FullPath}
-                alt={`${Gun.Make} ${Gun.Model} ${Gun.Variant} ${Gun.Type}`}
+                alt={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}
                 className="object-scale-down"
               />
             </div>
-            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${
-              Gun.Model ? Gun.Model : Gun.Type
-            } ${Gun.Variant ? Gun.Variant : ''}`}</h1>
+            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${gun.Make} ${
+              gun.Model ? gun.Model : ''
+            } ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}</h1>
             <div className="mx-4 mt-4 border border-black">
               <table className="table-fixed w-full mb-4">
                 <thead className="bg-ssblue text-white">

@@ -116,7 +116,7 @@ const Ammo = ({ items, categories, brands }) => {
     <Layout>
       <Head>
         <title>Ammo for Rifles, Shotguns, Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="Ammo for all guns, with bulk discounts available. | Shooting Supplies Ltd" />
+        <meta name="description" content="Ammo for all shotguns, rifles and airguns with bulk discounts available." />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

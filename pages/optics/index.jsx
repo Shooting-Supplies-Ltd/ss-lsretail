@@ -116,7 +116,10 @@ const Optics = ({ items, categories, brands }) => {
     <Layout>
       <Head>
         <title>From Spotters to Night Vision | Shooting Supplies Ltd</title>
-        <meta name="description" content="We stock a full range of optics from spotters to night vision" />
+        <meta
+          name="description"
+          content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of the leading brands."
+        />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

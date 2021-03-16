@@ -120,7 +120,7 @@ const Clothing = ({ items, categories, brands }) => {
         <title>Outdoor Clothing & Footwear for all Weathers | Shooting Supplies Ltd</title>
         <meta
           name="description"
-          content="Shooting & outdoor clothing for all weathers and conditions. | Shooting Supplies Ltd"
+          content="Shooting & Outdoor clothing for all weathers and conditions from the biggest brands."
         />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

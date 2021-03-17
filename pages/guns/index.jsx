@@ -216,7 +216,7 @@ export async function getStaticProps() {
       conditions,
       mechanisms,
     },
-    revalidate: 600,
+    revalidate: 3600,
   };
 }
 

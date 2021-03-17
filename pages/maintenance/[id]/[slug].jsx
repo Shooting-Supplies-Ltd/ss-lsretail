@@ -29,7 +29,7 @@ export async function getStaticProps({ params: { id } }) {
 
   return {
     props: { item },
-    revalidate: 10,
+    revalidate: 300,
   };
 }
 

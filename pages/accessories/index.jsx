@@ -125,7 +125,7 @@ const Accessories = ({ items, categories, brands }) => {
           name="description"
           content="Bipods & Supports, Grips, Mounts & Fixings, Spares & Accessories & More, from all of the big brands."
         />
-        <link rel="canonical" href="https://shootingsuppliesltd.co.uk/accessories" />
+        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/accessories" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

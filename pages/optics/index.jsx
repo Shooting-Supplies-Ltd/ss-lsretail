@@ -120,7 +120,7 @@ const Optics = ({ items, categories, brands }) => {
           name="description"
           content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of the leading brands."
         />
-        <link rel="canonical" href="https://shootingsuppliesltd.co.uk/optics" />
+        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/optics" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

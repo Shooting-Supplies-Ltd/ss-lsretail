@@ -191,7 +191,7 @@ export async function getStaticPaths() {
     })
     .filter((path) => path);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params: { id } }) {
@@ -204,8 +204,8 @@ export async function getStaticProps({ params: { id } }) {
   return {
     props: {
       Gun,
-      revalidate: 3600,
     },
+    revalidate: 3600,
   };
 }
 

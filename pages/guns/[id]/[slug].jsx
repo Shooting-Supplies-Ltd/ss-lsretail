@@ -62,11 +62,13 @@ const Gun = (props) => {
             <div className="block w-full">
               <img
                 src={Gun.Images[0].FullPath}
-                alt={`${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`}
+                alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
+                  Gun.Calibre
+                }`}
                 className="object-scale-down"
               />
             </div>
-            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Make} ${
+            <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Condition} ${Gun.Make} ${
               Gun.Model ? Gun.Model : ''
             } ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`}</h1>
             <div className="mx-4 mt-4 border border-black">

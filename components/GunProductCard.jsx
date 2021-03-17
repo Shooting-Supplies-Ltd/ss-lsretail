@@ -3,8 +3,14 @@ import slugify from 'slugify';
 
 const GunProductCard = ({ gun }) => {
   const slug = slugify(
-    `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
-  ).toLowerCase();
+    `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}${
+      gun.Calibre ? `-${gun.Calibre}` : ''
+    }`
+  )
+    .toLowerCase()
+    .replace('.', '')
+    .replace('(', '')
+    .replace(')', '');
 
   return (
     <>
@@ -14,15 +20,17 @@ const GunProductCard = ({ gun }) => {
             <div className="flex h-48 overflow-hidden">
               <img
                 src={gun.Images[0].FullPath}
-                alt={`${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}
+                alt={`${gun.Condition} ${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${
+                  gun.Calibre
+                }`}
                 className="w-full object-cover object-center"
               />
             </div>
             <div className="p-4 flex flex-col text-white hover:text-ssorange">
-              <h2 className="flex justify-center text-center uppercase">{`${gun.Make} ${gun.Model ? gun.Model : ''} ${
-                gun.Variant ? gun.Variant : ''
-              } ${gun.Calibre}`}</h2>
-              <p className="mt-2 flex justify-center font-bold text-lg">£{gun.Price}</p>
+              <h2 className="flex justify-center text-center uppercase font-semibold">{`${gun.Condition} ${gun.Make} ${
+                gun.Model ? gun.Model : ''
+              } ${gun.Variant ? gun.Variant : ''} ${gun.Calibre}`}</h2>
+              <p className="mt-2 flex justify-center font-bold text-xl">£{gun.Price}</p>
             </div>
           </a>
         </Link>

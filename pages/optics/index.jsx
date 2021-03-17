@@ -16,7 +16,7 @@ export async function getStaticProps() {
     if (item.Images?.Image?.baseImageURL) {
       return item;
     }
-  });
+  }).filter(Boolean);
 
   // Get Categories
   const categoryIds = items.map((item) => item.categoryID);

@@ -8,7 +8,7 @@ const TopBar = () => (
         Get the latest from Shooting Supplies on our{' '}
         <Link href="/blog">
           <a>
-            <span className="text-ssorange hover:text-ssblue underline">Blog</span>
+            <span className="text-ssblue hover:text-ssorange underline">Blog</span>
           </a>
         </Link>
       </p>
@@ -16,7 +16,7 @@ const TopBar = () => (
     <div className="w-2/6">
       <p className="text-right text-sm">
         Call Us:{' '}
-        <span className="text-ssorange hover:text-ssblue">
+        <span className="text-ssblue hover:text-ssorange">
           <a href="tel:01527831261">01527831261</a>
         </span>
       </p>

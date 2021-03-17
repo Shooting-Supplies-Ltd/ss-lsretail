@@ -8,7 +8,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/guns">
-              <a>
+              <a aria-label="Guns">
                 <Image src="/home/Guns.png" width={600} height={280} className="object-fill" />
               </a>
             </Link>
@@ -17,7 +17,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/ammo">
-              <a>
+              <a aria-label="Ammo">
                 <Image src="/home/Ammo.png" width={600} height={280} />
               </a>
             </Link>
@@ -26,7 +26,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/optics">
-              <a>
+              <a aria-label="Optics">
                 <Image src="/home/Optics.png" width={600} height={280} />
               </a>
             </Link>
@@ -35,7 +35,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/accessories">
-              <a>
+              <a aria-label="Accessories">
                 <Image src="/home/Accessories.png" width={600} height={280} />
               </a>
             </Link>
@@ -44,7 +44,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/maintenance">
-              <a>
+              <a aria-label="Maintenance">
                 <Image src="/home/Cleaning.png" width={600} height={280} className="object-fill" />
               </a>
             </Link>
@@ -53,7 +53,7 @@ const Categories = () => (
         <div>
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/clothing">
-              <a>
+              <a aria-label="Clothing">
                 <Image src="/home/Clothing.png" width={600} height={280} />
               </a>
             </Link>

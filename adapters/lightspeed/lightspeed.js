@@ -36,7 +36,6 @@ const makeRequest = async (url) => {
         setTimeout(function () {
           res();
         }, 2000);
-        d;
       });
 
       const originalRequest = error.config;

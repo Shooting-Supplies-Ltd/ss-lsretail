@@ -5,10 +5,12 @@ const token = [];
 
 const getToken = async (n) => {
   if (token[n] != null) {
+    console.log('Cached Token');
     return token[n];
   }
   const bearer = await refreshToken();
   token[n] = bearer;
+  console.log('New Token');
   return bearer;
 };
 
@@ -41,6 +43,7 @@ const makeRequest = async (url) => {
       const originalRequest = error.config;
 
       if (error.response.status === 401 && !originalRequest._retry) {
+        console.log('Try to refresh Token');
         token[n] = null;
         originalRequest._retry = true;
         const refreshedHeader = await getHeader();

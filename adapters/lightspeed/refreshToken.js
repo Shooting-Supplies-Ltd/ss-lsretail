@@ -18,6 +18,8 @@ const refreshToken = async () => {
   }).catch((err) => console.error(err));
 
   const accessToken = await response.data.access_token;
+  const data = await response.data;
+  console.log(data);
   return accessToken;
 };
 

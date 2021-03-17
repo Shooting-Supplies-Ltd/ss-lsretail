@@ -111,8 +111,8 @@ const Footer = () => (
         </ul>
       </div>
     </footer>
-    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101209513);</script>
-    <script async src="//static.getclicky.com/js" />
+    <script rel="preconnect">var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101209513);</script>
+    <script rel="preconnect" async src="//static.getclicky.com/js" />
   </div>
 );
 

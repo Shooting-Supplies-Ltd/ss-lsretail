@@ -1,7 +1,7 @@
 import api from './limit';
 import refreshToken from './refreshToken';
 
-let token = [];
+const token = [];
 
 const getToken = async (n) => {
   if (token[n] != null) {
@@ -41,8 +41,8 @@ const makeRequest = async (url) => {
       const originalRequest = error.config;
 
       if (error.response.status === 401 && !originalRequest._retry) {
+        token[n] = null;
         originalRequest._retry = true;
-        token = [];
         const refreshedHeader = await getHeader();
         api.defaults.headers = refreshedHeader;
         originalRequest.headers = refreshedHeader;

@@ -33,7 +33,7 @@ export async function getStaticProps({ params: { id } }) {
   if (items != null) {
     return {
       props: { item: items.filter((item) => item.itemID === id)[0] },
-      revalidate: 300,
+      revalidate: 86400,
     };
   }
 

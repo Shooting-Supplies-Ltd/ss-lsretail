@@ -46,7 +46,6 @@ export async function getStaticProps({ params: { id } }) {
 
   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
   const data = await res.json();
-  console.log(data);
   guns = data.Guns;
 
   return {

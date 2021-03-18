@@ -112,11 +112,8 @@ const Optics = ({ items, categories, brands }) => {
   return (
     <Layout>
       <Head>
-        <title>Optics - Rifle Scopes, Night Vision, Spotters & More | Shooting Supplies Ltd</title>
-        <meta
-          name="description"
-          content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of the leading brands."
-        />
+        <title>Security - Gun & Ammo Safes from Brattonsound</title>
+        <meta name="description" content="We stock a range of Gun & Ammo Safes from Brattonsound" />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/optics" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

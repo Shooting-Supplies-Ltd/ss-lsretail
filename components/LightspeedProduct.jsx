@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { formatCurrencyString } from 'use-shopping-cart';
 
@@ -38,9 +39,11 @@ export default function LightspeedProduct({ item }) {
       <main>
         <div className="xl:mx-72 xl:my-12 flex flex-col xl:flex-row justify-center">
           <div className="w-3/4 mx-auto xl:mx-0 xl:w-1/2 p-2">
-            <img
+            <Image
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
               alt={`${item.description}`}
+              width={600}
+              height={600}
               className="object-scale-down"
             />
           </div>

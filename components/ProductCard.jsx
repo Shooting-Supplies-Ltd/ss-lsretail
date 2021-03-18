@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import slugify from 'slugify';
 import { useRouter } from 'next/router';
 
@@ -15,7 +16,7 @@ const ProductCard = ({ item }) => {
       <Link href={`${router.pathname}/${item.itemID ? item.itemID : item.itemMatrixID}/${slug}`}>
         <a>
           <div className="flex justify-center h-48 overflow-hidden">
-            <img src={imageUrl} alt={`Image of ${name}`} className="w-60" />
+            <Image src={imageUrl} alt={`Image of ${name}`} width={200} height={200} />
           </div>
           <div className="h-32 p-4 flex flex-col bg-ssblue text-white hover:text-ssorange rounded-b-lg">
             <h2 className="flex justify-center text-center uppercase">{name}</h2>

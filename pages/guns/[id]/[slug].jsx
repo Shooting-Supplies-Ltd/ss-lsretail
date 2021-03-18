@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
+// import Image from 'next/image';
 import slugify from 'slugify';
 import Layout from '../../../components/layout/Layout';
 
@@ -111,6 +112,16 @@ const Gun = (props) => {
         <div className="xl:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 xl:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
             <div className="block w-full">
+              {/* <Image
+                src={Gun.Images[0].FullPath}
+                alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
+                  Gun.Calibre
+                }`}
+                width={800}
+                height={400}
+                layout="intrinsic"
+                // className="object-scale-down"
+              /> */}
               <img
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${

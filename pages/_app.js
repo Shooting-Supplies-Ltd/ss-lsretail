@@ -1,8 +1,6 @@
 import '../style/index.css';
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from 'use-shopping-cart';
-import Router from 'next/router';
-import withYM from 'next-ym';
 
 function MyApp({ Component, pageProps }) {
   const stripePromise = loadStripe(`${process.env.STRIPE_API_PUBLIC_KEY}`);
@@ -22,4 +20,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default withYM('55362838', Router)(MyApp);
+export default MyApp;

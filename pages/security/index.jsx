@@ -33,10 +33,7 @@ export async function getStaticProps() {
 
   const brandsToFetch = [...new Set(brandIds)];
   const brandData = await getManufacturers(brandsToFetch);
-  const brands = brandData.data.Manufacturer.map((brand) => ({
-    brandID: brand.manufacturerID,
-    name: brand.name,
-  }));
+  const brands = brandData.data;
 
   // Return props
   return {

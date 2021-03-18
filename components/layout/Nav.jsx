@@ -52,7 +52,7 @@ const Nav = () => {
             </Link>
             <Link href="/security">
               <a>
-                <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
+                <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
               </a>
             </Link>
             <Link href="/blog">

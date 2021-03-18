@@ -3,6 +3,58 @@ import Head from 'next/head';
 import slugify from 'slugify';
 import Layout from '../../../components/layout/Layout';
 
+let guns = null;
+
+export async function getStaticPaths() {
+  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
+  const data = await res.json();
+  const { Guns } = data;
+  const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
+
+  const paths = filteredGuns
+    .map((gun) => {
+      if (!gun.Images[0] || !gun.ID) {
+        return undefined;
+      }
+      return {
+        params: {
+          id: gun.ID,
+          slug: slugify(
+            `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
+          ).toLowerCase(),
+        },
+      };
+    })
+    .filter((path) => path);
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params: { id } }) {
+  if (!id) {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (guns != null) {
+    return {
+      props: { Gun: guns.find((gun) => gun.ID === id) },
+      revalidate: 3600,
+    };
+  }
+
+  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
+  const data = await res.json();
+  console.log(data);
+  guns = data.Guns;
+
+  return {
+    props: { Gun: guns.find((gun) => gun.ID === id) },
+    revalidate: 3600,
+  };
+}
+
 const Gun = (props) => {
   const router = useRouter();
   const { Gun } = props;
@@ -168,45 +220,5 @@ const Gun = (props) => {
     </Layout>
   );
 };
-
-export async function getStaticPaths() {
-  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
-  const data = await res.json();
-  const { Guns } = data;
-  const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
-
-  const paths = filteredGuns
-    .map((gun) => {
-      if (!gun.Images[0] || !gun.ID) {
-        return undefined;
-      }
-      return {
-        params: {
-          id: gun.ID,
-          slug: slugify(
-            `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
-          ).toLowerCase(),
-        },
-      };
-    })
-    .filter((path) => path);
-
-  return { paths, fallback: true };
-}
-
-export async function getStaticProps({ params: { id } }) {
-  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
-  const data = await res.json();
-  const { Guns } = data;
-
-  const Gun = Guns.find((gun) => gun.ID === id);
-
-  return {
-    props: {
-      Gun,
-    },
-    revalidate: 3600,
-  };
-}
 
 export default Gun;

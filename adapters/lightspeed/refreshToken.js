@@ -1,6 +1,7 @@
 import api from './limit';
 
 const refreshToken = async () => {
+  console.log('refreshToken() called');
   const body = {
     grant_type: 'refresh_token',
     client_id: process.env.LIGHTSPEED_ID,
@@ -18,8 +19,6 @@ const refreshToken = async () => {
   }).catch((err) => console.error(err));
 
   const accessToken = await response.data.access_token;
-  const data = await response.data;
-  console.log(data);
   return accessToken;
 };
 

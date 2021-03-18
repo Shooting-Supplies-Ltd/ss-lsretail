@@ -1,5 +1,5 @@
 import slugify from 'slugify';
-import { getMatrixClothing, getMatrixClothingItem, getItem } from '../../../adapters/lightspeed/lightspeed';
+import { getMatrixClothing } from '../../../adapters/lightspeed/lightspeed';
 import Layout from '../../../components/layout/Layout';
 import LightspeedProduct from '../../../components/LightspeedProduct';
 
@@ -17,19 +17,26 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params: { id } }) {
-  const itemData = await getMatrixClothingItem(id);
-  const item = itemData.data.ItemMatrix;
+  if (!id) {
+    return {
+      notFound: true,
+    };
+  }
 
-  if (!item) return;
+  const data = await getMatrixClothing();
+  const items = data.data.ItemMatrix;
+
+  const filterItem = items.filter((item) => item.itemMatrixID === id);
+  const item = filterItem[0];
 
   return {
     props: { item },
-    revalidate: 600,
+    revalidate: 300,
   };
 }
 

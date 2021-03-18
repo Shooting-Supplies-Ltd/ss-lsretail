@@ -46,7 +46,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 3600,
+    revalidate: 300,
   };
 }
 
@@ -94,7 +94,6 @@ const Clothing = ({ items, categories, brands }) => {
     if (initialRender.current) {
       initialRender.current = false;
     } else {
-      console.log(`Selected Brand:`, selectedBrand);
       handleFilters();
     }
   }, [selectedBrand]);

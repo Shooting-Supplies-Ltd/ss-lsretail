@@ -41,6 +41,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
+  if (!slug) {
+    return {
+      notFound: true,
+    };
+  }
+
   const query = JSON.stringify({
     query: `{
       allPost(where: {slug: {current: {eq: "${slug}"}}}) {
@@ -75,7 +81,7 @@ export async function getStaticProps({ params: { slug } }) {
   const postData = await data.json();
   const post = postData.data.allPost[0];
 
-  return { props: { post }, revalidate: 21600 };
+  return { props: { post }, revalidate: 3600 };
 }
 
 export default function Post({ post }) {

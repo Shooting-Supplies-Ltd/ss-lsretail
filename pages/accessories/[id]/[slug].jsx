@@ -1,7 +1,9 @@
 import slugify from 'slugify';
-import { getAccessories, getItem } from '../../../adapters/lightspeed/lightspeed';
+import { getAccessories } from '../../../adapters/lightspeed/lightspeed';
 import Layout from '../../../components/layout/Layout';
 import LightspeedProduct from '../../../components/LightspeedProduct';
+
+let items = null;
 
 export async function getStaticPaths() {
   const data = await getAccessories();
@@ -17,19 +19,30 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params: { id } }) {
-  const itemData = await getItem(id).catch((err) => console.error(err));
-  const item = await itemData.data.Item;
+  if (!id) {
+    return {
+      notFound: true,
+    };
+  }
 
-  if (!item) return;
+  if (items != null) {
+    return {
+      props: { item: items.filter((item) => item.itemID === id)[0] },
+      revalidate: 300,
+    };
+  }
+
+  const data = await getAccessories();
+  items = data.data.Item;
 
   return {
-    props: { item },
-    revalidate: 600,
+    props: { item: items.filter((item) => item.itemID === id)[0] },
+    revalidate: 300,
   };
 }
 

@@ -40,11 +40,6 @@ const Nav = () => {
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
               </a>
             </Link>
-            {/* <Link href="/security">
-                <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
-                </a>
-              </Link> */}
             <Link href="/maintenance">
               <a>
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
@@ -53,6 +48,11 @@ const Nav = () => {
             <Link href="/clothing">
               <a>
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
+              </a>
+            </Link>
+            <Link href="/security">
+              <a>
+                <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
               </a>
             </Link>
             <Link href="/blog">
@@ -99,11 +99,6 @@ const Nav = () => {
                   <li className="text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
                 </a>
               </Link>
-              {/* <Link href="/security">
-                <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
-                </a>
-              </Link> */}
               <Link href="/maintenance">
                 <a>
                   <li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
@@ -112,6 +107,11 @@ const Nav = () => {
               <Link href="/clothing">
                 <a>
                   <li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
+                </a>
+              </Link>
+              <Link href="/security">
+                <a>
+                  <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
                 </a>
               </Link>
               {/* <Link href="/sale">

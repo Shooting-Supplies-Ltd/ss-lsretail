@@ -1,13 +1,11 @@
-import Nav from "./Nav"
-import TopBar from "./TopBar"
+import Nav from './Nav';
+import TopBar from './TopBar';
 
-const Header = () => {
-  return (
-    <header>
-      <TopBar />
-      <Nav />
-    </header>
-  )
-}
+const Header = () => (
+  <header>
+    <TopBar />
+    <Nav />
+  </header>
+);
 
-export default Header
+export default Header;

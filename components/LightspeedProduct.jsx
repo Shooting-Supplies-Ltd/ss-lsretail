@@ -35,6 +35,18 @@ export default function LightspeedProduct({ item }) {
         <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta charSet="UTF-8" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'http://schema.org',
+              '@type': 'Product',
+              sku: item.customSku,
+              image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
+              name: item.description,
+            }),
+          }}
+        />
       </Head>
       <main>
         <div className="xl:mx-72 xl:my-12 flex flex-col xl:flex-row justify-center">

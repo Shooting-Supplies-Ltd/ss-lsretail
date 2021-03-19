@@ -12,6 +12,31 @@ export default function Home() {
       <Head>
         <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier.</title>
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'http://schema.org',
+              '@type': 'LocalBusiness',
+              name: 'Shooting Supplies Ltd',
+              description:
+                'The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More.',
+              openingHours: ['Tu,We,Th,Sa 09:00-17:30', 'Fr 09:00-19:00'],
+              telephone: '01527831261',
+              paymentAccepted: 'Cash, Credit Card, Debit Card, Finance',
+              url: 'https://www.shootingsuppliesltd.co.uk',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '38, Sherwood Road',
+                addressLocality: 'Bromsgrove',
+                addressRegion: 'Worcestershire',
+                postalCode: 'B60 3DR',
+                email: 'info@shootingsuppliesltd.co.uk',
+              },
+              logo: '/logos/Logo.webp',
+            }),
+          }}
+        />
         <meta
           name="description"
           content="The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More."

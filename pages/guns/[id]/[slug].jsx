@@ -106,6 +106,21 @@ const Gun = (props) => {
         <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta charSet="UTF-8" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'http://schema.org',
+              '@type': 'Product',
+              image: `${Gun.Images[0].FullPath}`,
+              name: `${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`,
+              brand: Gun.Make,
+              model: Gun.Model,
+              category: Gun.Type,
+              itemCondition: Gun.Condition,
+            }),
+          }}
+        />
       </Head>
       <main className="flex">
         <div className="xl:w-1/4" />

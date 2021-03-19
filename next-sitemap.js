@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: 'https://shootingsuppliesltd.co.uk',
+  siteUrl: 'https://www.shootingsuppliesltd.co.uk',
   generateRobotsTxt: false, // (optional)
   changefreq: 'daily',
   priority: 0.7,

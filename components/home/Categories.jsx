@@ -9,7 +9,7 @@ const Categories = () => (
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/guns">
               <a aria-label="Guns">
-                <Image src="/home/Guns.png" width={600} height={280} className="object-fill" alt="Navigate to Guns" />
+                <Image src="/home/Guns.webp" width={600} height={280} className="object-fill" alt="Navigate to Guns" />
               </a>
             </Link>
           </li>
@@ -18,7 +18,7 @@ const Categories = () => (
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/ammo">
               <a aria-label="Ammo">
-                <Image src="/home/Ammo.png" width={600} height={280} alt="Navigate to Ammo" />
+                <Image src="/home/Ammo.webp" width={600} height={280} alt="Navigate to Ammo" />
               </a>
             </Link>
           </li>
@@ -27,7 +27,7 @@ const Categories = () => (
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/optics">
               <a aria-label="Optics">
-                <Image src="/home/Optics.png" width={600} height={280} alt="Navigate to Optics" />
+                <Image src="/home/Optics.webp" width={600} height={280} alt="Navigate to Optics" />
               </a>
             </Link>
           </li>
@@ -36,7 +36,7 @@ const Categories = () => (
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/accessories">
               <a aria-label="Accessories">
-                <Image src="/home/Accessories.png" width={600} height={280} alt="Navigate to Accessories" />
+                <Image src="/home/Accessories.webp" width={600} height={280} alt="Navigate to Accessories" />
               </a>
             </Link>
           </li>
@@ -46,7 +46,7 @@ const Categories = () => (
             <Link href="/maintenance">
               <a aria-label="Maintenance">
                 <Image
-                  src="/home/Cleaning.png"
+                  src="/home/Cleaning.webp"
                   width={600}
                   height={280}
                   className="object-fill"
@@ -60,7 +60,7 @@ const Categories = () => (
           <li className="border border-gray-300 hover:border-ssorange">
             <Link href="/clothing">
               <a aria-label="Clothing">
-                <Image src="/home/Clothing.png" width={600} height={280} alt="Navigate to Clothing" />
+                <Image src="/home/Clothing.webp" width={600} height={280} alt="Navigate to Clothing" />
               </a>
             </Link>
           </li>

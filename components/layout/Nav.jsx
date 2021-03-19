@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { CgMenuRight } from 'react-icons/cg';
 
+import Image from 'next/image';
 import CartIcon from '../cart/CartIcon';
 import CartDisplay from '../cart/CartDisplay';
 
@@ -68,13 +69,11 @@ const Nav = () => {
       )}
       <div className="xl:bg-ssblue">
         <div className="flex justify-between xl:justify-start h-28 xl:h-12 xl:mx-12 shadow xl:shadow-none">
-          <div className="xl:w-1/6 xl:flex xl:justify-center p-2">
+          <div className="xl:w-1/6 xl:flex xl:justify-center p-2 cursor-pointer">
             <Link href="/">
-              <img
-                className="xl:absolute xl:z-10 xl:top-1 h-24 xl:h-40 w-auto border-2 border-white hover:border-ssorange hover:pointer rounded-xl"
-                src="/logos/Logo.png"
-                alt="Shooting Supplies"
-              />
+              <div className="xl:absolute xl:z-10 xl:top-1 h-24 xl:h-40 w-auto">
+                <Image src="/logos/Logo.webp" alt="Shooting Supplies Ltd" width={160} height={160} />
+              </div>
             </Link>
           </div>
           <div className="hidden xl:w-4/6 xl:p-2 xl:flex items-center justify-center">

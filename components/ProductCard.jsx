@@ -16,7 +16,7 @@ const ProductCard = ({ item }) => {
       <Link href={`${router.pathname}/${item.itemID ? item.itemID : item.itemMatrixID}/${slug}`}>
         <a>
           <div className="flex justify-center h-48 overflow-hidden">
-            <Image src={imageUrl} alt={`Image of ${name}`} width={200} height={200} />
+            <Image src={imageUrl} alt={`Image of ${name}`} width={240} height={240} />
           </div>
           <div className="h-32 p-4 flex flex-col bg-ssblue text-white hover:text-ssorange rounded-b-lg">
             <h2 className="flex justify-center text-center uppercase">{name}</h2>

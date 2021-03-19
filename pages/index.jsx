@@ -32,6 +32,8 @@ export default function Home() {
                 addressRegion: 'Worcestershire',
                 postalCode: 'B60 3DR',
                 email: 'info@shootingsuppliesltd.co.uk',
+                image:
+                  'https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg',
               },
               logo: '/logos/Logo.webp',
             }),

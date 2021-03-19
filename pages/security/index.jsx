@@ -114,7 +114,7 @@ const Optics = ({ items, categories, brands }) => {
       <Head>
         <title>Security - Gun & Ammo Safes from Brattonsound</title>
         <meta name="description" content="We stock a range of Gun & Ammo Safes from Brattonsound" />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/optics" />
+        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/security" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div className="flex mx-12 my-4 xl:my-16">

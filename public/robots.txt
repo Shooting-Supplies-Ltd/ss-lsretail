@@ -1,9 +1,10 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /_next/ 
 
 # Host
-Host: https://shootingsuppliesltd.co.uk
+Host: https://www.shootingsuppliesltd.co.uk
 
 # Sitemaps
-Sitemap: https://shootingsuppliesltd.co.uk/sitemap.xml
+Sitemap: https://www.shootingsuppliesltd.co.uk/sitemap.xml

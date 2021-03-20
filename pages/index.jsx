@@ -55,7 +55,7 @@ export default function Home() {
           content="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg"
         />
         <meta
-          name="og:description"
+          property="og:description"
           content="The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More."
         />
       </Head>

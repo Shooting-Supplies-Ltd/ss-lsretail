@@ -50,6 +50,14 @@ export default function Home() {
         <meta property="og:url" content="https://www.shootingsuppliesltd.co.uk" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Shooting Supplies Ltd | The Midlands leading gun shop." />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/shooting-supplies/image/upload/v1573564805/shop/ShootingSuppliesStore_inkcxw_qmb2bo.jpg"
+        />
+        <meta
+          name="og:description"
+          content="The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More."
+        />
       </Head>
       <div>
         <div id="app-modal" />

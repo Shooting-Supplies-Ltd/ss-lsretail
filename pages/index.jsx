@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Shooting Supplies Ltd | The Midlands leading Shooting Supplier.</title>
+        <title>Shooting Supplies Ltd | The Midlands leading gun shop.</title>
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk" />
         <script
           type="application/ld+json"
@@ -49,6 +49,7 @@ export default function Home() {
         />
         <meta property="og:url" content="https://www.shootingsuppliesltd.co.uk" />
         <meta property="og:type" content="website" />
+        <meta property="og:title" content="Shooting Supplies Ltd | The Midlands leading gun shop." />
       </Head>
       <div>
         <div id="app-modal" />

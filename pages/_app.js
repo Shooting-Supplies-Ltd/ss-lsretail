@@ -1,4 +1,5 @@
 import '../style/index.css';
+import 'react-bnb-gallery/dist/style.css';
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from 'use-shopping-cart';
 

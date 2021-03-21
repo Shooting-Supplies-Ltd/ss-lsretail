@@ -1,7 +1,9 @@
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Head from 'next/head';
 // import Image from 'next/image';
 import slugify from 'slugify';
+import ReactBnbGallery from 'react-bnb-gallery';
 import Layout from '../../../components/layout/Layout';
 
 let guns = null;
@@ -58,6 +60,14 @@ export async function getStaticProps({ params: { id } }) {
 const Gun = (props) => {
   const router = useRouter();
   const { Gun } = props;
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const images = Gun.Images.map((image) => ({
+    photo: image.FullPath,
+    thumbnail: image.ThumbPath,
+  }));
+  console.log(images);
 
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';
@@ -135,7 +145,7 @@ const Gun = (props) => {
         <div className="xl:w-1/4" />
         <div className="xl:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 xl:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
-            <div className="block w-full">
+            <div className="w-full">
               {/* <Image
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
@@ -151,7 +161,16 @@ const Gun = (props) => {
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
                   Gun.Calibre
                 }`}
-                className="object-scale-down"
+                className="object-cover max-h-72 w-full cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+                onKeyDown={() => setIsOpen(!isOpen)}
+                role="alert"
+              />
+              <ReactBnbGallery
+                show={isOpen}
+                photos={images}
+                onClose={() => setIsOpen(false)}
+                backgroundColor="	#004d91"
               />
             </div>
             <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Condition} ${Gun.Make} ${

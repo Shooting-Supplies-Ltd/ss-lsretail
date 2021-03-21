@@ -120,6 +120,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
     if (initialRender.current) {
       initialRender.current = false;
     } else {
+      console.log(selectedBrand);
       handleFilters();
     }
   }, [selectedBrand]);

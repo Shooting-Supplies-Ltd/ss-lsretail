@@ -118,6 +118,15 @@ const Gun = (props) => {
               model: Gun.Model,
               category: Gun.Type,
               itemCondition: Gun.Condition,
+              offers: {
+                '@type': 'Offer',
+                url: `https://shootingsuppliesltd.co.uk${router.asPath}`,
+                priceCurrency: 'GBP',
+                price: Gun.Price,
+                itemCondition:
+                  Gun.Condition == 'New' ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition',
+                availability: 'https://schema.org/InStock',
+              },
             }),
           }}
         />

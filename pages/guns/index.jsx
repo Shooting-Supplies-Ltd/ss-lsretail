@@ -2,20 +2,70 @@ import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import { useRouter } from 'next/router';
 import Layout from '../../components/layout/Layout';
 import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
 import GunProductCard from '../../components/GunProductCard';
 
+let routerQueryBrand;
+let routerQueryCategory;
+
 const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
-  const [selectedCategory, setSelectedCategory] = useState({});
-  const [selectedBrand, setSelectedBrand] = useState({});
+  const router = useRouter();
+  const initialRender = useRef(true);
+
+  // Implement useConstructor to load function before initial render.
+  const useConstructor = (callBack = () => {}) => {
+    const hasBeenCalled = useRef(false);
+    if (hasBeenCalled.current) return;
+    callBack();
+    hasBeenCalled.current = true;
+  };
+
+  // Get and set Query Brand if set
+  const initialBrand = () => {
+    const queryValue = router.asPath.match(new RegExp(`[&?]${'brand'}=(.*)(&|$)`));
+    if (queryValue) {
+      const filterQueryBrand = brands
+        .map((queryBrand) => {
+          if (queryBrand.brands.name === queryValue[1])
+            return {
+              [queryBrand.brands.name]: true,
+            };
+        })
+        .filter(Boolean);
+      routerQueryBrand = filterQueryBrand[0];
+    }
+  };
+
+  // Get and set Query Category if set
+  const initialCategory = () => {
+    const queryValue = router.asPath.match(new RegExp(`[&?]${'category'}=(.*)(&|$)`));
+    if (queryValue) {
+      const filterQueryCategory = categories
+        .map((queryCategory) => {
+          console.log(queryCategory);
+          if (queryCategory.categories.name === queryValue[1])
+            return {
+              [queryCategory.categories.name]: true,
+            };
+        })
+        .filter(Boolean);
+      console.log(filterQueryCategory);
+      routerQueryCategory = filterQueryCategory[0];
+    }
+  };
+
+  useConstructor(initialBrand);
+  useConstructor(initialCategory);
+
+  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
+  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
   const [selectedCondition, setSelectedCondition] = useState({});
   const [selectedMechanism, setSelectedMechanism] = useState({});
   const [gunFilters, setGunFilters] = useState();
   const [filteredGuns, setFilteredGuns] = useState();
-
-  const initialRender = useRef(true);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });

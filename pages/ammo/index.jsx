@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 import { getAmmo, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
 import Layout from '../../components/layout/Layout';
@@ -7,6 +8,9 @@ import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
+
+let routerQueryBrand;
+let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
@@ -50,12 +54,56 @@ export async function getStaticProps() {
 }
 
 const Ammo = ({ items, categories, brands }) => {
-  const [selectedCategory, setSelectedCategory] = useState({});
-  const [selectedBrand, setSelectedBrand] = useState({});
+  const router = useRouter();
+  const initialRender = useRef(true);
+
+  // Implement useConstructor to load function before initial render.
+  const useConstructor = (callBack = () => {}) => {
+    const hasBeenCalled = useRef(false);
+    if (hasBeenCalled.current) return;
+    callBack();
+    hasBeenCalled.current = true;
+  };
+
+  // Get and set Query Brand if set
+  const initialBrand = () => {
+    const queryValue = router.asPath.match(new RegExp(`[&?]${'brand'}=(.*)(&|$)`));
+    if (queryValue) {
+      const filterQueryBrand = brands
+        .map((queryBrand) => {
+          if (queryBrand.name === queryValue[1])
+            return {
+              [queryBrand.brandID]: true,
+            };
+        })
+        .filter(Boolean);
+      routerQueryBrand = filterQueryBrand[0];
+    }
+  };
+
+  // Get and set Query Category if set
+  const initialCategory = () => {
+    const queryValue = router.asPath.match(new RegExp(`[&?]${'category'}=(.*)(&|$)`));
+    if (queryValue) {
+      const filterQueryCategory = categories
+        .map((queryCategory) => {
+          if (queryCategory.name === queryValue[1])
+            return {
+              [queryCategory.catID]: true,
+            };
+        })
+        .filter(Boolean);
+      routerQueryCategory = filterQueryCategory[0];
+    }
+  };
+
+  useConstructor(initialBrand);
+  useConstructor(initialCategory);
+
+  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
+  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
-
-  const initialRender = useRef(true);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });

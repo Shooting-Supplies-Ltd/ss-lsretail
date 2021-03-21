@@ -66,7 +66,7 @@ const Gun = (props) => {
   const images = Gun.Images.map((image) => ({
     photo: image.FullPath,
     thumbnail: image.ThumbPath,
-  }));
+  })).filter(Boolean);
 
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';

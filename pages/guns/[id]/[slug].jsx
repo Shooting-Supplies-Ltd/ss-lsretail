@@ -57,16 +57,18 @@ export async function getStaticProps({ params: { id } }) {
   };
 }
 
-const Gun = (props) => {
+const Gun = ({ Gun }) => {
   const router = useRouter();
-  const { Gun } = props;
+  let images;
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const images = Gun.Images.map((image) => ({
-    photo: image.FullPath,
-    thumbnail: image.ThumbPath,
-  })).filter(Boolean);
+  if (Gun.ImageCount > 1) {
+    images = Gun.Images.map((image) => ({
+      photo: image.FullPath,
+      thumbnail: image.ThumbPath,
+    })).filter(Boolean);
+  }
 
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';
@@ -144,7 +146,7 @@ const Gun = (props) => {
         <div className="xl:w-1/4" />
         <div className="xl:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 xl:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
-            <div className="w-full">
+            <div className="flex justify-center items-center w-full h-80 bg-ssblue">
               {/* <Image
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
@@ -160,7 +162,7 @@ const Gun = (props) => {
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
                   Gun.Calibre
                 }`}
-                className="object-cover max-h-72 w-full cursor-pointer"
+                className="object-scale-down object-center h-72 cursor-pointer rounded-lg"
                 onClick={() => setIsOpen(!isOpen)}
                 onKeyDown={() => setIsOpen(!isOpen)}
                 role="alert"

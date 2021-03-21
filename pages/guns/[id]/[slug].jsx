@@ -67,7 +67,6 @@ const Gun = (props) => {
     photo: image.FullPath,
     thumbnail: image.ThumbPath,
   }));
-  console.log(images);
 
   const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';

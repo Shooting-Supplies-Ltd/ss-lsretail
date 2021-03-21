@@ -63,7 +63,7 @@ const Gun = ({ Gun }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  if (Gun.ImageCount > 1) {
+  if (Gun?.ImageCount > 1) {
     images = Gun.Images.map((image) => ({
       photo: image.FullPath,
       thumbnail: image.ThumbPath,
@@ -167,12 +167,16 @@ const Gun = ({ Gun }) => {
                 onKeyDown={() => setIsOpen(!isOpen)}
                 role="alert"
               />
-              <ReactBnbGallery
-                show={isOpen}
-                photos={images}
-                onClose={() => setIsOpen(false)}
-                backgroundColor="	#004d91"
-              />
+              {Gun?.ImageCount > 1 ? (
+                <ReactBnbGallery
+                  show={isOpen}
+                  photos={images}
+                  onClose={() => setIsOpen(false)}
+                  backgroundColor="	#004d91"
+                />
+              ) : (
+                ''
+              )}
             </div>
             <h1 className="mx-4 my-8 text-4xl font-black italic uppercase">{`${Gun.Condition} ${Gun.Make} ${
               Gun.Model ? Gun.Model : ''

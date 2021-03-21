@@ -55,7 +55,7 @@ export default function LightspeedProduct({ item }) {
                 }),
                 itemCondition: 'https://schema.org/NewCondition',
                 availability:
-                  item.ItemShops.ItemShop[0].qoh > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+                  item.ItemShops?.ItemShop[0]?.qoh > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
               },
             }),
           }}

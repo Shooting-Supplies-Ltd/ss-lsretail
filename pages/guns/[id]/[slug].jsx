@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Head from 'next/head';
 // import Image from 'next/image';
+import { MdFullscreen } from 'react-icons/md';
 import slugify from 'slugify';
 import ReactBnbGallery from 'react-bnb-gallery';
 import Layout from '../../../components/layout/Layout';
@@ -146,7 +147,7 @@ const Gun = ({ Gun }) => {
         <div className="xl:w-1/4" />
         <div className="xl:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 xl:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
-            <div className="flex justify-center items-center w-full h-80 bg-ssblue">
+            <div className="relative flex justify-center items-center w-full h-80 bg-ssblue">
               {/* <Image
                 src={Gun.Images[0].FullPath}
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
@@ -162,11 +163,16 @@ const Gun = ({ Gun }) => {
                 alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
                   Gun.Calibre
                 }`}
-                className="object-scale-down object-center h-72 cursor-pointer rounded-lg"
-                onClick={() => setIsOpen(!isOpen)}
-                onKeyDown={() => setIsOpen(!isOpen)}
-                role="alert"
+                className="object-scale-down object-center h-72 rounded-lg"
               />
+              <div className="absolute bottom-2 right-2 cursor-pointer">
+                <MdFullscreen
+                  className="text-4xl text-white"
+                  onClick={() => setIsOpen(!isOpen)}
+                  onKeyDown={() => setIsOpen(!isOpen)}
+                  role="button"
+                />
+              </div>
               {Gun?.ImageCount > 1 ? (
                 <ReactBnbGallery
                   show={isOpen}

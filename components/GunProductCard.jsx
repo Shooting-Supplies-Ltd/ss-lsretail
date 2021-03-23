@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import slugify from 'slugify';
 
@@ -18,6 +19,9 @@ const GunProductCard = ({ gun }) => {
         <Link href={`/guns/${gun.ID}/${slug}`}>
           <a>
             <div className="flex h-48 overflow-hidden">
+              {/* <Image src={gun.Images[0].FullPath} alt={`${gun.Condition} ${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${
+                  gun.Calibre
+                }`} width={300} height={100} quality={100} className="object-cover" /> */}
               <img
                 src={gun.Images[0].FullPath}
                 alt={`${gun.Condition} ${gun.Make} ${gun.Model ? gun.Model : ''} ${gun.Variant ? gun.Variant : ''} ${

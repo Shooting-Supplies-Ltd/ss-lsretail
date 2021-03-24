@@ -30,7 +30,16 @@ const Tippmann = ({ tippmannProducts }) => {
       <div className="hidden lg:mx-12 lg:my-8 lg:block">
         <Image src="/banners/tippmannBanner.png" layout="responsive" width={1920} height={380} className="rounded-lg" />
       </div>
-      <div className="flex mx-12 my-8 lg:my-4">
+      <div className="block mx-12 mt-4 lg:hidden">
+        <Image
+          src="/banners/Tippmann-Mobile.png"
+          layout="responsive"
+          width={284}
+          height={192}
+          className="rounded-lg cursor-pointer"
+        />
+      </div>
+      <div className="flex mx-12 my-4 lg:mb-12 lg:my-4">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
           {tippmannProducts.map((item) => (
             <div key={item.itemID}>

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { getAccessories, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
 import Layout from '../../components/layout/Layout';
@@ -186,11 +187,17 @@ const Accessories = ({ items, categories, brands }) => {
             selectedBrand={selectedBrand}
             handleBrandChange={handleBrandChange}
           />
-        </div>
-        <main className="xl:w-5/6 p-2">
           <div className="mb-4 xl:hidden text-center">
             <StockMessage />
           </div>
+          <div className="mt-4">
+            <a href="https://fabdefense.co.uk" rel="noopener noreferrer" target="_blank">
+              <Image src="/banners/FAB-Mobile.png" width={220} height={260} className="rounded-lg cursor-pointer" />
+            </a>
+          </div>
+        </div>
+
+        <main className="lg:mt-2 lg:ml-4 xl:w-5/6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
               ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)

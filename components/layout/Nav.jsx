@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useShoppingCart } from 'use-shopping-cart';
 import { CgMenuRight } from 'react-icons/cg';
+import { BiLinkExternal } from 'react-icons/bi';
 
 import Image from 'next/image';
 import CartIcon from '../cart/CartIcon';
@@ -61,6 +62,19 @@ const Nav = () => {
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">BLOG</li>
               </a>
             </Link>
+            <Link href="/tippmann-arms">
+              <a>
+                <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">TIPPMANN ARMS</li>
+              </a>
+            </Link>
+            <a href="https://fabdefense.co.uk" rel="noopener noreferrer" target="_blank">
+              <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">
+                FAB DEFENSE{' '}
+                <span className="ml-2 inline-block">
+                  <BiLinkExternal className="p-1" />
+                </span>
+              </li>
+            </a>
             {/* <Link href="/sale">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">SALE</li></a>
               </Link> */}

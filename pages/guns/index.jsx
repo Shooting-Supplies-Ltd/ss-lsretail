@@ -191,7 +191,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             selectedMechanism={selectedMechanism}
             handleMechanismChange={handleMechanismChange}
           />
-          <div className="mt-4 hidden lg:block">
+          <div className="hidden lg:mt-4 lg:block">
             <Link href="/tippmann-arms">
               <Image
                 src="/banners/Tippmann-Mobile.png"
@@ -203,7 +203,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             </Link>
           </div>
         </div>
-        <main className="lg:ml-4 xl:w-5/6">
+        <main className="lg:ml-4 lg:p-2 xl:w-5/6">
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredGuns
               ? filteredGuns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)

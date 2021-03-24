@@ -198,6 +198,9 @@ const Accessories = ({ items, categories, brands }) => {
         </div>
 
         <main className="lg:mt-2 lg:ml-4 xl:w-5/6">
+          <div className="mb-4 xl:hidden text-center">
+            <StockMessage />
+          </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
               ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)

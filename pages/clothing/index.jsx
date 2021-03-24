@@ -172,7 +172,7 @@ const Clothing = ({ items, categories, brands }) => {
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/clothing" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
-      <div className="flex mx-12 my-4 xl:my-16">
+      <div className="flex mx-12 my-4 xl:my-24">
         <div className="hidden xl:block xl:w-1/6 p-2">
           <ProductFilter
             categories={categories}

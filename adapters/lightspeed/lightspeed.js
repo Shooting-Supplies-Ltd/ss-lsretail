@@ -160,6 +160,13 @@ export async function getManufacturers(manufacturerID) {
   return manufacturers;
 }
 
+export async function getTippmann() {
+  console.log('getAmmo() Called');
+  const tippmann = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  &ItemShops.qoh=%3E%3D,1&manufacturerID=21&ItemECommerce.listOnStore=true&orderby=description`);
+  return tippmann;
+}
+
 export async function createSale(newSale) {
   const axiosConfig = await getHeader();
   const createSaleData = await http

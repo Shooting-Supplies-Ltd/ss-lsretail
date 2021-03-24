@@ -103,11 +103,11 @@ const Footer = () => (
               FAB Defense
             </a>
           </li>
-          {/* <li>
-            <Link href="/blog">
+          <li>
+            <Link href="/tippmann-arms">
               <a className="hover:text-ssorange">Tippmann Arms</a>
             </Link>
-          </li> */}
+          </li>
         </ul>
       </div>
     </footer>

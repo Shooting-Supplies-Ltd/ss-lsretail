@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
@@ -192,7 +193,18 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
           />
         </div>
         <main className="xl:w-5/6 p-2">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
+          <div>
+            <Link href="/tippmann-arms">
+              <Image
+                src="/banners/tippmannBanner.png"
+                layout="responsive"
+                width={1920}
+                height={380}
+                className="rounded-lg cursor-pointer"
+              />
+            </Link>
+          </div>
+          <div className="my-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
             {filteredGuns
               ? filteredGuns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)
               : guns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)}

@@ -46,14 +46,12 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
     if (queryValue) {
       const filterQueryCategory = categories
         .map((queryCategory) => {
-          console.log(queryCategory);
           if (queryCategory.categories.name === queryValue[1])
             return {
               [queryCategory.categories.name]: true,
             };
         })
         .filter(Boolean);
-      console.log(filterQueryCategory);
       routerQueryCategory = filterQueryCategory[0];
     }
   };
@@ -121,7 +119,6 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
     if (initialRender.current) {
       initialRender.current = false;
     } else {
-      console.log(selectedBrand);
       handleFilters();
     }
   }, [selectedBrand]);

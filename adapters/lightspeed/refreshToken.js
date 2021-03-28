@@ -1,7 +1,6 @@
 import api from './limit';
 
 const refreshToken = async () => {
-  console.log('refreshToken() called');
   const body = {
     grant_type: 'refresh_token',
     client_id: process.env.LIGHTSPEED_ID,

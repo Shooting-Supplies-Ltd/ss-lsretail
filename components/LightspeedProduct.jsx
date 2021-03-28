@@ -80,14 +80,16 @@ export default function LightspeedProduct({ item }) {
             </p>
             {item.ItemShops ? (
               item.ItemShops.ItemShop[0].qoh > 0 ? (
-                <p className="mt-4 text-green-500 font-bold text-lg">In Stock</p>
+                <p className="mt-2 text-green-500 font-bold uppercase text-sm">In Stock</p>
+              ) : item.ItemShops.ItemShop[0].backorder >= 1 ? (
+                <p className="mt-2 text-red-500 font-bold uppercase text-sm">Out of Stock - On Order</p>
               ) : (
-                <p className="mt-4 text-red-500 font-bold text-lg">
-                  Out of Stock - Check Back or Call for Availability
-                </p>
+                <p className="mt-2 text-red-500 font-bold uppercase text-sm">Out of Stock</p>
               )
-            ) : null}
-            <p className="mt-8" dangerouslySetInnerHTML={productDescriptionShort()} />
+            ) : (
+              ''
+            )}
+            <p className="mt-4" dangerouslySetInnerHTML={productDescriptionShort()} />
             <a href="#fulldescription" className="hidden xl:block">
               <p className="mt-6 text-ssblue hover:text-ssorange">Full Description..</p>
             </a>

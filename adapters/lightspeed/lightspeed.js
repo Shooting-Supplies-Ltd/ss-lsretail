@@ -82,48 +82,48 @@ export async function getItemsByCategory(categoryID) {
 export async function getAmmo() {
   console.log('getAmmo() Called');
   const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[23,46,218]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[23,46,218]&ItemECommerce.listOnStore=true&orderby=description`);
   return ammo;
 }
 
 export async function getAccessories() {
   console.log('getAccessories() Called');
   const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
   return accessories;
 }
 
 // export async function getMatrixAccessories() {
 //   const accessories = makeRequest(`ItemMatrix.json?load_relations=["Category", "Images", "ItemECommerce"]
-//   &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
+//   &Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
 //   return accessories;
 // }
 
 export async function getOptics() {
   console.log('getOptics() Called');
   const optics = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[39, 109, 91, 105, 267, 4, 36, 27, 37, 80, 29, 16, 150, 266, 259]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[39, 109, 91, 105, 267, 4, 36, 27, 37, 80, 29, 16, 150, 266, 259]&ItemECommerce.listOnStore=true&orderby=description`);
   return optics;
 }
 
 export async function getSecurity() {
   console.log('getSecurity() Called');
   const security = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[206, 124, 131]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[206, 124, 131]&ItemECommerce.listOnStore=true&orderby=description`);
   return security;
 }
 
 export async function getMaintenance() {
   console.log('getMaintenance() Called');
   const maintenance = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[164, 52, 106, 86, 57, 14, 58, 65, 96, 83, 245, 165]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[164, 52, 106, 86, 57, 14, 58, 65, 96, 83, 245, 165]&ItemECommerce.listOnStore=true&orderby=description`);
   return maintenance;
 }
 
 export async function getClothing() {
   console.log('getClothing() Called');
   const clothing = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&Category.categoryID=IN,[5]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[5]&ItemECommerce.listOnStore=true&orderby=description`);
   return clothing;
 }
 
@@ -163,7 +163,7 @@ export async function getManufacturers(manufacturerID) {
 export async function getTippmann() {
   console.log('getAmmo() Called');
   const tippmann = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &ItemShops.qoh=%3E%3D,1&manufacturerID=21&ItemECommerce.listOnStore=true&orderby=description`);
+  &manufacturerID=21&ItemECommerce.listOnStore=true&orderby=description`);
   return tippmann;
 }
 

@@ -1,5 +1,5 @@
 import slugify from 'slugify';
-import { getMaintenance, getItem } from '../../../adapters/lightspeed/lightspeed';
+import { getMaintenance } from '../../../adapters/lightspeed/lightspeed';
 import Layout from '../../../components/layout/Layout';
 import LightspeedProduct from '../../../components/LightspeedProduct';
 

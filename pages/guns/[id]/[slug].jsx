@@ -130,6 +130,9 @@ const Gun = ({ Gun }) => {
               model: Gun.Model,
               category: Gun.Type,
               itemCondition: Gun.Condition,
+              description: `${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
+                Gun.Calibre ? Gun.Calibre : ''
+              }`,
               offers: {
                 '@type': 'Offer',
                 url: `https://shootingsuppliesltd.co.uk${router.asPath}`,

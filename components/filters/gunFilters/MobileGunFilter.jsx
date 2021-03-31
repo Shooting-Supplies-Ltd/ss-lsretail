@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { useEffect } from 'react/cjs/react.development';
 
 import BrandFilter from './BrandFilter';
 import CategoryFilter from './CategoryFilter';

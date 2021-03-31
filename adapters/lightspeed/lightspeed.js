@@ -77,13 +77,13 @@ export async function getItemsByCategory(categoryID) {
 
 export async function getAmmo() {
   const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[23,46,120,218]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[23,46,120,180, 218]&ItemECommerce.listOnStore=true&orderby=description`);
   return ammo;
 }
 
 export async function getAccessories() {
   const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[273, 276, 275, 272, 279, 278, 274, 280, 281, 277, 90, 122, 154, 88, 47, 48, 18, 77, 153, 73, 2, 262, 163, 21, 78, 261, 24, 263, 76, 126, 166, 212, 56, 59, 42, 103, 104, 236, 66, 145, 207]&ItemECommerce.listOnStore=true&orderby=description`);
   return accessories;
 }
 

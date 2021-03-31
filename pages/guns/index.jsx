@@ -196,7 +196,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div
         type="button"
-        className="h-12 bg-ssblue text-white border-b border-ssblue lg:hidden flex justify-center items-center"
+        className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
         onClick={handleMobileFilter}
       >
         FILTERS
@@ -222,7 +222,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         )}
       </>
       <div className="flex mx-12 my-16">
-        <div className="hidden lg:block lg:w-1/6 p-2">
+        <div className="hidden xl:block xl:w-1/6 p-2">
           <GunFilter
             categories={categories}
             selectedCategory={selectedCategory}

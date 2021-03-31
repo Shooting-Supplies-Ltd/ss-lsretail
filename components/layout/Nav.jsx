@@ -85,7 +85,7 @@ const Nav = () => {
         <div className="flex justify-between xl:justify-start h-28 xl:h-12 xl:mx-12 shadow xl:shadow-none">
           <div className="xl:w-1/6 xl:flex xl:justify-center p-2 cursor-pointer">
             <Link href="/">
-              <div className="xl:absolute xl:z-10 xl:top-1 w-24 lg:w-40 xl:h-40">
+              <div className="xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
                 <Image src="/logos/Logo.webp" alt="Shooting Supplies Ltd" width={160} height={160} />
               </div>
             </Link>

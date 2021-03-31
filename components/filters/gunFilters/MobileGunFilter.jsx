@@ -1,26 +1,49 @@
 import { useState } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useEffect } from 'react/cjs/react.development';
 
 import BrandFilter from './BrandFilter';
 import CategoryFilter from './CategoryFilter';
 import ConditionFilter from './ConditionFilter';
 
 const MobileGunFilter = (props) => {
-  const [displayConditions, setDisplayConditions] = useState(false);
-  const [displayCategories, setDisplayCategories] = useState(false);
-  const [displayBrands, setDisplayBrands] = useState(false);
+  const [displayConditions, setDisplayConditions] = useState(() => {
+    const stickyValue = localStorage.getItem('conditions');
+    return stickyValue !== null ? JSON.parse(stickyValue) : false;
+  });
+
+  const [displayCategories, setDisplayCategories] = useState(() => {
+    const stickyValue = localStorage.getItem('categories');
+    return stickyValue !== null ? JSON.parse(stickyValue) : false;
+  });
+  const [displayBrands, setDisplayBrands] = useState(() => {
+    const stickyValue = localStorage.getItem('brands');
+    return stickyValue !== null ? JSON.parse(stickyValue) : false;
+  });
 
   const toggleDisplayConditions = () => {
     setDisplayConditions(!displayConditions);
   };
 
+  useEffect(() => {
+    localStorage.setItem('conditions', JSON.stringify(displayConditions));
+  }, [displayConditions]);
+
   const toggleDisplayCategories = () => {
     setDisplayCategories(!displayCategories);
   };
 
+  useEffect(() => {
+    localStorage.setItem('categories', JSON.stringify(displayCategories));
+  }, [displayCategories]);
+
   const toggleDisplayBrands = () => {
     setDisplayBrands(!displayBrands);
   };
+
+  useEffect(() => {
+    localStorage.setItem('brands', JSON.stringify(displayBrands));
+  }, [displayBrands]);
 
   return (
     <>

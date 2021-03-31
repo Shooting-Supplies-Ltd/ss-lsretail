@@ -122,6 +122,9 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
 
   const handleMobileFilter = () => {
     setDisplayMobileFilter(!displayMobileFilter);
+    setSelectedBrand({});
+    setSelectedCategory({});
+    setSelectedCondition({});
   };
 
   const multiPropsFilter = (guns, gunFilters) => {
@@ -193,10 +196,10 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div
         type="button"
-        className="h-12 border-b border-ssblue md:hidden flex justify-center items-center"
+        className="h-12 bg-ssblue text-white border-b border-ssblue md:hidden flex justify-center items-center"
         onClick={handleMobileFilter}
       >
-        Filters
+        FILTERS
       </div>
       <>
         {displayMobileFilter && (

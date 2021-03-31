@@ -195,7 +195,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
       <div
-        type="button"
+        role="navigation"
         className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
         onClick={handleMobileFilter}
       >

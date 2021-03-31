@@ -4,10 +4,12 @@ import Image from 'next/image';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { MdDriveEta } from 'react-icons/md';
 import Layout from '../../components/layout/Layout';
 import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
 import GunProductCard from '../../components/GunProductCard';
+import MobileGunFilter from '../../components/filters/gunFilters/MobileGunFilter';
 
 let routerQueryBrand;
 let routerQueryCategory;
@@ -65,21 +67,34 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const [selectedMechanism, setSelectedMechanism] = useState({});
   const [gunFilters, setGunFilters] = useState();
   const [filteredGuns, setFilteredGuns] = useState();
+  const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    if (displayMobileFilter) {
+      setDisplayMobileFilter(false);
+    }
   };
 
   const handleBrandChange = (event) => {
     setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    if (displayMobileFilter) {
+      setDisplayMobileFilter(false);
+    }
   };
 
   const handleConditionChange = (event) => {
     setSelectedCondition({ ...selectedCondition, [event.target.value]: event.target.checked });
+    if (displayMobileFilter) {
+      setDisplayMobileFilter(false);
+    }
   };
 
   const handleMechanismChange = (event) => {
     setSelectedMechanism({ ...selectedMechanism, [event.target.value]: event.target.checked });
+    if (displayMobileFilter) {
+      setDisplayMobileFilter(false);
+    }
   };
 
   const handleFilters = () => {
@@ -103,6 +118,10 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       if (selectedMechanism[MechanismKey]) appliedFilters.Mechanism.push(MechanismKey);
     }
     setGunFilters(appliedFilters);
+  };
+
+  const handleMobileFilter = () => {
+    setDisplayMobileFilter(!displayMobileFilter);
   };
 
   const multiPropsFilter = (guns, gunFilters) => {
@@ -172,6 +191,33 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/guns" />
       </Head>
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
+      <div
+        type="button"
+        className="h-12 border-b border-ssblue lg:hidden flex justify-center items-center"
+        onClick={handleMobileFilter}
+      >
+        Filters
+      </div>
+      <>
+        {displayMobileFilter && (
+          <div>
+            <MobileGunFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+              handleCategoryChange={handleCategoryChange}
+              brands={brands}
+              selectedBrand={selectedBrand}
+              handleBrandChange={handleBrandChange}
+              conditions={conditions}
+              selectedCondition={selectedCondition}
+              handleConditionChange={handleConditionChange}
+              mechanisms={mechanisms}
+              selectedMechanism={selectedMechanism}
+              handleMechanismChange={handleMechanismChange}
+            />
+          </div>
+        )}
+      </>
       <div className="flex mx-12 my-16">
         <div className="hidden xl:block xl:w-1/6 p-2">
           <GunFilter

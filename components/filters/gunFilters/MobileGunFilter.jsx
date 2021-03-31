@@ -4,13 +4,11 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import BrandFilter from './BrandFilter';
 import CategoryFilter from './CategoryFilter';
 import ConditionFilter from './ConditionFilter';
-import MechanismFilter from './MechanismFilter';
 
 const MobileGunFilter = (props) => {
   const [displayConditions, setDisplayConditions] = useState(false);
   const [displayCategories, setDisplayCategories] = useState(false);
   const [displayBrands, setDisplayBrands] = useState(false);
-  const [displayMechanisms, setDisplayMechanisms] = useState(false);
 
   const toggleDisplayConditions = () => {
     setDisplayConditions(!displayConditions);
@@ -22,10 +20,6 @@ const MobileGunFilter = (props) => {
 
   const toggleDisplayBrands = () => {
     setDisplayBrands(!displayBrands);
-  };
-
-  const toggleDisplayMechanisms = () => {
-    setDisplayMechanisms(!displayMechanisms);
   };
 
   return (
@@ -85,25 +79,6 @@ const MobileGunFilter = (props) => {
                 brands={props.brands}
                 handleBrandChange={props.handleBrandChange}
                 selectedBrand={props.selectedBrand}
-              />
-            </div>
-          )}
-        </div>
-        <div>
-          <div className="p-4" onClick={toggleDisplayMechanisms}>
-            <h5 className="font-semibold uppercase">
-              Mechanism
-              <span className="ml-2 inline-block align-middle">
-                <MdKeyboardArrowDown />
-              </span>
-            </h5>
-          </div>
-          {displayMechanisms && (
-            <div className="pl-4 pb-4 overflow-y-auto h-64">
-              <MechanismFilter
-                mechanisms={props.mechanisms}
-                handleMechanismChange={props.handleMechanismChange}
-                selectedMechanism={props.selectedMechanism}
               />
             </div>
           )}

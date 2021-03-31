@@ -8,6 +8,7 @@ import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
+import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
 
 let routerQueryBrand;
 let routerQueryCategory;
@@ -104,13 +105,16 @@ const Optics = ({ items, categories, brands }) => {
   const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
+  const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setDisplayMobileFilter(false);
   };
 
   const handleBrandChange = (event) => {
     setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setDisplayMobileFilter(false);
   };
 
   const handleFilters = () => {
@@ -135,6 +139,12 @@ const Optics = ({ items, categories, brands }) => {
         return itemFilters[key].includes(item[key]);
       })
     );
+  };
+
+  const handleMobileFilter = () => {
+    setDisplayMobileFilter(!displayMobileFilter);
+    setSelectedBrand({});
+    setSelectedCategory({});
   };
 
   useEffect(() => {
@@ -171,6 +181,27 @@ const Optics = ({ items, categories, brands }) => {
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/optics" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
+      <div
+        role="navigation"
+        className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
+        onClick={handleMobileFilter}
+      >
+        FILTERS
+      </div>
+      <>
+        {displayMobileFilter && (
+          <div>
+            <MobileProductFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+              handleCategoryChange={handleCategoryChange}
+              brands={brands}
+              selectedBrand={selectedBrand}
+              handleBrandChange={handleBrandChange}
+            />
+          </div>
+        )}
+      </>
       <div className="flex mx-12 my-4 xl:my-16">
         <div className="hidden xl:block xl:w-1/6 p-2">
           <ProductFilter

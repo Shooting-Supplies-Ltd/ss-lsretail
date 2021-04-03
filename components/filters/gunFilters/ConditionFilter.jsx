@@ -4,7 +4,7 @@ const ConditionFilter = (props) => {
   return (
     <>
       {conditions.map((condition) => (
-        <div className="hover:text-ssorange mb-1 md:mb-0" key={condition.condition.conID}>
+        <div className="hover:text-ssorange mb-2 md:mb-0" key={condition.condition.conID}>
           <input
             type="checkbox"
             id={condition.condition.name}

@@ -4,7 +4,7 @@ const CategoryFilter = (props) => {
   return (
     <>
       {categories.map((cat) => (
-        <div className="hover:text-ssorange mb-1 md:mb-0" key={cat.categories.catID}>
+        <div className="hover:text-ssorange mb-2 md:mb-0" key={cat.categories.catID}>
           <input
             type="checkbox"
             id={cat.categories.name}

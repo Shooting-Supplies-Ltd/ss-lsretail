@@ -5,7 +5,7 @@ const BrandFilter = (props) => {
     <>
       {brands.map((brand) => (
         <div>
-          <div className="mb-1 md:mb-0">
+          <div className="mb-2 md:mb-0">
             <input
               type="checkbox"
               id={brand.brands.name}

@@ -1,7 +1,7 @@
 const CategoryFilter = ({ categories, handleCategoryChange, selectedCategory }) => (
   <>
     {categories.map((cat) => (
-      <div className="hover:text-ssorange" key={cat.catID}>
+      <div className="hover:text-ssorange mb-2 md:mb-0" key={cat.catID}>
         <input
           type="checkbox"
           id={cat.name}

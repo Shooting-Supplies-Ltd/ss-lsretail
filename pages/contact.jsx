@@ -7,12 +7,12 @@ const Contact = () => (
       <title>Contact US | Shooting Supplies Ltd</title>
       <meta name="description" content="Contact us with any of your questions, we're always happy to help." />
     </Head>
-    <main className="mx-96 my-12">
+    <main className="p-3 lg:p-0 lg:mx-96 my-12">
       <h1 className="text-3xl font-black">Contact Us</h1>
       <div className="my-8">
         <p>
           <strong>Tel: </strong>
-          <a href="tel:01527831261" className="hover:text-ssorange">
+          <a href="tel:01527831261" className="hover:text-ssorange text-ssblue">
             01527 831261
           </a>
         </p>

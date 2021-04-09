@@ -32,7 +32,7 @@ const HomeModal = () => {
     <div>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
         <h2 className="text-xl mb-4">We're Opening!</h2>
-        <h2 className="text-xl mb-4">12th April 09:00-17:00</h2>
+        <h2 className="text-xl mb-4">12th April 09:00-17:30</h2>
         <p>
           With the latest update to Covid restrictions, we are happy to announce that we shall be re-opening in full as
           of Monday 12th April, 09:00-17:30.

@@ -19,7 +19,7 @@ const ProductFilter = (props) => (
           </h5>
         </div>
 
-        <div className="pl-4 pb-4">
+        <div className="pl-4 pb-4 overflow-y-auto h-64">
           <CategoryFilter
             categories={props.categories}
             handleCategoryChange={props.handleCategoryChange}

@@ -40,7 +40,7 @@ const Contact = () => (
           <li>Sun - Closed</li>
         </ul>
       </div>
-      <div className="mt-8 text-red-700">
+      {/* <div className="mt-8 text-red-700">
         <p>
           During the current Covid Restrictions we are operating at reduced opening hours and serving customers by
           appointment only.
@@ -53,7 +53,7 @@ const Contact = () => (
           to book your slot.
         </p>
         <p className="mt-4">Tue-Sat: 10:00 - 14:00</p>
-      </div>
+      </div> */}
       <hr className="my-8" />
       {/* <h2 className="text-xl font-bold mb-8">Send Us a Message</h2> */}
       {/* <form className="mt-4">

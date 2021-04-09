@@ -11,7 +11,7 @@ const HelpBanner = () => (
       </span>
     </h3>
     <p className="hidden xl:block mt-2 xl:text-lg text-white text-center">
-      Phone Lines are open Monday to Thursday & Saturday 09:00am to 17:30pm, late on Friday 09:00am to 19:00am
+      Phone Lines are open Monday to Thursday & Saturday 09:00 to 17:30, late on Friday 09:00 to 19:00
     </p>
     <h3 className="pt-8 text-white font-semibold xl:text-2xl text-center">Get In Touch & Follow Us for Updates</h3>
     <div className="pt-4 flex justify-center">

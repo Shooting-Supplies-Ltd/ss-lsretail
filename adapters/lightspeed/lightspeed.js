@@ -27,31 +27,6 @@ const getHeader = async () => {
 const makeRequest = async (url) => {
   const axiosConfig = await getHeader();
 
-  api.interceptors.response.use(
-    function (response) {
-      return response;
-    },
-    async function (error) {
-      await new Promise(function (res) {
-        setTimeout(function () {
-          res();
-        }, 2000);
-      });
-
-      const originalRequest = error.config;
-
-      if (error.response.status === 401 && !originalRequest._retry) {
-        token[n] = null;
-        originalRequest._retry = true;
-        const refreshedHeader = await getHeader();
-        api.defaults.headers = refreshedHeader;
-        originalRequest.headers = refreshedHeader;
-        return Promise.resolve(api(originalRequest));
-      }
-      return Promise.reject(error);
-    }
-  );
-
   // Call paginated API and return number of requests needed.
   const getQueryCount = await api.get(url, axiosConfig).catch((error) => {
     throw error;

@@ -5,7 +5,6 @@ import HomeBanner from '../components/home/HomeBanner';
 import Categories from '../components/home/Categories';
 import HelpBanner from '../components/home/HelpBanner';
 import SubHeader from '../components/home/SubHeader';
-import HomeModal from '../components/home/Modal';
 
 export default function Home() {
   return (
@@ -61,9 +60,6 @@ export default function Home() {
         />
       </Head>
       <div>
-        <div id="app-modal">
-          <HomeModal />
-        </div>
         <div className="hidden xl:block">
           <HomeBanner />
         </div>

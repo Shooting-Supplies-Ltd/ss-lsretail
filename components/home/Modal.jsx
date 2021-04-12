@@ -31,19 +31,13 @@ const HomeModal = () => {
   return (
     <div>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-        <h2 className="text-xl mb-4">We're Opening!</h2>
-        <h2 className="text-xl mb-4">12th April 09:00-17:30</h2>
-        <p>
-          With the latest update to Covid restrictions, we are happy to announce that we shall be re-opening in full as
-          of Monday 12th April, 09:00-17:30.
-        </p>
+        <h2 className="text-lg font-semibold uppercase">We Are Open!</h2>
         <p className="mt-2">
-          After Monday the 12th we shall return to our normal{' '}
+          After today we shall return to our normal{' '}
           <Link href="/contact">
             <a className="text-ssblue">Opening Hours.</a>
           </Link>
         </p>
-        <p className="mt-2">See you all very soon.</p>
         <button onClick={closeModal} className="bg-ssblue text-white mt-4 rounded p-2">
           Close
         </button>

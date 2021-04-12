@@ -6,14 +6,16 @@ import LightspeedProduct from '../../../components/LightspeedProduct';
 export async function getStaticPaths() {
   const data = await getMatrixClothing();
 
-  const paths = await data.data.ItemMatrix.map((item) => ({
-    params: {
-      slug: slugify(item.description.replace('/', '-'))
-        .replace(/["'.,]/g, '')
-        .toLocaleLowerCase(),
-      id: item.itemMatrixID,
-    },
-  })).filter((path) => path);
+  const paths = await data
+    .map((item) => ({
+      params: {
+        slug: slugify(item.description.replace('/', '-'))
+          .replace(/["'.,]/g, '')
+          .toLocaleLowerCase(),
+        id: item.itemMatrixID,
+      },
+    }))
+    .filter((path) => path);
 
   return {
     paths,
@@ -29,7 +31,7 @@ export async function getStaticProps({ params: { id } }) {
   }
 
   const data = await getMatrixClothing();
-  const items = data.data.ItemMatrix;
+  const items = data;
 
   const filterItem = items.filter((item) => item.itemMatrixID === id);
   const item = filterItem[0];

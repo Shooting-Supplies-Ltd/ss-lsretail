@@ -8,14 +8,16 @@ let items = null;
 export async function getStaticPaths() {
   const data = await getOptics();
 
-  const paths = await data.data.Item.map((item) => ({
-    params: {
-      slug: slugify(item.description.replace('/', '-'))
-        .replace(/["'.,]/g, '')
-        .toLocaleLowerCase(),
-      id: item.itemID,
-    },
-  })).filter((path) => path);
+  const paths = await data
+    .map((item) => ({
+      params: {
+        slug: slugify(item.description.replace('/', '-'))
+          .replace(/["'.,]/g, '')
+          .toLocaleLowerCase(),
+        id: item.itemID,
+      },
+    }))
+    .filter((path) => path);
 
   return {
     paths,
@@ -38,7 +40,7 @@ export async function getStaticProps({ params: { id } }) {
   }
 
   const data = await getOptics();
-  items = data.data.Item;
+  items = data;
 
   return {
     props: { item: items.filter((item) => item.itemID === id)[0] },

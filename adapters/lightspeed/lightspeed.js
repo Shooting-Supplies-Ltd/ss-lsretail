@@ -52,8 +52,38 @@ const makeRequest = async (url) => {
     }
   );
 
-  const data = await api.get(url, axiosConfig).catch((err) => console.error(err.response.data));
-  return data;
+  // Call paginated API and return number of requests needed.
+  const getQueryCount = await api.get(url, axiosConfig).catch((error) => {
+    throw error;
+  });
+  const totalItems = parseInt(getQueryCount.data['@attributes'].count);
+  const queriesNeeded = Math.ceil(totalItems / 100);
+
+  // Loop through paginated API and push data to dataToReturn
+  const dataToReturn = [];
+
+  for (let i = 0; i < queriesNeeded; i++) {
+    try {
+      const res = await api.get(`${url}&offset=${i * 100}`, axiosConfig);
+      const { data } = res;
+      const arrayName = Object.keys(data)[1];
+      const selectedData = await data[arrayName];
+      if (selectedData instanceof Array) {
+        selectedData.map((item) => {
+          dataToReturn.push(item);
+        });
+      } else dataToReturn.push(selectedData);
+
+      if (i + 1 === queriesNeeded) {
+        return dataToReturn;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // const data = await api.get(url, axiosConfig).catch((err) => console.error(err.response.data));
+  // return data;
 };
 
 export async function getItems() {
@@ -131,7 +161,7 @@ export async function getMatrixClothingItem(itemID) {
 }
 
 export async function getCategory(categoryID) {
-  const category = makeRequest(`Category.json?categoryID=IN,${categoryID}&orderby=name`);
+  const category = await makeRequest(`Category.json?categoryID=IN,${categoryID}&orderby=name`);
   return category;
 }
 

@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { formatCurrencyString } from 'use-shopping-cart';
 
 export default function LightspeedProduct({ item }) {
-  console.log(item);
   const router = useRouter();
   const productDescriptionLong = () => ({ __html: item.ItemECommerce ? item.ItemECommerce.longDescription : '' });
   const productDescriptionShort = () => ({ __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : '' });

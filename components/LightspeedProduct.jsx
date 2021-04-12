@@ -97,7 +97,7 @@ export default function LightspeedProduct({ item }) {
           </div>
         </div>
         <hr className="xl:hidden my-4" />
-        <div id="fulldescription" className="mx-0 xl:mx-72 mt-4 mb-12 p-6 bg-gray-50 rounded-xl">
+        <div id="fulldescription" className="mx-0 xl:mx-72 mt-4 mb-12 p-4 bg-gray-50 rounded-xl">
           <h2 className="font-bold text-3xl text-center uppercase font-black">Description</h2>
           <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 mx-auto prose" />
         </div>
@@ -106,7 +106,7 @@ export default function LightspeedProduct({ item }) {
             Please Contact Us to Purchase this item or for more information
           </h3>
         </div>
-        <div className="xl:mx-72 flex justify-center mx-4 my-8">
+        <div className="xl:mx-72 flex justify-center mx-4 mb-20">
           <a
             href="tel:01527831261"
             className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded"

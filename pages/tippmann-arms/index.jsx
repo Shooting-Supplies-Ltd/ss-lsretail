@@ -6,7 +6,7 @@ import TippmannProductCard from '../../components/TippmannProductCard';
 
 export async function getStaticProps() {
   const getTippmannProducts = await getTippmann();
-  const tippmannProducts = getTippmannProducts.data.Item;
+  const tippmannProducts = getTippmannProducts;
 
   return {
     props: { tippmannProducts },

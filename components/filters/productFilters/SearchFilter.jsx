@@ -26,7 +26,7 @@ const SearchFilter = ({ items, setFilteredItems }) => {
         name="search"
         id="search"
         autoComplete="off"
-        className="p-2 w-full border-t border-b border-ssblue"
+        className="p-2 w-full border-t border-b border-ssblue placeholder-ssblue font-semibold"
         style={{ textAlign: 'center' }}
         placeholder="Search Here"
         onChange={(e) => setSearchQuery(e.target.value)}

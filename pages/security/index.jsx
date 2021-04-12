@@ -12,18 +12,20 @@ export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getSecurity().catch((err) => console.err(err));
 
-  const items = itemData.data.Item.map((item) => {
-    if (item.Images?.Image?.baseImageURL) {
-      return item;
-    }
-  }).filter(Boolean);
+  const items = itemData
+    .map((item) => {
+      if (item.Images?.Image?.baseImageURL) {
+        return item;
+      }
+    })
+    .filter(Boolean);
 
   // Get Categories
   const categoryIds = items.map((item) => item.categoryID);
 
   const categoriesToFetch = [...new Set(categoryIds)];
   const categoryData = await getCategory(categoriesToFetch);
-  const categories = categoryData.data.Category.map((category) => ({
+  const categories = categoryData.map((category) => ({
     catID: category.categoryID,
     name: category.name,
   }));
@@ -33,7 +35,7 @@ export async function getStaticProps() {
 
   const brandsToFetch = [...new Set(brandIds)];
   const brandData = await getManufacturers(brandsToFetch);
-  const brands = brandData.data;
+  const brands = brandData;
 
   // Return props
   return {

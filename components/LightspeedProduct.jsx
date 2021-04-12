@@ -59,8 +59,8 @@ export default function LightspeedProduct({ item }) {
         />
       </Head>
       <main>
-        <div className="xl:mx-72 xl:my-12 flex flex-col xl:flex-row justify-center">
-          <div className="w-3/4 mx-auto xl:mx-0 xl:w-1/2 p-2">
+        <div className="lg:mx-72 lg:my-12 flex flex-col lg:flex-row justify-center">
+          <div className="w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
             <Image
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
               alt={`${item.description}`}
@@ -69,7 +69,7 @@ export default function LightspeedProduct({ item }) {
               className="object-scale-down"
             />
           </div>
-          <div className="p-4 xl:w-1/2 bg-gray-50 rounded-xl">
+          <div className="p-4 lg:w-1/2 bg-gray-50 rounded-xl">
             <h1 className="text-4xl font-black">{item.description}</h1>
             <p className="mt-1">SKU: {item.customSku}</p>
 
@@ -96,17 +96,17 @@ export default function LightspeedProduct({ item }) {
             <p className="mt-4 prose" dangerouslySetInnerHTML={productDescriptionShort()} />
           </div>
         </div>
-        <hr className="xl:hidden my-4" />
-        <div id="fulldescription" className="mx-0 xl:mx-72 mt-4 mb-12 p-4 bg-gray-50 rounded-xl">
+        <hr className="lg:hidden my-4" />
+        <div id="fulldescription" className="mx-0 lg:mx-72 mt-4 mb-12 p-4 bg-gray-50 rounded-xl">
           <h2 className="font-bold text-3xl text-center uppercase font-black">Description</h2>
           <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 mx-auto prose" />
         </div>
-        <div className="xl:mx-72 mx-4">
+        <div className="lg:mx-72 mx-4">
           <h3 className="my-8 text-2xl font-black uppercase text-center">
             Please Contact Us to Purchase this item or for more information
           </h3>
         </div>
-        <div className="xl:mx-72 flex justify-center mx-4 mb-20">
+        <div className="lg:mx-72 flex justify-center mx-4 mb-20">
           <a
             href="tel:01527831261"
             className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded"

@@ -15,7 +15,7 @@ let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getMatrixClothing().catch((err) => console.err(err));
+  const itemData = await getMatrixClothing().catch((err) => console.error(err));
 
   const items = itemData
     .map((item) => {

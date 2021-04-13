@@ -118,7 +118,7 @@ export async function getMaintenance() {
 
 export async function getClothing() {
   const clothing = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[5]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[5, 237, 202, 49, 15, 137, 235, 140, 43, 6, 179, 155, 214, 100, 162, 228, 8, 121, 51, 200, 147, 7, 151]&ItemECommerce.listOnStore=true&orderby=description`);
   return clothing;
 }
 

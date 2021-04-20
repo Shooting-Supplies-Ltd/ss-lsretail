@@ -32,6 +32,11 @@ const Nav = () => {
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">AMMO</li>
               </a>
             </Link>
+            <Link href="/reloading">
+              <a>
+                <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">RELOADING</li>
+              </a>
+            </Link>
             <Link href="/accessories">
               <a>
                 <li className="mt-4 text-white hover:text-ssorange font-bold text-2xl">ACCESSORIES</li>
@@ -86,45 +91,52 @@ const Nav = () => {
           <div className="xl:w-1/6 xl:flex xl:justify-center p-2 cursor-pointer">
             <Link href="/">
               <div className="xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
-                <Image src="/logos/Logo.webp" alt="Shooting Supplies Ltd" width={160} height={160} />
+                <Image src="/logos/Logo.webp" alt="Shooting Supplies Ltd" width={140} height={140} />
               </div>
             </Link>
           </div>
           <div className="hidden xl:w-4/6 xl:p-2 xl:flex items-center justify-center">
             <ul className="flex justify-center space-x-6 p-2">
-              <Link href="/guns">
-                <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">GUNS</li>
-                </a>
-              </Link>
+              <div className="flex justify-center items-center">
+                <Link href="/guns">
+                  <a>
+                    <li className="text-white hover:text-ssorange font-bold text-lg">GUNS</li>
+                  </a>
+                </Link>
+              </div>
               <Link href="/ammo">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">AMMO</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">AMMO</li>
+                </a>
+              </Link>
+              <Link href="/reloading">
+                <a>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">RELOADING</li>
                 </a>
               </Link>
               <Link href="/accessories">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">ACCESSORIES</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">ACCESSORIES</li>
                 </a>
               </Link>
               <Link href="/optics">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">OPTICS</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">OPTICS</li>
                 </a>
               </Link>
               <Link href="/maintenance">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">MAINTENANCE</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">MAINTENANCE</li>
                 </a>
               </Link>
               <Link href="/clothing">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">CLOTHING</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">CLOTHING</li>
                 </a>
               </Link>
               <Link href="/security">
                 <a>
-                  <li className="text-white hover:text-ssorange font-bold text-2xl">SECURITY</li>
+                  <li className="text-white hover:text-ssorange font-bold text-lg">SECURITY</li>
                 </a>
               </Link>
               {/* <Link href="/sale">

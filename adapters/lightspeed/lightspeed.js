@@ -82,7 +82,7 @@ export async function getItemsByCategory(categoryID) {
 
 export async function getAmmo() {
   const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[23,46,218,71,62,116,197,35,241,233,287,282]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[23,46,82,218,71,62,116,197,35,241,233,268,269,287,282]&ItemECommerce.listOnStore=true&orderby=description`);
   return ammo;
 }
 

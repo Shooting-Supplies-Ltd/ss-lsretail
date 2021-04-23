@@ -94,7 +94,7 @@ export async function getReloading() {
 
 export async function getAccessories() {
   const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[28,95,119,177,102,286,288,31,265,284,186,16,114,11,260,26,289,126,77,153,73,2,262,163,21,78,261,24,263,76,166,212,56,59,42,103,104,236,66,285,145,207,134,231,88,141,173,189,175,97,216,93]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[28,95,119,177,102,286,288,31,265,284,186,16,114,11,260,26,289,126,77,153,73,2,262,163,21,78,261,24,263,76,166,212,56,59,42,103,104,236,66,285,145,207,134,231,88,141,173,189,175,97,216,93,136]&ItemECommerce.listOnStore=true&orderby=description`);
   return accessories;
 }
 

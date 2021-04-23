@@ -112,7 +112,7 @@ export async function getOptics() {
 
 export async function getSecurity() {
   const security = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
-  &Category.categoryID=IN,[206, 124, 131]&ItemECommerce.listOnStore=true&orderby=description`);
+  &Category.categoryID=IN,[206,124,131,225]&ItemECommerce.listOnStore=true&orderby=description`);
   return security;
 }
 

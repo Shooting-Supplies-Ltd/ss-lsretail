@@ -21,12 +21,15 @@ export default function LightspeedProduct({ item }) {
     <>
       <Head>
         <title className="uppercase">{`${item.description}`}</title>
-        <meta name="description" content={`${productDescriptionShort()}`} />
+        <meta property="description" content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content={`${item.description.replace(' ', ',')}`} />
         <meta property="og:title" content={`${item.description}`} />
-        <meta property="og:description" content={item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')} />
+        <meta
+          property="og:description"
+          content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`}
+        />
         <meta
           property="og:image"
           content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}

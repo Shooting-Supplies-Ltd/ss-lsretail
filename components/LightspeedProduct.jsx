@@ -20,7 +20,7 @@ export default function LightspeedProduct({ item }) {
   return (
     <>
       <Head>
-        <title className="uppercase">{`${item.description}`}</title>
+        <title className="uppercase">{`Buy ${item.description}. Only £${item.Prices?.ItemPrice[0]?.amount} at Shooting Supplies Ltd`}</title>
         <meta property="description" content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,7 +66,7 @@ export default function LightspeedProduct({ item }) {
           <div className="w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
             <Image
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
-              alt={`${item.description}`}
+              alt={`Buy ${item.description} at Shooting Supplies Ltd`}
               width={600}
               height={600}
               className="object-scale-down"

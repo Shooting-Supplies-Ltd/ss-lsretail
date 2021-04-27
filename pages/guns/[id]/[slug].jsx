@@ -163,9 +163,9 @@ const Gun = ({ Gun }) => {
               /> */}
               <img
                 src={Gun.Images[0].FullPath}
-                alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
-                  Gun.Calibre
-                }`}
+                alt={`Buy ${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${
+                  Gun.Variant ? Gun.Variant : ''
+                } ${Gun.Calibre} at Shooting Supplies Ltd`}
                 className="object-scale-down object-center h-72 rounded-lg"
               />
               <div className="absolute bottom-2 right-2 cursor-pointer">

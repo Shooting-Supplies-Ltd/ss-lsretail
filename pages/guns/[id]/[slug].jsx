@@ -96,9 +96,9 @@ const Gun = ({ Gun }) => {
   return (
     <Layout>
       <Head>
-        <title className="uppercase">{`${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
-          Gun.Calibre
-        }`}</title>
+        <title className="uppercase">{`Buy ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${
+          Gun.Variant ? Gun.Variant : ''
+        } ${Gun.Calibre} at Shooting Supplies Ltd`}</title>
         <meta
           name="description"
           content={`${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`}

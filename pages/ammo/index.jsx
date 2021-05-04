@@ -16,14 +16,17 @@ let routerQueryCategory;
 export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getAmmo();
-  const items = itemData.map((item) => {
-    if (item.Images?.Image?.baseImageURL) {
-      return item;
-    }
-  });
+
+  const items = itemData
+    .map((item) => {
+      if (item.Images?.Image?.baseImageURL) {
+        return item;
+      }
+    })
+    .filter(Boolean);
 
   // Get Categories for filter
-  const categoryIds = items.map((item) => item.categoryID);
+  const categoryIds = items.map((item) => item.categoryID).filter(Boolean);
 
   const categoriesToFetch = [...new Set(categoryIds)];
   const categoryData = await getCategory(categoriesToFetch);

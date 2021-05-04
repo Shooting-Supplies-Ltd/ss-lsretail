@@ -15,8 +15,7 @@ let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getAmmo().catch((err) => console.err(err));
-
+  const itemData = await getAmmo();
   const items = itemData.map((item) => {
     if (item.Images?.Image?.baseImageURL) {
       return item;

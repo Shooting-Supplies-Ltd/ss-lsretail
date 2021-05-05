@@ -64,7 +64,7 @@ const Item = ({ item }) => {
   if (!item) {
     return (
       <Layout>
-        <div>Loading...</div>;
+        <div>Loading...</div>
       </Layout>
     );
   }

@@ -12,7 +12,7 @@ export async function getStaticPaths() {
     .map((item) => ({
       params: {
         slug: slugify(item.description.replace('/', '-'))
-          .replace(/["'.,]/g, '')
+          .replace(/[+"'.,]/g, '')
           .toLocaleLowerCase(),
         id: item.itemID,
       },

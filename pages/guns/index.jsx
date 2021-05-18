@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { MdDriveEta } from 'react-icons/md';
 import Layout from '../../components/layout/Layout';
 import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
@@ -187,7 +186,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   }
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>New & Used Firearms, Shotguns & Airguns | Shooting Supplies Ltd</title>
         <meta name="description" content="The best collection of Shotguns, Rifles and Airguns in the Midlands" />
@@ -257,7 +256,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

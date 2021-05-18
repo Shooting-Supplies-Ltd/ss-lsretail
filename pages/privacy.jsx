@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 
 export default function Privacy() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Privacy | Shooting Supplies Ltd</title>
         <meta
@@ -155,6 +154,6 @@ export default function Privacy() {
           </p>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

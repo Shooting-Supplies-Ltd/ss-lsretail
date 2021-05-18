@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { getSecurity, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -112,7 +111,7 @@ const Optics = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Security - Gun & Ammo Safes from Brattonsound</title>
         <meta name="description" content="We stock a range of Gun & Ammo Safes from Brattonsound" />
@@ -141,7 +140,7 @@ const Optics = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

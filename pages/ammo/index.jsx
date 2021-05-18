@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { getAmmo, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -173,7 +172,7 @@ const Ammo = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Ammo for Rifles, Shotguns, Airguns | Shooting Supplies Ltd</title>
         <meta name="description" content="Ammo for all shotguns, rifles and airguns with bulk discounts available." />
@@ -223,7 +222,7 @@ const Ammo = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

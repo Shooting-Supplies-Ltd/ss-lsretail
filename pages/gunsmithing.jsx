@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '../components/layout/Layout';
 
 export default function Gunsmithing() {
   return (
-    <Layout>
+    <>
       <Head>
         <title className="uppercase">Gunsmithing | Shooting Supplies Ltd</title>
         <meta name="description" content="Professional gun repair and refurbishment" />
@@ -55,6 +54,6 @@ export default function Gunsmithing() {
           As an Air Arms approved service center we also provide servicing and repairs for most airguns.
         </p>
       </main>
-    </Layout>
+    </>
   );
 }

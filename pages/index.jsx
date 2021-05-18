@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import Layout from '../components/layout/Layout';
 import HomeBanner from '../components/home/HomeBanner';
 import Categories from '../components/home/Categories';
 import HelpBanner from '../components/home/HelpBanner';
@@ -8,7 +7,7 @@ import SubHeader from '../components/home/SubHeader';
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Shooting Supplies Ltd | The Midlands leading gun shop.</title>
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk" />
@@ -71,6 +70,6 @@ export default function Home() {
         </div>
       </div>
       <HelpBanner />
-    </Layout>
+    </>
   );
 }

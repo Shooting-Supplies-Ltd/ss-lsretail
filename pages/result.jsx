@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { useShoppingCart } from 'use-shopping-cart';
 import { parseCookies, destroyCookie } from 'nookies';
-import Layout from '../components/layout/Layout';
 import PrintObject from '../components/PrintObject';
 import { createSale } from '../adapters/lightspeed/lightspeed';
 
@@ -17,7 +16,7 @@ const ResultPage = (props) => {
   clearCart();
 
   return (
-    <Layout>
+    <>
       <div className="page-container">
         <h1>Checkout Payment Result</h1>
         <h2>Sale Reference: {saleID}</h2>
@@ -25,7 +24,7 @@ const ResultPage = (props) => {
         <h3>CheckoutSession response:</h3>
         <PrintObject content={data ?? 'loading...'} />
       </div>
-    </Layout>
+    </>
   );
 };
 

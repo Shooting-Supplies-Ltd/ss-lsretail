@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 
 const Terms = () => (
-  <Layout>
+  <>
     <Head>
       <title>Terms & Conditions | Shooting Supplies Ltd</title>
       <meta
@@ -427,7 +426,7 @@ const Terms = () => (
         in connection with this Legal Notice are subject to the exclusive jurisdiction of England and Wales.
       </p>
     </div>
-  </Layout>
+  </>
 );
 
 export default Terms;

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Layout from '../../components/layout/Layout';
 import PostCard from '../../components/PostCard';
 
 export async function getStaticProps() {
@@ -36,7 +35,7 @@ export async function getStaticProps() {
 }
 
 const Blog = ({ posts }) => (
-  <Layout>
+  <>
     <Head>
       <title className="uppercase">Blog | Shooting Supplies Ltd</title>
       <meta name="description" content="News & Updates from Shooting Supplies" />
@@ -54,7 +53,7 @@ const Blog = ({ posts }) => (
         {posts && posts.map((post) => <PostCard item={post} key={post._id} />)}
       </div>
     </main>
-  </Layout>
+  </>
 );
 
 export default Blog;

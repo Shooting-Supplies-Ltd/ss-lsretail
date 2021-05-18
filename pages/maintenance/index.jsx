@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { getMaintenance, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -173,7 +172,7 @@ const Maintenance = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Gun Cleaning Kits & Chemicals & Supplies | Shooting Supplies Ltd</title>
         <meta name="description" content="Gun cleaning cloths, chemicals and kits from all of the leading brands." />
@@ -223,7 +222,7 @@ const Maintenance = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

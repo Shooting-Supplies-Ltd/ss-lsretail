@@ -1,6 +1,5 @@
 import slugify from 'slugify';
 import { getMatrixClothing } from '../../../adapters/lightspeed/lightspeed';
-import Layout from '../../../components/layout/Layout';
 import LightspeedProduct from '../../../components/LightspeedProduct';
 
 export async function getStaticPaths() {
@@ -57,16 +56,16 @@ const Item = ({ item }) => {
 
   if (!item) {
     return (
-      <Layout>
+      <>
         <div>Loading...</div>;
-      </Layout>
+      </>
     );
   }
 
   return (
-    <Layout>
+    <>
       <LightspeedProduct item={item} />
-    </Layout>
+    </>
   );
 };
 

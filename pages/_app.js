@@ -1,5 +1,6 @@
 import '../style/index.css';
 import 'react-bnb-gallery/dist/style.css';
+import Layout from '../components/layout/Layout'
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from 'use-shopping-cart';
 
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }) {
       allowedCountries={['GB']}
       billingAddressCollection
     >
+    <Layout>
       <Component {...pageProps} />
+      </Layout>
     </CartProvider>
   );
 }

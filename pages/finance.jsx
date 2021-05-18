@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 
 export default function Finance() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>Finance | Shooting Supplies Ltd</title>
         <meta name="description" content="We offer finance on in-store purchases through Deko" />
@@ -17,6 +16,6 @@ export default function Finance() {
           finance and checkout options to the website in the very near future. Keep an eye out for that!
         </p>
       </div>
-    </Layout>
+    </>
   );
 }

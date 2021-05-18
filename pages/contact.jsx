@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 
 const Contact = () => (
-  <Layout>
+  <>
     <Head>
       <title>Contact US | Shooting Supplies Ltd</title>
       <meta name="description" content="Contact us with any of your questions, we're always happy to help." />
@@ -130,7 +129,7 @@ const Contact = () => (
         </div>
       </form> */}
     </main>
-  </Layout>
+  </>
 );
 
 export default Contact;

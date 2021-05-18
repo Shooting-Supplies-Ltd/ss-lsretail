@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { getAccessories, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -179,7 +178,7 @@ const Accessories = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Shooting Accessories & Gun Attachments | Shooting Supplies Ltd</title>
         <meta
@@ -241,7 +240,7 @@ const Accessories = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

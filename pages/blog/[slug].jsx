@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import BlockContent from '@sanity/block-content-to-react';
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';
-import Layout from '../../components/layout/Layout';
 
 export async function getStaticPaths() {
   const query = JSON.stringify({
@@ -98,11 +97,11 @@ export default function Post({ post }) {
   };
 
   if (!post) {
-    return <Layout>Loading...</Layout>;
+    return <>Loading...</>;
   }
 
   return (
-    <Layout>
+    <>
       <Head>
         <title className="uppercase">{`${post.title}`}</title>
         <meta name="description" content={`Blog post about - ${post.title}`} />
@@ -130,6 +129,6 @@ export default function Post({ post }) {
           </div>
         </article>
       </div>
-    </Layout>
+    </>
   );
 }

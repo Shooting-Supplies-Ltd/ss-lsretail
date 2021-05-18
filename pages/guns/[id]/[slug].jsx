@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { MdFullscreen } from 'react-icons/md';
 import slugify from 'slugify';
 import ReactBnbGallery from 'react-bnb-gallery';
-import Layout from '../../../components/layout/Layout';
 
 let guns = null;
 
@@ -81,7 +80,7 @@ const Gun = ({ Gun }) => {
 
   if (!Gun) {
     return (
-      <Layout>
+      <>
         <div className="grid grid-cols-3">
           <div />
           <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
@@ -89,12 +88,12 @@ const Gun = ({ Gun }) => {
           </div>
           <div />
         </div>
-      </Layout>
+      </>
     );
   }
 
   return (
-    <Layout>
+    <>
       <Head>
         <title className="uppercase">{`Buy ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${
           Gun.Variant ? Gun.Variant : ''
@@ -284,7 +283,7 @@ const Gun = ({ Gun }) => {
         </div>
         <div className="xl:w-1/4" />
       </main>
-    </Layout>
+    </>
   );
 };
 

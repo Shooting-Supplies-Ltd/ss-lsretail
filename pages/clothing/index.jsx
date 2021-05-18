@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { getMatrixClothing, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -173,7 +172,7 @@ const Clothing = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Shooting & Outdoor Clothing for all Conditions | Shooting Supplies Ltd</title>
         <meta
@@ -234,7 +233,7 @@ const Clothing = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { getOptics, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
-import Layout from '../../components/layout/Layout';
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
@@ -15,7 +14,7 @@ let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getOptics().catch((err) => console.err(err));
+  const itemData = await getOptics().catch((err) => console.error(err));
 
   const items = itemData
     .map((item) => {
@@ -173,7 +172,7 @@ const Optics = ({ items, categories, brands }) => {
   }, [itemFilters]);
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Optics - Rifle Scopes, Night Vision, Spotters & More | Shooting Supplies Ltd</title>
         <meta
@@ -226,7 +225,7 @@ const Optics = ({ items, categories, brands }) => {
           </div>
         </main>
       </div>
-    </Layout>
+    </>
   );
 };
 

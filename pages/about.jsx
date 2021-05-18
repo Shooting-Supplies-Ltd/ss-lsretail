@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Layout from '../components/layout/Layout';
 
 export default function About() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>About Us | Shooting Supplies Ltd</title>
         <meta name="description" content="More about Shooting Supplies Ltd." />
@@ -37,6 +36,6 @@ export default function About() {
           />
         </div>
       </main>
-    </Layout>
+    </>
   );
 }

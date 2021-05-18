@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { getTippmann } from '../../adapters/lightspeed/lightspeed';
-import Layout from '../../components/layout/Layout';
 import TippmannProductCard from '../../components/TippmannProductCard';
 
 export async function getStaticProps() {
@@ -14,7 +13,7 @@ export async function getStaticProps() {
 }
 
 const Tippmann = ({ tippmannProducts }) => (
-  <Layout>
+  <>
     <Head>
       <title>Tippmann Arms Rifles & Accessories | Shooting Supplies Ltd</title>
       <meta
@@ -35,7 +34,7 @@ const Tippmann = ({ tippmannProducts }) => (
         ))}
       </div>
     </div>
-  </Layout>
+  </>
 );
 
 export default Tippmann;

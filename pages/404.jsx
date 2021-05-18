@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../components/layout/Layout';
 
 const ErrorPage = () => (
-  <Layout>
+  <>
     <Head>
       <title>404 - Shooting Supplies Ltd</title>
       <meta name="description" content="404 Error. Oops, this page does not exist." />
@@ -27,7 +26,7 @@ const ErrorPage = () => (
         </span>
       </p>
     </div>
-  </Layout>
+  </>
 );
 
 export default ErrorPage;

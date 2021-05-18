@@ -5,7 +5,6 @@ import { setCookie, destroyCookie } from 'nookies';
 import Head from 'next/head';
 import { fetchPostJSON } from './api/api-helpers';
 import CartItems from '../components/cart/CartItems';
-import Layout from '../components/layout/Layout';
 
 const Cart = () => {
   const [loading, setLoading] = useState(false);
@@ -35,7 +34,7 @@ const Cart = () => {
   };
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Cart | Shooting Supplies Ltd</title>
         <meta name="description" content="Your Cart" />
@@ -88,7 +87,7 @@ const Cart = () => {
           </button>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

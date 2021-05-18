@@ -1,6 +1,5 @@
 import slugify from 'slugify';
 import { getOptics } from '../../../adapters/lightspeed/lightspeed';
-import Layout from '../../../components/layout/Layout';
 import LightspeedProduct from '../../../components/LightspeedProduct';
 
 let items = null;
@@ -63,16 +62,16 @@ const Item = ({ item }) => {
 
   if (!item) {
     return (
-      <Layout>
+      <>
         <div>Loading...</div>;
-      </Layout>
+      </>
     );
   }
 
   return (
-    <Layout>
+    <>
       <LightspeedProduct item={item} />
-    </Layout>
+    </>
   );
 };
 

@@ -36,4 +36,23 @@ api.interceptors.response.use(
   }
 );
 
+axios.interceptors.response.use(function(response) {
+  return response;
+}, async function(error) {
+    await new Promise(function(res) {
+      setTimeout(function() {res()}, 2000);
+     });
+
+    const originalRequest = error.config;
+
+    if (error.response.status===401 && !originalRequest._retry) {
+      originalRequest._retry = true;
+      const refreshedHeader = await setHeader()
+      axios.defaults.headers = refreshedHeader
+      originalRequest.headers = refreshedHeader
+      return Promise.resolve(axios(originalRequest));
+    }
+    return Promise.reject(error);
+  });
+
 export default api;

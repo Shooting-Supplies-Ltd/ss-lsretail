@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MdSearch } from 'react-icons/md';
 
-
 const SearchFilter = ({ items, setFilteredItems }) => {
   const [searchQuery, setSearchQuery] = useState();
 
@@ -24,7 +23,7 @@ const SearchFilter = ({ items, setFilteredItems }) => {
   return (
     <div className="flex justify-center">
       <div className="relative left-2/4">
-      <MdSearch className="relative top-2.5 right-16 text-2xl text-ssblue" />
+        <MdSearch className="absolute z-10 top-2.5 right-14 text-2xl text-ssblue" />
       </div>
       <input
         type="text"

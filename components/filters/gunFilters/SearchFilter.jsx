@@ -23,8 +23,8 @@ const SearchFilter = ({ guns, setFilteredGuns }) => {
 
   return (
     <div className="flex justify-center">
-       <div className="relative left-2/4">
-      <MdSearch className="relative top-2.5 right-16 text-2xl text-ssblue" />
+      <div className="relative left-2/4">
+        <MdSearch className="absolute z-10 top-2.5 right-14 text-2xl text-ssblue" />
       </div>
       <input
         type="text"

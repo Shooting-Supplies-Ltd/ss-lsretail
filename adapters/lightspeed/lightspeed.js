@@ -63,37 +63,37 @@ const makeRequest = async (url) => {
 
 export async function getItems() {
   const items = makeRequest(
-    `Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]&ItemECommerce.listOnStore=true&orderby=description`
+    `Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]&ItemECommerce.listOnStore=true&orderby=description`
   );
   return items;
 }
 
 export async function getItem(itemID) {
-  const item = makeRequest(`Item/${itemID}.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const item = makeRequest(`Item/${itemID}.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &ItemECommerce.listOnStore=true`);
   return item;
 }
 
 export async function getItemsByCategory(categoryID) {
-  const itemsByCategory = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const itemsByCategory = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &ItemECommerce.listOnStore=true&categoryID=${categoryID}&orderby=description`);
   return itemsByCategory;
 }
 
 export async function getAmmo() {
-  const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[23,35,46,59,62,71,82,116,143,197,218,233,239,241,268,269,282,287,297]&ItemECommerce.listOnStore=true&orderby=description`);
   return ammo;
 }
 
 export async function getReloading() {
-  const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const ammo = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[156,38,190,120,180,12,50,108,74,10,159,154,185,238]&ItemECommerce.listOnStore=true&orderby=description`);
   return ammo;
 }
 
 export async function getAccessories() {
-  const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const accessories = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[2,21,48,68,77,78,93,95,97,102,119,134,144,146,148,149,153,161,163,173,175,177,189,205,213,216,220,221,230,231,262,286,290,294,298,170,215,270,265,261,284,70,291,132, 127,253,242,209,240,186,191,188,158,184,187,243,244,139,222,296,254,24,107,61,79,45,115,263,90,292,168,117,76,166,208,88,141,212,56,18,47,289,103,104,201,234,232,75,33,236,126,181,85,182,69,285,145,207]&ItemECommerce.listOnStore=true&orderby=description`);
   return accessories;
 }
@@ -105,25 +105,25 @@ export async function getAccessories() {
 // }
 
 export async function getOptics() {
-  const optics = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const optics = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[39, 109, 91, 105, 267, 4, 36, 27, 37, 80, 29, 16, 150, 266, 259]&ItemECommerce.listOnStore=true&orderby=description`);
   return optics;
 }
 
 export async function getSecurity() {
-  const security = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const security = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[206,124,131,225]&ItemECommerce.listOnStore=true&orderby=description`);
   return security;
 }
 
 export async function getMaintenance() {
-  const maintenance = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const maintenance = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[164, 52, 106, 86, 57, 14, 58, 65, 96, 83, 245, 165]&ItemECommerce.listOnStore=true&orderby=description`);
   return maintenance;
 }
 
 export async function getClothing() {
-  const clothing = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+  const clothing = makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]
   &Category.categoryID=IN,[5, 237, 202, 49, 15, 137, 235, 140, 43, 6, 179, 155, 214, 100, 162, 228, 8, 121, 51, 200, 147, 7, 151]&ItemECommerce.listOnStore=true&orderby=description`);
   return clothing;
 }

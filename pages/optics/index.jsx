@@ -59,6 +59,8 @@ const Optics = ({ items, categories, brands }) => {
   const router = useRouter();
   const initialRender = useRef(true);
 
+  console.log(items);
+
   // Implement useConstructor to load function before initial render.
   const useConstructor = (callBack = () => {}) => {
     const hasBeenCalled = useRef(false);

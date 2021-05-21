@@ -1,6 +1,6 @@
 import slugify from 'slugify';
 import { getMatrixClothing } from '../../../adapters/lightspeed/lightspeed';
-import LightspeedProduct from '../../../components/LightspeedProduct';
+import LightspeedMatrixProduct from '../../../components/LightspeedMatrixProduct';
 
 export async function getStaticPaths() {
   const data = await getMatrixClothing();
@@ -64,7 +64,7 @@ const Item = ({ item }) => {
 
   return (
     <>
-      <LightspeedProduct item={item} />
+      <LightspeedMatrixProduct item={item} />
     </>
   );
 };

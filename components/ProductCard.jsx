@@ -17,17 +17,19 @@ const ProductCard = ({ item }) => {
         <a>
           <div className="relative flex justify-center h-48 overflow-hidden">
             <Image src={imageUrl} alt={`Image of ${name}`} width={240} height={240} />
-            {item.CustomFieldValues.CustomFieldValue.map((field) => {
-              if (field.customFieldID === '5' && field.value === 'true') {
-                return (
-                  <>
-                    <span className="absolute z-10 top-2 right-2 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-sm lg:text-lg text-white bg-red-600 uppercase">
-                      Sale
-                    </span>
-                  </>
-                );
-              }
-            })}
+            {item.CustomFieldValues
+              ? item.CustomFieldValues.CustomFieldValue.map((field) => {
+                  if (field.customFieldID === '5' && field.value === 'true') {
+                    return (
+                      <>
+                        <span className="absolute z-10 top-2 right-2 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-sm lg:text-lg text-white bg-red-600 uppercase">
+                          Sale
+                        </span>
+                      </>
+                    );
+                  }
+                })
+              : null}
           </div>
           <div className="h-32 p-4 flex flex-col bg-ssblue text-white rounded-b-lg">
             <h2 className="flex justify-center text-center uppercase">{name}</h2>

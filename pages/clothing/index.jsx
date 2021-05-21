@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { getMatrixClothing, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/ProductCard';
+import MatrixProductCard from '../../components/MatrixProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
@@ -222,12 +222,12 @@ const Clothing = ({ items, categories, brands }) => {
             {filteredItems
               ? filteredItems.map((item) => (
                   <div key={item.itemID}>
-                    <ProductCard item={item} />
+                    <MatrixProductCard item={item} />
                   </div>
                 ))
               : items.map((item) => (
                   <div key={item.itemID}>
-                    <ProductCard item={item} />
+                    <MatrixProductCard item={item} />
                   </div>
                 ))}
           </div>

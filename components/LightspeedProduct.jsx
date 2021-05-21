@@ -97,7 +97,7 @@ export default function LightspeedProduct({ item }) {
                 return (
                   <>
                     <p className="mt-4 font-bold text-4xl uppercase">
-                      <span className="line-through mr-4">
+                      <span className="line-through mr-2 text-sm lg:text-md xl:text-xl">
                         £{parseFloat(item.Prices.ItemPrice[1].amount).toFixed(2)}
                       </span>
                       {formatCurrencyString({
@@ -105,7 +105,7 @@ export default function LightspeedProduct({ item }) {
                         currency: 'GBP',
                       })}
                     </p>
-                    <span className="absolute z-10 top-32 left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-sm lg:text-2xl text-white bg-red-600 uppercase">
+                    <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-2xl text-white bg-red-600 uppercase">
                       Sale
                     </span>
                   </>

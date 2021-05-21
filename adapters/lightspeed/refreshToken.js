@@ -15,7 +15,7 @@ const refreshToken = async () => {
       'Content-Type': 'application/json',
     },
     data: JSON.stringify(body),
-  }).catch((err) => console.error(err));
+  });
 
   const accessToken = await response.data.access_token;
   return accessToken;

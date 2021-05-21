@@ -66,7 +66,7 @@ export default function LightspeedProduct({ item }) {
       </Head>
       <main>
         <div className="lg:mx-72 lg:my-12 flex flex-col lg:flex-row justify-center">
-          <div className="w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
+          <div className="relative w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
             <Image
               src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
               alt={`Buy ${item.description} at Shooting Supplies Ltd`}
@@ -78,7 +78,6 @@ export default function LightspeedProduct({ item }) {
           <div className="p-4 lg:w-1/2 bg-gray-50 rounded-xl">
             <h1 className="text-4xl font-black">{item.description}</h1>
             <p className="mt-1">SKU: {item.customSku}</p>
-
             <div>
               {item.ItemShops ? (
                 item.ItemShops.ItemShop[0].qoh > 0 ? (
@@ -93,12 +92,28 @@ export default function LightspeedProduct({ item }) {
               )}
             </div>
 
-            <p className="mt-4 font-bold text-4xl uppercase">
-              {formatCurrencyString({
-                value: price,
-                currency: 'GBP',
-              })}
-            </p>
+            {item.CustomFieldValues.CustomFieldValue.map((field) => {
+              if (field.customFieldID === '5' && field.value === 'true') {
+                return (
+                  <>
+                    <p className="mt-4 font-bold text-4xl uppercase">
+                      <span className="line-through mr-4">
+                        £{parseFloat(item.Prices.ItemPrice[1].amount).toFixed(2)}
+                      </span>
+                      {formatCurrencyString({
+                        value: price,
+                        currency: 'GBP',
+                      })}
+                    </p>
+                    <span className="absolute z-10 top-32 left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-sm lg:text-2xl text-white bg-red-600 uppercase">
+                      Sale
+                    </span>
+                  </>
+                );
+              }
+            })}
+
+            <p className="" />
             <p className="mt-4 prose" dangerouslySetInnerHTML={productDescriptionShort()} />
           </div>
         </div>

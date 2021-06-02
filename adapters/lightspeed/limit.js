@@ -6,7 +6,7 @@ const INTERVAL_MS = 1500;
 let PENDING_REQUESTS = 0;
 
 // create new axios instance
-const api = axios.create({ retry: 3, retryDelay: 3000 });
+const api = axios.create({ retry: 3, retryDelay: 30000 });
 
 /**
  * Axios Request Interceptor

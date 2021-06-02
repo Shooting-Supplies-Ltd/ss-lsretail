@@ -18,7 +18,9 @@ const makeRequest = async (url) => {
     headers: header,
   };
 
-  const get = await api.get(url, axiosConfig).catch((err) => console.error(err));
+  const get = await api
+    .get(url, axiosConfig)
+    .catch((err) => console.error(err.response.status, err.response.statusText));
 
   const bucketLevel = get.headers['x-ls-api-bucket-level'].split('/');
   bucketMax.push(parseInt(Math.ceil(bucketLevel[1])));

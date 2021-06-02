@@ -2,11 +2,11 @@ import axios from 'axios';
 import refreshToken from './refreshToken';
 
 const MAX_REQUESTS_COUNT = 1;
-const INTERVAL_MS = 1500;
+const INTERVAL_MS = 1000;
 let PENDING_REQUESTS = 0;
 
 // create new axios instance
-const api = axios.create({ retry: 3, retryDelay: 30000 });
+const api = axios.create({ retry: 3, retryDelay: 10000 });
 
 /**
  * Axios Request Interceptor

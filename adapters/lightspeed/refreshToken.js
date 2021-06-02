@@ -2,8 +2,6 @@ import NodeCache from 'node-cache';
 
 const axios = require('axios');
 
-const lightspeedApi = 'https://api.lightspeedapp.com/API';
-
 const tokenCache = new NodeCache();
 let token = null;
 
@@ -41,7 +39,7 @@ export default async function refreshToken() {
 
       return token;
     } catch (error) {
-      if (error) console.error('We have a problem! Could not get token.', error.data);
+      if (error) console.error('We have a problem! Could not get token.', error);
     }
   }
 }

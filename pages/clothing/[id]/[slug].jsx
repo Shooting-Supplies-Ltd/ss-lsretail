@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: 'blocking',
   };
 }
 
@@ -41,7 +41,7 @@ export async function getStaticProps({ params: { id } }) {
   };
 }
 
-const Item = ({ item }) => {
+const Item = ({ item }) => (
   // const product = {
   //   name: item.description,
   //   description: item.ItemECommerce ? item.ItemECommerce.longDescription : '',
@@ -54,19 +54,8 @@ const Item = ({ item }) => {
   //   unitPrice: item.Prices.ItemPrice[0].amount,
   // }
 
-  if (!item) {
-    return (
-      <>
-        <div>Loading...</div>;
-      </>
-    );
-  }
-
-  return (
-    <>
-      <LightspeedMatrixProduct item={item} />
-    </>
-  );
-};
-
+  <>
+    <LightspeedMatrixProduct item={item} />
+  </>
+);
 export default Item;

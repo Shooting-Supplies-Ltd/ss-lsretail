@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const MAX_REQUESTS_COUNT = 1;
-const INTERVAL_MS = 10000;
+const INTERVAL_MS = 3000;
 let PENDING_REQUESTS = 0;
 
 // create new axios instance
@@ -32,30 +32,6 @@ api.interceptors.response.use(
   },
   function (error) {
     PENDING_REQUESTS = Math.max(0, PENDING_REQUESTS - 1);
-    return Promise.reject(error);
-  }
-);
-
-axios.interceptors.response.use(
-  function (response) {
-    return response;
-  },
-  async function (error) {
-    await new Promise(function (res) {
-      setTimeout(function () {
-        res();
-      }, 2000);
-    });
-
-    const originalRequest = error.config;
-
-    if (error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      const refreshedHeader = await setHeader();
-      axios.defaults.headers = refreshedHeader;
-      originalRequest.headers = refreshedHeader;
-      return Promise.resolve(axios(originalRequest));
-    }
     return Promise.reject(error);
   }
 );

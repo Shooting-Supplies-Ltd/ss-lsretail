@@ -1,6 +1,13 @@
-import api from './limit';
+import NodeCache from 'node-cache';
 
-const refreshToken = async () => {
+const axios = require('axios');
+
+const lightspeedApi = 'https://api.lightspeedapp.com/API';
+
+const tokenCache = new NodeCache();
+let token = null;
+
+export default async function refreshToken() {
   const body = {
     grant_type: 'refresh_token',
     client_id: process.env.LIGHTSPEED_ID,
@@ -8,17 +15,33 @@ const refreshToken = async () => {
     refresh_token: process.env.LIGHTSPEED_REFRESH_TOKEN,
   };
 
-  const response = await api({
-    url: 'https://cloud.lightspeedapp.com/oauth/access_token.php',
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: JSON.stringify(body),
-  });
+  const cachedToken = await tokenCache.get('tokenData');
 
-  const accessToken = await response.data.access_token;
-  return accessToken;
-};
+  if (cachedToken != undefined && cachedToken.expires_in > 30) {
+    token = cachedToken.access_token;
+    return token;
+  }
 
-module.exports = refreshToken;
+  if (cachedToken === undefined || cachedToken.expires_in < 30) {
+    try {
+      const response = await axios({
+        url: 'https://cloud.lightspeedapp.com/oauth/access_token.php',
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: JSON.stringify(body),
+      });
+
+      const tokenData = await response.data;
+
+      tokenCache.set('tokenData', tokenData, { checkperiod: tokenData.expires_in });
+
+      token = tokenData.access_token;
+
+      return token;
+    } catch (error) {
+      if (error) console.error('We have a problem! Could not get token.', error.data);
+    }
+  }
+}

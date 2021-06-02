@@ -12,7 +12,7 @@ const ProductCard = ({ item }) => {
   const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.webp`;
 
   return (
-    <div className="block h-80 border-2 border-gray-300 rounded-lg" key={item.itemID}>
+    <div className="block h-80 border-2 border-gray-300 rounded-lg">
       <Link href={`${router.pathname}/${item.itemID ? item.itemID : item.itemMatrixID}/${slug}`}>
         <a>
           <div className="relative flex justify-center h-48 overflow-hidden">

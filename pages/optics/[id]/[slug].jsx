@@ -1,8 +1,6 @@
 import slugify from 'slugify';
-import { getOptics } from '../../../adapters/lightspeed/lightspeed';
+import { getOptics, getItem } from '../../../adapters/lightspeed/lightspeed';
 import LightspeedProduct from '../../../components/LightspeedProduct';
-
-let items = null;
 
 export async function getStaticPaths() {
   const data = await getOptics();
@@ -20,59 +18,31 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true,
+    fallback: 'blocking',
   };
 }
 
-export async function getStaticProps({ params: { id } }) {
+export async function getStaticProps({ params }) {
+  const id = await params.id;
+
   if (!id) {
     return {
       notFound: true,
     };
   }
 
-  if (items != null) {
-    return {
-      props: { item: items.filter((item) => item.itemID === id)[0] },
-      revalidate: 300,
-    };
-  }
-
-  const data = await getOptics();
-  items = data;
+  const data = await getItem(id);
+  const item = data[0];
 
   return {
-    props: { item: items.filter((item) => item.itemID === id)[0] },
-    revalidate: 300,
+    props: { item },
+    revalidate: 60,
   };
 }
 
-const Item = ({ item }) => {
-  // const product = {
-  //   name: item.description,
-  //   description: item.ItemECommerce ? item.ItemECommerce.longDescription : '',
-  //   shortDescription: item.ItemECommerce ? item.ItemECommerce.shortDescription : '',
-  //   sku: item.customSku,
-  //   price: item.Prices.ItemPrice[0].amount.replace('.', ''),
-  //   currency: 'GBP',
-  //   image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
-  //   itemID: item.itemID,
-  //   unitPrice: item.Prices.ItemPrice[0].amount,
-  // }
-
-  if (!item) {
-    return (
-      <>
-        <div>Loading...</div>;
-      </>
-    );
-  }
-
-  return (
-    <>
-      <LightspeedProduct item={item} />
-    </>
-  );
-};
-
+const Item = ({ item }) => (
+  <>
+    <LightspeedProduct item={item} />
+  </>
+);
 export default Item;

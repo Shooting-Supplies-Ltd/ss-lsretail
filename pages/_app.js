@@ -1,8 +1,10 @@
 import '../style/index.css';
 import 'react-bnb-gallery/dist/style.css';
-import Layout from '../components/layout/Layout'
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from 'use-shopping-cart';
+import Layout from '../components/layout/Layout';
+import { BrandsProvider } from '../context/BrandsContext';
+import { CategoriesProvider } from '../context/CategoriesContext';
 
 function MyApp({ Component, pageProps }) {
   const stripePromise = loadStripe(`${process.env.STRIPE_API_PUBLIC_KEY}`);
@@ -17,9 +19,13 @@ function MyApp({ Component, pageProps }) {
       allowedCountries={['GB']}
       billingAddressCollection
     >
-    <Layout>
-      <Component {...pageProps} />
-      </Layout>
+      <CategoriesProvider>
+        <BrandsProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </BrandsProvider>
+      </CategoriesProvider>
     </CartProvider>
   );
 }

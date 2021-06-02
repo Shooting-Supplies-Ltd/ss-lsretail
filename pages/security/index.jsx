@@ -9,7 +9,7 @@ import StockMessage from '../../components/StockMessage';
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getSecurity().catch((err) => console.err(err));
+  const itemData = await getSecurity().catch((err) => console.error(err));
 
   const items = itemData
     .map((item) => {
@@ -43,7 +43,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 86400,
+    revalidate: 60,
   };
 }
 

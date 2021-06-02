@@ -30,7 +30,7 @@ export async function getStaticPaths() {
     })
     .filter((path) => path);
 
-  return { paths, fallback: true };
+  return { paths, fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params: { id } }) {
@@ -77,20 +77,6 @@ const Gun = ({ Gun }) => {
 
     return <a href={`mailto:${email}${params}`}>{children}</a>;
   };
-
-  if (!Gun) {
-    return (
-      <>
-        <div className="grid grid-cols-3">
-          <div />
-          <div className="my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
-            <p>Details will be updated soon, please check back later.</p>
-          </div>
-          <div />
-        </div>
-      </>
-    );
-  }
 
   return (
     <>

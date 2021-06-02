@@ -1,11 +1,38 @@
 import Head from 'next/head';
+import { useContext, useEffect, useState } from 'react';
+import { BrandsContext } from '../context/BrandsContext';
+import { CategoriesContext } from '../context/CategoriesContext';
+import { getCategories, getManufacturers } from '../adapters/lightspeed/lightspeed';
 
 import HomeBanner from '../components/home/HomeBanner';
 import Categories from '../components/home/Categories';
 import HelpBanner from '../components/home/HelpBanner';
 import SubHeader from '../components/home/SubHeader';
 
-export default function Home() {
+export async function getStaticProps() {
+  const fetchCategories = await getCategories();
+  const fetchBrands = await getManufacturers();
+
+  return { props: { fetchCategories, fetchBrands } };
+}
+
+export default function Home({ fetchCategories, fetchBrands }) {
+  const [brands, setBrands] = useContext(BrandsContext);
+  const [categories, setCategories] = useContext(CategoriesContext);
+
+  useEffect(() => {
+    setBrands(fetchBrands);
+    setCategories(fetchCategories);
+  }, [fetchBrands, setBrands, fetchCategories, setCategories]);
+
+  useEffect(() => {
+    console.log(brands);
+  }, [brands]);
+
+  useEffect(() => {
+    console.log(categories);
+  }, [categories]);
+
   return (
     <>
       <Head>

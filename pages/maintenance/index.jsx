@@ -14,7 +14,7 @@ let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getMaintenance().catch((err) => console.err(err));
+  const itemData = await getMaintenance().catch((err) => console.error(err));
 
   const items = itemData.map((item) => {
     if (item.Images?.Image?.baseImageURL) {
@@ -51,7 +51,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 300,
+    revalidate: 60,
   };
 }
 

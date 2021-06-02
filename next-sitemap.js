@@ -1,7 +1,7 @@
 module.exports = {
   siteUrl: 'https://www.shootingsuppliesltd.co.uk',
   generateRobotsTxt: false, // (optional)
-  changefreq: 'daily',
+  changefreq: 'weekly',
   priority: 0.7,
   exclude: ['/api'],
   transform: async (config, path) => ({

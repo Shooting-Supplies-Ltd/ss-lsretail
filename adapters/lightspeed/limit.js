@@ -40,6 +40,7 @@ api.interceptors.response.use(
       config._retry = true;
       const access_token = await refreshToken();
       axios.defaults.headers.common.Authorization = `Bearer ${access_token}`;
+      console.log(`Token Pulled ${access_token}`);
       return api(config);
     }
 
@@ -59,7 +60,7 @@ api.interceptors.response.use(
       console.log('Backoff Used');
       setTimeout(function () {
         resolve();
-      }, config.retryDelay || 2000);
+      }, config.retryDelay || 10000);
     });
 
     return backoff.then(function () {

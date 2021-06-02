@@ -35,6 +35,7 @@ api.interceptors.response.use(
     const { config } = error;
 
     if (error.response.status === 401 && !config._retry) {
+      console.log('Error 401');
       config._retry = true;
       const access_token = await refreshToken();
       axios.defaults.headers.common.Authorization = `Bearer ${access_token}`;
@@ -47,15 +48,17 @@ api.interceptors.response.use(
 
     if (config.__retryCount >= config.retry) {
       // Reject with the error
+      console.log('Too many retries');
       return Promise.reject(err);
     }
 
     config.__retryCount += 1;
 
     const backoff = new Promise(function (resolve) {
+      console.log('Backoff Used');
       setTimeout(function () {
         resolve();
-      }, config.retryDelay || 1);
+      }, config.retryDelay || 2000);
     });
 
     return backoff.then(function () {

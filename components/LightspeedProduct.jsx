@@ -92,30 +92,53 @@ export default function LightspeedProduct({ item }) {
               )}
             </div>
 
+            {item.CustomFieldValues ? (
+              item.CustomFieldValues.CustomFieldValue.map((field) => {
+                if (field.customFieldID === '5' && field.value === 'true') {
+                  return (
+                    <>
+                      <p className="mt-4 font-bold text-4xl uppercase">
+                        <span className="line-through mr-2 text-sm lg:text-md xl:text-xl">
+                          £{parseFloat(item.Prices.ItemPrice[1].amount).toFixed(2)}
+                        </span>
+                        {formatCurrencyString({
+                          value: price,
+                          currency: 'GBP',
+                        })}
+                      </p>
+                      <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-2xl text-white bg-red-600 uppercase">
+                        Sale
+                      </span>
+                    </>
+                  );
+                }
+              })
+            ) : (
+              <p className="mt-4 font-bold text-4xl uppercase">
+                {formatCurrencyString({
+                  value: price,
+                  currency: 'GBP',
+                })}
+              </p>
+            )}
+
             {item.CustomFieldValues
               ? item.CustomFieldValues.CustomFieldValue.map((field) => {
-                  if (field.customFieldID === '5' && field.value === 'true') {
+                  if (field.customFieldID === '5' && field.value === 'false') {
                     return (
                       <>
                         <p className="mt-4 font-bold text-4xl uppercase">
-                          <span className="line-through mr-2 text-sm lg:text-md xl:text-xl">
-                            £{parseFloat(item.Prices.ItemPrice[1].amount).toFixed(2)}
-                          </span>
                           {formatCurrencyString({
                             value: price,
                             currency: 'GBP',
                           })}
                         </p>
-                        <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-2xl text-white bg-red-600 uppercase">
-                          Sale
-                        </span>
                       </>
                     );
                   }
                 })
               : null}
 
-            <p className="" />
             <p className="mt-4 prose" dangerouslySetInnerHTML={productDescriptionShort()} />
           </div>
         </div>

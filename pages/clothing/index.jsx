@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { getMatrixClothing, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
+import { getMatrixClothing, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import MatrixProductCard from '../../components/MatrixProductCard';
@@ -38,7 +38,7 @@ export async function getStaticProps() {
   const brandIds = items.map((item) => parseInt(item.manufacturerID));
 
   const brandsToFetch = [...new Set(brandIds)];
-  const brandData = await getManufacturers(brandsToFetch);
+  const brandData = await getManufacturer(brandsToFetch);
   const brands = brandData.map((brand) => ({
     brandID: brand.manufacturerID,
     name: brand.name,

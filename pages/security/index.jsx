@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
-import { getSecurity, getCategory, getManufacturers } from '../../adapters/lightspeed/lightspeed';
+import { getSecurity, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
@@ -33,7 +33,7 @@ export async function getStaticProps() {
   const brandIds = items.map((item) => item.manufacturerID);
 
   const brandsToFetch = [...new Set(brandIds)];
-  const brandData = await getManufacturers(brandsToFetch);
+  const brandData = await getManufacturer(brandsToFetch);
   const brands = brandData;
 
   // Return props

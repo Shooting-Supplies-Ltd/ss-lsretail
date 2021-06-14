@@ -107,7 +107,7 @@ export default function LightspeedProduct({ item }) {
                           currency: 'GBP',
                         })}
                       </p>
-                      <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-2xl text-white bg-red-600 uppercase">
+                      <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 rounded-lg md:text-2xl text-white bg-red-600 uppercase">
                         Sale
                       </span>
                     </>
@@ -145,7 +145,7 @@ export default function LightspeedProduct({ item }) {
         </div>
         <hr className="lg:hidden my-4" />
         <div id="fulldescription" className="mx-0 lg:mx-72 mt-4 mb-12 p-4 bg-gray-50 rounded-xl">
-          <h2 className="font-bold text-3xl text-center uppercase font-black">Description</h2>
+          <h2 className="text-3xl text-center uppercase font-black">Description</h2>
           <div dangerouslySetInnerHTML={productDescriptionLong()} className="mt-4 mx-auto prose" />
         </div>
         <div className="lg:mx-72 mx-4">

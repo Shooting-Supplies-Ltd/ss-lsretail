@@ -206,7 +206,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
           </div>
         </div>
         <main className="lg:ml-4 lg:p-2 xl:w-5/6">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 xl:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
             {filteredGuns
               ? filteredGuns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)
               : guns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)}

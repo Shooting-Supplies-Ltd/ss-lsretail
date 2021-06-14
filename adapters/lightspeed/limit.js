@@ -33,13 +33,13 @@ api.interceptors.response.use(
   },
   async function (error) {
     const { config } = error;
-    console.log(config);
+    console.log(error.response)
 
     if (error.response.status === 401 && !config._retry) {
       console.log('Error 401');
       config._retry = true;
       const access_token = await refreshToken();
-      axios.defaults.headers.Authorization = `Bearer ${access_token}`;
+      api.defaults.headers[`Authorization`] = `Bearer ${access_token}`;
       console.log(`Token Pulled ${access_token}`);
       return api(config);
     }

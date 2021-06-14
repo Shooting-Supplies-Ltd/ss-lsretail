@@ -59,49 +59,6 @@ const Clothing = ({ items, categories, brands }) => {
   const router = useRouter();
   const initialRender = useRef(true);
 
-  // Implement useConstructor to load function before initial render.
-  const useConstructor = (callBack = () => {}) => {
-    const hasBeenCalled = useRef(false);
-    if (hasBeenCalled.current) return;
-    callBack();
-    hasBeenCalled.current = true;
-  };
-
-  // Get and set Query Brand if set
-  const initialBrand = () => {
-    const queryValue = router.asPath.match(new RegExp(`[&?]${'brand'}=(.*)(&|$)`));
-    if (queryValue) {
-      const filterQueryBrand = brands
-        .map((queryBrand) => {
-          if (queryBrand.name === queryValue[1])
-            return {
-              [queryBrand.brandID]: true,
-            };
-        })
-        .filter(Boolean);
-      routerQueryBrand = filterQueryBrand[0];
-    }
-  };
-
-  // Get and set Query Category if set
-  const initialCategory = () => {
-    const queryValue = router.asPath.match(new RegExp(`[&?]${'category'}=(.*)(&|$)`));
-    if (queryValue) {
-      const filterQueryCategory = categories
-        .map((queryCategory) => {
-          if (queryCategory.name === queryValue[1])
-            return {
-              [queryCategory.catID]: true,
-            };
-        })
-        .filter(Boolean);
-      routerQueryCategory = filterQueryCategory[0];
-    }
-  };
-
-  useConstructor(initialBrand);
-  useConstructor(initialCategory);
-
   const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
   const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
   const [itemFilters, setItemFilters] = useState();

@@ -47,7 +47,7 @@ export async function getStaticProps() {
   };
 }
 
-const Optics = ({ items, categories, brands }) => {
+const Security = ({ items, categories, brands }) => {
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedBrand, setSelectedBrand] = useState({});
   const [itemFilters, setItemFilters] = useState();
@@ -144,4 +144,4 @@ const Optics = ({ items, categories, brands }) => {
   );
 };
 
-export default Optics;
+export default Security;

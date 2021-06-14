@@ -39,7 +39,7 @@ api.interceptors.response.use(
       console.log('Error 401');
       config._retry = true;
       const access_token = await refreshToken();
-      axios.defaults.headers.common.Authorization = `Bearer ${access_token}`;
+      axios.defaults.headers.Authorization = `Bearer ${access_token}`;
       console.log(`Token Pulled ${access_token}`);
       return api(config);
     }

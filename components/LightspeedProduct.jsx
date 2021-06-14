@@ -20,49 +20,50 @@ export default function LightspeedProduct({ item }) {
   return (
     <>
       <Head>
-        <title className="uppercase">{`BUY ${item.description}. ONLY ${formatCurrencyString({
-          value: price,
-          currency: 'GBP',
-        })} | SHOOTING SUPPLIES LTD`}</title>
-        <meta property="description" content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`} />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="keywords" content={`${item.description.replace(' ', ',')}`} />
-        <meta property="og:title" content={`${item.description}`} />
-        <meta
-          property="og:description"
-          content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`}
-        />
-        <meta
-          property="og:image"
-          content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
-          alt={`${item.description}`}
-        />
-        <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta charSet="UTF-8" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'http://schema.org',
-              '@type': 'Product',
-              sku: item.customSku,
-              image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
-              name: item.description,
-              description: item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, ''),
-              offers: {
-                '@type': 'Offer',
-                url: `https://shootingsuppliesltd.co.uk${router.asPath}`,
-                priceCurrency: 'GBP',
-                price: item.Prices?.ItemPrice[0]?.amount,
-                itemCondition: 'https://schema.org/NewCondition',
-                availability:
-                  item.ItemShops?.ItemShop[0]?.qoh > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-              },
-            }),
-          }}
-        />
+      <title className="uppercase">{`BUY ${item.description}. ONLY ${formatCurrencyString({
+      value: price,
+      currency: 'GBP',
+    })} | SHOOTING SUPPLIES LTD`}</title>
+    <meta property="description" content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`} />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content={`${item.description.replace(' ', ',')}`} />
+    <meta property="og:title" content={`${item.description}`} />
+    <meta
+      property="og:description"
+      content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`}
+    />
+    <meta
+      property="og:image"
+      content={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
+      alt={`${item.description}`}
+    />
+    <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta charSet="UTF-8" />
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          '@context': 'http://schema.org',
+          '@type': 'Product',
+          sku: item.customSku,
+          image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
+          name: item.description,
+          description: item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, ''),
+          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+          offers: {
+            '@type': 'Offer',
+            url: `https://shootingsuppliesltd.co.uk${router.asPath}`,
+            priceCurrency: 'GBP',
+            price: item.Prices?.ItemPrice[0]?.amount,
+            itemCondition: 'https://schema.org/NewCondition',
+            availability:
+              item.ItemShops?.ItemShop[0]?.qoh > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+          },
+        }),
+      }}
+    />
       </Head>
       <main>
         <div className="lg:mx-72 lg:my-12 flex flex-col lg:flex-row justify-center">

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import { MdFullscreen } from 'react-icons/md';
 import ReactBnbGallery from 'react-bnb-gallery';
+import 'react-bnb-gallery/dist/style.css';
 
 let guns = null;
 

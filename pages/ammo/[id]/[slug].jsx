@@ -2,28 +2,30 @@ import slugify from 'slugify';
 import { getAmmo, getItem } from '../../../adapters/lightspeed/lightspeed';
 import LightspeedProduct from '../../../components/LightspeedProduct';
 
-export async function getStaticPaths() {
-  const data = await getAmmo();
+// export async function getStaticPaths() {
+//   const data = await getAmmo();
 
-  const paths = data
-    .map((item) => ({
-      params: {
-        slug: slugify(item.description.replace('/', '-'))
-          .replace(/["'.,]/g, '')
-          .toLocaleLowerCase(),
-        id: item.itemID,
-      },
-    }))
-    .filter((path) => path);
+//   const paths = data
+//     .map((item) => ({
+//       params: {
+//         slug: slugify(item.description.replace('/', '-'))
+//           .replace(/["'.,]/g, '')
+//           .toLocaleLowerCase(),
+//         id: item.itemID,
+//       },
+//     }))
+//     .filter((path) => path);
 
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-}
+//   return {
+//     paths,
+//     fallback: 'blocking',
+//   };
+// }
 
-export async function getStaticProps({ params }) {
-  const id = await params.id;
+export async function getServerSideProps({ res, query }) {
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
+
+  const id = await query.id;
 
   if (!id) {
     return {
@@ -36,7 +38,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: { item },
-    revalidate: 60,
+    // revalidate: 60,
   };
 }
 

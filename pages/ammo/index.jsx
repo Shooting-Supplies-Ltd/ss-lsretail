@@ -12,7 +12,8 @@ import MobileProductFilter from '../../components/filters/productFilters/MobileP
 let routerQueryBrand;
 let routerQueryCategory;
 
-export async function getStaticProps() {
+export async function getServerSideProps({res}) {
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
   // Get Items/Products
   const itemData = await getAmmo();
 
@@ -51,7 +52,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 60,
+    // revalidate: 60,
   };
 }
 

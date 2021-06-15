@@ -217,10 +217,11 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps({res}) {
+  res.setHeader('Cache-Control', `s-maxage=3600, stale-while-revalidate`)
   // Get guns
-  const res = await fetch(process.env.GUNTRADER_API);
-  const data = await res.json();
+  const get = await fetch(process.env.GUNTRADER_API);
+  const data = await get.json();
   const gunData = data.Guns;
   const guns = [];
 
@@ -281,7 +282,7 @@ export async function getStaticProps() {
       conditions,
       mechanisms,
     },
-    revalidate: 3600,
+    // revalidate: 3600,
   };
 }
 

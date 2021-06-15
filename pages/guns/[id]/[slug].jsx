@@ -8,32 +8,36 @@ import ReactBnbGallery from 'react-bnb-gallery';
 
 let guns = null;
 
-export async function getStaticPaths() {
-  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
-  const data = await res.json();
-  const { Guns } = data;
-  const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
+// export async function getStaticPaths() {
+//   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
+//   const data = await res.json();
+//   const { Guns } = data;
+//   const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
 
-  const paths = filteredGuns
-    .map((gun) => {
-      if (!gun.Images[0] || !gun.ID) {
-        return undefined;
-      }
-      return {
-        params: {
-          id: gun.ID,
-          slug: slugify(
-            `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
-          ).toLowerCase(),
-        },
-      };
-    })
-    .filter((path) => path);
+//   const paths = filteredGuns
+//     .map((gun) => {
+//       if (!gun.Images[0] || !gun.ID) {
+//         return undefined;
+//       }
+//       return {
+//         params: {
+//           id: gun.ID,
+//           slug: slugify(
+//             `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
+//           ).toLowerCase(),
+//         },
+//       };
+//     })
+//     .filter((path) => path);
 
-  return { paths, fallback: 'blocking' };
-}
+//   return { paths, fallback: 'blocking' };
+// }
 
-export async function getStaticProps({ params: { id } }) {
+export async function getServerSideProps({ res, query }) {
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
+
+  const id = query.id
+
   if (!id) {
     return {
       notFound: true,
@@ -43,17 +47,17 @@ export async function getStaticProps({ params: { id } }) {
   if (guns != null) {
     return {
       props: { Gun: guns.find((gun) => gun.ID === id) },
-      revalidate: 3600,
+      // revalidate: 3600,
     };
   }
 
-  const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
-  const data = await res.json();
+  const getGuns = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
+  const data = await getGuns.json();
   guns = data.Guns;
 
   return {
     props: { Gun: guns.find((gun) => gun.ID === id) },
-    revalidate: 3600,
+    // revalidate: 3600,
   };
 }
 

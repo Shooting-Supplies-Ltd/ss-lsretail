@@ -2,27 +2,31 @@ import slugify from 'slugify';
 import { getMatrixClothing } from '../../../adapters/lightspeed/lightspeed';
 import LightspeedMatrixProduct from '../../../components/LightspeedMatrixProduct';
 
-export async function getStaticPaths() {
-  const data = await getMatrixClothing();
+// export async function getStaticPaths() {
+//   const data = await getMatrixClothing();
 
-  const paths = await data
-    .map((item) => ({
-      params: {
-        slug: slugify(item.description.replace('/', '-'))
-          .replace(/["'.,]/g, '')
-          .toLocaleLowerCase(),
-        id: item.itemMatrixID,
-      },
-    }))
-    .filter((path) => path);
+//   const paths = await data
+//     .map((item) => ({
+//       params: {
+//         slug: slugify(item.description.replace('/', '-'))
+//           .replace(/["'.,]/g, '')
+//           .toLocaleLowerCase(),
+//         id: item.itemMatrixID,
+//       },
+//     }))
+//     .filter((path) => path);
 
-  return {
-    paths,
-    fallback: 'blocking',
-  };
-}
+//   return {
+//     paths,
+//     fallback: 'blocking',
+//   };
+// }
 
-export async function getStaticProps({ params: { id } }) {
+export async function getServerSideProps({ res, query }) {
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
+
+  const id = query.id
+
   if (!id) {
     return {
       notFound: true,
@@ -37,7 +41,7 @@ export async function getStaticProps({ params: { id } }) {
 
   return {
     props: { item },
-    revalidate: 300,
+    // revalidate: 300,
   };
 }
 

@@ -7,7 +7,9 @@ import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 
-export async function getStaticProps() {
+export async function getServerSideProps({res}) {
+  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
+
   // Get Items/Products
   const itemData = await getSecurity().catch((err) => console.error(err));
 
@@ -43,7 +45,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 60,
+    // revalidate: 60,
   };
 }
 

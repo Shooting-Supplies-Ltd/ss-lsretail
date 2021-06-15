@@ -33,7 +33,7 @@ export default async function refreshToken() {
 
       const tokenData = await response.data;
 
-      tokenCache.set('tokenData', tokenData, { checkperiod: tokenData.expires_in });
+      tokenCache.set('tokenData', tokenData, { checkperiod: parseInt(tokenData.expires_in) });
 
       token = tokenData.access_token;
 

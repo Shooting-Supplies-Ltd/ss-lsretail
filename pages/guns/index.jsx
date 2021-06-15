@@ -282,7 +282,6 @@ export async function getServerSideProps({res}) {
       conditions,
       mechanisms,
     },
-    // revalidate: 3600,
   };
 }
 

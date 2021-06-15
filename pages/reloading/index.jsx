@@ -51,7 +51,6 @@ export async function getServerSideProps({res}) {
       categories,
       brands,
     },
-    // revalidate: 60,
   };
 }
 

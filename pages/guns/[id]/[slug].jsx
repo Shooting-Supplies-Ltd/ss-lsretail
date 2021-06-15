@@ -1,37 +1,10 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Head from 'next/head';
-// import Image from 'next/image';
 import { MdFullscreen } from 'react-icons/md';
-import slugify from 'slugify';
 import ReactBnbGallery from 'react-bnb-gallery';
 
 let guns = null;
-
-// export async function getStaticPaths() {
-//   const res = await fetch('https://3rdParty.guntrader.uk/ShootingSuppliesLtd/jsonGuns');
-//   const data = await res.json();
-//   const { Guns } = data;
-//   const filteredGuns = Guns.filter((gun) => gun.SerialNumber !== 'NVN');
-
-//   const paths = filteredGuns
-//     .map((gun) => {
-//       if (!gun.Images[0] || !gun.ID) {
-//         return undefined;
-//       }
-//       return {
-//         params: {
-//           id: gun.ID,
-//           slug: slugify(
-//             `${gun.Make}-${gun.Model ? gun.Model : gun.Type}${gun.Variant ? `-${gun.Variant}` : ''}`
-//           ).toLowerCase(),
-//         },
-//       };
-//     })
-//     .filter((path) => path);
-
-//   return { paths, fallback: 'blocking' };
-// }
 
 export async function getServerSideProps({ res, query }) {
   res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
@@ -47,7 +20,6 @@ export async function getServerSideProps({ res, query }) {
   if (guns != null) {
     return {
       props: { Gun: guns.find((gun) => gun.ID === id) },
-      // revalidate: 3600,
     };
   }
 
@@ -57,7 +29,6 @@ export async function getServerSideProps({ res, query }) {
 
   return {
     props: { Gun: guns.find((gun) => gun.ID === id) },
-    // revalidate: 3600,
   };
 }
 
@@ -140,16 +111,6 @@ const Gun = ({ Gun }) => {
         <div className="xl:w-2/4 flex flex-wrap justify-center">
           <div className="my-0 xl:my-12 rounded-b-lg shadow-lg border-t-2 border-ssblue">
             <div className="relative flex justify-center items-center w-full h-80 bg-ssblue">
-              {/* <Image
-                src={Gun.Images[0].FullPath}
-                alt={`${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
-                  Gun.Calibre
-                }`}
-                width={800}
-                height={400}
-                layout="intrinsic"
-                // className="object-scale-down"
-              /> */}
               <img
                 src={Gun.Images[0].FullPath}
                 alt={`Buy ${Gun.Condition} ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${

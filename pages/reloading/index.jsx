@@ -129,8 +129,8 @@ const Reloading = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Ammo for Rifles, Shotguns, Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="Ammo for all shotguns, rifles and airguns with bulk discounts available." />
+        <title>Reloading Supplies & Tools | Shooting Supplies Ltd</title>
+        <meta name="description" content="All your loading supplies covered from tools to powders" />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/ammo" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

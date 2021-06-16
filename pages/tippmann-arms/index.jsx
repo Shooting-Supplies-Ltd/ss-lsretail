@@ -19,7 +19,7 @@ const Tippmann = ({ tippmannProducts }) => (
       <title>Tippmann Arms Rifles & Accessories | Shooting Supplies Ltd</title>
       <meta
         name="description"
-        content="Tippmann Arms rifles and accesories, imported and distributed by Shooting Supplies Ltd"
+        content="UK supplier of the fantastic Tippmann Arms M4 rifles and accessories"
       />
       <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/tippmann-arms" />
     </Head>

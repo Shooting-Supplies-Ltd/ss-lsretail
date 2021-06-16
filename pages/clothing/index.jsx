@@ -134,7 +134,7 @@ const Clothing = ({ items, categories, brands }) => {
         <title>Shooting & Outdoor Clothing for all Conditions | Shooting Supplies Ltd</title>
         <meta
           name="description"
-          content="Shooting & Outdoor clothing for all weathers and conditions from the biggest brands."
+          content="Shooting & Outdoor clothing for all weathers and conditions from your favourite brands."
         />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/clothing" />
       </Head>

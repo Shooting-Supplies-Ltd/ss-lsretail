@@ -137,10 +137,10 @@ const Accessories = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Shooting Accessories & Gun Attachments | Shooting Supplies Ltd</title>
+        <title>Accessories, Attachments & Fittings | Shooting Supplies Ltd</title>
         <meta
           name="description"
-          content="Bipods & Supports, Grips, Mounts & Fixings, Spares & Accessories & More, from all of the big brands."
+          content="Bipods & Supports, Grips, Mounts & Fixings, Spares & Accessories & More, from all of your favourite brands."
         />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/accessories" />
       </Head>

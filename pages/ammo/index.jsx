@@ -131,8 +131,8 @@ const Ammo = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Ammo for Rifles, Shotguns, Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="Ammo for all shotguns, rifles and airguns with bulk discounts available." />
+        <title>Ammunition for Rifles, Shotguns & Airguns | Shooting Supplies Ltd</title>
+        <meta name="description" content="All the ammunition you need whatever the use with bulk discounts available." />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/ammo" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

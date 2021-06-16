@@ -134,7 +134,7 @@ const Optics = ({ items, categories, brands }) => {
         <title>Optics - Rifle Scopes, Night Vision, Spotters & More | Shooting Supplies Ltd</title>
         <meta
           name="description"
-          content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of the leading brands."
+          content="A huge range of Optics including Scopes, Night Vision, Thermal and more from all of your favourite brands."
         />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/optics" />
       </Head>

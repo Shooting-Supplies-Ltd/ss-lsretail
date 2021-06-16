@@ -87,10 +87,10 @@ const Gun = ({ Gun }) => {
               '@type': 'Product',
               image: `${Gun.Images[0].FullPath}`,
               name: `${Gun.Make ? Gun.Make : ''} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre ? Gun.Calibre : ''}`,
-              brand: Gun.Make,
-              model: Gun.Model,
-              category: Gun.Type,
-              itemCondition: Gun.Condition,
+              brand: Gun.Make ? Gun.Make : '',
+              model: Gun.Model ? Gun.Model : '',
+              category: Gun.Type ? Gun.Type : '',
+              itemCondition: Gun.Condition ? Gun.Condition : '',
               description: `${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${
                 Gun.Calibre ? Gun.Calibre : ''
               }`,
@@ -98,6 +98,7 @@ const Gun = ({ Gun }) => {
                 '@type': 'Offer',
                 url: `https://shootingsuppliesltd.co.uk${router.asPath}`,
                 priceCurrency: 'GBP',
+                priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
                 price: Gun.Price,
                 itemCondition:
                   Gun.Condition == 'New' ? 'https://schema.org/NewCondition' : 'https://schema.org/UsedCondition',

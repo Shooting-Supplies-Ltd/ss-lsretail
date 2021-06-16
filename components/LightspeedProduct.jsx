@@ -20,10 +20,7 @@ export default function LightspeedProduct({ item }) {
   return (
     <>
       <Head>
-      <title className="uppercase">{`BUY ${item.description}. ONLY ${formatCurrencyString({
-      value: price,
-      currency: 'GBP',
-    })} | SHOOTING SUPPLIES LTD`}</title>
+      <title>{`${item.description} | Shooting Supplies Ltd`}</title>
     <meta property="description" content={`${item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, '')}`} />
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

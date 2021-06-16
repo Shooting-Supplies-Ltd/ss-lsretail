@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Shooting Supplies Ltd | The Midlands leading gun shop.</title>
+        <title>Shooting Supplies Ltd | The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More.</title>
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk" />
         <script
           type="application/ld+json"
@@ -19,7 +19,7 @@ export default function Home() {
               '@type': 'LocalBusiness',
               name: 'Shooting Supplies Ltd',
               description:
-                'The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More.',
+                'The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More.',
               openingHours: ['Tu,We,Th,Sa 09:00-17:30', 'Fr 09:00-19:00'],
               telephone: '01527831261',
               paymentAccepted: 'Cash, Credit Card, Debit Card, Finance',
@@ -40,7 +40,7 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More."
+          content="The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More."
         />
         <meta
           name="keywords"
@@ -55,7 +55,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="The Midlands leading gun shop for Rifles, Shotguns, Airguns, Ammo, Reloading, Scopes, Accessories, Clothing & More."
+          content="The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More."
         />
       </Head>
       <div>

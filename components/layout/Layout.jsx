@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
-NProgress.configure({ showSpinner: false, easing: 'ease', speed: 1000 });
+NProgress.configure({ showSpinner: false, easing: 'ease', speed: 500, trickleSpeed: 500 });
 
 const Layout = (props) => {
   const router = useRouter();

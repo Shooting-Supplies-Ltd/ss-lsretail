@@ -2,11 +2,11 @@ import axios from 'axios';
 import refreshToken from './refreshToken';
 
 const MAX_REQUESTS_COUNT = 1;
-const INTERVAL_MS = 1000;
+const INTERVAL_MS = 500;
 let PENDING_REQUESTS = 0;
 
 // create new axios instance
-const api = axios.create({ retry: 3, retryDelay: 10000 });
+const api = axios.create({ retry: 3, retryDelay: 2000 });
 
 /**
  * Axios Request Interceptor
@@ -60,7 +60,7 @@ api.interceptors.response.use(
       console.log('Backoff Used');
       setTimeout(function () {
         resolve();
-      }, config.retryDelay || 10000);
+      }, config.retryDelay || 5000);
     });
 
     return backoff.then(function () {

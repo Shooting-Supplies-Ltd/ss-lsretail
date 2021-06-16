@@ -47,9 +47,11 @@ export default function LightspeedProduct({ item }) {
           sku: item.customSku,
           image: `${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`,
           name: item.description,
+          brand: item.Manufacturer.name ? item.Manufacturer.name : '',
           description: item.ItemECommerce.shortDescription.replace(/(<([^>]+)>)/gi, ''),
-          priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+          mpn: item.manufacturerSku ? item.manufacturerSku : '',
           offers: {
+            priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
             '@type': 'Offer',
             url: `https://shootingsuppliesltd.co.uk${router.asPath}`,
             priceCurrency: 'GBP',

@@ -9,7 +9,7 @@ export async function getItems() {
 
 export async function getItem(itemID) {
   const item = makeRequest(
-    `Item/${itemID}.json?load_relations=["Category", "Images", "ItemShops", "ItemPrices", "ItemECommerce", "CustomFieldValues"]`
+    `Item/${itemID}.json?load_relations=["Category", "Images", "ItemShops", "ItemPrices", "ItemECommerce", "Manufacturer", "CustomFieldValues"]`
   );
   return item;
 }

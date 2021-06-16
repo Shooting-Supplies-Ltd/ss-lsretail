@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { getTippmann } from '../../adapters/lightspeed/lightspeed';
 import TippmannProductCard from '../../components/TippmannProductCard';
 
-export async function getServerSideProps({res}) {
-  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
-  
+export async function getStaticProps() {  
   const getTippmannProducts = await getTippmann();
   const tippmannProducts = getTippmannProducts;
 

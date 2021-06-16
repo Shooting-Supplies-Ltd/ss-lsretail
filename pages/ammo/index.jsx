@@ -12,8 +12,7 @@ import MobileProductFilter from '../../components/filters/productFilters/MobileP
 let routerQueryBrand;
 let routerQueryCategory;
 
-export async function getServerSideProps({res}) {
-  res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)
+export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getAmmo();
 

@@ -9,6 +9,7 @@ export async function getStaticProps() {
 
   return {
     props: { tippmannProducts },
+    revalidate: 300
   };
 }
 

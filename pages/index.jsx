@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Shooting Supplies Ltd | The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More.</title>
+        <title>The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More | Shooting Supplies Ltd</title>
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk" />
         <script
           type="application/ld+json"

@@ -2,11 +2,10 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import NProgress from 'nprogress';
 import Head from 'next/head';
-
 import Header from './Header';
 import Footer from './Footer';
 
-NProgress.configure({ showSpinner: false });
+NProgress.configure({ showSpinner: false, easing: 'ease', speed: 1000 });
 
 const Layout = (props) => {
   const router = useRouter();

@@ -1,4 +1,5 @@
 import '../style/index.css';
+import '../style/nprogress.css'
 import { loadStripe } from '@stripe/stripe-js';
 import { CartProvider } from 'use-shopping-cart';
 import { useEffect } from 'react'

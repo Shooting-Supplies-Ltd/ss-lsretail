@@ -57,12 +57,12 @@ const Gun = ({ Gun }) => {
   return (
     <>
       <Head>
-        <title className="uppercase">{`Buy ${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${
+        <title className="uppercase">{`${Gun.Make ? Gun.Make : ''} ${Gun.Model ? Gun.Model : ''} ${
           Gun.Variant ? Gun.Variant : ''
-        } ${Gun.Calibre} at Shooting Supplies Ltd`}</title>
+        } ${Gun.Calibre ? Gun.Calibre : ''} | Shooting Supplies Ltd`}</title>
         <meta
           name="description"
-          content={`${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`}
+          content={`${Gun.Make ? Gun.Make : ''} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre ? Gun.Calibre : ''}`}
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -86,7 +86,7 @@ const Gun = ({ Gun }) => {
               '@context': 'http://schema.org',
               '@type': 'Product',
               image: `${Gun.Images[0].FullPath}`,
-              name: `${Gun.Make} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre}`,
+              name: `${Gun.Make ? Gun.Make : ''} ${Gun.Model ? Gun.Model : ''} ${Gun.Variant ? Gun.Variant : ''} ${Gun.Calibre ? Gun.Calibre : ''}`,
               brand: Gun.Make,
               model: Gun.Model,
               category: Gun.Type,

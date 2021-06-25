@@ -1,13 +1,17 @@
-import Head from 'next/head';
-import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
-import { getReloading, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
+import Head from "next/head";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
+import {
+  getReloading,
+  getCategory,
+  getManufacturer,
+} from "../../adapters/lightspeed/lightspeed";
 
-import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/ProductCard';
-import ProductFilter from '../../components/filters/productFilters/ProductFilter';
-import StockMessage from '../../components/StockMessage';
-import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
+import SearchFilter from "../../components/filters/productFilters/SearchFilter";
+import ProductCard from "../../components/ProductCard";
+import ProductFilter from "../../components/filters/productFilters/ProductFilter";
+import StockMessage from "../../components/StockMessage";
+import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
 
 let routerQueryBrand;
 let routerQueryCategory;
@@ -49,7 +53,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
@@ -57,19 +61,27 @@ const Reloading = ({ items, categories, brands }) => {
   const router = useRouter();
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
+  const [selectedCategory, setSelectedCategory] = useState(
+    routerQueryCategory || {}
+  );
   const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const handleCategoryChange = (event) => {
-    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setSelectedCategory({
+      ...selectedCategory,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
   const handleBrandChange = (event) => {
-    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setSelectedBrand({
+      ...selectedBrand,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
@@ -79,7 +91,8 @@ const Reloading = ({ items, categories, brands }) => {
       manufacturerID: [],
     };
     for (const CategoryKey in selectedCategory) {
-      if (selectedCategory[CategoryKey]) appliedFilters.categoryID.push(CategoryKey);
+      if (selectedCategory[CategoryKey])
+        appliedFilters.categoryID.push(CategoryKey);
     }
     for (const BrandKey in selectedBrand) {
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey);
@@ -130,8 +143,14 @@ const Reloading = ({ items, categories, brands }) => {
     <>
       <Head>
         <title>Reloading Supplies & Tools | Shooting Supplies Ltd</title>
-        <meta name="description" content="All your loading supplies covered from tools to powders" />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/ammo" />
+        <meta
+          name="description"
+          content="All your loading supplies covered from tools to powders"
+        />
+        <link
+          rel="canonical"
+          href="https://www.shootingsuppliesltd.co.uk/ammo"
+        />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div
@@ -172,8 +191,12 @@ const Reloading = ({ items, categories, brands }) => {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
-              : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
+              ? filteredItems.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))
+              : items.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))}
           </div>
         </main>
       </div>

@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import BlockContent from '@sanity/block-content-to-react';
-import getYouTubeId from 'get-youtube-id';
-import YouTube from 'react-youtube';
+import Head from "next/head";
+import { useRouter } from "next/router";
+import BlockContent from "@sanity/block-content-to-react";
+import getYouTubeId from "get-youtube-id";
+import YouTube from "react-youtube";
 
 export async function getStaticPaths() {
   const query = JSON.stringify({
@@ -16,14 +16,17 @@ export async function getStaticPaths() {
     }`,
   });
 
-  const data = await fetch('https://sspj558i.api.sanity.io/v1/graphql/production/default', {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.SANITY_API_KEY}`,
-    },
-    method: 'POST',
-    body: query,
-  });
+  const data = await fetch(
+    "https://sspj558i.api.sanity.io/v1/graphql/production/default",
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.SANITY_API_KEY}`,
+      },
+      method: "POST",
+      body: query,
+    }
+  );
 
   const slugData = await data.json();
 
@@ -35,7 +38,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 }
 
@@ -68,14 +71,17 @@ export async function getStaticProps({ params: { slug } }) {
     }`,
   });
 
-  const data = await fetch('https://sspj558i.api.sanity.io/v1/graphql/production/default', {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.SANITY_API_KEY}`,
-    },
-    method: 'POST',
-    body: query,
-  });
+  const data = await fetch(
+    "https://sspj558i.api.sanity.io/v1/graphql/production/default",
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.SANITY_API_KEY}`,
+      },
+      method: "POST",
+      body: query,
+    }
+  );
 
   const postData = await data.json();
   const post = postData.data.allPost[0];
@@ -105,9 +111,19 @@ export default function Post({ post }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="keywords" content={`${post.title}`} />
         <meta property="og:title" content={`${post.title}`} />
-        <meta property="og:description" content={`Blog post about - ${post.title}`} />
-        <meta property="og:image" content={`${post.mainImage}`} alt={`${post.title}`} />
-        <meta property="og:url" content={`https://shootingsuppliesltd.co.uk${router.asPath}`} />
+        <meta
+          property="og:description"
+          content={`Blog post about - ${post.title}`}
+        />
+        <meta
+          property="og:image"
+          content={`${post.mainImage}`}
+          alt={`${post.title}`}
+        />
+        <meta
+          property="og:url"
+          content={`https://shootingsuppliesltd.co.uk${router.asPath}`}
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta charSet="UTF-8" />
       </Head>
@@ -117,7 +133,7 @@ export default function Post({ post }) {
           <div className="prose prose-lg max-w-none">
             <BlockContent
               blocks={post.bodyRaw}
-              imageOptions={{ w: 320, h: 240, fit: 'max' }}
+              imageOptions={{ w: 780, h: 360, fit: "max" }}
               projectId="sspj558i"
               dataset="production"
               serializers={serializers}

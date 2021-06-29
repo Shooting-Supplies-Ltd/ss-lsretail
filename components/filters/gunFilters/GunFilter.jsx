@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import useLocalStorage from '../../../lib/localStorage'
 
 import BrandFilter from './BrandFilter';
 import CategoryFilter from './CategoryFilter';
@@ -7,10 +8,10 @@ import ConditionFilter from './ConditionFilter';
 import MechanismFilter from './MechanismFilter';
 
 const GunFilter = (props) => {
-  const [displayConditions, setDisplayConditions] = useState(true);
-  const [displayCategories, setDisplayCategories] = useState(true);
-  const [displayBrands, setDisplayBrands] = useState(false);
-  const [displayMechanisms, setDisplayMechanisms] = useState(false);
+  const [displayConditions, setDisplayConditions] = useLocalStorage('displayConditionsGun', true);
+  const [displayCategories, setDisplayCategories] = useLocalStorage('displayCategoriesGuns', true);
+  const [displayBrands, setDisplayBrands] = useLocalStorage('displayBrandsGuns', false);
+  const [displayMechanisms, setDisplayMechanisms] = useLocalStorage('displayMechanismsGuns', false);
 
   const toggleDisplayConditions = () => {
     setDisplayConditions(!displayConditions);

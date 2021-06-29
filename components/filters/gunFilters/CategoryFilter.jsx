@@ -9,7 +9,7 @@ const CategoryFilter = (props) => {
             type="checkbox"
             id={cat.categories.name}
             value={cat.categories.name}
-            checked={selectedCategory[cat.category]}
+            checked={selectedCategory[cat.categories.name]}
             onChange={handleCategoryChange}
             className="hover:ssorange"
           />

@@ -9,7 +9,7 @@ const ConditionFilter = (props) => {
             type="checkbox"
             id={condition.condition.name}
             value={condition.condition.name}
-            checked={selectedCondition[condition.condition]}
+            checked={selectedCondition[condition.condition.name]}
             onChange={handleConditionChange}
             className="hover:ssorange"
           />

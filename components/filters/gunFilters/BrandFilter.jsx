@@ -10,7 +10,7 @@ const BrandFilter = (props) => {
               type="checkbox"
               id={brand.brands.name}
               value={brand.brands.name}
-              checked={selectedBrand[brand.brands]}
+              checked={selectedBrand[brand.brands.name]}
               onChange={handleBrandChange}
               className="hover:ssorange"
             />

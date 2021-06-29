@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import useLocalStorage from '../../lib/localStorage'
 
 import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
@@ -8,9 +9,6 @@ import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
 import GunProductCard from '../../components/GunProductCard';
 import MobileGunFilter from '../../components/filters/gunFilters/MobileGunFilter';
-
-let routerQueryBrand;
-let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get guns
@@ -78,10 +76,10 @@ export async function getStaticProps() {
 const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
-  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
-  const [selectedCondition, setSelectedCondition] = useState({});
-  const [selectedMechanism, setSelectedMechanism] = useState({});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('gunsCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('gunsBrand', {});
+  const [selectedCondition, setSelectedCondition] =useLocalStorage('gunsCondition', {});
+  const [selectedMechanism, setSelectedMechanism] =useLocalStorage('gunsMechanism', {});
   const [gunFilters, setGunFilters] = useState();
   const [filteredGuns, setFilteredGuns] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);

@@ -110,7 +110,7 @@ export async function getManufacturers() {
 
 export async function getTippmann() {
   const tippmann =
-    makeRequest(`Item.json?load_relations=["Category", "Images", "ItemShops", "ItemECommerce"]
+    makeRequest(`Item.json?load_relations=["Category", "Manufacturer", "Images", "ItemShops", "ItemECommerce"]
   &manufacturerID=21&CustomFieldValues.customFieldID=7&orderby=description`);
   return tippmann;
 }

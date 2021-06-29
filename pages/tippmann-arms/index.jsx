@@ -7,13 +7,15 @@ export async function getStaticProps() {
   const getTippmannProducts = await getTippmann();
   const tippmannProducts = getTippmannProducts;
 
+  const items = tippmannProducts.filter(item => item.Images && item.Manufacturer)
+
   return {
-    props: { tippmannProducts },
+    props: { items },
     revalidate: 300
   };
 }
 
-const Tippmann = ({ tippmannProducts }) => (
+const Tippmann = ({ items }) => (
   <>
     <Head>
       <title>Tippmann Arms Rifles & Accessories | Shooting Supplies Ltd</title>
@@ -28,7 +30,7 @@ const Tippmann = ({ tippmannProducts }) => (
     </div>
     <div className="flex mx-12 my-16 lg:mb-12 lg:my-4">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
-        {tippmannProducts.map((item) => (
+        {items.map((item) => (
           <div key={item.itemID}>
             <TippmannProductCard item={item} />
           </div>

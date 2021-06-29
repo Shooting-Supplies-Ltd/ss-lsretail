@@ -1,10 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
-import {
-  getReloading,
-  getCategory,
-  getManufacturer,
-} from "../../adapters/lightspeed/lightspeed";
+import { getReloading } from "../../adapters/lightspeed/lightspeed";
+import { getCategories, getBrands } from "../../lib/helpers";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
 import ProductCard from "../../components/ProductCard";
@@ -16,27 +13,11 @@ let routerQueryBrand;
 let routerQueryCategory;
 
 export async function getStaticProps() {
-  // Get Items/Products
   const itemData = await getReloading().catch((err) => console.error(err));
-  const items = itemData.filter(item => item.Images)
+  const items = itemData.filter(item => item.Images && item.Manufacturer)
 
-  const getCategories = items.map((item) => ({
-    catID: item.Category.categoryID,
-    name: item.Category.name,
-  }))
-
-  const getBrands = items.map((item) => ({
-    brandID: item.Manufacturer.manufacturerID,
-    name: item.Manufacturer.name,
-  }));
-
-  const categories = Array.from(new Set(getCategories.map(cat => cat.catID))).map(id => {
-    return getCategories.find(cat => cat.catID === id)
-  }).sort((a,b) => a.name.localeCompare(b.name))
-
-  const brands = Array.from(new Set(getBrands.map(brand => brand.brandID))).map(id => {
-    return getBrands.find(brand => brand.brandID === id)
-  }).sort((a,b) => a.name.localeCompare(b.name))
+  const categories = getCategories(items)
+  const brands = getBrands(items)
 
   return {
     props: {

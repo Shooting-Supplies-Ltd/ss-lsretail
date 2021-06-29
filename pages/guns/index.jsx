@@ -220,14 +220,9 @@ export async function getStaticProps() {
   const get = await fetch(process.env.GUNTRADER_API);
   const data = await get.json();
   const gunData = data.Guns;
-  const guns = [];
 
   // Filter out guns with no images
-  gunData.map((gun) => {
-    if (gun.ImageCount > 1) {
-      guns.push(gun);
-    }
-  });
+  const guns = gunData.filter(gun => gun.ImageCount > 1)
 
   // Get brands for the Gun filter.
   const findBrands = guns.map((gun) => gun.Make);

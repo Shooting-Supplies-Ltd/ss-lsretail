@@ -9,7 +9,4 @@ module.exports = {
     domains: ['res.cloudinary.com', 'images.guntrader.uk'],
     loader: 'default',
   },
-  future: {
-    webpack5: false,
-  },
 };

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
 import { getMaintenance, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
@@ -56,7 +55,6 @@ export async function getStaticProps() {
 }
 
 const Maintenance = ({ items, categories, brands }) => {
-  const router = useRouter();
   const initialRender = useRef(true);
 
   const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import {
   getReloading,
   getCategory,
@@ -58,7 +57,6 @@ export async function getStaticProps() {
 }
 
 const Reloading = ({ items, categories, brands }) => {
-  const router = useRouter();
   const initialRender = useRef(true);
 
   const [selectedCategory, setSelectedCategory] = useState(

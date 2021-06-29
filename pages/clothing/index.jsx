@@ -14,30 +14,26 @@ let routerQueryCategory;
 export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getMatrixClothing().catch((err) => console.error(err));
-
   const items = itemData.filter(item => item.Images)
 
-  // Get Categories
-  const categoryIds = items.map((item) => item.categoryID);
-  const categoriesToFetch = [...new Set(categoryIds)];
-  const categoryData = await getCategory(categoriesToFetch);
-  const returnedCategories = await categoryData.filter(Boolean);
-  const categories = returnedCategories.map((category) => ({
-    catID: category.categoryID,
-    name: category.name,
+  const getCategories = items.map((item) => ({
+    catID: item.Category.categoryID,
+    name: item.Category.name,
+  }))
+
+  const getBrands = items.map((item) => ({
+    brandID: item.Manufacturer.manufacturerID,
+    name: item.Manufacturer.name,
   }));
 
-  // Get Brands
-  const brandIds = items.map((item) => parseInt(item.manufacturerID));
+  const categories = Array.from(new Set(getCategories.map(cat => cat.catID))).map(id => {
+    return getCategories.find(cat => cat.catID === id)
+  }).sort((a,b) => a.name.localeCompare(b.name))
 
-  const brandsToFetch = [...new Set(brandIds)];
-  const brandData = await getManufacturer(brandsToFetch);
-  const brands = brandData.map((brand) => ({
-    brandID: brand.manufacturerID,
-    name: brand.name,
-  }));
+  const brands = Array.from(new Set(getBrands.map(brand => brand.brandID))).map(id => {
+    return getBrands.find(brand => brand.brandID === id)
+  }).sort((a,b) => a.name.localeCompare(b.name))
 
-  // Return props
   return {
     props: {
       items,

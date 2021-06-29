@@ -16,15 +16,8 @@ let routerQueryCategory;
 export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getAccessories().catch((err) => console.error(err));
-  // const matrixItemData = await getMatrixAccessories();
-
-  const items = itemData
-    .map((item) => {
-      if (item.Images?.Image?.baseImageURL) {
-        return item;
-      }
-    })
-    .filter(Boolean);
+  
+  const items = itemData.filter(item => item.Images)
 
   // Get Categories
   const categoryIds = items.map((item) => item.categoryID);

@@ -19,11 +19,7 @@ export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getReloading().catch((err) => console.error(err));
 
-  const items = itemData.map((item) => {
-    if (item.Images?.Image?.baseImageURL) {
-      return item;
-    }
-  });
+  const items = itemData.filter(item => item.Images)
 
   // Get Categories for filter
   const categoryIds = items.map((item) => item.categoryID);

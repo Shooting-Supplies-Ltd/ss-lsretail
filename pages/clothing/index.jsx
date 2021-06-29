@@ -15,13 +15,7 @@ export async function getStaticProps() {
   // Get Items/Products
   const itemData = await getMatrixClothing().catch((err) => console.error(err));
 
-  const items = itemData
-    .map((item) => {
-      if (item.Images?.Image?.baseImageURL) {
-        return item;
-      }
-    })
-    .filter((item) => item);
+  const items = itemData.filter(item => item.Images)
 
   // Get Categories
   const categoryIds = items.map((item) => item.categoryID);

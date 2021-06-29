@@ -26,8 +26,8 @@ export async function getStaticProps() {
 }
 
 const Security = ({ items, categories, brands }) => {
-  const [selectedCategory, setSelectedCategory] = useState({});
-  const [selectedBrand, setSelectedBrand] = useState({});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('securityCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('securityBrand', {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
 

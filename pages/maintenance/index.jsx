@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { getMaintenance } from '../../adapters/lightspeed/lightspeed';
 import { getCategories, getBrands } from '../../lib/helpers';
+import useLocalStorage from '../../lib/localStorage'
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
@@ -32,8 +33,8 @@ export async function getStaticProps() {
 const Maintenance = ({ items, categories, brands }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
-  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('maintenanceCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('maintenanceBrand', {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);

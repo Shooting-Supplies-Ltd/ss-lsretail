@@ -6,7 +6,7 @@ const CategoryFilter = ({ categories, handleCategoryChange, selectedCategory }) 
           type="checkbox"
           id={cat.name}
           value={cat.catID}
-          checked={selectedCategory[cat.name]}
+          checked={selectedCategory[cat.catID]}
           onChange={handleCategoryChange}
           className="hover:ssorange"
         />

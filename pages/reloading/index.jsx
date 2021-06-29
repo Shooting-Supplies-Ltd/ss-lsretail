@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import { getReloading } from "../../adapters/lightspeed/lightspeed";
 import { getCategories, getBrands } from "../../lib/helpers";
+import useLocalStorage from '../../lib/localStorage'
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
 import ProductCard from "../../components/ProductCard";
@@ -32,10 +33,8 @@ export async function getStaticProps() {
 const Reloading = ({ items, categories, brands }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(
-    routerQueryCategory || {}
-  );
-  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('reloadingCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('reloadingBrand', {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);

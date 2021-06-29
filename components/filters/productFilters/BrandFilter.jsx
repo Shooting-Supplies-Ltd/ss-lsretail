@@ -8,7 +8,7 @@ const BrandFilter = ({ brands, handleBrandChange, selectedBrand }) => (
                 type="checkbox"
                 id={brand.name}
                 value={brand.brandID}
-                checked={selectedBrand[brand]}
+                checked={selectedBrand[brand.brandID]}
                 onChange={handleBrandChange}
                 className="hover:ssorange"
               />

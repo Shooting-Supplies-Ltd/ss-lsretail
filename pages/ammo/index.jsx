@@ -2,15 +2,13 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { getAmmo } from '../../adapters/lightspeed/lightspeed';
 import { getCategories, getBrands } from '../../lib/helpers';
+import useLocalStorage from '../../lib/localStorage'
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
-
-let routerQueryBrand;
-let routerQueryCategory;
 
 export async function getStaticProps() {
   const itemData = await getAmmo();
@@ -32,8 +30,8 @@ export async function getStaticProps() {
 const Ammo = ({ items, categories, brands }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
-  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('ammoCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('ammoBrand', {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
@@ -105,7 +103,7 @@ const Ammo = ({ items, categories, brands }) => {
     <>
       <Head>
         <title>Ammunition for Rifles, Shotguns & Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="All the ammunition you need whatever the use with bulk discounts available." />
+        <meta name="description" content="All the ammo you need whether Hunting, Clay or Target Shooting." />
         <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/ammo" />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />

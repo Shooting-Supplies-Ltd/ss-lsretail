@@ -4,15 +4,13 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { getAccessories, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
 import { getCategories, getBrands } from '../../lib/helpers';
+import useLocalStorage from '../../lib/localStorage'
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
-
-let routerQueryBrand;
-let routerQueryCategory;
 
 export async function getStaticProps() {
   // Get Items/Products
@@ -37,8 +35,8 @@ const Accessories = ({ items, categories, brands }) => {
   const router = useRouter();
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useState(routerQueryCategory || {});
-  const [selectedBrand, setSelectedBrand] = useState(routerQueryBrand || {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage('accessoriesCategory', {});
+  const [selectedBrand, setSelectedBrand] = useLocalStorage('accessoriesBrand', {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);

@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Link from 'next/link'
+import CookieConsent from "react-cookie-consent";
 
 import HomeBanner from "../components/home/HomeBanner";
 import Categories from "../components/home/Categories";
@@ -67,6 +69,16 @@ export default function Home() {
           content="The Midlands Leading Supplier for Guns, Ammo, Accessories, Scopes, Clothing & More."
         />
       </Head>
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="fab-cart"
+        style={{ background: "#004d91" }}
+        buttonStyle={{ backgroundColor: "#fff", color: "#000", fontSize: "16px", fontWeight: "700", borderRadius: "5px" }}
+        expires={150}
+      >
+        This website uses cookies for functionality and user experience. <Link href="/privacy#cookies"><a><span className="underline">Learn More</span></a></Link>
+      </CookieConsent>
       <div>
         <div className="hidden xl:block">
           <HomeBanner />

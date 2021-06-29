@@ -12,6 +12,69 @@ import MobileGunFilter from '../../components/filters/gunFilters/MobileGunFilter
 let routerQueryBrand;
 let routerQueryCategory;
 
+export async function getStaticProps() {
+  // Get guns
+  const get = await fetch(process.env.GUNTRADER_API);
+  const data = await get.json();
+  const gunData = data.Guns;
+
+  // Filter out guns with no images
+  const guns = gunData.filter(gun => gun.ImageCount > 1)
+
+  // Get brands for the Gun filter.
+  const findBrands = guns.map((gun) => gun.Make);
+  const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort();
+  const brands = filterBrands.map((brand, index) => ({
+    brands: {
+      brandID: index,
+      name: brand,
+    },
+  }));
+
+  // Get categories for the category filter
+  const findCategories = guns.map((gun) => gun.Type);
+  const filterCategories = findCategories
+    .filter((category, index) => findCategories.indexOf(category) === index)
+    .sort();
+  const categories = filterCategories.map((cat, index) => ({
+    categories: {
+      catID: index,
+      name: cat,
+    },
+  }));
+
+  // Get condition for the condition filter
+  const findCondition = guns.map((gun) => gun.Condition);
+  const filterCondition = findCondition.filter((condition, index) => findCondition.indexOf(condition) === index).sort();
+  const conditions = filterCondition.map((condition, index) => ({
+    condition: {
+      conID: index,
+      name: condition,
+    },
+  }));
+
+  // Get Mechanisms
+  const findMechanism = guns.map((gun) => gun.Mechanism);
+  const filterMechanism = findMechanism.filter((mechanism, index) => findMechanism.indexOf(mechanism) === index).sort();
+  const mechanisms = filterMechanism.map((mechanism, index) => ({
+    mechanism: {
+      mechID: index,
+      name: mechanism,
+    },
+  }));
+
+  return {
+    props: {
+      guns,
+      brands,
+      categories,
+      conditions,
+      mechanisms,
+    },
+    revalidate: 300
+  };
+}
+
 const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const initialRender = useRef(true);
 
@@ -214,68 +277,5 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  // Get guns
-  const get = await fetch(process.env.GUNTRADER_API);
-  const data = await get.json();
-  const gunData = data.Guns;
-
-  // Filter out guns with no images
-  const guns = gunData.filter(gun => gun.ImageCount > 1)
-
-  // Get brands for the Gun filter.
-  const findBrands = guns.map((gun) => gun.Make);
-  const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort();
-  const brands = filterBrands.map((brand, index) => ({
-    brands: {
-      brandID: index,
-      name: brand,
-    },
-  }));
-
-  // Get categories for the category filter
-  const findCategories = guns.map((gun) => gun.Type);
-  const filterCategories = findCategories
-    .filter((category, index) => findCategories.indexOf(category) === index)
-    .sort();
-  const categories = filterCategories.map((cat, index) => ({
-    categories: {
-      catID: index,
-      name: cat,
-    },
-  }));
-
-  // Get condition for the condition filter
-  const findCondition = guns.map((gun) => gun.Condition);
-  const filterCondition = findCondition.filter((condition, index) => findCondition.indexOf(condition) === index).sort();
-  const conditions = filterCondition.map((condition, index) => ({
-    condition: {
-      conID: index,
-      name: condition,
-    },
-  }));
-
-  // Get Mechanisms
-  const findMechanism = guns.map((gun) => gun.Mechanism);
-  const filterMechanism = findMechanism.filter((mechanism, index) => findMechanism.indexOf(mechanism) === index).sort();
-  const mechanisms = filterMechanism.map((mechanism, index) => ({
-    mechanism: {
-      mechID: index,
-      name: mechanism,
-    },
-  }));
-
-  return {
-    props: {
-      guns,
-      brands,
-      categories,
-      conditions,
-      mechanisms,
-    },
-    revalidate: 300
-  };
-}
 
 export default Guns;

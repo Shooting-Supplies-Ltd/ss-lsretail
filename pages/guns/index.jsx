@@ -84,6 +84,14 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const [filteredGuns, setFilteredGuns] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
+  const clearFilters = () => {
+    localStorage.clear();
+    setSelectedBrand({})
+    setSelectedCategory({})
+    setSelectedCondition({})
+    setSelectedMechanism({})
+  }
+
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
     if (displayMobileFilter) {
@@ -251,6 +259,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             mechanisms={mechanisms}
             selectedMechanism={selectedMechanism}
             handleMechanismChange={handleMechanismChange}
+            clearFilters={clearFilters}
           />
           <div className="hidden lg:mt-4 lg:block">
             <Link href="/tippmann-arms">

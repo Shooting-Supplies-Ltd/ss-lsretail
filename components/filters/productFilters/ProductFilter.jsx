@@ -11,8 +11,8 @@ const ProductFilter = (props) => {
   <>
     <div className="border-2 border-gray-300 rounded-lg">
       <div className="flex p-4 border-b-2">
-      <h4 className="font-bold uppercase text-xl">Filter By</h4>
-      <p role="button" onClick={props.clearFilters} className="ml-16 flex items-end">Clear Filters</p>
+        <h4 className="font-bold uppercase text-xl">Filter By</h4>
+        <p role="button" onClick={props.clearFilters} className="ml-16 flex items-end">Clear Filters</p>
       </div>
       <div className="border-b-2">
         <div className="p-4">

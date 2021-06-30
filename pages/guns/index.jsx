@@ -90,6 +90,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
     setSelectedCategory({})
     setSelectedCondition({})
     setSelectedMechanism({})
+    window.location.reload(false)
   }
 
   const handleCategoryChange = (event) => {

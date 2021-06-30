@@ -43,6 +43,7 @@ const Clothing = ({ items, categories, brands }) => {
     localStorage.clear();
     setSelectedBrand({})
     setSelectedCategory({})
+    window.location.reload(false)
   }
 
   const handleCategoryChange = (event) => {

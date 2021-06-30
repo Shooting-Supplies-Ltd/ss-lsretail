@@ -38,6 +38,7 @@ const Security = ({ items, categories, brands }) => {
     localStorage.clear();
     setSelectedBrand({})
     setSelectedCategory({})
+    window.location.reload(false)
   }
 
 

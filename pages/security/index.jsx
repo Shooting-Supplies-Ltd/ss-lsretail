@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { getSecurity } from '../../adapters/lightspeed/lightspeed';
 import { getCategories, getBrands } from '../../lib/helpers';
+import useLocalStorage from '../../lib/localStorage';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
 import ProductCard from '../../components/ProductCard';
@@ -32,6 +33,13 @@ const Security = ({ items, categories, brands }) => {
   const [filteredItems, setFilteredItems] = useState();
 
   const initialRender = useRef(true);
+
+  const clearFilters = () => {
+    localStorage.clear();
+    setSelectedBrand({})
+    setSelectedCategory({})
+  }
+
 
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
@@ -105,6 +113,7 @@ const Security = ({ items, categories, brands }) => {
             brands={brands}
             selectedBrand={selectedBrand}
             handleBrandChange={handleBrandChange}
+            clearFilters={clearFilters}
           />
         </div>
         <main className="xl:w-5/6 p-2">

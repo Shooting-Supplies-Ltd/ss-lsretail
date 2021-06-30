@@ -41,6 +41,12 @@ const Accessories = ({ items, categories, brands }) => {
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
+  const clearFilters = () => {
+    localStorage.clear();
+    setSelectedBrand({})
+    setSelectedCategory({})
+  }
+
   const handleCategoryChange = (event) => {
     setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
     setDisplayMobileFilter(false);
@@ -145,6 +151,7 @@ const Accessories = ({ items, categories, brands }) => {
             brands={brands}
             selectedBrand={selectedBrand}
             handleBrandChange={handleBrandChange}
+            clearFilters={clearFilters}
           />
           <div className="mb-4 xl:hidden text-center">
             <StockMessage />

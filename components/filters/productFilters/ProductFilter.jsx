@@ -5,10 +5,15 @@ import CategoryFilter from './CategoryFilter';
 import BrandFilter from './BrandFilter';
 import StockMessage from '../../StockMessage';
 
-const ProductFilter = (props) => (
+
+const ProductFilter = (props) => {
+  return (
   <>
     <div className="border-2 border-gray-300 rounded-lg">
-      <h4 className="p-4 font-bold uppercase text-xl border-b-2">Filter By</h4>
+      <div className="flex p-4 border-b-2">
+      <h4 className="font-bold uppercase text-xl">Filter By</h4>
+      <p role="button" onClick={props.clearFilters} className="ml-16 flex items-end">Clear Filters</p>
+      </div>
       <div className="border-b-2">
         <div className="p-4">
           <h5 className="font-semibold uppercase">
@@ -48,5 +53,5 @@ const ProductFilter = (props) => (
     </div>
     <StockMessage />
   </>
-);
+)};
 export default ProductFilter;

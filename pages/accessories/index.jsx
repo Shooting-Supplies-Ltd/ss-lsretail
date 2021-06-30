@@ -2,12 +2,12 @@ import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { getAccessories, getCategory, getManufacturer } from '../../adapters/lightspeed/lightspeed';
+import { getAccessories } from '../../adapters/lightspeed/lightspeed';
 import { getCategories, getBrands } from '../../lib/helpers';
 import useLocalStorage from '../../lib/localStorage'
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../../components/product-page/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';

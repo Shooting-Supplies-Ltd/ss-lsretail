@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import PostCard from '../../components/PostCard';
+import PostCard from '../../components/blog/PostCard';
 
 export async function getStaticProps() {
   const query = JSON.stringify({

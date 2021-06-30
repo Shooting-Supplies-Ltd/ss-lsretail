@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { getTippmann } from '../../adapters/lightspeed/lightspeed';
-import TippmannProductCard from '../../components/TippmannProductCard';
+import TippmannProductCard from '../../components/product-page/TippmannProductCard';
 
 export async function getStaticProps() {  
   const getTippmannProducts = await getTippmann();

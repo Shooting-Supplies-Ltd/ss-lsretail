@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import GunFilter from '../../components/filters/gunFilters/GunFilter';
 import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
-import GunProductCard from '../../components/GunProductCard';
+import GunProductCard from '../../components/gun-page/GunProductCard';
 import MobileGunFilter from '../../components/filters/gunFilters/MobileGunFilter';
 
 export async function getStaticProps() {

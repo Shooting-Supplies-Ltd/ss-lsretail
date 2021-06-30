@@ -1,5 +1,5 @@
 import { getItem } from '../../../adapters/lightspeed/lightspeed';
-import LightspeedProduct from '../../../components/LightspeedProduct';
+import LightspeedProduct from '../../../components/product-page/LightspeedProduct';
 
 export async function getServerSideProps({ res, query }) {
   res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)

@@ -5,7 +5,7 @@ import { getCategories, getBrands } from '../../lib/helpers';
 import useLocalStorage from '../../lib/localStorage';
 
 import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../../components/product-page/ProductCard';
 import ProductFilter from '../../components/filters/productFilters/ProductFilter';
 import StockMessage from '../../components/StockMessage';
 

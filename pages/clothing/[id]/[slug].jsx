@@ -1,5 +1,5 @@
 import { getMatrixClothing } from '../../../adapters/lightspeed/lightspeed';
-import LightspeedMatrixProduct from '../../../components/LightspeedMatrixProduct';
+import LightspeedMatrixProduct from '../../../components/product-page/LightspeedMatrixProduct';
 
 export async function getServerSideProps({ res, query }) {
   res.setHeader('Cache-Control', `s-maxage=60, stale-while-revalidate`)

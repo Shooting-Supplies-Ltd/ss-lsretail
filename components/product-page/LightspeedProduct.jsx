@@ -22,128 +22,133 @@ export default function LightspeedProduct({ item }) {
     <>
       <LsProductHead item={item} />
       <main>
-        <div className="lg:mx-72 lg:my-12 flex flex-col lg:flex-row justify-center">
-          <div className="relative w-3/4 mx-auto lg:mx-0 lg:w-1/2 p-2">
-            <Image
-              src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
-              alt={`Buy ${item.description} at Shooting Supplies Ltd`}
-              width={600}
-              height={600}
-              className="object-scale-down"
-            />
-          </div>
-          <div className="p-4 lg:w-1/2 bg-gray-50 rounded-xl">
-            <h1 className="text-4xl font-black">{item.description}</h1>
-            <p className="mt-1">SKU: {item.customSku}</p>
-            <div>
-              {item.ItemShops ? (
-                item.ItemShops.ItemShop[0].qoh > 0 ? (
-                  <p className="mt-1 text-green-500 font-bold uppercase">
-                    In Stock
-                  </p>
-                ) : item.ItemShops.ItemShop[0].backorder >= 1 ? (
-                  <p className="mt-1 text-red-500 font-bold uppercase">
-                    Out of Stock - On Order
-                  </p>
-                ) : (
-                  <p className="mt-1 text-red-500 font-bold uppercase">
-                    Out of Stock
-                  </p>
-                )
-              ) : (
-                ""
-              )}
+        <div className="flex lg:mx-12 lg:my-12">
+          <div className="lg:w-4/6 border-r-2 border-ssblue">
+            <div
+              className="flex justify-center items-center"
+              style={{ height: "620px" }}
+            >
+              <Image
+                src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
+                alt={`Buy ${item.description} at Shooting Supplies Ltd`}
+                width={600}
+                height={600}
+                className="object-scale-down"
+              />
             </div>
-
-            {item.CustomFieldValues ? (
-              item.CustomFieldValues.CustomFieldValue.map((field) => {
-                if (field.customFieldID === "5" && field.value === "true") {
-                  return (
-                    <>
-                      <p className="mt-4 font-bold text-4xl uppercase">
-                        <span className="line-through mr-2 text-sm lg:text-md xl:text-xl">
-                          £
-                          {parseFloat(item.Prices.ItemPrice[1].amount).toFixed(
-                            2
-                          )}
-                        </span>
-                        {formatCurrencyString({
-                          value: price,
-                          currency: "GBP",
-                        })}
-                      </p>
-                      <span className="absolute z-10 top-32 lg:top-44 xl:top-32 md:left-auto lg:left-60 xl:left-80 font-semibold inline-block py-2 px-3 rounded-lg md:text-2xl text-white bg-red-600 uppercase">
-                        Sale
-                      </span>
-                    </>
-                  );
-                }
-              })
-            ) : (
-              <p className="mt-4 font-bold text-4xl uppercase">
-                {formatCurrencyString({
-                  value: price,
-                  currency: "GBP",
-                })}
-              </p>
-            )}
-
-            {item.CustomFieldValues
-              ? item.CustomFieldValues.CustomFieldValue.map((field) => {
-                  if (field.customFieldID === "5" && field.value === "false") {
-                    return (
-                      <>
-                        <p className="mt-4 font-bold text-4xl uppercase">
-                          {formatCurrencyString({
-                            value: price,
-                            currency: "GBP",
-                          })}
-                        </p>
-                      </>
-                    );
-                  }
-                })
-              : null}
-
-            <p
-              className="mt-4 prose"
-              dangerouslySetInnerHTML={productDescriptionShort()}
-            />
+            <div id="fulldescription" className="mt-4 mb-12">
+              <h2 className="text-3xl lg:ml-24 uppercase font-black">
+                Product Details
+              </h2>
+              <div
+                className="mt-4 mx-24 prose max-w-none text-lg"
+                dangerouslySetInnerHTML={productDescriptionLong()}
+              />
+            </div>
           </div>
-        </div>
-        <hr className="lg:hidden my-4" />
-        <div
-          id="fulldescription"
-          className="mx-0 lg:mx-72 mt-4 mb-12 p-4 bg-gray-50 rounded-xl"
-        >
-          <h2 className="text-3xl text-center uppercase font-black">
-            Description
-          </h2>
-          <div
-            className="mt-4 mx-auto prose"
-            dangerouslySetInnerHTML={productDescriptionLong()}
-          />
-        </div>
-        <div className="lg:mx-72 mx-4">
-          <h3 className="my-8 text-2xl font-black uppercase text-center">
-            Please Contact Us to Purchase this item or for more information
-          </h3>
-        </div>
-        <div className="lg:mx-72 flex justify-center mx-4 mb-20">
-          <a
-            href="tel:01527831261"
-            className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded"
-          >
-            Call Us
-          </a>
-          <MailTo
-            email="info@shootingsuppliesltd.co.uk"
-            subject={`ITEM ENQUIRY: ${item.description} / ${item.customSku}`}
-          >
-            <p className="flex items-center justify-center h-10 w-24 mr-4 bg-ssblue hover:bg-green-600 text-lg text-white font-bold uppercase rounded">
-              Email
-            </p>
-          </MailTo>
+
+          <div className="lg:w-2/6 ml-4">
+            <div className="mx-4">
+              <h1 className="text-4xl font-black">{item.description}</h1>
+
+              <div className="flex space-x-20">
+                {item.ItemShops ? (
+                  item.ItemShops.ItemShop[0].qoh > 0 ? (
+                    <p className="mt-1 text-green-500 font-bold uppercase text-lg">
+                      In Stock
+                    </p>
+                  ) : item.ItemShops.ItemShop[0].backorder >= 1 ? (
+                    <p className="mt-1 text-red-600 font-bold uppercase text-lg">
+                      Out of Stock - On Order
+                    </p>
+                  ) : (
+                    <p className="mt-1 text-red-600 font-bold uppercase text-lg">
+                      Out of Stock
+                    </p>
+                  )
+                ) : (
+                  ""
+                )}
+              </div>
+
+              <div className="mt-2 text-3xl font-bold">
+                {item.CustomFieldValues ? (
+                  item.CustomFieldValues.CustomFieldValue.map((field) => {
+                    if (field.customFieldID === "5" && field.value === "true") {
+                      return (
+                        <>
+                          <p>
+                            <span className="line-through mr-2 text-sm lg:text-md xl:text-xl">
+                              £
+                              {parseFloat(
+                                item.Prices.ItemPrice[1].amount
+                              ).toFixed(2)}
+                            </span>
+                            {formatCurrencyString({
+                              value: price,
+                              currency: "GBP",
+                            })}
+                            <span className="btn-red ml-4 text-xl">Sale</span>
+                          </p>
+                        </>
+                      );
+                    }
+                  })
+                ) : (
+                  <p>
+                    {formatCurrencyString({
+                      value: price,
+                      currency: "GBP",
+                    })}
+                  </p>
+                )}
+                {item.CustomFieldValues
+                  ? item.CustomFieldValues.CustomFieldValue.map((field) => {
+                      if (
+                        field.customFieldID === "5" &&
+                        field.value === "false"
+                      ) {
+                        return (
+                          <>
+                            <p>
+                              {formatCurrencyString({
+                                value: price,
+                                currency: "GBP",
+                              })}
+                            </p>
+                          </>
+                        );
+                      }
+                    })
+                  : null}
+              </div>
+
+              <p
+                className="mt-12 prose text-lg"
+                dangerouslySetInnerHTML={productDescriptionShort()}
+              />
+
+              <h3 className="mt-20 text-xl font-semibold uppercase">
+                Please contact us to buy this item or for more information
+              </h3>
+
+              <div className="mt-8 flex space-x-4">
+                <a
+                  href="tel:01527831261"
+                  className="btn-blue hover:bg-green-600"
+                >
+                  Call Us
+                </a>
+
+                <MailTo
+                  email="info@shootingsuppliesltd.co.uk"
+                  subject={`ITEM ENQUIRY: ${item.description} / ${item.customSku}`}
+                >
+                  <p className="btn-blue hover:bg-green-600">Email</p>
+                </MailTo>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </>

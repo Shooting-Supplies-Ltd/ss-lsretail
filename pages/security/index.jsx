@@ -37,6 +37,7 @@ const Security = ({ items, categories, brands }) => {
   );
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
+  const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const initialRender = useRef(true);
 
@@ -74,6 +75,12 @@ const Security = ({ items, categories, brands }) => {
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey);
     }
     setItemFilters(appliedFilters);
+  };
+
+  const handleMobileFilter = () => {
+    setDisplayMobileFilter(!displayMobileFilter);
+    setSelectedBrand({});
+    setSelectedCategory({});
   };
 
   const multiPropsFilter = (items, itemFilters) => {

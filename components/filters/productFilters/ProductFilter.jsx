@@ -10,11 +10,13 @@ const ProductFilter = (props) => {
     <>
       <div className="border-r border-ssblue">
         <div className="flex p-4 border-b border-ssblue">
-          <h4 className="font-bold uppercase text-xl">Filter By</h4>
+          <h4 className="flex justify-start font-bold uppercase text-xl">
+            Filter By
+          </h4>
           <p
             role="button"
             onClick={props.clearFilters}
-            className="ml-16 flex items-end"
+            className="ml-32 flex items-end"
           >
             Clear Filters
           </p>

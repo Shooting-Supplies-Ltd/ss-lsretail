@@ -110,94 +110,86 @@ const Nav = () => {
           </ul>
         </div>
       )}
-      <div className="xl:bg-ssblue">
-        <div className="flex justify-between xl:justify-start h-28 xl:h-12 xl:mx-8 shadow xl:shadow-none">
-          <div className="xl:w-2/12 xl:flex xl:justify-center p-2 cursor-pointer">
+      <div className="flex xl:h-16 bg-ssblue">
+        <div className="xl:w-1/6 xl:flex xl:justify-center cursor-pointer">
+          <div className="xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
             <Link href="/">
-              <div className="xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
-                <Image
-                  src="/logos/Logo.webp"
-                  alt="Shooting Supplies Ltd"
-                  width={140}
-                  height={140}
-                />
-              </div>
+              <Image
+                src="/logos/Logo.webp"
+                alt="Shooting Supplies Ltd"
+                width={140}
+                height={140}
+              />
             </Link>
           </div>
-          <div className="hidden xl:w-10/12 xl:p-2 xl:flex items-center">
-            <ul className="flex space-x-6 p-2 font-bold text-lg">
-              <div className="flex justify-center items-center">
-                <Link href="/guns">
-                  <a>
-                    <li className="text-white hover:text-ssorange">GUNS</li>
-                  </a>
-                </Link>
-              </div>
-              <Link href="/ammo">
+        </div>
+        <div className="hidden xl:w-4/6 xl:p-2 xl:flex justify-center items-center">
+          <ul className="flex space-x-6 p-2 font-bold text-xl text-white">
+            <div className="flex justify-center items-center">
+              <Link href="/guns">
                 <a>
-                  <li className="text-white hover:text-ssorange">AMMO</li>
+                  <li className="hover:text-ssorange">GUNS</li>
                 </a>
               </Link>
-              <Link href="/reloading">
-                <a>
-                  <li className="text-white hover:text-ssorange">RELOADING</li>
-                </a>
-              </Link>
-              <Link href="/accessories">
-                <a>
-                  <li className="text-white hover:text-ssorange">
-                    ACCESSORIES
-                  </li>
-                </a>
-              </Link>
-              <Link href="/optics">
-                <a>
-                  <li className="text-white hover:text-ssorange">OPTICS</li>
-                </a>
-              </Link>
-              <Link href="/maintenance">
-                <a>
-                  <li className="text-white hover:text-ssorange">
-                    MAINTENANCE
-                  </li>
-                </a>
-              </Link>
-              <Link href="/clothing">
-                <a>
-                  <li className="text-white hover:text-ssorange">CLOTHING</li>
-                </a>
-              </Link>
-              <Link href="/security">
-                <a>
-                  <li className="text-white hover:text-ssorange">SECURITY</li>
-                </a>
-              </Link>
-              <Link href="/tippmann-arms">
-                <a>
-                  <li className="text-white hover:text-ssorange">
-                    TIPPMANN ARMS
-                  </li>
-                </a>
-              </Link>
-              {/* <Link href="/sale">
+            </div>
+            <Link href="/ammo">
+              <a>
+                <li className="hover:text-ssorange">AMMO</li>
+              </a>
+            </Link>
+            <Link href="/reloading">
+              <a>
+                <li className="hover:text-ssorange">RELOADING</li>
+              </a>
+            </Link>
+            <Link href="/accessories">
+              <a>
+                <li className="hover:text-ssorange">ACCESSORIES</li>
+              </a>
+            </Link>
+            <Link href="/optics">
+              <a>
+                <li className="hover:text-ssorange">OPTICS</li>
+              </a>
+            </Link>
+            <Link href="/maintenance">
+              <a>
+                <li className="hover:text-ssorange">MAINTENANCE</li>
+              </a>
+            </Link>
+            <Link href="/clothing">
+              <a>
+                <li className="hover:text-ssorange">CLOTHING</li>
+              </a>
+            </Link>
+            <Link href="/security">
+              <a>
+                <li className="hover:text-ssorange">SECURITY</li>
+              </a>
+            </Link>
+            <Link href="/tippmann-arms">
+              <a>
+                <li className="hover:text-ssorange">TIPPMANN ARMS</li>
+              </a>
+            </Link>
+            {/* <Link href="/sale">
                 <a><li className="text-white hover:text-ssorange font-bold text-2xl">SALE</li></a>
               </Link> */}
-            </ul>
+          </ul>
+        </div>
+        <div className="w-1/6 p-2 flex justify-center items-center text-white">
+          <div
+            onMouseEnter={updateCartDisplay}
+            onMouseLeave={updateCartDisplay}
+          >
+            <CartIcon />
+            {cartCount > 0 && cartDisplay && <CartDisplay />}
           </div>
-          {/* <div className="w-1/6 p-2 flex justify-center items-center hidden">
-            <div
-              onMouseEnter={updateCartDisplay}
-              onMouseLeave={updateCartDisplay}
-            >
-              <CartIcon />
-              {cartCount > 0 && cartDisplay && <CartDisplay />}
-            </div>
-          </div>
-          <div className="mr-4 flex items-center text-3xl xl:hidden">
-            <CgMenuRight
-              onClick={() => setDisplayMobileMenu(!displayMobileMenu)}
-            />
-          </div> */}
+        </div>
+        <div className="mr-4 flex items-center text-3xl xl:hidden">
+          <CgMenuRight
+            onClick={() => setDisplayMobileMenu(!displayMobileMenu)}
+          />
         </div>
       </div>
     </nav>

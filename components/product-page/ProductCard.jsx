@@ -12,7 +12,7 @@ const ProductCard = ({ item }) => {
   const imageUrl = `${item.Images?.Image?.baseImageURL}/w_240/${item.Images?.Image?.publicID}.webp`;
 
   return (
-    <div className="block h-96 w-80 rounded-lg shadow hover:shadow-2xl">
+    <div className="block h-96 w-80 shadow hover:shadow-2xl border border-white hover:border-ssblue">
       <Link
         href={`${router.pathname}/${
           item.itemID ? item.itemID : item.itemMatrixID
@@ -31,7 +31,7 @@ const ProductCard = ({ item }) => {
                   if (field.customFieldID === "5" && field.value === "true") {
                     return (
                       <>
-                        <span className="absolute z-10 top-2 right-2 font-semibold inline-block py-2 px-3 uppercase rounded-lg md:text-sm lg:text-lg text-white bg-red-600">
+                        <span className="absolute z-10 top-2 right-2 font-semibold inline-block py-2 px-3 uppercase md:text-sm lg:text-lg text-white bg-red-600">
                           Sale
                         </span>
                       </>
@@ -40,7 +40,7 @@ const ProductCard = ({ item }) => {
                 })
               : null}
           </div>
-          <div className="h-32 p-4 flex flex-col bg-ssblue text-white rounded-b-lg">
+          <div className="h-32 p-4 flex flex-col bg-ssblue text-white">
             <h2 className="flex justify-center text-center uppercase text-lg font-bold">
               {name}
             </h2>

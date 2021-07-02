@@ -13,7 +13,7 @@ const TippmannProductCard = ({ item }) => {
 
   return (
     <div
-      className="block h-96 w-80 rounded-lg shadow hover:shadow-2xl"
+      className="block h-96 w-80 shadow hover:shadow-2xl border border-white hover:border-ssblue"
       key={item.itemID}
     >
       <Link
@@ -30,7 +30,7 @@ const TippmannProductCard = ({ item }) => {
               height={240}
             />
           </div>
-          <div className="h-32 p-4 flex flex-col bg-ssblue text-white rounded-b-lg">
+          <div className="h-32 p-4 flex flex-col bg-ssblue text-white">
             <h2 className="flex justify-center text-center uppercase text-lg font-bold">
               {name}
             </h2>

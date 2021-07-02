@@ -15,7 +15,7 @@ const GunProductCard = ({ gun }) => {
 
   return (
     <div
-      className="block h-96 w-80 rounded-lg shadow hover:shadow-2xl"
+      className="bblock h-96 w-80 shadow hover:shadow-2xl border border-white hover:border-ssblue"
       key={gun.ID}
     >
       <Link href={`/guns/${gun.ID}/${slug}`}>
@@ -39,7 +39,7 @@ const GunProductCard = ({ gun }) => {
                 className="w-full object-cover object-center"
               /> */}
           </div>
-          <div className="h-32 p-4 flex flex-col bg-ssblue text-white rounded-b-lg">
+          <div className="h-32 p-4 flex flex-col bg-ssblue text-white">
             <h2 className="flex justify-center text-center uppercase font-bold">{`${
               gun.Condition
             } ${gun.Make} ${gun.Model ? gun.Model : ""} ${

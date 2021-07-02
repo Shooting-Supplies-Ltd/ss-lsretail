@@ -1,24 +1,24 @@
-import Head from 'next/head';
-import { useState, useEffect, useRef } from 'react';
-import { getMaintenance } from '../../adapters/lightspeed/lightspeed';
-import { getCategories, getBrands } from '../../lib/helpers';
-import useLocalStorage from '../../lib/localStorage'
+import Head from "next/head";
+import { useState, useEffect, useRef } from "react";
+import { getMaintenance } from "../../adapters/lightspeed/lightspeed";
+import { getCategories, getBrands } from "../../lib/helpers";
+import useLocalStorage from "../../lib/localStorage";
 
-import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/product-page/ProductCard';
-import ProductFilter from '../../components/filters/productFilters/ProductFilter';
-import StockMessage from '../../components/StockMessage';
-import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
+import SearchFilter from "../../components/filters/productFilters/SearchFilter";
+import ProductCard from "../../components/product-page/ProductCard";
+import ProductFilter from "../../components/filters/productFilters/ProductFilter";
+import StockMessage from "../../components/StockMessage";
+import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
 
 let routerQueryBrand;
 let routerQueryCategory;
 
 export async function getStaticProps() {
   const itemData = await getMaintenance().catch((err) => console.error(err));
-  const items = itemData.filter(item => item.Images && item.Manufacturer)
+  const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items)
-  const brands = getBrands(items)
+  const categories = getCategories(items);
+  const brands = getBrands(items);
 
   return {
     props: {
@@ -26,33 +26,45 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
 const Maintenance = ({ items, categories, brands }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useLocalStorage('maintenanceCategory', {});
-  const [selectedBrand, setSelectedBrand] = useLocalStorage('maintenanceBrand', {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage(
+    "maintenanceCategory",
+    {}
+  );
+  const [selectedBrand, setSelectedBrand] = useLocalStorage(
+    "maintenanceBrand",
+    {}
+  );
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const clearFilters = () => {
     localStorage.clear();
-    setSelectedBrand({})
-    setSelectedCategory({})
-    window.location.reload(false)
-  }
+    setSelectedBrand({});
+    setSelectedCategory({});
+    window.location.reload(false);
+  };
 
   const handleCategoryChange = (event) => {
-    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setSelectedCategory({
+      ...selectedCategory,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
   const handleBrandChange = (event) => {
-    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setSelectedBrand({
+      ...selectedBrand,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
@@ -62,7 +74,8 @@ const Maintenance = ({ items, categories, brands }) => {
       manufacturerID: [],
     };
     for (const CategoryKey in selectedCategory) {
-      if (selectedCategory[CategoryKey]) appliedFilters.categoryID.push(CategoryKey);
+      if (selectedCategory[CategoryKey])
+        appliedFilters.categoryID.push(CategoryKey);
     }
     for (const BrandKey in selectedBrand) {
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey);
@@ -112,9 +125,17 @@ const Maintenance = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Gun Cleaning Kits & Chemicals & Supplies | Shooting Supplies Ltd</title>
-        <meta name="description" content="Gun cleaning cloths, chemicals and kits from all of your favourite brands." />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/maintenance" />
+        <title>
+          Gun Cleaning Kits & Chemicals & Supplies | Shooting Supplies Ltd
+        </title>
+        <meta
+          name="description"
+          content="Gun cleaning cloths, chemicals and kits from all of your favourite brands."
+        />
+        <link
+          rel="canonical"
+          href="https://www.shootingsuppliesltd.co.uk/maintenance"
+        />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div
@@ -138,8 +159,8 @@ const Maintenance = ({ items, categories, brands }) => {
           </div>
         )}
       </>
-      <div className="flex mx-12 my-4 xl:my-16">
-        <div className="hidden xl:block xl:w-1/6 p-2">
+      <div className="flex lg:mx-20 xl:my-16">
+        <div className="hidden xl:block px-4 max-w-sm">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -150,14 +171,20 @@ const Maintenance = ({ items, categories, brands }) => {
             clearFilters={clearFilters}
           />
         </div>
-        <main className="xl:w-5/6 p-2">
-          <div className="mb-4 xl:hidden text-center">
-            <StockMessage />
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
+
+        <div className="mb-4 xl:hidden text-center">
+          <StockMessage />
+        </div>
+
+        <main>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.itemID} />)
-              : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
+              ? filteredItems.map((item) => (
+                  <ProductCard item={item} key={item.itemID} />
+                ))
+              : items.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))}
           </div>
         </main>
       </div>

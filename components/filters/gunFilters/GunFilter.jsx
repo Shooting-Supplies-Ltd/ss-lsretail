@@ -43,7 +43,7 @@ const GunFilter = (props) => {
   return (
     <>
       <div className="border-r border-ssblue">
-        <div className="p-4 flex border-b border-ssblue">
+        <div className="flex p-4 border-b border-ssblue">
           <h4 className="font-bold uppercase text-xl">Filter By</h4>
           <p
             role="button"

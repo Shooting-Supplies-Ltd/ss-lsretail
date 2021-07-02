@@ -1,55 +1,64 @@
-import Head from 'next/head';
-import { useState, useEffect, useRef } from 'react';
-import { getAmmo } from '../../adapters/lightspeed/lightspeed';
-import { getCategories, getBrands } from '../../lib/helpers';
-import useLocalStorage from '../../lib/localStorage'
+import Head from "next/head";
+import { useState, useEffect, useRef } from "react";
+import { getAmmo } from "../../adapters/lightspeed/lightspeed";
+import { getCategories, getBrands } from "../../lib/helpers";
+import useLocalStorage from "../../lib/localStorage";
 
-import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/product-page/ProductCard';
-import ProductFilter from '../../components/filters/productFilters/ProductFilter';
-import StockMessage from '../../components/StockMessage';
-import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
+import SearchFilter from "../../components/filters/productFilters/SearchFilter";
+import ProductCard from "../../components/product-page/ProductCard";
+import ProductFilter from "../../components/filters/productFilters/ProductFilter";
+import StockMessage from "../../components/StockMessage";
+import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
 
 export async function getStaticProps() {
   const itemData = await getAmmo();
-  const items = itemData.filter(item => item.Images && item.Manufacturer)
+  const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items)
-  const brands = getBrands(items)
- 
+  const categories = getCategories(items);
+  const brands = getBrands(items);
+
   return {
     props: {
       items,
       categories,
       brands,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
 const Ammo = ({ items, categories, brands }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useLocalStorage('ammoCategory', {});
-  const [selectedBrand, setSelectedBrand] = useLocalStorage('ammoBrand', {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage(
+    "ammoCategory",
+    {}
+  );
+  const [selectedBrand, setSelectedBrand] = useLocalStorage("ammoBrand", {});
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const clearFilters = () => {
     localStorage.clear();
-    setSelectedBrand({})
-    setSelectedCategory({})
-    window.location.reload(false)
-  }
+    setSelectedBrand({});
+    setSelectedCategory({});
+    window.location.reload(false);
+  };
 
   const handleCategoryChange = (event) => {
-    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setSelectedCategory({
+      ...selectedCategory,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
   const handleBrandChange = (event) => {
-    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setSelectedBrand({
+      ...selectedBrand,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
@@ -59,7 +68,8 @@ const Ammo = ({ items, categories, brands }) => {
       manufacturerID: [],
     };
     for (const CategoryKey in selectedCategory) {
-      if (selectedCategory[CategoryKey]) appliedFilters.categoryID.push(CategoryKey);
+      if (selectedCategory[CategoryKey])
+        appliedFilters.categoryID.push(CategoryKey);
     }
     for (const BrandKey in selectedBrand) {
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey);
@@ -109,34 +119,45 @@ const Ammo = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Ammunition for Rifles, Shotguns & Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="All the ammo you need whether Hunting, Clay or Target Shooting." />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/ammo" />
+        <title>
+          Ammunition for Rifles, Shotguns & Airguns | Shooting Supplies Ltd
+        </title>
+        <meta
+          name="description"
+          content="All the ammo you need whether Hunting, Clay or Target Shooting."
+        />
+        <link
+          rel="canonical"
+          href="https://www.shootingsuppliesltd.co.uk/ammo"
+        />
       </Head>
+
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
+
       <div
         role="navigation"
-        className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
+        className="xl:hidden flex justify-center items-center h-12 bg-ssblue text-white border-b border-ssblue"
         onClick={handleMobileFilter}
       >
         FILTERS
+        <>
+          {displayMobileFilter && (
+            <div>
+              <MobileProductFilter
+                categories={categories}
+                selectedCategory={selectedCategory}
+                handleCategoryChange={handleCategoryChange}
+                brands={brands}
+                selectedBrand={selectedBrand}
+                handleBrandChange={handleBrandChange}
+              />
+            </div>
+          )}
+        </>
       </div>
-      <>
-        {displayMobileFilter && (
-          <div>
-            <MobileProductFilter
-              categories={categories}
-              selectedCategory={selectedCategory}
-              handleCategoryChange={handleCategoryChange}
-              brands={brands}
-              selectedBrand={selectedBrand}
-              handleBrandChange={handleBrandChange}
-            />
-          </div>
-        )}
-      </>
-      <div className="flex mx-12 my-4 xl:my-16">
-        <div className="hidden xl:block xl:w-1/6 p-2">
+
+      <div className="flex lg:mx-20 xl:my-12">
+        <div className="hidden xl:block px-4 max-w-sm">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -147,14 +168,20 @@ const Ammo = ({ items, categories, brands }) => {
             clearFilters={clearFilters}
           />
         </div>
-        <main className="xl:w-5/6 p-2">
-          <div className="mb-4 xl:hidden text-center">
-            <StockMessage />
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
+
+        <div className="mb-4 xl:hidden text-center">
+          <StockMessage />
+        </div>
+
+        <main>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
-              : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
+              ? filteredItems.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))
+              : items.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))}
           </div>
         </main>
       </div>

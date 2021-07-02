@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
-import useLocalStorage from '../../lib/localStorage'
+import { useState, useEffect, useRef } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import useLocalStorage from "../../lib/localStorage";
 
-import Link from 'next/link';
-import Layout from '../../components/layout/Layout';
-import GunFilter from '../../components/filters/gunFilters/GunFilter';
-import SearchFilter from '../../components/filters/gunFilters/SearchFilter';
-import GunProductCard from '../../components/gun-page/GunProductCard';
-import MobileGunFilter from '../../components/filters/gunFilters/MobileGunFilter';
+import Link from "next/link";
+import Layout from "../../components/layout/Layout";
+import GunFilter from "../../components/filters/gunFilters/GunFilter";
+import SearchFilter from "../../components/filters/gunFilters/SearchFilter";
+import GunProductCard from "../../components/gun-page/GunProductCard";
+import MobileGunFilter from "../../components/filters/gunFilters/MobileGunFilter";
 
 export async function getStaticProps() {
   // Get guns
@@ -17,11 +17,13 @@ export async function getStaticProps() {
   const gunData = data.Guns;
 
   // Filter out guns with no images
-  const guns = gunData.filter(gun => gun.ImageCount > 1)
+  const guns = gunData.filter((gun) => gun.ImageCount > 1);
 
   // Get brands for the Gun filter.
   const findBrands = guns.map((gun) => gun.Make);
-  const filterBrands = findBrands.filter((brand, index) => findBrands.indexOf(brand) === index).sort();
+  const filterBrands = findBrands
+    .filter((brand, index) => findBrands.indexOf(brand) === index)
+    .sort();
   const brands = filterBrands.map((brand, index) => ({
     brands: {
       brandID: index,
@@ -43,7 +45,9 @@ export async function getStaticProps() {
 
   // Get condition for the condition filter
   const findCondition = guns.map((gun) => gun.Condition);
-  const filterCondition = findCondition.filter((condition, index) => findCondition.indexOf(condition) === index).sort();
+  const filterCondition = findCondition
+    .filter((condition, index) => findCondition.indexOf(condition) === index)
+    .sort();
   const conditions = filterCondition.map((condition, index) => ({
     condition: {
       conID: index,
@@ -53,7 +57,9 @@ export async function getStaticProps() {
 
   // Get Mechanisms
   const findMechanism = guns.map((gun) => gun.Mechanism);
-  const filterMechanism = findMechanism.filter((mechanism, index) => findMechanism.indexOf(mechanism) === index).sort();
+  const filterMechanism = findMechanism
+    .filter((mechanism, index) => findMechanism.indexOf(mechanism) === index)
+    .sort();
   const mechanisms = filterMechanism.map((mechanism, index) => ({
     mechanism: {
       mechID: index,
@@ -69,53 +75,74 @@ export async function getStaticProps() {
       conditions,
       mechanisms,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
 const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useLocalStorage('gunsCategory', {});
-  const [selectedBrand, setSelectedBrand] = useLocalStorage('gunsBrand', {});
-  const [selectedCondition, setSelectedCondition] =useLocalStorage('gunsCondition', {});
-  const [selectedMechanism, setSelectedMechanism] =useLocalStorage('gunsMechanism', {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage(
+    "gunsCategory",
+    {}
+  );
+  const [selectedBrand, setSelectedBrand] = useLocalStorage("gunsBrand", {});
+  const [selectedCondition, setSelectedCondition] = useLocalStorage(
+    "gunsCondition",
+    {}
+  );
+  const [selectedMechanism, setSelectedMechanism] = useLocalStorage(
+    "gunsMechanism",
+    {}
+  );
   const [gunFilters, setGunFilters] = useState();
   const [filteredGuns, setFilteredGuns] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const clearFilters = () => {
     localStorage.clear();
-    setSelectedBrand({})
-    setSelectedCategory({})
-    setSelectedCondition({})
-    setSelectedMechanism({})
-    window.location.reload(false)
-  }
+    setSelectedBrand({});
+    setSelectedCategory({});
+    setSelectedCondition({});
+    setSelectedMechanism({});
+    window.location.reload(false);
+  };
 
   const handleCategoryChange = (event) => {
-    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setSelectedCategory({
+      ...selectedCategory,
+      [event.target.value]: event.target.checked,
+    });
     if (displayMobileFilter) {
       setDisplayMobileFilter(false);
     }
   };
 
   const handleBrandChange = (event) => {
-    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setSelectedBrand({
+      ...selectedBrand,
+      [event.target.value]: event.target.checked,
+    });
     if (displayMobileFilter) {
       setDisplayMobileFilter(false);
     }
   };
 
   const handleConditionChange = (event) => {
-    setSelectedCondition({ ...selectedCondition, [event.target.value]: event.target.checked });
+    setSelectedCondition({
+      ...selectedCondition,
+      [event.target.value]: event.target.checked,
+    });
     if (displayMobileFilter) {
       setDisplayMobileFilter(false);
     }
   };
 
   const handleMechanismChange = (event) => {
-    setSelectedMechanism({ ...selectedMechanism, [event.target.value]: event.target.checked });
+    setSelectedMechanism({
+      ...selectedMechanism,
+      [event.target.value]: event.target.checked,
+    });
     if (displayMobileFilter) {
       setDisplayMobileFilter(false);
     }
@@ -136,10 +163,12 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
       if (selectedCategory[TypeKey]) appliedFilters.Type.push(TypeKey);
     }
     for (const ConditionKey in selectedCondition) {
-      if (selectedCondition[ConditionKey]) appliedFilters.Condition.push(ConditionKey);
+      if (selectedCondition[ConditionKey])
+        appliedFilters.Condition.push(ConditionKey);
     }
     for (const MechanismKey in selectedMechanism) {
-      if (selectedMechanism[MechanismKey]) appliedFilters.Mechanism.push(MechanismKey);
+      if (selectedMechanism[MechanismKey])
+        appliedFilters.Mechanism.push(MechanismKey);
     }
     setGunFilters(appliedFilters);
   };
@@ -213,40 +242,51 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
   return (
     <>
       <Head>
-        <title>New & Used Firearms, Shotguns & Airguns | Shooting Supplies Ltd</title>
-        <meta name="description" content="The best collection of New & Used Shotguns, Rifles and Airguns in the Midlands" />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/guns" />
+        <title>
+          New & Used Firearms, Shotguns & Airguns | Shooting Supplies Ltd
+        </title>
+        <meta
+          name="description"
+          content="The best collection of New & Used Shotguns, Rifles and Airguns in the Midlands"
+        />
+        <link
+          rel="canonical"
+          href="https://www.shootingsuppliesltd.co.uk/guns"
+        />
       </Head>
+
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
+
       <div
         role="navigation"
-        className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
+        className="xl:hidden flex justify-center items-center h-12 bg-ssblue text-white border-b border-ssblue"
         onClick={handleMobileFilter}
       >
         FILTERS
+        <>
+          {displayMobileFilter && (
+            <div>
+              <MobileGunFilter
+                categories={categories}
+                selectedCategory={selectedCategory}
+                handleCategoryChange={handleCategoryChange}
+                brands={brands}
+                selectedBrand={selectedBrand}
+                handleBrandChange={handleBrandChange}
+                conditions={conditions}
+                selectedCondition={selectedCondition}
+                handleConditionChange={handleConditionChange}
+                mechanisms={mechanisms}
+                selectedMechanism={selectedMechanism}
+                handleMechanismChange={handleMechanismChange}
+              />
+            </div>
+          )}
+        </>
       </div>
-      <>
-        {displayMobileFilter && (
-          <div>
-            <MobileGunFilter
-              categories={categories}
-              selectedCategory={selectedCategory}
-              handleCategoryChange={handleCategoryChange}
-              brands={brands}
-              selectedBrand={selectedBrand}
-              handleBrandChange={handleBrandChange}
-              conditions={conditions}
-              selectedCondition={selectedCondition}
-              handleConditionChange={handleConditionChange}
-              mechanisms={mechanisms}
-              selectedMechanism={selectedMechanism}
-              handleMechanismChange={handleMechanismChange}
-            />
-          </div>
-        )}
-      </>
-      <div className="flex mx-12 my-16">
-        <div className="hidden xl:block xl:w-1/6 p-2">
+
+      <div className="flex lg:mx-20 lg:my-12">
+        <div className="hidden xl:block px-4 max-w-sm">
           <GunFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -262,7 +302,8 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             handleMechanismChange={handleMechanismChange}
             clearFilters={clearFilters}
           />
-          <div className="hidden lg:mt-4 lg:block">
+
+          <div className="hidden lg:mt-8 lg:block">
             <Link href="/tippmann-arms">
               <Image
                 src="/banners/Tippmann-Mobile.png"
@@ -274,10 +315,13 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             </Link>
           </div>
         </div>
-        <main className="lg:ml-4 lg:p-2 xl:w-5/6">
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+        <main>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredGuns
-              ? filteredGuns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)
+              ? filteredGuns.map((gun) => (
+                  <GunProductCard gun={gun} key={gun.ID} />
+                ))
               : guns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)}
           </div>
         </main>

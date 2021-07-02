@@ -1,17 +1,19 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { getTippmann } from '../../adapters/lightspeed/lightspeed';
-import TippmannProductCard from '../../components/product-page/TippmannProductCard';
+import Head from "next/head";
+import Image from "next/image";
+import { getTippmann } from "../../adapters/lightspeed/lightspeed";
+import TippmannProductCard from "../../components/product-page/TippmannProductCard";
 
-export async function getStaticProps() {  
+export async function getStaticProps() {
   const getTippmannProducts = await getTippmann();
   const tippmannProducts = getTippmannProducts;
 
-  const items = tippmannProducts.filter(item => item.Images && item.Manufacturer)
+  const items = tippmannProducts.filter(
+    (item) => item.Images && item.Manufacturer
+  );
 
   return {
     props: { items },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
@@ -23,12 +25,21 @@ const Tippmann = ({ items }) => (
         name="description"
         content="UK supplier of the fantastic Tippmann Arms M4 rifles and accessories"
       />
-      <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/tippmann-arms" />
+      <link
+        rel="canonical"
+        href="https://www.shootingsuppliesltd.co.uk/tippmann-arms"
+      />
     </Head>
-    <div className="hidden lg:mx-12 lg:my-8 lg:block">
-      <Image src="/banners/tippmannBanner.png" layout="responsive" width={1920} height={380} className="rounded-lg" />
+    <div className="flex lg:mx-20 xl:my-12">
+      <Image
+        src="/banners/tippmannBanner.png"
+        layout="responsive"
+        width={1920}
+        height={380}
+        className="rounded-lg"
+      />
     </div>
-    <div className="flex mx-12 my-16 lg:mb-12 lg:my-4">
+    <div className="flex justify-center my-16 lg:mb-12 lg:my-4">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
         {items.map((item) => (
           <div key={item.itemID}>

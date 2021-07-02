@@ -1,24 +1,24 @@
-import Head from 'next/head';
-import { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { getAccessories } from '../../adapters/lightspeed/lightspeed';
-import { getCategories, getBrands } from '../../lib/helpers';
-import useLocalStorage from '../../lib/localStorage'
+import Head from "next/head";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { getAccessories } from "../../adapters/lightspeed/lightspeed";
+import { getCategories, getBrands } from "../../lib/helpers";
+import useLocalStorage from "../../lib/localStorage";
 
-import SearchFilter from '../../components/filters/productFilters/SearchFilter';
-import ProductCard from '../../components/product-page/ProductCard';
-import ProductFilter from '../../components/filters/productFilters/ProductFilter';
-import StockMessage from '../../components/StockMessage';
-import MobileProductFilter from '../../components/filters/productFilters/MobileProductFilter';
+import SearchFilter from "../../components/filters/productFilters/SearchFilter";
+import ProductCard from "../../components/product-page/ProductCard";
+import ProductFilter from "../../components/filters/productFilters/ProductFilter";
+import StockMessage from "../../components/StockMessage";
+import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
 
 export async function getStaticProps() {
   // Get Items/Products
-  const itemData = await getAccessories().catch((err) => console.error(err));  
-  const items = itemData.filter(item => item.Images && item.Manufacturer)
+  const itemData = await getAccessories().catch((err) => console.error(err));
+  const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items)
-  const brands = getBrands(items)
+  const categories = getCategories(items);
+  const brands = getBrands(items);
 
   // Return props
   return {
@@ -27,7 +27,7 @@ export async function getStaticProps() {
       categories,
       brands,
     },
-    revalidate: 300
+    revalidate: 300,
   };
 }
 
@@ -35,26 +35,38 @@ const Accessories = ({ items, categories, brands }) => {
   const router = useRouter();
   const initialRender = useRef(true);
 
-  const [selectedCategory, setSelectedCategory] = useLocalStorage('accessoriesCategory', {});
-  const [selectedBrand, setSelectedBrand] = useLocalStorage('accessoriesBrand', {});
+  const [selectedCategory, setSelectedCategory] = useLocalStorage(
+    "accessoriesCategory",
+    {}
+  );
+  const [selectedBrand, setSelectedBrand] = useLocalStorage(
+    "accessoriesBrand",
+    {}
+  );
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
 
   const clearFilters = () => {
     localStorage.clear();
-    setSelectedBrand({})
-    setSelectedCategory({})
-    window.location.reload(false)
-  }
+    setSelectedBrand({});
+    setSelectedCategory({});
+    window.location.reload(false);
+  };
 
   const handleCategoryChange = (event) => {
-    setSelectedCategory({ ...selectedCategory, [event.target.value]: event.target.checked });
+    setSelectedCategory({
+      ...selectedCategory,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
   const handleBrandChange = (event) => {
-    setSelectedBrand({ ...selectedBrand, [event.target.value]: event.target.checked });
+    setSelectedBrand({
+      ...selectedBrand,
+      [event.target.value]: event.target.checked,
+    });
     setDisplayMobileFilter(false);
   };
 
@@ -64,7 +76,8 @@ const Accessories = ({ items, categories, brands }) => {
       manufacturerID: [],
     };
     for (const CategoryKey in selectedCategory) {
-      if (selectedCategory[CategoryKey]) appliedFilters.categoryID.push(CategoryKey);
+      if (selectedCategory[CategoryKey])
+        appliedFilters.categoryID.push(CategoryKey);
     }
     for (const BrandKey in selectedBrand) {
       if (selectedBrand[BrandKey]) appliedFilters.manufacturerID.push(BrandKey);
@@ -114,17 +127,22 @@ const Accessories = ({ items, categories, brands }) => {
   return (
     <>
       <Head>
-        <title>Accessories, Attachments & Fittings | Shooting Supplies Ltd</title>
+        <title>
+          Accessories, Attachments & Fittings | Shooting Supplies Ltd
+        </title>
         <meta
           name="description"
           content="Bipods & Supports, Grips, Mounts & Fixings, Spares & Accessories & More, from all of your favourite brands."
         />
-        <link rel="canonical" href="https://www.shootingsuppliesltd.co.uk/accessories" />
+        <link
+          rel="canonical"
+          href="https://www.shootingsuppliesltd.co.uk/accessories"
+        />
       </Head>
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
       <div
         role="navigation"
-        className="flex justify-center items-center xl:hidden h-12 bg-ssblue text-white border-b border-ssblue"
+        className="xl:hidden flex justify-center items-center h-12 bg-ssblue text-white border-b border-ssblue"
         onClick={handleMobileFilter}
       >
         FILTERS
@@ -143,8 +161,8 @@ const Accessories = ({ items, categories, brands }) => {
           </div>
         )}
       </>
-      <div className="flex mx-12 my-4 xl:my-16">
-        <div className="hidden xl:block xl:w-1/6 p-2">
+      <div className="flex lg:mx-20 xl:my-16">
+        <div className="hidden xl:block px-4 max-w-sm">
           <ProductFilter
             categories={categories}
             selectedCategory={selectedCategory}
@@ -158,20 +176,33 @@ const Accessories = ({ items, categories, brands }) => {
             <StockMessage />
           </div>
           <div className="mt-4">
-            <a href="https://fabdefense.co.uk" rel="noopener noreferrer" target="_blank">
-              <Image src="/banners/FAB-Mobile.png" width={220} height={260} className="rounded-lg cursor-pointer" />
+            <a
+              href="https://fabdefense.co.uk"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                src="/banners/FAB-Mobile.png"
+                width={220}
+                height={260}
+                className="rounded-lg cursor-pointer"
+              />
             </a>
           </div>
-        </div>
-
-        <main className="lg:mt-2 lg:ml-4 xl:w-5/6">
           <div className="mb-4 xl:hidden text-center">
             <StockMessage />
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
+        </div>
+
+        <main>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
-              ? filteredItems.map((item) => <ProductCard item={item} key={item.customSku} />)
-              : items.map((item) => <ProductCard item={item} key={item.customSku} />)}
+              ? filteredItems.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))
+              : items.map((item) => (
+                  <ProductCard item={item} key={item.customSku} />
+                ))}
           </div>
         </main>
       </div>

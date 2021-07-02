@@ -1,16 +1,28 @@
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import useLocalStorage from '../../../lib/localStorage'
+import { MdKeyboardArrowDown } from "react-icons/md";
+import useLocalStorage from "../../../lib/localStorage";
 
-import BrandFilter from './BrandFilter';
-import CategoryFilter from './CategoryFilter';
-import ConditionFilter from './ConditionFilter';
-import MechanismFilter from './MechanismFilter';
+import BrandFilter from "./BrandFilter";
+import CategoryFilter from "./CategoryFilter";
+import ConditionFilter from "./ConditionFilter";
+import MechanismFilter from "./MechanismFilter";
 
 const GunFilter = (props) => {
-  const [displayConditions, setDisplayConditions] = useLocalStorage('displayConditionsGun', true);
-  const [displayCategories, setDisplayCategories] = useLocalStorage('displayCategoriesGuns', true);
-  const [displayBrands, setDisplayBrands] = useLocalStorage('displayBrandsGuns', false);
-  const [displayMechanisms, setDisplayMechanisms] = useLocalStorage('displayMechanismsGuns', false);
+  const [displayConditions, setDisplayConditions] = useLocalStorage(
+    "displayConditionsGun",
+    true
+  );
+  const [displayCategories, setDisplayCategories] = useLocalStorage(
+    "displayCategoriesGuns",
+    true
+  );
+  const [displayBrands, setDisplayBrands] = useLocalStorage(
+    "displayBrandsGuns",
+    true
+  );
+  const [displayMechanisms, setDisplayMechanisms] = useLocalStorage(
+    "displayMechanismsGuns",
+    true
+  );
 
   const toggleDisplayConditions = () => {
     setDisplayConditions(!displayConditions);
@@ -30,12 +42,18 @@ const GunFilter = (props) => {
 
   return (
     <>
-      <div className="border-2 border-gray-300 rounded-lg">
-        <div className="p-4 flex border-b-2">
+      <div className="border-r border-ssblue">
+        <div className="p-4 flex border-b border-ssblue">
           <h4 className="font-bold uppercase text-xl">Filter By</h4>
-          <p role="button" onClick={props.clearFilters} className="ml-16 flex items-end">Clear Filters</p>
+          <p
+            role="button"
+            onClick={props.clearFilters}
+            className="ml-16 flex items-end"
+          >
+            Clear Filters
+          </p>
         </div>
-        <div className="border-b-2">
+        <div className="border-b border-ssblue">
           <div className="p-4" onClick={toggleDisplayConditions}>
             <h5 className="font-semibold uppercase">
               Condition
@@ -54,7 +72,7 @@ const GunFilter = (props) => {
             </div>
           )}
         </div>
-        <div className="border-b-2">
+        <div className="border-b border-ssblue">
           <div className="p-4" onClick={toggleDisplayCategories}>
             <h5 className="font-semibold uppercase">
               Category
@@ -73,7 +91,7 @@ const GunFilter = (props) => {
             </div>
           )}
         </div>
-        <div className="border-b-2">
+        <div className="border-b border-ssblue">
           <div className="p-4" onClick={toggleDisplayBrands}>
             <h5 className="font-semibold uppercase">
               Brand

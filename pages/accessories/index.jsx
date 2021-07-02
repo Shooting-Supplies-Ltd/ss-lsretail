@@ -161,7 +161,7 @@ const Accessories = ({ items, categories, brands }) => {
           </div>
         )}
       </>
-      <div className="flex lg:mx-20 xl:my-16">
+      <div className="flex justify-center lg:mx-4 lg:my-12 xl:mx-20">
         <div className="hidden xl:block px-4 max-w-sm">
           <ProductFilter
             categories={categories}
@@ -172,9 +172,7 @@ const Accessories = ({ items, categories, brands }) => {
             handleBrandChange={handleBrandChange}
             clearFilters={clearFilters}
           />
-          <div className="mb-4 xl:hidden text-center">
-            <StockMessage />
-          </div>
+
           <div className="mt-4">
             <a
               href="https://fabdefense.co.uk"
@@ -195,7 +193,7 @@ const Accessories = ({ items, categories, brands }) => {
         </div>
 
         <main>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
+          <div className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
               ? filteredItems.map((item) => (
                   <ProductCard item={item} key={item.customSku} />

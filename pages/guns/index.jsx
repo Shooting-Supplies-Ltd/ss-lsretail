@@ -285,7 +285,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         )}
       </>
 
-      <div className="flex lg:mx-20 lg:my-12">
+      <div className="flex justify-center lg:mx-4 xl:mx-20 lg:my-12">
         <div className="hidden xl:block px-4 max-w-sm">
           <GunFilter
             categories={categories}
@@ -317,7 +317,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         </div>
 
         <main>
-          <div className="flex flex-wrap justify-center mt-4 lg:mt-0 md:grid gap-4 grid-cols-1 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
+          <div className="mt-4 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredGuns
               ? filteredGuns.map((gun) => (
                   <GunProductCard gun={gun} key={gun.ID} />

@@ -180,7 +180,7 @@ const Nav = () => {
               </Link> */}
           </ul>
         </div>
-        <div className="hidden w-1/6 p-2 lg:flex justify-center items-center text-white">
+        <div className="hidden w-1/6 p-2 xl:flex justify-center items-center text-white">
           <div
             onMouseEnter={updateCartDisplay}
             onMouseLeave={updateCartDisplay}

@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useState, useEffect } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-import BrandFilter from './BrandFilter';
-import CategoryFilter from './CategoryFilter';
+import BrandFilter from "./BrandFilter";
+import CategoryFilter from "./CategoryFilter";
 
 const MobileProductFilter = (props) => {
   const [displayCategories, setDisplayCategories] = useState(() => {
-    const stickyValue = localStorage.getItem('categories');
+    const stickyValue = localStorage.getItem("categories");
     return stickyValue !== null ? JSON.parse(stickyValue) : false;
   });
   const [displayBrands, setDisplayBrands] = useState(() => {
-    const stickyValue = localStorage.getItem('brands');
+    const stickyValue = localStorage.getItem("brands");
     return stickyValue !== null ? JSON.parse(stickyValue) : false;
   });
 
@@ -19,7 +19,7 @@ const MobileProductFilter = (props) => {
   };
 
   useEffect(() => {
-    localStorage.setItem('categories', JSON.stringify(displayCategories));
+    localStorage.setItem("categories", JSON.stringify(displayCategories));
   }, [displayCategories]);
 
   const toggleDisplayBrands = () => {
@@ -27,13 +27,15 @@ const MobileProductFilter = (props) => {
   };
 
   useEffect(() => {
-    localStorage.setItem('brands', JSON.stringify(displayBrands));
+    localStorage.setItem("brands", JSON.stringify(displayBrands));
   }, [displayBrands]);
 
   return (
     <>
-      <div className="absolute bg-ssblue w-full text-white z-10 border-2 border-gray-300 rounded-lg">
-        <h4 className="p-4 font-bold uppercase text-xl border-b-2">Filter By</h4>
+      <div className="absolute bg-ssblue w-full text-white z-10 border-2 border-gray-300">
+        <h4 className="p-4 font-bold uppercase text-xl border-b-2">
+          Filter By
+        </h4>
         <div className="border-b-2">
           <div className="p-4" onClick={toggleDisplayCategories}>
             <h5 className="font-semibold uppercase">

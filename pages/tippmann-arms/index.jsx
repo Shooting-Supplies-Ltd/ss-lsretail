@@ -30,7 +30,7 @@ const Tippmann = ({ items }) => (
         href="https://www.shootingsuppliesltd.co.uk/tippmann-arms"
       />
     </Head>
-    <div className="flex lg:mx-20 xl:my-12">
+    <div className="flex justify-center lg:mx-4 lg:my-12 xl:mx-20">
       <Image
         src="/banners/tippmannBanner.png"
         layout="responsive"
@@ -40,7 +40,7 @@ const Tippmann = ({ items }) => (
       />
     </div>
     <div className="flex justify-center my-16 lg:mb-12 lg:my-4">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4">
+      <div className="lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
         {items.map((item) => (
           <div key={item.itemID}>
             <TippmannProductCard item={item} />

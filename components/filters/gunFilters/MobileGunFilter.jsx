@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useState, useEffect } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
-import BrandFilter from './BrandFilter';
-import CategoryFilter from './CategoryFilter';
-import ConditionFilter from './ConditionFilter';
+import BrandFilter from "./BrandFilter";
+import CategoryFilter from "./CategoryFilter";
+import ConditionFilter from "./ConditionFilter";
 
 const MobileGunFilter = (props) => {
   const [displayConditions, setDisplayConditions] = useState(() => {
-    const stickyValue = localStorage.getItem('conditions');
+    const stickyValue = localStorage.getItem("conditions");
     return stickyValue !== null ? JSON.parse(stickyValue) : false;
   });
 
   const [displayCategories, setDisplayCategories] = useState(() => {
-    const stickyValue = localStorage.getItem('categories');
+    const stickyValue = localStorage.getItem("categories");
     return stickyValue !== null ? JSON.parse(stickyValue) : false;
   });
   const [displayBrands, setDisplayBrands] = useState(() => {
-    const stickyValue = localStorage.getItem('brands');
+    const stickyValue = localStorage.getItem("brands");
     return stickyValue !== null ? JSON.parse(stickyValue) : false;
   });
 
@@ -25,7 +25,7 @@ const MobileGunFilter = (props) => {
   };
 
   useEffect(() => {
-    localStorage.setItem('conditions', JSON.stringify(displayConditions));
+    localStorage.setItem("conditions", JSON.stringify(displayConditions));
   }, [displayConditions]);
 
   const toggleDisplayCategories = () => {
@@ -33,7 +33,7 @@ const MobileGunFilter = (props) => {
   };
 
   useEffect(() => {
-    localStorage.setItem('categories', JSON.stringify(displayCategories));
+    localStorage.setItem("categories", JSON.stringify(displayCategories));
   }, [displayCategories]);
 
   const toggleDisplayBrands = () => {
@@ -41,13 +41,15 @@ const MobileGunFilter = (props) => {
   };
 
   useEffect(() => {
-    localStorage.setItem('brands', JSON.stringify(displayBrands));
+    localStorage.setItem("brands", JSON.stringify(displayBrands));
   }, [displayBrands]);
 
   return (
     <>
-      <div className="absolute bg-ssblue w-full text-white z-10 border-2 border-gray-300 rounded-lg">
-        <h4 className="p-4 font-bold uppercase text-xl border-b-2">Filter By</h4>
+      <div className="absolute bg-ssblue w-full text-white z-10 border-2 border-gray-300">
+        <h4 className="p-4 font-bold uppercase text-xl border-b-2">
+          Filter By
+        </h4>
         <div className="border-b-2">
           <div className="p-4" onClick={toggleDisplayConditions}>
             <h5 className="font-semibold uppercase">

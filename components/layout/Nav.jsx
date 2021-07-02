@@ -20,7 +20,7 @@ const Nav = () => {
   return (
     <nav>
       {displayMobileMenu && (
-        <div className="absolute z-20 top-28 bg-ssblue w-full text-white shadow-2xl">
+        <div className="absolute z-20 top-24 bg-ssblue w-full text-white shadow-2xl">
           <ul className="my-6 text-center uppercase font-bold">
             <Link href="/guns">
               <a>
@@ -110,16 +110,19 @@ const Nav = () => {
           </ul>
         </div>
       )}
-      <div className="flex xl:h-16 bg-ssblue">
+
+      <div className="flex justify-between xl:h-16 bg-ssblue">
         <div className="xl:w-1/6 xl:flex xl:justify-center cursor-pointer">
-          <div className="xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
+          <div className="p-4 lg:p-0 xl:p-0 xl:absolute xl:z-10 xl:top-1 w-24 xl:w-40">
             <Link href="/">
-              <Image
-                src="/logos/Logo.webp"
-                alt="Shooting Supplies Ltd"
-                width={140}
-                height={140}
-              />
+              <a>
+                <Image
+                  src="/logos/Logo.webp"
+                  alt="Shooting Supplies Ltd"
+                  width={140}
+                  height={140}
+                />
+              </a>
             </Link>
           </div>
         </div>
@@ -177,7 +180,7 @@ const Nav = () => {
               </Link> */}
           </ul>
         </div>
-        <div className="w-1/6 p-2 flex justify-center items-center text-white">
+        <div className="hidden w-1/6 p-2 lg:flex justify-center items-center text-white">
           <div
             onMouseEnter={updateCartDisplay}
             onMouseLeave={updateCartDisplay}
@@ -186,7 +189,7 @@ const Nav = () => {
             {cartCount > 0 && cartDisplay && <CartDisplay />}
           </div>
         </div>
-        <div className="mr-4 flex items-center text-3xl xl:hidden">
+        <div className="mr-4 flex justify-end items-center text-3xl text-white xl:hidden">
           <CgMenuRight
             onClick={() => setDisplayMobileMenu(!displayMobileMenu)}
           />

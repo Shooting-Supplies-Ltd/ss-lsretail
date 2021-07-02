@@ -113,7 +113,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="bg-ssblue border-t border-gray-50">
-      <p class="text-center text-white py-8">
+      <p className="text-center text-white py-8">
         © Shooting Supplies Ltd 2021 - All rights reserved
       </p>
     </div>

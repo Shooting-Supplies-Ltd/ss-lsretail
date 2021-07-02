@@ -263,27 +263,27 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         onClick={handleMobileFilter}
       >
         FILTERS
-        <>
-          {displayMobileFilter && (
-            <div>
-              <MobileGunFilter
-                categories={categories}
-                selectedCategory={selectedCategory}
-                handleCategoryChange={handleCategoryChange}
-                brands={brands}
-                selectedBrand={selectedBrand}
-                handleBrandChange={handleBrandChange}
-                conditions={conditions}
-                selectedCondition={selectedCondition}
-                handleConditionChange={handleConditionChange}
-                mechanisms={mechanisms}
-                selectedMechanism={selectedMechanism}
-                handleMechanismChange={handleMechanismChange}
-              />
-            </div>
-          )}
-        </>
       </div>
+      <>
+        {displayMobileFilter && (
+          <div>
+            <MobileGunFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+              handleCategoryChange={handleCategoryChange}
+              brands={brands}
+              selectedBrand={selectedBrand}
+              handleBrandChange={handleBrandChange}
+              conditions={conditions}
+              selectedCondition={selectedCondition}
+              handleConditionChange={handleConditionChange}
+              mechanisms={mechanisms}
+              selectedMechanism={selectedMechanism}
+              handleMechanismChange={handleMechanismChange}
+            />
+          </div>
+        )}
+      </>
 
       <div className="flex lg:mx-20 lg:my-12">
         <div className="hidden xl:block px-4 max-w-sm">
@@ -317,7 +317,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         </div>
 
         <main>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
+          <div className="flex flex-wrap justify-center mt-4 lg:mt-0 md:grid gap-4 grid-cols-1 md:grid-cols-3 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
             {filteredGuns
               ? filteredGuns.map((gun) => (
                   <GunProductCard gun={gun} key={gun.ID} />

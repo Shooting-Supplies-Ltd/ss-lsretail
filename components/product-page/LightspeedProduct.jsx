@@ -22,10 +22,10 @@ export default function LightspeedProduct({ item }) {
     <>
       <LsProductHead item={item} />
       <main>
-        <div className="flex lg:mx-12 lg:my-12">
-          <div className="lg:w-4/6 border-r-2 border-ssblue">
+        <div className="lg:flex mx-4 lg:mx-12 mb-8 lg:my-12">
+          <div className="lg:w-4/6 lg:border-r-2 lg:border-ssblue">
             <div
-              className="flex justify-center items-center"
+              className="hidden lg:flex justify-center items-center"
               style={{ height: "620px" }}
             >
               <Image
@@ -36,22 +36,36 @@ export default function LightspeedProduct({ item }) {
                 className="object-scale-down"
               />
             </div>
-            <div id="fulldescription" className="mt-4 mb-12">
-              <h2 className="text-3xl lg:ml-24 uppercase font-black">
+            <div className="lg:hidden flex justify-center items-center">
+              <Image
+                src={`${item.Images.Image.baseImageURL}/w_600/${item.Images.Image.publicID}.webp`}
+                alt={`Buy ${item.description} at Shooting Supplies Ltd`}
+                width={300}
+                height={300}
+                className="object-scale-down"
+              />
+            </div>
+            <h1 className="lg:hidden mt-4 text-4xl font-black">
+              {item.description}
+            </h1>
+            <div id="fulldescription" className="mt-4">
+              <h2 className="hidden lg:block text-3xl lg:ml-24 uppercase font-black">
                 Product Details
               </h2>
               <div
-                className="mt-4 mx-24 prose max-w-none text-lg"
+                className="mt-8 lg:mt-4 lg:mx-24 prose max-w-none"
                 dangerouslySetInnerHTML={productDescriptionLong()}
               />
             </div>
           </div>
 
-          <div className="lg:w-2/6 ml-4">
-            <div className="mx-4">
-              <h1 className="text-4xl font-black">{item.description}</h1>
+          <div className="lg:w-2/6 lg:ml-4">
+            <div className="lg:mx-4">
+              <h1 className="hidden lg:block text-4xl font-black">
+                {item.description}
+              </h1>
 
-              <div className="flex space-x-20">
+              <div className="mt-8 lg:mt-2">
                 {item.ItemShops ? (
                   item.ItemShops.ItemShop[0].qoh > 0 ? (
                     <p className="mt-1 text-green-500 font-bold uppercase text-lg">
@@ -124,12 +138,12 @@ export default function LightspeedProduct({ item }) {
               </div>
 
               <p
-                className="mt-12 prose text-lg"
+                className="hidden lg:block mt-12 prose text-lg"
                 dangerouslySetInnerHTML={productDescriptionShort()}
               />
 
-              <h3 className="mt-20 text-xl font-semibold uppercase">
-                Please contact us to buy this item or for more information
+              <h3 className="mt-8 lg:mt-20 text-xl font-bold uppercase">
+                Please contact us to buy this item or for futher information
               </h3>
 
               <div className="mt-8 flex space-x-4">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useShoppingCart } from "use-shopping-cart";
 import { CgMenuRight } from "react-icons/cg";
@@ -12,6 +13,16 @@ const Nav = () => {
   const [cartDisplay, setCartDisplay] = useState(false);
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   const { cartCount } = useShoppingCart();
+
+  const router = useRouter();
+
+  const handleRouteChange = (url, { shallow }) => {
+    setDisplayMobileMenu(false);
+  };
+
+  if (process.browser) {
+    router.events.on("routeChangeStart", handleRouteChange);
+  }
 
   const updateCartDisplay = () => {
     setCartDisplay(!cartDisplay);

@@ -143,7 +143,7 @@ export default function LightspeedProduct({ item }) {
               />
 
               <h3 className="mt-8 lg:mt-20 text-xl font-bold uppercase">
-                Please contact us to buy this item or for futher information
+                Please contact us to buy this item or for further information
               </h3>
 
               <div className="mt-8 flex space-x-4">

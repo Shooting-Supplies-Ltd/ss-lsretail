@@ -40,7 +40,7 @@ const Tippmann = ({ items }) => (
       />
     </div>
     <div className="flex justify-center my-16 lg:mb-12 lg:my-4">
-      <div className="lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
+      <div className="lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
         {items.map((item) => (
           <div key={item.itemID}>
             <TippmannProductCard item={item} />

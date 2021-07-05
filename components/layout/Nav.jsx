@@ -126,8 +126,8 @@ const Nav = () => {
             </Link>
           </div>
         </div>
-        <div className="hidden xl:w-4/6 xl:p-2 xl:flex justify-center items-center">
-          <ul className="flex space-x-6 p-2 font-bold text-xl text-white">
+        <div className="hidden xl:w-4/6 xl:flex justify-center items-center">
+          <ul className="flex space-x-6 2xl:space-x-4 font-bold text-xl 2xl:text-lg text-white">
             <div className="flex justify-center items-center">
               <Link href="/guns">
                 <a>

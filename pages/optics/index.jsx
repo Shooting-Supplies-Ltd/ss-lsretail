@@ -175,7 +175,7 @@ const Optics = ({ items, categories, brands }) => {
         </div>
 
         <main>
-          <div className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-4 xl:gap-x-6 xl:gap-y-12">
+          <div className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
               ? filteredItems.map((item) => (
                   <ProductCard item={item} key={item.customSku} />

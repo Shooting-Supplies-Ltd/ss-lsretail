@@ -12,13 +12,17 @@ const BrandFilter = ({ brands, handleBrandChange, selectedBrand }) => (
                 onChange={handleBrandChange}
                 className="hover:ssorange"
               />
-              <label key={brand.name} htmlFor={brand.name} className="ml-1 uppercase">
+              <label
+                key={brand.name}
+                htmlFor={brand.name}
+                className="ml-2 text-lg lg:text-base uppercase"
+              >
                 {brand.name}
               </label>
             </div>
           </div>
         ))
-      : ''}
+      : ""}
   </>
 );
 

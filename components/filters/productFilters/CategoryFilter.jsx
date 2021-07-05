@@ -1,4 +1,8 @@
-const CategoryFilter = ({ categories, handleCategoryChange, selectedCategory }) => (
+const CategoryFilter = ({
+  categories,
+  handleCategoryChange,
+  selectedCategory,
+}) => (
   <>
     {categories.map((cat) => (
       <div className="hover:text-ssorange mb-2 md:mb-0" key={cat.catID}>
@@ -10,7 +14,11 @@ const CategoryFilter = ({ categories, handleCategoryChange, selectedCategory }) 
           onChange={handleCategoryChange}
           className="hover:ssorange"
         />
-        <label key={cat.name} htmlFor={cat.name} className="ml-1 uppercase">
+        <label
+          key={cat.name}
+          htmlFor={cat.name}
+          className="ml-2 text-lg lg:text-base uppercase"
+        >
           {cat.name}
         </label>
       </div>

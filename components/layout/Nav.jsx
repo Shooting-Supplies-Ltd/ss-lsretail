@@ -192,13 +192,13 @@ const Nav = () => {
           </ul>
         </div>
         <div className="hidden w-1/6 p-2 xl:flex justify-center items-center text-white">
-          <div
+          {/* <div
             onMouseEnter={updateCartDisplay}
             onMouseLeave={updateCartDisplay}
           >
             <CartIcon />
             {cartCount > 0 && cartDisplay && <CartDisplay />}
-          </div>
+          </div> */}
         </div>
         <div className="mr-4 flex justify-end items-center text-3xl text-white xl:hidden">
           <CgMenuRight

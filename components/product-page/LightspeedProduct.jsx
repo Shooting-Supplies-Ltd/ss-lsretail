@@ -22,7 +22,7 @@ export default function LightspeedProduct({ item }) {
     <>
       <LsProductHead item={item} />
       <main>
-        <div className="lg:flex mx-4 lg:mx-12 mb-8 lg:my-12">
+        <div className="lg:flex mx-4 lg:mx-12 mb-8 lg:mt-12 lg:mb-20">
           <div className="lg:w-4/6 lg:border-r-2 lg:border-ssblue">
             <div
               className="hidden lg:flex justify-center items-center"
@@ -138,7 +138,7 @@ export default function LightspeedProduct({ item }) {
               </div>
 
               <p
-                className="hidden lg:block mt-12 prose text-lg"
+                className="hidden lg:block mt-12 prose"
                 dangerouslySetInnerHTML={productDescriptionShort()}
               />
 
@@ -158,7 +158,9 @@ export default function LightspeedProduct({ item }) {
                   email="info@shootingsuppliesltd.co.uk"
                   subject={`ITEM ENQUIRY: ${item.description} / ${item.customSku}`}
                 >
-                  <p className="btn-blue hover:bg-green-600">Email</p>
+                  <p aria-label="" className="btn-blue hover:bg-green-600">
+                    Email
+                  </p>
                 </MailTo>
               </div>
             </div>

@@ -98,7 +98,7 @@ export default function LightspeedMatrixProduct({ item }) {
               </p>
 
               <p
-                className="hidden lg:block mt-12 prose text-lg"
+                className="hidden lg:block mt-12 prose"
                 dangerouslySetInnerHTML={productDescriptionShort()}
               />
 

@@ -158,9 +158,7 @@ export default function LightspeedProduct({ item }) {
                   email="info@shootingsuppliesltd.co.uk"
                   subject={`ITEM ENQUIRY: ${item.description} / ${item.customSku}`}
                 >
-                  <p aria-label="" className="btn-blue hover:bg-green-600">
-                    Email
-                  </p>
+                  <p className="btn-blue hover:bg-green-600">Email</p>
                 </MailTo>
               </div>
             </div>

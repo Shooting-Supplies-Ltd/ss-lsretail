@@ -12,8 +12,19 @@ const Footer = () => (
           The Midlands leading Shooting Supplies Store. Offering all you need
           for Target, Clay & Hunting Sports, with easy access from the M5 & M42
           motorways and onsite parking.
-          <p className="mt-2">T: 01527831261</p>
-          <p>E: info@shootingsuppliesltd.co.uk</p>
+        </p>
+        <p className="mt-2">
+          <a href="tel:01527831261" className="text-white hover:text-ssorange">
+            T: 01527831261
+          </a>
+        </p>
+        <p>
+          <a
+            href="mailto:info:shootingsuppliesltd.co.uk"
+            className="text-white hover:text-ssorange"
+          >
+            E: info@shootingsuppliesltd.co.uk
+          </a>
         </p>
       </div>
       <div className="mx-12 py-12 w-3/6 xl:grid grid-cols-3 gap-4">

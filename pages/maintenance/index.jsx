@@ -183,7 +183,7 @@ const Maintenance = ({ items, categories, brands }) => {
                   <ProductCard item={item} key={item.itemID} />
                 ))
               : items.map((item) => (
-                  <ProductCard item={item} key={item.customSku} />
+                  <ProductCard item={item} key={item.itemID} />
                 ))}
           </div>
         </main>

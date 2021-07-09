@@ -40,11 +40,11 @@ const ProductCard = ({ item }) => {
                 })
               : null}
           </div>
-          <div className="h-32 p-4 flex flex-col bg-ssblue text-white">
+          <div className="h-36 p-4 flex flex-col bg-ssblue text-white">
             <h2 className="flex justify-center text-center uppercase text-lg font-bold">
               {name}
             </h2>
-            <p className="mt-2 flex justify-center font-bold text-lg">
+            <p className="mt-2 flex justify-center font-bold text-xl">
               £{parseFloat(item.Prices.ItemPrice[0].amount).toFixed(2)}
             </p>
           </div>

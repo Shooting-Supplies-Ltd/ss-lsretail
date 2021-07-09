@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { getAmmo } from "../../adapters/lightspeed/lightspeed";
 import { getCategories, getBrands } from "../../lib/helpers";
 import useLocalStorage from "../../lib/localStorage";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
 import ProductCard from "../../components/product-page/ProductCard";
@@ -38,6 +39,23 @@ const Ammo = ({ items, categories, brands }) => {
   const [itemFilters, setItemFilters] = useState();
   const [filteredItems, setFilteredItems] = useState();
   const [displayMobileFilter, setDisplayMobileFilter] = useState(false);
+  const [showScroll, setShowScroll] = useState();
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 200) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 200) {
+      setShowScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    return window.addEventListener("scroll", checkScrollTop);
+  }, [showScroll]);
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const clearFilters = () => {
     localStorage.clear();
@@ -131,6 +149,19 @@ const Ammo = ({ items, categories, brands }) => {
           href="https://www.shootingsuppliesltd.co.uk/ammo"
         />
       </Head>
+      <div className="hidden lg:flex lg:mx-60 lg:mt-8 cursor-pointer">
+        <FaArrowCircleUp
+          className="scrollTop lg:text-4xl xl:text-5xl text-ssblue"
+          onClick={scrollTop}
+          style={{
+            height: 60,
+            display: showScroll ? "flex" : "none",
+            position: "fixed",
+            bottom: "30px",
+            right: "60px",
+          }}
+        />
+      </div>
 
       <SearchFilter items={items} setFilteredItems={setFilteredItems} />
 

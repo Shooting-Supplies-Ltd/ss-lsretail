@@ -348,13 +348,19 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
         </div>
 
         <main>
-          <div className="mt-4 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
+          <ul className="mt-4 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
             {filteredGuns
               ? filteredGuns.map((gun) => (
-                  <GunProductCard gun={gun} key={gun.ID} />
+                  <li key={gun.ID}>
+                    <GunProductCard gun={gun} />
+                  </li>
                 ))
-              : guns.map((gun) => <GunProductCard gun={gun} key={gun.ID} />)}
-          </div>
+              : guns.map((gun) => (
+                  <li key={gun.ID}>
+                    <GunProductCard gun={gun} />
+                  </li>
+                ))}
+          </ul>
         </main>
       </div>
     </>

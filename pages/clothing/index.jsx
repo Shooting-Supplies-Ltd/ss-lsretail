@@ -207,19 +207,19 @@ const Clothing = ({ items, categories, brands }) => {
         </div>
 
         <main>
-          <div className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
+          <ul className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
               ? filteredItems.map((item) => (
-                  <div key={item.itemID}>
+                  <li key={item.itemID}>
                     <MatrixProductCard item={item} key={item.itemID} />
-                  </div>
+                  </li>
                 ))
               : items.map((item) => (
-                  <div key={item.itemID}>
+                  <li key={item.itemID}>
                     <MatrixProductCard item={item} key={item.itemID} />
-                  </div>
+                  </li>
                 ))}
-          </div>
+          </ul>
         </main>
       </div>
     </>

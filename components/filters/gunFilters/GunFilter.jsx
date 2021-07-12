@@ -63,13 +63,13 @@ const GunFilter = (props) => {
             </h5>
           </div>
           {displayConditions && (
-            <div className="pl-4 pb-4">
+            <ul className="pl-4 pb-4">
               <ConditionFilter
                 conditions={props.conditions}
                 handleConditionChange={props.handleConditionChange}
                 selectedCondition={props.selectedCondition}
               />
-            </div>
+            </ul>
           )}
         </div>
         <div className="border-b border-ssblue">
@@ -82,13 +82,13 @@ const GunFilter = (props) => {
             </h5>
           </div>
           {displayCategories && (
-            <div className="pl-4 pb-4">
+            <ul className="pl-4 pb-4">
               <CategoryFilter
                 categories={props.categories}
                 handleCategoryChange={props.handleCategoryChange}
                 selectedCategory={props.selectedCategory}
               />
-            </div>
+            </ul>
           )}
         </div>
         <div className="border-b border-ssblue">
@@ -101,13 +101,13 @@ const GunFilter = (props) => {
             </h5>
           </div>
           {displayBrands && (
-            <div className="pl-4 pb-4 overflow-y-auto h-64">
+            <ul className="pl-4 pb-4 overflow-y-auto h-64">
               <BrandFilter
                 brands={props.brands}
                 handleBrandChange={props.handleBrandChange}
                 selectedBrand={props.selectedBrand}
               />
-            </div>
+            </ul>
           )}
         </div>
         <div>
@@ -120,13 +120,13 @@ const GunFilter = (props) => {
             </h5>
           </div>
           {displayMechanisms && (
-            <div className="pl-4 pb-4 overflow-y-auto h-64">
+            <ul className="pl-4 pb-4 overflow-y-auto h-64">
               <MechanismFilter
                 mechanisms={props.mechanisms}
                 handleMechanismChange={props.handleMechanismChange}
                 selectedMechanism={props.selectedMechanism}
               />
-            </div>
+            </ul>
           )}
         </div>
       </div>

@@ -285,9 +285,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
           }}
         />
       </div>
-
       <SearchFilter guns={guns} setFilteredGuns={setFilteredGuns} />
-
       <div
         role="navigation"
         className="xl:hidden flex justify-center items-center h-12 bg-ssblue text-white border-b border-ssblue"
@@ -315,7 +313,6 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
           </div>
         )}
       </>
-
       <div className="flex justify-center lg:mx-4 xl:mx-20 lg:my-12">
         <div className="hidden xl:block px-4 max-w-sm">
           <GunFilter
@@ -334,8 +331,8 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             clearFilters={clearFilters}
           />
 
-          <div className="hidden lg:mt-8 lg:block">
-            <Link href="/tippmann-arms">
+          <Link href="/tippmann-arms">
+            <div className="hidden lg:mt-8 lg:block">
               <Image
                 src="/banners/Tippmann-Mobile.png"
                 layout="responsive"
@@ -343,8 +340,8 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
                 height={260}
                 className="rounded-lg cursor-pointer"
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
 
         <main>

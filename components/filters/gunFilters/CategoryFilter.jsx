@@ -4,7 +4,10 @@ const CategoryFilter = (props) => {
   return (
     <>
       {categories.map((cat) => (
-        <div className="hover:text-ssorange mb-2 md:mb-0" key={cat.categories.catID}>
+        <li
+          className="hover:text-ssorange mb-2 md:mb-0"
+          key={cat.categories.name}
+        >
           <input
             type="checkbox"
             id={cat.categories.name}
@@ -13,10 +16,14 @@ const CategoryFilter = (props) => {
             onChange={handleCategoryChange}
             className="hover:ssorange"
           />
-          <label key={cat.categories.name} htmlFor={cat.categories.name} className="ml-1 uppercase">
+          <label
+            key={cat.categories.name}
+            htmlFor={cat.categories.name}
+            className="ml-1 uppercase"
+          >
             {cat.categories.name}
           </label>
-        </div>
+        </li>
       ))}
     </>
   );

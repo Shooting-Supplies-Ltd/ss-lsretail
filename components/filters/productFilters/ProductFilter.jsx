@@ -29,14 +29,13 @@ const ProductFilter = (props) => {
               </span>
             </h5>
           </div>
-
-          <div className="pl-4 pb-4 overflow-y-auto h-64">
+          <ul className="pl-4 pb-4 overflow-y-auto h-64">
             <CategoryFilter
               categories={props.categories}
               handleCategoryChange={props.handleCategoryChange}
               selectedCategory={props.selectedCategory}
             />
-          </div>
+          </ul>
         </div>
         <div className="border-b border-ssblue">
           <div className="p-4">
@@ -47,14 +46,13 @@ const ProductFilter = (props) => {
               </span>
             </h5>
           </div>
-
-          <div className="pl-4 pb-4 overflow-y-auto h-64">
+          <ul className="pl-4 pb-4 overflow-y-auto h-64">
             <BrandFilter
               brands={props.brands}
               handleBrandChange={props.handleBrandChange}
               selectedBrand={props.selectedBrand}
             />
-          </div>
+          </ul>
         </div>
       </div>
       <StockMessage />

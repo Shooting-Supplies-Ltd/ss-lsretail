@@ -211,12 +211,12 @@ const Clothing = ({ items, categories, brands }) => {
             {filteredItems
               ? filteredItems.map((item) => (
                   <li key={item.itemID}>
-                    <MatrixProductCard item={item} key={item.itemID} />
+                    <MatrixProductCard item={item} />
                   </li>
                 ))
               : items.map((item) => (
                   <li key={item.itemID}>
-                    <MatrixProductCard item={item} key={item.itemID} />
+                    <MatrixProductCard item={item} />
                   </li>
                 ))}
           </ul>

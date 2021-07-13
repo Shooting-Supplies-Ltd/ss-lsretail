@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import { getSecurity } from "../../adapters/lightspeed/lightspeed";
-import { getCategories, getBrands } from "../../lib/helpers";
+import { parseCategories, parseBrands } from "../../lib/helpers";
 import useLocalStorage from "../../lib/localStorage";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
@@ -13,8 +13,8 @@ export async function getStaticProps() {
   const itemData = await getSecurity().catch((err) => console.error(err));
   const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items);
-  const brands = getBrands(items);
+  const categories = parseCategories(items);
+  const brands = parseBrands(items);
 
   return {
     props: {

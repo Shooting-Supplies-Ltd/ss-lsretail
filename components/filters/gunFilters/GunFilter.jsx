@@ -45,13 +45,13 @@ const GunFilter = (props) => {
       <div className="border-r border-ssblue">
         <div className="flex p-4 border-b border-ssblue">
           <h4 className="font-bold uppercase text-xl">Filter By</h4>
-          <p
+          <button
             role="button"
             onClick={props.clearFilters}
-            className="ml-16 flex items-end"
+            className="ml-16 flex items-end bg-ssblue hover:bg-blue-700 text-white py-1 px-2 rounded"
           >
             Clear Filters
-          </p>
+          </button>
         </div>
         <div className="border-b border-ssblue">
           <div className="p-4" onClick={toggleDisplayConditions}>

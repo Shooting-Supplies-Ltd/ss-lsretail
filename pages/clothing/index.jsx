@@ -1,9 +1,12 @@
 import Head from "next/head";
-import { useState, useEffect, useRef } from "react";
-import { getMatrixClothing } from "../../adapters/lightspeed/lightspeed";
-import { getCategories, getBrands } from "../../lib/helpers";
 import useLocalStorage from "../../lib/localStorage";
+import { useState, useEffect, useRef } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
+import {
+  getClothing,
+  getMatrixClothing,
+} from "../../adapters/lightspeed/lightspeed";
+import { parseCategories, parseBrands } from "../../lib/helpers";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
 import MatrixProductCard from "../../components/product-page/MatrixProductCard";
@@ -15,11 +18,58 @@ let routerQueryBrand;
 let routerQueryCategory;
 
 export async function getStaticProps() {
-  const itemData = await getMatrixClothing().catch((err) => console.error(err));
-  const items = itemData.filter((item) => item.Images && item.Manufacturer);
+  const matrixItemData = await getMatrixClothing();
+  // Array of Objects
+  const matrixItems = matrixItemData.filter(
+    (item) => item.Images && item.Manufacturer
+  );
 
-  const categories = getCategories(items);
-  const brands = getBrands(items);
+  const singleItemData = await getClothing();
+  // Array of Objects
+  const singleItems = singleItemData
+    .map((item) => {
+      if (item.itemMatrixID == 0) {
+        return item;
+      }
+    })
+    .filter(Boolean)
+    .filter((item) => item.Images && item.Manufacturer);
+
+  const items = [...singleItems, ...matrixItems];
+
+  const categories = parseCategories(items);
+  const brands = parseBrands(items);
+
+  // Get Categories
+  // const categories = items
+  //   .map((item) => {
+  //     return item.Category;
+  //   })
+  //   .filter(Boolean)
+  //   .filter(
+  //     (v, i, a) =>
+  //       a.findIndex(
+  //         (t) => t.categoryID === v.categoryID && t.categoryID === v.categoryID
+  //       ) === i
+  //   )
+  //   .sort((a, b) => a.name.localeCompare(b.name));
+
+  //Get Brands
+  // const brands = items
+  //   .map((item) => {
+  //     console.log(item.Manufacturer);
+  //     return item.Manufacturer;
+  //   })
+  //   .filter(Boolean)
+  //   .filter(
+  //     (v, i, a) =>
+  //       a.findIndex(
+  //         (t) =>
+  //           t.manufacturerID === v.manufacturerID &&
+  //           t.manufacturerID === v.manufacturerID
+  //       ) === i
+  //   )
+  //   .sort((a, b) => a.name.localeCompare(b.name));
 
   return {
     props: {

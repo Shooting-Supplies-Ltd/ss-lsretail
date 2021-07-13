@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import { getAccessories } from "../../adapters/lightspeed/lightspeed";
-import { getCategories, getBrands } from "../../lib/helpers";
 import useLocalStorage from "../../lib/localStorage";
+import { useRouter } from "next/router";
+import { useState, useEffect, useRef } from "react";
+import { getAccessories } from "../../adapters/lightspeed/lightspeed";
+import { parseCategories, parseBrands } from "../../lib/helpers";
 import { FaArrowCircleUp } from "react-icons/fa";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
@@ -14,14 +14,12 @@ import StockMessage from "../../components/StockMessage";
 import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
 
 export async function getStaticProps() {
-  // Get Items/Products
   const itemData = await getAccessories().catch((err) => console.error(err));
   const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items);
-  const brands = getBrands(items);
+  const categories = parseCategories(items);
+  const brands = parseBrands(items);
 
-  // Return props
   return {
     props: {
       items,
@@ -157,9 +155,9 @@ const Accessories = ({ items, categories, brands }) => {
           href="https://www.shootingsuppliesltd.co.uk/accessories"
         />
       </Head>
-      <div className="hidden lg:flex lg:mx-60 lg:mt-8 cursor-pointer">
+      <div className="hidden lg:flex cursor-pointer">
         <FaArrowCircleUp
-          className="scrollTop lg:text-4xl xl:text-5xl text-ssblue"
+          className="scrollTop lg:text-4xl xl:text-4xl text-ssblue"
           onClick={scrollTop}
           style={{
             height: 60,

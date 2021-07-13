@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect, useRef } from "react";
 import { getMaintenance } from "../../adapters/lightspeed/lightspeed";
-import { getCategories, getBrands } from "../../lib/helpers";
+import { parseCategories, parseBrands } from "../../lib/helpers";
 import useLocalStorage from "../../lib/localStorage";
 import { FaArrowCircleUp } from "react-icons/fa";
 
@@ -18,8 +18,8 @@ export async function getStaticProps() {
   const itemData = await getMaintenance().catch((err) => console.error(err));
   const items = itemData.filter((item) => item.Images && item.Manufacturer);
 
-  const categories = getCategories(items);
-  const brands = getBrands(items);
+  const categories = parseCategories(items);
+  const brands = parseBrands(items);
 
   return {
     props: {

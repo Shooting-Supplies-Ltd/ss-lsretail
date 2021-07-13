@@ -30,6 +30,9 @@ export async function getServerSideProps({ res, query }) {
 
 const Item = ({ item }) => {
   const [image, setImage] = useState();
+  const [shortDescription, setShortDescription] = useState({
+    __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : "",
+  });
   const [checkedInputs, setCheckedInputs] = useState({});
   const [matrixItem, setMatrixItem] = useState();
   const [matrixLoading, setMatrixLoading] = useState(false);
@@ -57,6 +60,10 @@ const Item = ({ item }) => {
           : "/loading.gif"
       );
 
+      setShortDescription({
+        __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : "",
+      });
+
       setMatrixItem(item);
       setMatrixLoading(false);
     }
@@ -73,6 +80,9 @@ const Item = ({ item }) => {
     setCheckedInputs([event.target.value]);
   };
 
+  console.log("Item", item);
+  console.log("Matrix Item", matrixItem);
+
   return (
     <>
       {item.itemMatrixID == 0 ? (
@@ -85,6 +95,7 @@ const Item = ({ item }) => {
           matrixLoading={matrixLoading}
           handleInputChange={handleInputChange}
           checkedInputs={checkedInputs}
+          shortDescription={shortDescription}
         />
       )}
     </>

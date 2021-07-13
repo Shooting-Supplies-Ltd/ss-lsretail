@@ -8,6 +8,7 @@ export default function LightspeedMatrixProduct({
   item,
   matrixItem,
   image,
+  shortDescription,
   matrixLoading,
   handleInputChange,
   checkedInputs,
@@ -20,9 +21,6 @@ export default function LightspeedMatrixProduct({
     __html: item.ItemECommerce ? item.ItemECommerce.longDescription : "",
   });
 
-  const productDescriptionShort = () => ({
-    __html: item.ItemECommerce ? item.ItemECommerce.shortDescription : "",
-  });
   const price = parseFloat(item.Prices?.ItemPrice[0]?.amount)
     .toFixed(2)
     .replace(".", "");
@@ -109,24 +107,6 @@ export default function LightspeedMatrixProduct({
                     </span>
                   </p>
                 )}
-
-                {/* {matrixItem && matrixItem ? (
-                  item.ItemShops.ItemShop[0].qoh > 0 ? (
-                    <p className="mt-1 text-green-500 font-bold uppercase text-lg">
-                      In Stock
-                    </p>
-                  ) : item.ItemShops.ItemShop[0].backorder >= 1 ? (
-                    <p className="mt-1 text-red-600 font-bold uppercase text-lg">
-                      Out of Stock - On Order
-                    </p>
-                  ) : (
-                    <p className="mt-1 text-red-600 font-bold uppercase text-lg">
-                      Out of Stock
-                    </p>
-                  )
-                ) : (
-                  ""
-                )} */}
               </div>
 
               <p className="mt-4 font-bold text-4xl uppercase">
@@ -138,7 +118,7 @@ export default function LightspeedMatrixProduct({
 
               <p
                 className="hidden lg:block mt-12 prose"
-                dangerouslySetInnerHTML={productDescriptionShort()}
+                dangerouslySetInnerHTML={shortDescription}
               />
 
               <MatrixFilter
@@ -153,7 +133,7 @@ export default function LightspeedMatrixProduct({
                       addItem(getSingleProductFromMatrix(checkedInputs))
                     }
                     aria-label={`Add ${matrixItem.description} to your cart`}
-                    className="p-3 bg-fabred focus:bg-red-400 text-white font-bold rounded mr-2"
+                    className="p-3 bg-ssblue focus:bg-blue-400 text-white font-bold rounded mr-2"
                   >
                     Add to Cart
                   </button>

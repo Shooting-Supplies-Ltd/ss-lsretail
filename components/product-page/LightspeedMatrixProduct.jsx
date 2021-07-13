@@ -126,7 +126,7 @@ export default function LightspeedMatrixProduct({
                 handleInputChange={handleInputChange}
                 checkedInputs={checkedInputs}
               />
-              <div className="mt-8">
+              {/* <div className="mt-8">
                 {matrixItem && matrixItem.ItemShops.ItemShop[0].qoh > 0 && (
                   <button
                     onClick={() =>
@@ -144,7 +144,7 @@ export default function LightspeedMatrixProduct({
                       addItem(getSingleProductFromMatrix(checkedInputs))
                     }
                     aria-label={`Add ${matrixItem.name} to your cart`}
-                    className="p-3 bg-fabgrey text-gray-400 font-bold rounded mr-2"
+                    className="p-3 bg-black text-gray-400 font-bold rounded mr-2"
                     disabled
                   >
                     Add to Cart
@@ -159,7 +159,7 @@ export default function LightspeedMatrixProduct({
                 ) : (
                   ""
                 )}
-              </div>
+              </div> */}
 
               <h3 className="mt-8 lg:mt-20 text-xl font-bold uppercase">
                 Please contact us to buy this item or for further information

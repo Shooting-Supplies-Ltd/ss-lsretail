@@ -16,7 +16,7 @@ export async function getItem(itemID) {
 
 export async function getMatrixItem(itemID) {
   const item = makeRequest(
-    `ItemMatrix/${itemID}.json?load_relations=["Category", "Manufacturer", "Images", "ItemECommerce", "Manufacturer", "CustomFieldValues"]`
+    `ItemMatrix/${itemID}.json?load_relations=["Category", "Manufacturer", "Items", "Images", "ItemECommerce", "Manufacturer", "CustomFieldValues"]`
   );
   return item;
 }

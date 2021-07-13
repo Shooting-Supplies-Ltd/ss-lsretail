@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import {
   getItem,
   getMatrixItem,
@@ -14,16 +15,12 @@ export async function getServerSideProps({ res, query }) {
     const data = await getMatrixItem(id);
     const item = data[0];
 
-    console.log("Matrix Item", item);
-
     return {
       props: { item },
     };
   } else {
     const data = await getItem(id);
     const item = data[0];
-
-    console.log("Single Item", item);
 
     return {
       props: { item },
@@ -32,13 +29,63 @@ export async function getServerSideProps({ res, query }) {
 }
 
 const Item = ({ item }) => {
-  console.log(item);
+  const [image, setImage] = useState();
+  const [checkedInputs, setCheckedInputs] = useState({});
+  const [matrixItem, setMatrixItem] = useState();
+  const [matrixLoading, setMatrixLoading] = useState(false);
+
+  const loaded = useRef(false);
+
+  // Set Item || MatrixItem on Load
+  useEffect(() => {
+    setImage(
+      `${item.Images.Image.baseImageURL}/w_300/${item.Images.Image.publicID}.jpg`
+    );
+  }, []);
+
+  // Get Matrix Item on checkedInputs change.
+  useEffect(() => {
+    async function getMatrixItem() {
+      setMatrixLoading(true);
+
+      const res = await fetch(`/api/item?itemID=${checkedInputs}`);
+      const item = await res.json();
+
+      setImage(
+        item.Images
+          ? `${item.Images.Image.baseImageURL}/w_300/${item.Images.Image.publicID}.jpg`
+          : "/loading.gif"
+      );
+
+      setMatrixItem(item);
+      setMatrixLoading(false);
+    }
+
+    if (loaded.current) {
+      getMatrixItem();
+    } else {
+      loaded.current = true;
+    }
+  }, [checkedInputs]);
+
+  // Handle matrix input
+  const handleInputChange = (event) => {
+    setCheckedInputs([event.target.value]);
+  };
+
   return (
     <>
       {item.itemMatrixID == 0 ? (
         <LightspeedProduct item={item} />
       ) : (
-        <LightspeedMatrixProduct item={item} />
+        <LightspeedMatrixProduct
+          item={item}
+          image={image}
+          matrixItem={matrixItem}
+          matrixLoading={matrixLoading}
+          handleInputChange={handleInputChange}
+          checkedInputs={checkedInputs}
+        />
       )}
     </>
   );

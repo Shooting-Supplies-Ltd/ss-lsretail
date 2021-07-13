@@ -15,8 +15,10 @@ const ProductCard = ({ item }) => {
     <div className="block h-96 w-80 shadow hover:shadow-2xl border border-white hover:border-ssblue">
       <Link
         href={`${router.pathname}/${
-          item.itemID ? item.itemID : item.itemMatrixID
-        }/${slug}`}
+          item.itemID
+            ? `${item.itemID}/${slug}`
+            : `${item.itemMatrixID}/${slug}?matrix=true`
+        }`}
       >
         <a>
           <div className="relative flex justify-center h-64 overflow-hidden">

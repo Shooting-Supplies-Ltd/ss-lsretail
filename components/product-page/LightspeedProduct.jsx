@@ -21,6 +21,7 @@ export default function LightspeedProduct({ item }) {
   return (
     <>
       <LsProductHead item={item} />
+      {console.log("Item in Single Product", item)}
       <main>
         <div className="lg:flex mx-4 lg:mx-12 mb-8 lg:mt-12 lg:mb-20">
           <div className="lg:w-4/6 lg:border-r-2 lg:border-ssblue">

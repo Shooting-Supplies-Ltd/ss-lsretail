@@ -26,6 +26,7 @@ export default function LightspeedMatrixProduct({ item }) {
   return (
     <>
       <LsProductHead item={item} />
+      {console.log("Item in Matrix Product", item)}
       <main>
         <div className="lg:flex mx-4 lg:mx-12 mb-8 lg:my-12">
           <div className="lg:w-4/6 lg:border-r-2 lg:border-ssblue">

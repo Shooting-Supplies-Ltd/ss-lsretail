@@ -229,12 +229,20 @@ const Clothing = ({ items, categories, brands }) => {
           <ul className="mt-8 lg:mt-0 grid gap-y-8 md:grid md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-x-6 xl:gap-y-12">
             {filteredItems
               ? filteredItems.map((item) => (
-                  <li key={item.itemID}>
+                  <li
+                    key={
+                      item.itemID ? item.itemID : `${item.itemMatrixID}}matrix`
+                    }
+                  >
                     <ProductCard item={item} />
                   </li>
                 ))
               : items.map((item) => (
-                  <li key={item.itemID}>
+                  <li
+                    key={
+                      item.itemID ? item.itemID : `${item.itemMatrixID}}matrix`
+                    }
+                  >
                     <ProductCard item={item} />
                   </li>
                 ))}

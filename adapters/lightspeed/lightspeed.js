@@ -14,6 +14,13 @@ export async function getItem(itemID) {
   return item;
 }
 
+export async function getMatrixItem(itemID) {
+  const item = makeRequest(
+    `ItemMatrix/${itemID}.json?load_relations=["Category", "Manufacturer", "Images", "ItemECommerce", "Manufacturer", "CustomFieldValues"]`
+  );
+  return item;
+}
+
 export async function getItemsByCategory(categoryID) {
   const itemsByCategory =
     makeRequest(`Item.json?load_relations=["Category", "Manufacturer", "Images", "ItemShops", "ItemECommerce", "CustomFieldValues"]

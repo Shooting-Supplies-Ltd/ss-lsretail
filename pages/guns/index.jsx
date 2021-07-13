@@ -281,7 +281,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
             display: showScroll ? "flex" : "none",
             position: "fixed",
             bottom: "30px",
-            right: "60px",
+            right: "20px",
           }}
         />
       </div>

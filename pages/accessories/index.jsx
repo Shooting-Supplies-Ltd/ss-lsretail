@@ -155,7 +155,7 @@ const Accessories = ({ items, categories, brands }) => {
           href="https://www.shootingsuppliesltd.co.uk/accessories"
         />
       </Head>
-      <div className="hidden lg:flex cursor-pointer">
+      <div className="hidden lg:hidden xl:flex cursor-pointer">
         <FaArrowCircleUp
           className="scrollTop lg:text-4xl xl:text-4xl text-ssblue"
           onClick={scrollTop}
@@ -164,7 +164,7 @@ const Accessories = ({ items, categories, brands }) => {
             display: showScroll ? "flex" : "none",
             position: "fixed",
             bottom: "30px",
-            right: "60px",
+            right: "20px",
           }}
         />
       </div>

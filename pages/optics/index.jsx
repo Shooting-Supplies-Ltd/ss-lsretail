@@ -162,7 +162,7 @@ const Optics = ({ items, categories, brands }) => {
             display: showScroll ? "flex" : "none",
             position: "fixed",
             bottom: "30px",
-            right: "60px",
+            right: "20px",
           }}
         />
       </div>

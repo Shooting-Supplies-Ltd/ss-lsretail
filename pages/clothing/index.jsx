@@ -9,7 +9,7 @@ import {
 import { parseCategories, parseBrands } from "../../lib/helpers";
 
 import SearchFilter from "../../components/filters/productFilters/SearchFilter";
-import MatrixProductCard from "../../components/product-page/MatrixProductCard";
+import ProductCard from "../../components/product-page/ProductCard";
 import ProductFilter from "../../components/filters/productFilters/ProductFilter";
 import StockMessage from "../../components/StockMessage";
 import MobileProductFilter from "../../components/filters/productFilters/MobileProductFilter";
@@ -39,37 +39,6 @@ export async function getStaticProps() {
 
   const categories = parseCategories(items);
   const brands = parseBrands(items);
-
-  // Get Categories
-  // const categories = items
-  //   .map((item) => {
-  //     return item.Category;
-  //   })
-  //   .filter(Boolean)
-  //   .filter(
-  //     (v, i, a) =>
-  //       a.findIndex(
-  //         (t) => t.categoryID === v.categoryID && t.categoryID === v.categoryID
-  //       ) === i
-  //   )
-  //   .sort((a, b) => a.name.localeCompare(b.name));
-
-  //Get Brands
-  // const brands = items
-  //   .map((item) => {
-  //     console.log(item.Manufacturer);
-  //     return item.Manufacturer;
-  //   })
-  //   .filter(Boolean)
-  //   .filter(
-  //     (v, i, a) =>
-  //       a.findIndex(
-  //         (t) =>
-  //           t.manufacturerID === v.manufacturerID &&
-  //           t.manufacturerID === v.manufacturerID
-  //       ) === i
-  //   )
-  //   .sort((a, b) => a.name.localeCompare(b.name));
 
   return {
     props: {
@@ -261,12 +230,12 @@ const Clothing = ({ items, categories, brands }) => {
             {filteredItems
               ? filteredItems.map((item) => (
                   <li key={item.itemID}>
-                    <MatrixProductCard item={item} />
+                    <ProductCard item={item} />
                   </li>
                 ))
               : items.map((item) => (
                   <li key={item.itemID}>
-                    <MatrixProductCard item={item} />
+                    <ProductCard item={item} />
                   </li>
                 ))}
           </ul>

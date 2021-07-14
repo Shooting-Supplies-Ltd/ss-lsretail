@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import slugify from "slugify";
 
@@ -21,7 +21,7 @@ const GunProductCard = ({ gun }) => {
       <Link href={`/guns/${gun.ID}/${slug}`}>
         <a>
           <div className="relative flex justify-center h-64 overflow-hidden bg-black border-b border-white">
-            <Image
+            {/* <Image
               src={gun.Images[0].FullPath}
               alt={`${gun.Condition} ${gun.Make} ${
                 gun.Model ? gun.Model : ""
@@ -30,14 +30,14 @@ const GunProductCard = ({ gun }) => {
               height={320}
               quality={75}
               className="object-scale-down"
+            /> */}
+            <img
+              src={gun.Images[0].FullPath}
+              alt={`${gun.Condition} ${gun.Make} ${
+                gun.Model ? gun.Model : ""
+              } ${gun.Variant ? gun.Variant : ""} ${gun.Calibre}`}
+              className="w-full object-scale-down object-center"
             />
-            {/* <img
-                src={gun.Images[0].FullPath}
-                alt={`${gun.Condition} ${gun.Make} ${
-                  gun.Model ? gun.Model : ""
-                } ${gun.Variant ? gun.Variant : ""} ${gun.Calibre}`}
-                className="w-full object-cover object-center"
-              /> */}
           </div>
           <div className="h-32 p-4 flex flex-col bg-ssblue text-white">
             <h2 className="flex justify-center text-center uppercase font-bold">{`${

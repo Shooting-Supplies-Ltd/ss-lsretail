@@ -33,9 +33,15 @@ const MobileProductFilter = (props) => {
   return (
     <>
       <div className="absolute bg-ssblue w-full text-white z-10 border-2 border-gray-300">
-        <h4 className="p-4 font-bold uppercase text-xl border-b-2">
-          Filter By
-        </h4>
+        <div className="flex justify-between p-4 border-b border-white">
+          <h4 className="flex font-bold uppercase text-xl">Filter By</h4>
+          <button
+            onClick={props.clearFilters}
+            className="ml-32 flex items-end bg-ssblue hover:bg-black text-white border py-1 px-2 ring-1 ring-white rounded"
+          >
+            Clear Filters
+          </button>
+        </div>
         <div className="border-b-2">
           <div className="p-4" onClick={toggleDisplayCategories}>
             <h5 className="font-semibold uppercase">
@@ -46,13 +52,13 @@ const MobileProductFilter = (props) => {
             </h5>
           </div>
           {displayCategories && (
-            <div className="pl-4 pb-4 overflow-y-auto h-64">
+            <ul className="pl-4 pb-4 overflow-y-auto h-64 list-none">
               <CategoryFilter
                 categories={props.categories}
                 handleCategoryChange={props.handleCategoryChange}
                 selectedCategory={props.selectedCategory}
               />
-            </div>
+            </ul>
           )}
         </div>
         <div className="border-b-2">
@@ -65,13 +71,13 @@ const MobileProductFilter = (props) => {
             </h5>
           </div>
           {displayBrands && (
-            <div className="pl-4 pb-4 overflow-y-auto h-64">
+            <ul className="pl-4 pb-4 overflow-y-auto h-64 list-none">
               <BrandFilter
                 brands={props.brands}
                 handleBrandChange={props.handleBrandChange}
                 selectedBrand={props.selectedBrand}
               />
-            </div>
+            </ul>
           )}
         </div>
       </div>

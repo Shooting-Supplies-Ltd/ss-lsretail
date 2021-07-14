@@ -309,6 +309,7 @@ const Guns = ({ guns, categories, brands, conditions, mechanisms }) => {
               mechanisms={mechanisms}
               selectedMechanism={selectedMechanism}
               handleMechanismChange={handleMechanismChange}
+              clearFilters={clearFilters}
             />
           </div>
         )}

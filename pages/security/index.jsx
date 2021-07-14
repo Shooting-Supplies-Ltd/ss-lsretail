@@ -147,6 +147,7 @@ const Security = ({ items, categories, brands }) => {
                 brands={brands}
                 selectedBrand={selectedBrand}
                 handleBrandChange={handleBrandChange}
+                clearFilters={clearFilters}
               />
             </div>
           )}

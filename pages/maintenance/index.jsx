@@ -157,7 +157,7 @@ const Maintenance = ({ items, categories, brands }) => {
       </Head>
       <div className="hidden lg:flex lg:mx-60 lg:mt-8 cursor-pointer">
         <FaArrowCircleUp
-          className="scrollTop lg:text-4xl xl:text-5xl text-ssblue"
+          className="scrollTop lg:text-4xl text-ssblue"
           onClick={scrollTop}
           style={{
             height: 60,

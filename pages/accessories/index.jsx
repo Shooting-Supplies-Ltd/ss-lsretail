@@ -157,7 +157,7 @@ const Accessories = ({ items, categories, brands }) => {
       </Head>
       <div className="hidden lg:hidden xl:flex cursor-pointer">
         <FaArrowCircleUp
-          className="scrollTop lg:text-4xl xl:text-4xl text-ssblue"
+          className="scrollTop lg:text-4xl text-ssblue"
           onClick={scrollTop}
           style={{
             height: 60,
